@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speakers | Green Innovation Conference</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          },
+          colors: {
+            primary: '#16a34a',
+            accent:  '#2563eb',
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <!-- Meta SEO -->
+  <meta name="description" content="Meet our distinguished keynote speakers and industry experts at the Green Innovation Conference 2025." />
+
+  <!-- Custom Styles -->
+  <style>
+    html { scroll-behavior: smooth; }
+    
+    @keyframes fadeUp {
+      0%   { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    
+    .nav-link, .footer-link {
+      @apply text-gray-300 hover:text-primary transition-colors duration-300;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .speaker-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
+      backdrop-filter: blur(10px);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 1rem;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      animation: fadeUp 0.3s ease-out;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-gray-900 antialiased">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
+    Skip to main content
+  </a>
+
+  <!-- Navbar -->
+  <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+      <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
+        Green Innovation
+      </a>
+
+      <input id="nav-toggle" type="checkbox" class="hidden peer" />
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="speakers.html" class="nav-link text-primary">Speakers</a>
+        <a href="committee.html" class="nav-link">Committee</a>
+        <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="venue.html" class="nav-link">Venue</a>
+        <a href="registration.html" class="nav-link">Register</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="main" class="pt-20">
+
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
+      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
+      
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <div class="animate-fadeUp">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+            Keynote Speakers
+          </h1>
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+            Meet our distinguished speakers who are leading the charge in sustainable business innovation 
+            and green technology solutions worldwide.
+          </p>
+          <div class="flex justify-center">
+            <div class="bg-primary/10 px-6 py-3 rounded-full">
+              <span class="text-primary font-semibold">
+                <i class="fas fa-users mr-2"></i>
+                30+ Industry Experts & Researchers
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keynote Speakers -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-4 text-gray-800 animate-fadeUp">Keynote Speakers</h2>
+        <p class="text-center text-gray-600 mb-12 animate-fadeUp">Featured speakers delivering transformative insights</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Keynote Speaker 1 -->
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal1')">
+            <div class="h-80 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center relative">
+              <div class="w-40 h-40 bg-primary/20 rounded-full flex items-center justify-center">
+                <span class="text-5xl font-bold text-primary">DR</span>
+              </div>
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Keynote
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Priya Rajan</h3>
+              <p class="text-primary font-semibold mb-2">
+                <i class="fas fa-leaf mr-2"></i>Sustainable Tech Pioneer
+              </p>
+              <p class="text-gray-600 mb-4">Leading researcher in green technology solutions and sustainable business models with 15+ years of experience.</p>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-building mr-2"></i>
+                MIT Clean Energy Institute
+              </div>
+            </div>
+          </article>
+
+          <!-- Keynote Speaker 2 -->
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal2')" style="animation-delay: 0.2s;">
+            <div class="h-80 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative">
+              <div class="w-40 h-40 bg-accent/20 rounded-full flex items-center justify-center">
+                <span class="text-5xl font-bold text-accent">MT</span>
+              </div>
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Keynote
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">Prof. Mark Tan</h3>
+              <p class="text-accent font-semibold mb-2">
+                <i class="fas fa-recycle mr-2"></i>Circular Economy Expert
+              </p>
+              <p class="text-gray-600 mb-4">International authority on circular economy principles and sustainable manufacturing processes.</p>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-university mr-2"></i>
+                Stanford University
+              </div>
+            </div>
+          </article>
+
+          <!-- Keynote Speaker 3 -->
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal3')" style="animation-delay: 0.4s;">
+            <div class="h-80 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center relative">
+              <div class="w-40 h-40 bg-primary/20 rounded-full flex items-center justify-center">
+                <span class="text-5xl font-bold text-primary">ND</span>
+              </div>
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Keynote
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">Ms. Nisha Das</h3>
+              <p class="text-primary font-semibold mb-2">
+                <i class="fas fa-solar-panel mr-2"></i>Renewable Energy Innovator
+              </p>
+              <p class="text-gray-600 mb-4">Pioneering work in renewable energy integration and smart grid technologies for sustainable cities.</p>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-industry mr-2"></i>
+                Tesla Energy Division
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Experts -->
+    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-4 text-gray-800 animate-fadeUp">Industry Experts</h2>
+        <p class="text-center text-gray-600 mb-12 animate-fadeUp">Leaders driving sustainable innovation across industries</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Industry Expert 1 -->
+          <article class="speaker-card rounded-xl shadow-md overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal4')">
+            <div class="h-48 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+              <div class="w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center">
+                <span class="text-2xl font-bold text-purple-600">AK</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-1">Dr. Amit Kumar</h3>
+              <p class="text-accent font-semibold text-sm mb-2">Clean Tech Entrepreneur</p>
+              <p class="text-gray-600 text-sm">Founder of multiple green-tech startups</p>
+            </div>
+          </article>
+
+          <!-- Industry Expert 2 -->
+          <article class="speaker-card rounded-xl shadow-md overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal5')" style="animation-delay: 0.1s;">
+            <div class="h-48 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+              <div class="w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center">
+                <span class="text-2xl font-bold text-orange-600">SL</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-1">Dr. Sarah Lee</h3>
+              <p class="text-primary font-semibold text-sm mb-2">Carbon Footprint Specialist</p>
+              <p class="text-gray-600 text-sm">Leading carbon neutrality initiatives</p>
+            </div>
+          </article>
+
+          <!-- Industry Expert 3 -->
+          <article class="speaker-card rounded-xl shadow-md overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal6')" style="animation-delay: 0.2s;">
+            <div class="h-48 bg-gradient-to-br from-teal-100 to-teal-200 flex items-center justify-center">
+              <div class="w-20 h-20 bg-teal-500/20 rounded-full flex items-center justify-center">
+                <span class="text-2xl font-bold text-teal-600">RG</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-1">Mr. Raj Gupta</h3>
+              <p class="text-accent font-semibold text-sm mb-2">Supply Chain Sustainability</p>
+              <p class="text-gray-600 text-sm">Transforming global supply chains</p>
+            </div>
+          </article>
+
+          <!-- Industry Expert 4 -->
+          <article class="speaker-card rounded-xl shadow-md overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal7')" style="animation-delay: 0.3s;">
+            <div class="h-48 bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center">
+              <div class="w-20 h-20 bg-pink-500/20 rounded-full flex items-center justify-center">
+                <span class="text-2xl font-bold text-pink-600">MP</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-1">Dr. Maria Patel</h3>
+              <p class="text-primary font-semibold text-sm mb-2">ESG Investment Expert</p>
+              <p class="text-gray-600 text-sm">Driving sustainable investments</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">Join the Conversation</h2>
+          <p class="text-xl text-gray-700 mb-8">
+            Don't miss the opportunity to learn from these industry leaders and network with fellow sustainability advocates.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="registration.html"
+               class="bg-primary hover:bg-primary/90 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+               Register Now
+            </a>
+            <a href="agenda.html"
+               class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-10 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+               View Schedule
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-100 pt-16 pb-8 mt-20">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <h3 class="text-2xl font-bold mb-4 text-primary">Green Innovation Conference</h3>
+        <p class="text-gray-300 text-lg mb-4">
+          International Conference on Sustainable Business Technology
+        </p>
+        <p class="text-gray-300">
+          <i class="fas fa-calendar-alt text-primary mr-2"></i>14–15 November 2025<br>
+          <i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur<br>
+          <i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology
+        </p>
+      </div>
+
+      <nav class="flex flex-col gap-3">
+        <h4 class="font-semibold text-lg mb-2 text-gray-200">Quick Links</h4>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="speakers.html" class="footer-link text-primary">Speakers</a>
+        <a href="committee.html" class="footer-link">Committee</a>
+        <a href="call-for-papers.html" class="footer-link">Call for Papers</a>
+        <a href="agenda.html" class="footer-link">Agenda</a>
+        <a href="venue.html" class="footer-link">Venue</a>
+        <a href="registration.html" class="footer-link">Register</a>
+      </nav>
+
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
+        <form action="#" class="mb-4">
+          <div class="flex">
+            <input type="email" placeholder="Enter your email"
+                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
+                   aria-label="Email for newsletter">
+            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
+            <i class="fab fa-facebook text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-700 pt-8 text-center">
+      <p class="text-gray-300 mb-2">
+        © 2025 Green Innovation Conference — Hosted by Kalam Institute of Technology. All rights reserved.
+      </p>
+      <p class="text-sm text-gray-400">
+        Built and maintained by 
+        <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+          Pixlight LLP
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modals for Speaker Details -->
+  <!-- Modal 1 - Dr. Priya Rajan -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 relative">
+        <button onclick="closeModal('modal1')" class="absolute top-4 right-4 text-white hover:text-gray-200 text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="flex items-center gap-4">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
+            <span class="text-2xl font-bold">DR</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold">Dr. Priya Rajan</h3>
+            <p class="text-green-100">Sustainable Tech Pioneer</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="mb-6">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Biography</h4>
+          <p class="text-gray-600 leading-relaxed">
+            Dr. Priya Rajan is a renowned researcher and thought leader in sustainable technology solutions. With over 15 years of experience in green innovation, she has spearheaded numerous breakthrough projects in renewable energy and sustainable business models. Her work at MIT has influenced policy decisions and corporate strategies worldwide.
+          </p>
+        </div>
+        <div class="mb-6">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Expertise</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Green Technology</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Sustainable Business</span>
+            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Innovation Strategy</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Session</h4>
+          <p class="text-gray-600">"The Future of Sustainable Technology in Business Transformation"</p>
+          <p class="text-sm text-gray-500 mt-1">Day 1, 10:00 AM - 11:00 AM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 - Prof. Mark Tan -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 relative">
+        <button onclick="closeModal('modal2')" class="absolute top-4 right-4 text-white hover:text-gray-200 text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="flex items-center gap-4">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
+            <span class="text-2xl font-bold">MT</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold">Prof. Mark Tan</h3>
+            <p class="text-blue-100">Circular Economy Expert</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="mb-6">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Biography</h4>
+          <p class="text-gray-600 leading-relaxed">
+            Professor Mark Tan is an internationally recognized authority on circular economy principles and sustainable manufacturing. His research at Stanford University has revolutionized how companies approach waste reduction and resource optimization. He has consulted for Fortune 500 companies and government agencies worldwide.
+          </p>
+        </div>
+        <div class="mb-6">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Expertise</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Circular Economy</span>
+            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Sustainable Manufacturing</span>
+            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Waste Management</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Session</h4>
+          <p class="text-gray-600">"Implementing Circular Economy Models for Sustainable Growth"</p>
+          <p class="text-sm text-gray-500 mt-1">Day 1, 2:00 PM - 3:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 - Ms. Nisha Das -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 relative">
+        <button onclick="closeModal('modal3')" class="absolute top-4 right-4 text-white hover:text-gray-200 text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="flex items-center gap-4">
+          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
+            <span class="text-2xl font-bold">ND</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold">Ms. Nisha Das</h3>
+            <p class="text-green-100">Renewable Energy Innovator</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="mb-6">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Biography</h4>
+          <p class="text-gray-600 leading-relaxed">
+            Ms. Nisha Das leads the renewable energy division at Tesla and has been instrumental in developing smart grid technologies for sustainable cities. Her innovative approach to energy integration has helped numerous organizations transition to renewable sources while maintaining operational efficiency.
+          </p>
+        </div>
+        <div class="mb-6">
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Expertise</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Renewable Energy</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Smart Grids</span>
+            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Energy Storage</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-2 text-gray-800">Session</h4>
+          <p class="text-gray-600">"Smart Grid Integration for Renewable Energy Systems"</p>
+          <p class="text-sm text-gray-500 mt-1">Day 2, 11:00 AM - 12:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional modals for industry experts (modal4-modal7) would follow similar pattern -->
+
+  <!-- JavaScript for Modals -->
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const activeModal = document.querySelector('.modal.active');
+        if (activeModal) {
+          activeModal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

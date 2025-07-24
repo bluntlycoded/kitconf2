@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Green Innovation Conference</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          },
+          colors: {
+            primary: '#16a34a',
+            accent:  '#2563eb',
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <!-- Meta SEO -->
+  <meta name="description" content="Contact the Green Innovation Conference 2025 organizing team. Get in touch for inquiries, support, and conference information." />
+
+  <!-- Custom Styles -->
+  <style>
+    html { scroll-behavior: smooth; }
+    
+    @keyframes fadeUp {
+      0%   { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    
+    .nav-link, .footer-link {
+      @apply text-gray-300 hover:text-primary transition-colors duration-300;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%);
+      border: 1px solid rgba(22, 163, 74, 0.1);
+    }
+
+    .form-input {
+      @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors;
+    }
+
+    .form-textarea {
+      @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-vertical;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-gray-900 antialiased">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
+    Skip to main content
+  </a>
+
+  <!-- Navbar -->
+  <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+      <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
+        Green Innovation
+      </a>
+
+      <input id="nav-toggle" type="checkbox" class="hidden peer" />
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="speakers.html" class="nav-link">Speakers</a>
+        <a href="committee.html" class="nav-link">Committee</a>
+        <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="venue.html" class="nav-link">Venue</a>
+        <a href="registration.html" class="nav-link">Register</a>
+        <a href="contact.html" class="nav-link text-primary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="main" class="pt-20">
+
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
+      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
+      
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <div class="animate-fadeUp">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+            Contact Us
+          </h1>
+          <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
+            Get in touch with the Green Innovation Conference organizing team. We're here to help with your 
+            inquiries, support needs, and provide all the information you need for the conference.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="bg-primary/10 px-6 py-3 rounded-full">
+              <span class="text-primary font-semibold">
+                <i class="fas fa-phone mr-2"></i>
+                +91-680-2345678
+              </span>
+            </div>
+            <div class="bg-accent/10 px-6 py-3 rounded-full">
+              <span class="text-accent font-semibold">
+                <i class="fas fa-envelope mr-2"></i>
+                info@greeninnovation2025.kit.ac.in
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Information Cards -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Choose the best way to reach us based on your inquiry type. Our team is ready to assist you.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- General Information -->
+          <div class="contact-card rounded-2xl p-8 card-hover animate-fadeUp">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-info-circle text-primary text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">General Information</h3>
+              <div class="space-y-3 text-gray-600">
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-envelope text-primary mr-3"></i>
+                  <a href="mailto:info@greeninnovation2025.kit.ac.in" class="hover:text-primary transition-colors">
+                    info@greeninnovation2025.kit.ac.in
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-phone text-primary mr-3"></i>
+                  <a href="tel:+916802345678" class="hover:text-primary transition-colors">
+                    +91-680-2345678
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-fax text-primary mr-3"></i>
+                  <span>+91-680-2345679</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-500 mt-4">
+                For general conference inquiries and information
+              </p>
+            </div>
+          </div>
+
+          <!-- Paper Submissions -->
+          <div class="contact-card rounded-2xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.2s;">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-file-alt text-accent text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">Paper Submissions</h3>
+              <div class="space-y-3 text-gray-600">
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-envelope text-accent mr-3"></i>
+                  <a href="mailto:papers@greeninnovation2025.kit.ac.in" class="hover:text-accent transition-colors">
+                    papers@greeninnovation2025.kit.ac.in
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-phone text-accent mr-3"></i>
+                  <a href="tel:+916802345680" class="hover:text-accent transition-colors">
+                    +91-680-2345680
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-user text-accent mr-3"></i>
+                  <span>Dr. Vikash Kumar</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-500 mt-4">
+                For abstract submissions and paper-related queries
+              </p>
+            </div>
+          </div>
+
+          <!-- Registration -->
+          <div class="contact-card rounded-2xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.4s;">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-user-check text-primary text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">Registration</h3>
+              <div class="space-y-3 text-gray-600">
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-envelope text-primary mr-3"></i>
+                  <a href="mailto:registration@greeninnovation2025.kit.ac.in" class="hover:text-primary transition-colors">
+                    registration@greeninnovation2025.kit.ac.in
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-phone text-primary mr-3"></i>
+                  <a href="tel:+916802345681" class="hover:text-primary transition-colors">
+                    +91-680-2345681
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-user text-primary mr-3"></i>
+                  <span>Prof. Sunita Mishra</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-500 mt-4">
+                For registration and payment inquiries
+              </p>
+            </div>
+          </div>
+
+          <!-- Technical Support -->
+          <div class="contact-card rounded-2xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.6s;">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-cogs text-accent text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">Technical Support</h3>
+              <div class="space-y-3 text-gray-600">
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-envelope text-accent mr-3"></i>
+                  <a href="mailto:technical@greeninnovation2025.kit.ac.in" class="hover:text-accent transition-colors">
+                    technical@greeninnovation2025.kit.ac.in
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-phone text-accent mr-3"></i>
+                  <a href="tel:+916802345682" class="hover:text-accent transition-colors">
+                    +91-680-2345682
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-user text-accent mr-3"></i>
+                  <span>Rahul Nayak</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-500 mt-4">
+                For technical sessions and presentation support
+              </p>
+            </div>
+          </div>
+
+          <!-- Media & Publicity -->
+          <div class="contact-card rounded-2xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.8s;">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-bullhorn text-primary text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">Media & Publicity</h3>
+              <div class="space-y-3 text-gray-600">
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-envelope text-primary mr-3"></i>
+                  <a href="mailto:media@greeninnovation2025.kit.ac.in" class="hover:text-primary transition-colors">
+                    media@greeninnovation2025.kit.ac.in
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-phone text-primary mr-3"></i>
+                  <a href="tel:+916802345683" class="hover:text-primary transition-colors">
+                    +91-680-2345683
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-user text-primary mr-3"></i>
+                  <span>Ms. Neha Kapoor</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-500 mt-4">
+                For media partnerships and publicity inquiries
+              </p>
+            </div>
+          </div>
+
+          <!-- Local Arrangements -->
+          <div class="contact-card rounded-2xl p-8 card-hover animate-fadeUp" style="animation-delay: 1s;">
+            <div class="text-center">
+              <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-map-marker-alt text-accent text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4">Local Arrangements</h3>
+              <div class="space-y-3 text-gray-600">
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-envelope text-accent mr-3"></i>
+                  <a href="mailto:local@greeninnovation2025.kit.ac.in" class="hover:text-accent transition-colors">
+                    local@greeninnovation2025.kit.ac.in
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-phone text-accent mr-3"></i>
+                  <a href="tel:+916802345684" class="hover:text-accent transition-colors">
+                    +91-680-2345684
+                  </a>
+                </div>
+                <div class="flex items-center justify-center">
+                  <i class="fas fa-user text-accent mr-3"></i>
+                  <span>Dr. Rajesh Das</span>
+                </div>
+              </div>
+              <p class="text-sm text-gray-500 mt-4">
+                For accommodation and local travel assistance
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conference Secretariat -->
+    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Conference Secretariat</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our main office location and primary contact information for the Green Innovation Conference 2025.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Address Card -->
+          <div class="bg-white rounded-2xl shadow-xl p-8 animate-fadeUp">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+              <i class="fas fa-building text-primary mr-3"></i>
+              Office Address
+            </h3>
+            <div class="space-y-4 text-gray-700">
+              <div class="flex items-start">
+                <i class="fas fa-map-marker-alt text-primary mt-1 mr-4"></i>
+                <div>
+                  <p class="font-semibold">Green Innovation Conference Secretariat</p>
+                  <p>Kalam Institute of Technology</p>
+                  <p>Bhubaneswar-Berhampur Highway</p>
+                  <p>Berhampur, Odisha - 760010</p>
+                  <p>India</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <i class="fas fa-phone text-primary mr-4"></i>
+                <div>
+                  <p class="font-semibold">Main Office:</p>
+                  <a href="tel:+916802345678" class="text-primary hover:underline">+91-680-2345678</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <i class="fas fa-fax text-primary mr-4"></i>
+                <div>
+                  <p class="font-semibold">Fax:</p>
+                  <span>+91-680-2345679</span>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <i class="fas fa-envelope text-primary mr-4"></i>
+                <div>
+                  <p class="font-semibold">Email:</p>
+                  <a href="mailto:info@greeninnovation2025.kit.ac.in" class="text-primary hover:underline">
+                    info@greeninnovation2025.kit.ac.in
+                  </a>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <i class="fas fa-globe text-primary mr-4"></i>
+                <div>
+                  <p class="font-semibold">Website:</p>
+                  <a href="https://kit.ac.in" target="_blank" class="text-primary hover:underline">
+                    www.kit.ac.in
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8 p-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg">
+              <h4 class="font-bold text-gray-800 mb-2">
+                <i class="fas fa-clock text-primary mr-2"></i>
+                Office Hours
+              </h4>
+              <div class="text-sm text-gray-700">
+                <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                <p>Saturday: 9:00 AM - 2:00 PM IST</p>
+                <p>Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="bg-white rounded-2xl shadow-xl p-8 animate-fadeUp" style="animation-delay: 0.3s;">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+              <i class="fas fa-paper-plane text-accent mr-3"></i>
+              Send us a Message
+            </h3>
+            
+            <form action="#" method="POST" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="first-name" class="block text-sm font-semibold text-gray-700 mb-2">
+                    First Name *
+                  </label>
+                  <input 
+                    type="text" 
+                    id="first-name" 
+                    name="first-name" 
+                    required 
+                    class="form-input"
+                    placeholder="Enter your first name"
+                  >
+                </div>
+                <div>
+                  <label for="last-name" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Last Name *
+                  </label>
+                  <input 
+                    type="text" 
+                    id="last-name" 
+                    name="last-name" 
+                    required 
+                    class="form-input"
+                    placeholder="Enter your last name"
+                  >
+                </div>
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Email Address *
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  class="form-input"
+                  placeholder="Enter your email address"
+                >
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Phone Number
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  class="form-input"
+                  placeholder="Enter your phone number"
+                >
+              </div>
+              
+              <div>
+                <label for="inquiry-type" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Inquiry Type *
+                </label>
+                <select id="inquiry-type" name="inquiry-type" required class="form-input">
+                  <option value="">Select inquiry type</option>
+                  <option value="general">General Information</option>
+                  <option value="papers">Paper Submission</option>
+                  <option value="registration">Registration</option>
+                  <option value="technical">Technical Support</option>
+                  <option value="media">Media & Publicity</option>
+                  <option value="local">Local Arrangements</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Subject *
+                </label>
+                <input 
+                  type="text" 
+                  id="subject" 
+                  name="subject" 
+                  required 
+                  class="form-input"
+                  placeholder="Enter the subject of your inquiry"
+                >
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Message *
+                </label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="5" 
+                  required 
+                  class="form-textarea"
+                  placeholder="Enter your message or inquiry details"
+                ></textarea>
+              </div>
+              
+              <div class="flex items-center">
+                <input 
+                  type="checkbox" 
+                  id="newsletter" 
+                  name="newsletter" 
+                  class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2"
+                >
+                <label for="newsletter" class="ml-2 text-sm text-gray-700">
+                  Subscribe to conference updates and newsletter
+                </label>
+              </div>
+              
+              <button 
+                type="submit" 
+                class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                <i class="fas fa-paper-plane mr-2"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Find Us</h2>
+          <p class="text-lg text-gray-600">
+            Kalam Institute of Technology is conveniently located in Berhampur, Odisha.
+          </p>
+        </div>
+        
+        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-xl animate-fadeUp">
+          <!-- Placeholder for Google Maps -->
+          <div class="h-96 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
+            <div class="text-center">
+              <i class="fas fa-map-marked-alt text-6xl text-primary mb-4"></i>
+              <p class="text-xl font-semibold text-gray-700 mb-2">Interactive Map</p>
+              <p class="text-gray-600">
+                Kalam Institute of Technology<br>
+                Berhampur, Odisha - 760010
+              </p>
+              <a href="https://maps.google.com/?q=Kalam+Institute+of+Technology+Berhampur" 
+                 target="_blank" 
+                 class="inline-block mt-4 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                <i class="fas fa-external-link-alt mr-2"></i>
+                Open in Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+          <p class="text-lg text-gray-600">
+            Quick answers to common questions about contacting us and the conference.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <!-- FAQ Item 1 -->
+          <div class="bg-white rounded-lg shadow-md p-6 animate-fadeUp">
+            <h3 class="text-lg font-bold text-gray-800 mb-3">
+              <i class="fas fa-question-circle text-primary mr-2"></i>
+              What's the best way to contact you for urgent matters?
+            </h3>
+            <p class="text-gray-600">
+              For urgent matters, please call our main office at <a href="tel:+916802345678" class="text-primary font-semibold">+91-680-2345678</a> 
+              during office hours (9 AM - 6 PM IST, Monday-Friday). For after-hours emergencies, send an email to 
+              <a href="mailto:info@greeninnovation2025.kit.ac.in" class="text-primary font-semibold">info@greeninnovation2025.kit.ac.in</a> 
+              with "URGENT" in the subject line.
+            </p>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="bg-white rounded-lg shadow-md p-6 animate-fadeUp" style="animation-delay: 0.2s;">
+            <h3 class="text-lg font-bold text-gray-800 mb-3">
+              <i class="fas fa-question-circle text-primary mr-2"></i>
+              How quickly can I expect a response to my inquiry?
+            </h3>
+            <p class="text-gray-600">
+              We typically respond to all inquiries within 24-48 hours during business days. Paper submission 
+              queries are prioritized and usually answered within 24 hours. For faster responses, please use 
+              the specific departmental email addresses listed above.
+            </p>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="bg-white rounded-lg shadow-md p-6 animate-fadeUp" style="animation-delay: 0.4s;">
+            <h3 class="text-lg font-bold text-gray-800 mb-3">
+              <i class="fas fa-question-circle text-primary mr-2"></i>
+              Can I visit your office in person?
+            </h3>
+            <p class="text-gray-600">
+              Yes, our office is open for visitors during regular business hours (Monday-Friday, 9 AM - 6 PM IST; 
+              Saturday, 9 AM - 2 PM IST). We recommend calling ahead to ensure the appropriate team member is 
+              available to assist you. Our office is located at KIT Campus, Berhampur, Odisha.
+            </p>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="bg-white rounded-lg shadow-md p-6 animate-fadeUp" style="animation-delay: 0.6s;">
+            <h3 class="text-lg font-bold text-gray-800 mb-3">
+              <i class="fas fa-question-circle text-primary mr-2"></i>
+              Do you have social media accounts for updates?
+            </h3>
+            <p class="text-gray-600">
+              Yes, follow us on our social media channels for regular updates, announcements, and behind-the-scenes 
+              content. Links to our official social media accounts are available in the footer of this website. 
+              We post daily updates during the conference period.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-100 pt-16 pb-8 mt-20">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <h3 class="text-2xl font-bold mb-4 text-primary">Green Innovation Conference</h3>
+        <p class="text-gray-300 text-lg mb-4">
+          International Conference on Sustainable Business Technology
+        </p>
+        <p class="text-gray-300">
+          <i class="fas fa-calendar-alt text-primary mr-2"></i>14–15 November 2025<br>
+          <i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur<br>
+          <i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology
+        </p>
+      </div>
+
+      <nav class="flex flex-col gap-3">
+        <h4 class="font-semibold text-lg mb-2 text-gray-200">Quick Links</h4>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="speakers.html" class="footer-link">Speakers</a>
+        <a href="committee.html" class="footer-link">Committee</a>
+        <a href="call-for-papers.html" class="footer-link">Call for Papers</a>
+        <a href="agenda.html" class="footer-link">Agenda</a>
+        <a href="venue.html" class="footer-link">Venue</a>
+        <a href="registration.html" class="footer-link">Register</a>
+        <a href="contact.html" class="footer-link text-primary">Contact</a>
+      </nav>
+
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
+        <form action="#" class="mb-4">
+          <div class="flex">
+            <input type="email" placeholder="Enter your email"
+                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
+                   aria-label="Email for newsletter">
+            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
+            <i class="fab fa-facebook text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-700 pt-8 text-center">
+      <p class="text-gray-300 mb-2">
+        © 2025 Green Innovation Conference — Hosted by Kalam Institute of Technology. All rights reserved.
+      </p>
+      <p class="text-sm text-gray-400">
+        Built and maintained by 
+        <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+          Pixlight LLP
+        </a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

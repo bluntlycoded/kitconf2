@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Green Innovation Conference</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          },
+          colors: {
+            primary: '#16a34a',
+            accent:  '#2563eb',
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <!-- Meta SEO -->
+  <meta name="description" content="Learn about the Green Innovation Conference 2025 - an international conference on sustainable business technology hosted by Kalam Institute of Technology." />
+
+  <!-- Custom Styles -->
+  <style>
+    html { scroll-behavior: smooth; }
+    
+    @keyframes fadeUp {
+      0%   { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    
+    .nav-link, .footer-link {
+      @apply text-gray-300 hover:text-primary transition-colors duration-300;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-card {
+      background: linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%);
+      border: 1px solid rgba(22, 163, 74, 0.1);
+    }
+
+    .stats-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-gray-900 antialiased">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
+    Skip to main content
+  </a>
+
+  <!-- Navbar -->
+  <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+      <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
+        Green Innovation
+      </a>
+
+      <input id="nav-toggle" type="checkbox" class="hidden peer" />
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
+        <a href="about.html" class="nav-link text-primary">About</a>
+        <a href="speakers.html" class="nav-link">Speakers</a>
+        <a href="committee.html" class="nav-link">Committee</a>
+        <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="venue.html" class="nav-link">Venue</a>
+        <a href="registration.html" class="nav-link">Register</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="main" class="pt-20">
+
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
+      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
+      
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <div class="animate-fadeUp">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+            About Green Innovation Conference
+          </h1>
+          <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
+            Discover how the Green Innovation Conference 2025 is bringing together global leaders, researchers, 
+            and innovators to shape the future of sustainable business technology and environmental solutions.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="bg-primary/10 px-6 py-3 rounded-full">
+              <span class="text-primary font-semibold">
+                <i class="fas fa-globe mr-2"></i>
+                International Conference
+              </span>
+            </div>
+            <div class="bg-accent/10 px-6 py-3 rounded-full">
+              <span class="text-accent font-semibold">
+                <i class="fas fa-leaf mr-2"></i>
+                Sustainable Innovation Focus
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conference Overview -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Content -->
+          <div class="animate-fadeUp">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Conference Overview</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              The Green Innovation Conference 2025 represents a pivotal gathering of minds committed to 
+              sustainable business transformation. As we face unprecedented environmental challenges, 
+              this conference serves as a catalyst for innovative solutions that bridge technology, 
+              business, and environmental stewardship.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              Our two-day intensive program brings together leading researchers, industry pioneers, 
+              policy makers, and entrepreneurs to explore cutting-edge technologies and methodologies 
+              that are reshaping how businesses operate sustainably in the 21st century.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                <span class="text-gray-700">Expert-led sessions</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                <span class="text-gray-700">Networking opportunities</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                <span class="text-gray-700">Hands-on workshops</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                <span class="text-gray-700">Research presentations</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Element -->
+          <div class="animate-fadeUp" style="animation-delay: 0.3s;">
+            <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 text-center">
+              <i class="fas fa-seedling text-6xl text-primary mb-6"></i>
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+              <p class="text-gray-700 text-lg">
+                To accelerate the adoption of sustainable business practices through technology-driven 
+                innovation, fostering a collaborative ecosystem for environmental and economic prosperity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conference Themes -->
+    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Conference Themes</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our conference explores five key themes that are shaping the future of sustainable business innovation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Theme 1 -->
+          <div class="feature-card p-8 rounded-xl card-hover animate-fadeUp">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-industry text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Sustainable Manufacturing</h3>
+            <p class="text-gray-600">
+              Exploring innovative manufacturing processes that minimize environmental impact while 
+              maximizing efficiency and economic viability.
+            </p>
+          </div>
+
+          <!-- Theme 2 -->
+          <div class="feature-card p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.2s;">
+            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-solar-panel text-accent text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Clean Energy Solutions</h3>
+            <p class="text-gray-600">
+              Advancing renewable energy technologies and smart grid systems that power sustainable 
+              business operations and communities.
+            </p>
+          </div>
+
+          <!-- Theme 3 -->
+          <div class="feature-card p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.4s;">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-recycle text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Circular Economy</h3>
+            <p class="text-gray-600">
+              Implementing circular business models that eliminate waste and create regenerative 
+              systems for long-term sustainability.
+            </p>
+          </div>
+
+          <!-- Theme 4 -->
+          <div class="feature-card p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.6s;">
+            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-brain text-accent text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">AI for Sustainability</h3>
+            <p class="text-gray-600">
+              Leveraging artificial intelligence and machine learning to optimize resource usage 
+              and drive environmental intelligence.
+            </p>
+          </div>
+
+          <!-- Theme 5 -->
+          <div class="feature-card p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.8s;">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-chart-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Green Finance</h3>
+            <p class="text-gray-600">
+              Developing financial mechanisms and investment strategies that support sustainable 
+              business growth and environmental initiatives.
+            </p>
+          </div>
+
+          <!-- Theme 6 -->
+          <div class="feature-card p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay: 1s;">
+            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-network-wired text-accent text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Digital Transformation</h3>
+            <p class="text-gray-600">
+              Utilizing digital technologies to create transparent, efficient, and sustainable 
+              business ecosystems and supply chains.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Attend -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Attend Green Innovation 2025?</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Join a transformative experience that will reshape your approach to sustainable business innovation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- For Researchers -->
+          <div class="animate-fadeUp">
+            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-microscope text-primary text-2xl mr-3"></i>
+                For Researchers & Academics
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <i class="fas fa-star text-primary mr-3 mt-1"></i>
+                  <span class="text-gray-700">Present your research to a global audience of peers and industry leaders</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-primary mr-3 mt-1"></i>
+                  <span class="text-gray-700">Collaborate with researchers from 40+ countries worldwide</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-primary mr-3 mt-1"></i>
+                  <span class="text-gray-700">Publish your work in IEEE-indexed conference proceedings</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-primary mr-3 mt-1"></i>
+                  <span class="text-gray-700">Access funding opportunities and research partnerships</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- For Industry -->
+          <div class="animate-fadeUp" style="animation-delay: 0.3s;">
+            <div class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-2xl p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-building text-accent text-2xl mr-3"></i>
+                For Industry Professionals
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <i class="fas fa-star text-accent mr-3 mt-1"></i>
+                  <span class="text-gray-700">Discover cutting-edge technologies ready for commercial application</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-accent mr-3 mt-1"></i>
+                  <span class="text-gray-700">Network with potential partners, suppliers, and clients</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-accent mr-3 mt-1"></i>
+                  <span class="text-gray-700">Learn about regulatory trends and compliance strategies</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-star text-accent mr-3 mt-1"></i>
+                  <span class="text-gray-700">Gain competitive advantages through sustainable innovation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conference Statistics -->
+    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Conference Impact</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Green Innovation Conference continues to grow as the premier platform for sustainable business innovation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Stat 1 -->
+          <div class="stats-card text-center p-6 rounded-xl shadow-lg card-hover animate-fadeUp">
+            <div class="text-4xl font-extrabold text-primary mb-2">500+</div>
+            <div class="text-lg font-semibold text-gray-800 mb-1">Expected Participants</div>
+            <div class="text-sm text-gray-600">From industry and academia</div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="stats-card text-center p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.2s;">
+            <div class="text-4xl font-extrabold text-accent mb-2">40+</div>
+            <div class="text-lg font-semibold text-gray-800 mb-1">Countries</div>
+            <div class="text-sm text-gray-600">Global representation</div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="stats-card text-center p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.4s;">
+            <div class="text-4xl font-extrabold text-primary mb-2">100+</div>
+            <div class="text-lg font-semibold text-gray-800 mb-1">Research Papers</div>
+            <div class="text-sm text-gray-600">Innovative research findings</div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="stats-card text-center p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.6s;">
+            <div class="text-4xl font-extrabold text-accent mb-2">30+</div>
+            <div class="text-lg font-semibold text-gray-800 mb-1">Expert Speakers</div>
+            <div class="text-sm text-gray-600">Industry thought leaders</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conference History -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Timeline Visual -->
+          <div class="animate-fadeUp">
+            <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Conference Journey</h3>
+              
+              <div class="space-y-6">
+                <div class="flex items-center">
+                  <div class="w-4 h-4 bg-primary rounded-full mr-6"></div>
+                  <div>
+                    <div class="font-semibold text-gray-800">2025 - Inaugural Edition</div>
+                    <div class="text-gray-600 text-sm">Launching the Green Innovation Conference</div>
+                  </div>
+                </div>
+                
+                <div class="flex items-center">
+                  <div class="w-4 h-4 bg-accent rounded-full mr-6"></div>
+                  <div>
+                    <div class="font-semibold text-gray-800">Vision for 2026</div>
+                    <div class="text-gray-600 text-sm">Expanding to include virtual participation</div>
+                  </div>
+                </div>
+                
+                <div class="flex items-center">
+                  <div class="w-4 h-4 bg-primary rounded-full mr-6"></div>
+                  <div>
+                    <div class="font-semibold text-gray-800">Future Goals</div>
+                    <div class="text-gray-600 text-sm">Becoming Asia's premier sustainability conference</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="animate-fadeUp" style="animation-delay: 0.3s;">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              The Green Innovation Conference was conceived from a vision to create a premier platform 
+              where sustainability meets technology. As environmental challenges grow more complex, 
+              the need for innovative, technology-driven solutions becomes increasingly critical.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              Hosted by the prestigious Kalam Institute of Technology, this inaugural conference 
+              represents the culmination of extensive planning and collaboration with leading 
+              sustainability experts, researchers, and industry pioneers worldwide.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Our goal is to establish this conference as an annual gathering that not only showcases 
+              cutting-edge research but also facilitates meaningful partnerships and drives real-world 
+              implementation of sustainable business solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expected Outcomes -->
+    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Expected Outcomes</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            The Green Innovation Conference 2025 aims to deliver tangible outcomes that advance 
+            sustainable business practices globally.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Outcome 1 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 card-hover animate-fadeUp">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-lightbulb text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Innovation Catalyst</h3>
+            <p class="text-gray-600 text-center">
+              Spark breakthrough innovations through cross-sector collaboration and knowledge exchange 
+              between researchers and industry professionals.
+            </p>
+          </div>
+
+          <!-- Outcome 2 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 card-hover animate-fadeUp" style="animation-delay: 0.2s;">
+            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-handshake text-accent text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Strategic Partnerships</h3>
+            <p class="text-gray-600 text-center">
+              Facilitate meaningful partnerships between academia, industry, and government to 
+              accelerate sustainable technology adoption.
+            </p>
+          </div>
+
+          <!-- Outcome 3 -->
+          <div class="bg-white rounded-xl shadow-lg p-8 card-hover animate-fadeUp" style="animation-delay: 0.4s;">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 mx-auto">
+              <i class="fas fa-rocket text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Market Implementation</h3>
+            <p class="text-gray-600 text-center">
+              Bridge the gap between research and market application, turning innovative ideas 
+              into commercially viable sustainable solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">Join the Green Innovation Movement</h2>
+          <p class="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
+            Be part of a transformative experience that will shape the future of sustainable business. 
+            Register today and contribute to building a more sustainable tomorrow.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
+            <a href="registration.html"
+               class="bg-primary hover:bg-primary/90 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+               <i class="fas fa-user-plus mr-2"></i>
+               Register Now
+            </a>
+            <a href="call-for-papers.html"
+               class="bg-accent hover:bg-accent/90 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+               <i class="fas fa-file-alt mr-2"></i>
+               Submit Your Research
+            </a>
+            <a href="speakers.html"
+               class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-10 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+               <i class="fas fa-users mr-2"></i>
+               Meet Our Speakers
+            </a>
+          </div>
+          
+          <div class="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              <i class="fas fa-envelope text-primary mr-2"></i>
+              Stay Updated
+            </h3>
+            <p class="text-gray-700 mb-6">
+              Subscribe to our newsletter for the latest conference updates, speaker announcements, and sustainability insights.
+            </p>
+            <form class="max-w-md mx-auto">
+              <div class="flex">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email address"
+                  class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                >
+                <button 
+                  type="submit"
+                  class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-r-lg transition-colors"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-100 pt-16 pb-8 mt-20">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <h3 class="text-2xl font-bold mb-4 text-primary">Green Innovation Conference</h3>
+        <p class="text-gray-300 text-lg mb-4">
+          International Conference on Sustainable Business Technology
+        </p>
+        <p class="text-gray-300">
+          <i class="fas fa-calendar-alt text-primary mr-2"></i>14–15 November 2025<br>
+          <i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur<br>
+          <i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology
+        </p>
+      </div>
+
+      <nav class="flex flex-col gap-3">
+        <h4 class="font-semibold text-lg mb-2 text-gray-200">Quick Links</h4>
+        <a href="about.html" class="footer-link text-primary">About</a>
+        <a href="speakers.html" class="footer-link">Speakers</a>
+        <a href="committee.html" class="footer-link">Committee</a>
+        <a href="call-for-papers.html" class="footer-link">Call for Papers</a>
+        <a href="agenda.html" class="footer-link">Agenda</a>
+        <a href="venue.html" class="footer-link">Venue</a>
+        <a href="registration.html" class="footer-link">Register</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </nav>
+
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
+        <form action="#" class="mb-4">
+          <div class="flex">
+            <input type="email" placeholder="Enter your email"
+                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
+                   aria-label="Email for newsletter">
+            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
+            <i class="fab fa-facebook text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-700 pt-8 text-center">
+      <p class="text-gray-300 mb-2">
+        © 2025 Green Innovation Conference — Hosted by Kalam Institute of Technology. All rights reserved.
+      </p>
+      <p class="text-sm text-gray-400">
+        Built and maintained by 
+        <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+          Pixlight LLP
+        </a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

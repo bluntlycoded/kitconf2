@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration | Green Innovation Conference</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          },
+          colors: {
+            primary: '#16a34a',
+            accent:  '#2563eb',
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <!-- Meta SEO -->
+  <meta name="description" content="Register for the Green Innovation Conference 2025. Choose from different registration categories and secure your spot at this premier sustainability event." />
+
+  <!-- Custom Styles -->
+  <style>
+    html { scroll-behavior: smooth; }
+    
+    @keyframes fadeUp {
+      0%   { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    
+    .nav-link, .footer-link {
+      @apply text-gray-300 hover:text-primary transition-colors duration-300;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .pricing-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
+      backdrop-filter: blur(10px);
+    }
+
+    .pricing-card.featured {
+      background: linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%);
+      border: 2px solid #16a34a;
+    }
+
+    .form-input {
+      @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors;
+    }
+
+    .form-select {
+      @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors appearance-none bg-white;
+    }
+
+    .step-indicator {
+      @apply w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors;
+    }
+
+    .step-indicator.active {
+      @apply bg-primary text-white;
+    }
+
+    .step-indicator.completed {
+      @apply bg-primary text-white;
+    }
+
+    .step-indicator.inactive {
+      @apply bg-gray-200 text-gray-500;
+    }
+
+    .registration-step {
+      display: none;
+    }
+
+    .registration-step.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-gray-900 antialiased">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
+    Skip to main content
+  </a>
+
+  <!-- Navbar -->
+  <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+      <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
+        Green Innovation
+      </a>
+
+      <input id="nav-toggle" type="checkbox" class="hidden peer" />
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="speakers.html" class="nav-link">Speakers</a>
+        <a href="committee.html" class="nav-link">Committee</a>
+        <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
+        <a href="agenda.html" class="nav-link">Agenda</a>
+        <a href="venue.html" class="nav-link">Venue</a>
+        <a href="registration.html" class="nav-link text-primary">Register</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="main" class="pt-20">
+
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
+      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
+      
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <div class="animate-fadeUp">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+            Conference Registration
+          </h1>
+          <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
+            Secure your spot at the Green Innovation Conference 2025. Choose from our flexible 
+            registration options and join global leaders in sustainable business innovation.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="bg-primary/10 px-6 py-3 rounded-full">
+              <span class="text-primary font-semibold">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Early Bird: Save 25%
+              </span>
+            </div>
+            <div class="bg-accent/10 px-6 py-3 rounded-full">
+              <span class="text-accent font-semibold">
+                <i class="fas fa-clock mr-2"></i>
+                Limited Time Offer
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Categories -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Registration Categories</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Choose the registration category that best fits your profile and take advantage of our early bird pricing.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Academic Regular -->
+          <div class="pricing-card featured rounded-2xl shadow-xl p-8 card-hover animate-fadeUp">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-graduation-cap text-primary text-2xl"></i>
+              </div>
+              <span class="bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold mb-4 inline-block">
+                MOST POPULAR
+              </span>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Academic</h3>
+              <p class="text-gray-600 text-sm mb-6">Faculty, Researchers & PhD Students</p>
+              
+              <div class="mb-6">
+                <div class="text-3xl font-extrabold text-primary mb-2">₹8,500</div>
+                <div class="text-lg text-gray-500 line-through mb-1">₹11,000</div>
+                <div class="text-sm text-green-600 font-semibold">Save ₹2,500</div>
+              </div>
+              
+              <ul class="text-left text-gray-600 space-y-2 mb-8">
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>All conference sessions</li>
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Conference kit & materials</li>
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Lunch & refreshments</li>
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Certificate of participation</li>
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>IEEE publication</li>
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Networking sessions</li>
+              </ul>
+              
+              <button onclick="selectCategory('academic', 8500)" class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg transition-colors">
+                Select Academic
+              </button>
+            </div>
+          </div>
+
+          <!-- Industry -->
+          <div class="pricing-card rounded-2xl shadow-xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.2s;">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-building text-accent text-2xl"></i>
+              </div>
+              <div class="mb-4 h-6"></div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Industry</h3>
+              <p class="text-gray-600 text-sm mb-6">Corporate Professionals</p>
+              
+              <div class="mb-6">
+                <div class="text-3xl font-extrabold text-accent mb-2">₹12,000</div>
+                <div class="text-lg text-gray-500 line-through mb-1">₹15,000</div>
+                <div class="text-sm text-green-600 font-semibold">Save ₹3,000</div>
+              </div>
+              
+              <ul class="text-left text-gray-600 space-y-2 mb-8">
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>All conference sessions</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Premium conference kit</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Lunch & refreshments</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Certificate of participation</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Business networking</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Industry showcase access</li>
+              </ul>
+              
+              <button onclick="selectCategory('industry', 12000)" class="w-full bg-accent hover:bg-accent/90 text-white font-bold py-4 rounded-lg transition-colors">
+                Select Industry
+              </button>
+            </div>
+          </div>
+
+          <!-- Student -->
+          <div class="pricing-card rounded-2xl shadow-xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.4s;">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-user-graduate text-primary text-2xl"></i>
+              </div>
+              <div class="mb-4 h-6"></div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Student</h3>
+              <p class="text-gray-600 text-sm mb-6">Undergraduate & Masters</p>
+              
+              <div class="mb-6">
+                <div class="text-3xl font-extrabold text-primary mb-2">₹3,500</div>
+                <div class="text-lg text-gray-500 line-through mb-1">₹5,000</div>
+                <div class="text-sm text-green-600 font-semibold">Save ₹1,500</div>
+              </div>
+              
+              <ul class="text-left text-gray-600 space-y-2 mb-8">
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>All conference sessions</li>
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Student conference kit</li>
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Lunch & refreshments</li>
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Certificate of participation</li>
+                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Career guidance session</li>
+                <li class="flex items-center"><i class="fas fa-times text-gray-400 mr-2"></i>IEEE publication</li>
+              </ul>
+              
+              <button onclick="selectCategory('student', 3500)" class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg transition-colors">
+                Select Student
+              </button>
+            </div>
+          </div>
+
+          <!-- International -->
+          <div class="pricing-card rounded-2xl shadow-xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.6s;">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-globe text-accent text-2xl"></i>
+              </div>
+              <div class="mb-4 h-6"></div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">International</h3>
+              <p class="text-gray-600 text-sm mb-6">Foreign Delegates</p>
+              
+              <div class="mb-6">
+                <div class="text-3xl font-extrabold text-accent mb-2">$180</div>
+                <div class="text-lg text-gray-500 line-through mb-1">$250</div>
+                <div class="text-sm text-green-600 font-semibold">Save $70</div>
+              </div>
+              
+              <ul class="text-left text-gray-600 space-y-2 mb-8">
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>All conference sessions</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Premium conference kit</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Lunch & refreshments</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Certificate of participation</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>IEEE publication</li>
+                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Cultural tour (optional)</li>
+              </ul>
+              
+              <button onclick="selectCategory('international', 180)" class="w-full bg-accent hover:bg-accent/90 text-white font-bold py-4 rounded-lg transition-colors">
+                Select International
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Early Bird Notice -->
+        <div class="mt-12 text-center animate-fadeUp">
+          <div class="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+              <i class="fas fa-clock text-primary mr-2"></i>
+              Early Bird Pricing Ends Soon!
+            </h3>
+            <p class="text-gray-700 mb-6">
+              Save up to 25% on registration fees. Early bird pricing valid until <strong>September 30, 2025</strong>. 
+              Regular pricing will apply after this date.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="text-3xl font-bold text-primary mb-2">30</div>
+                <div class="text-sm text-gray-600">Days Left</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-accent mb-2">25%</div>
+                <div class="text-sm text-gray-600">Savings</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-primary mb-2">500+</div>
+                <div class="text-sm text-gray-600">Already Registered</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50" id="registration-form" style="display: none;">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Complete Your Registration</h2>
+          <p class="text-lg text-gray-600">
+            Fill in your details to secure your spot at the Green Innovation Conference 2025.
+          </p>
+        </div>
+
+        <!-- Step Indicator -->
+        <div class="flex justify-center mb-12 animate-fadeUp">
+          <div class="flex items-center space-x-4">
+            <div class="flex items-center">
+              <div id="step1-indicator" class="step-indicator active">1</div>
+              <span class="ml-2 text-sm text-gray-600 hidden sm:inline">Personal Info</span>
+            </div>
+            <div class="w-12 h-px bg-gray-300"></div>
+            <div class="flex items-center">
+              <div id="step2-indicator" class="step-indicator inactive">2</div>
+              <span class="ml-2 text-sm text-gray-600 hidden sm:inline">Professional</span>
+            </div>
+            <div class="w-12 h-px bg-gray-300"></div>
+            <div class="flex items-center">
+              <div id="step3-indicator" class="step-indicator inactive">3</div>
+              <span class="ml-2 text-sm text-gray-600 hidden sm:inline">Payment</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 animate-fadeUp">
+          <form id="registrationForm">
+            <!-- Step 1: Personal Information -->
+            <div id="step1" class="registration-step active">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">Personal Information</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="firstName" class="block text-sm font-semibold text-gray-700 mb-2">
+                    First Name *
+                  </label>
+                  <input type="text" id="firstName" name="firstName" required class="form-input">
+                </div>
+                
+                <div>
+                  <label for="lastName" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Last Name *
+                  </label>
+                  <input type="text" id="lastName" name="lastName" required class="form-input">
+                </div>
+              </div>
+              
+              <div class="mt-6">
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Email Address *
+                </label>
+                <input type="email" id="email" name="email" required class="form-input">
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div>
+                  <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Phone Number *
+                  </label>
+                  <input type="tel" id="phone" name="phone" required class="form-input">
+                </div>
+                
+                <div>
+                  <label for="country" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Country *
+                  </label>
+                  <select id="country" name="country" required class="form-select">
+                    <option value="">Select Country</option>
+                    <option value="IN">India</option>
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="DE">Germany</option>
+                    <option value="FR">France</option>
+                    <option value="JP">Japan</option>
+                    <option value="SG">Singapore</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="mt-8 flex justify-end">
+                <button type="button" onclick="nextStep(2)" class="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3 rounded-lg transition-colors">
+                  Next <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Professional Information -->
+            <div id="step2" class="registration-step">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">Professional Information</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="designation" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Designation/Title *
+                  </label>
+                  <input type="text" id="designation" name="designation" required class="form-input" placeholder="e.g., Professor, Manager, Student">
+                </div>
+                
+                <div>
+                  <label for="organization" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Organization/Institution *
+                  </label>
+                  <input type="text" id="organization" name="organization" required class="form-input">
+                </div>
+              </div>
+              
+              <div class="mt-6">
+                <label for="department" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Department/Division
+                </label>
+                <input type="text" id="department" name="department" class="form-input">
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div>
+                  <label for="experience" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Years of Experience
+                  </label>
+                  <select id="experience" name="experience" class="form-select">
+                    <option value="">Select Experience</option>
+                    <option value="0-2">0-2 years</option>
+                    <option value="3-5">3-5 years</option>
+                    <option value="6-10">6-10 years</option>
+                    <option value="11-15">11-15 years</option>
+                    <option value="16+">16+ years</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label for="expertise" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Area of Expertise
+                  </label>
+                  <select id="expertise" name="expertise" class="form-select">
+                    <option value="">Select Area</option>
+                    <option value="sustainable-manufacturing">Sustainable Manufacturing</option>
+                    <option value="renewable-energy">Renewable Energy</option>
+                    <option value="circular-economy">Circular Economy</option>
+                    <option value="ai-sustainability">AI for Sustainability</option>
+                    <option value="green-finance">Green Finance</option>
+                    <option value="digital-transformation">Digital Transformation</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="mt-6">
+                <label for="dietaryRequirements" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Dietary Requirements
+                </label>
+                <select id="dietaryRequirements" name="dietaryRequirements" class="form-select">
+                  <option value="">No special requirements</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="halal">Halal</option>
+                  <option value="gluten-free">Gluten-free</option>
+                  <option value="other">Other (specify in comments)</option>
+                </select>
+              </div>
+              
+              <div class="mt-6">
+                <label for="specialRequests" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Special Requests/Comments
+                </label>
+                <textarea id="specialRequests" name="specialRequests" rows="3" class="form-input" placeholder="Any special accessibility needs, dietary restrictions, or other requests..."></textarea>
+              </div>
+              
+              <div class="mt-8 flex justify-between">
+                <button type="button" onclick="previousStep(1)" class="bg-gray-500 hover:bg-gray-600 text-white font-bold px-8 py-3 rounded-lg transition-colors">
+                  <i class="fas fa-arrow-left mr-2"></i> Previous
+                </button>
+                <button type="button" onclick="nextStep(3)" class="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3 rounded-lg transition-colors">
+                  Next <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Payment Information -->
+            <div id="step3" class="registration-step">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">Payment & Confirmation</h3>
+              
+              <!-- Registration Summary -->
+              <div class="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-6 mb-6">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">Registration Summary</h4>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-700">Category:</span>
+                  <span id="summary-category" class="font-semibold text-gray-800"></span>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-700">Registration Fee:</span>
+                  <span id="summary-fee" class="font-semibold text-gray-800"></span>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-700">Processing Fee:</span>
+                  <span class="font-semibold text-gray-800">₹200</span>
+                </div>
+                <hr class="my-3">
+                <div class="flex justify-between items-center">
+                  <span class="text-lg font-bold text-gray-800">Total Amount:</span>
+                  <span id="summary-total" class="text-xl font-bold text-primary"></span>
+                </div>
+              </div>
+              
+              <!-- Payment Options -->
+              <div class="mb-6">
+                <h4 class="text-lg font-bold text-gray-800 mb-4">Payment Method</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                    <input type="radio" name="paymentMethod" value="online" checked class="mr-3">
+                    <div>
+                      <div class="font-semibold text-gray-800">Online Payment</div>
+                      <div class="text-sm text-gray-600">Credit/Debit Card, UPI, Net Banking</div>
+                    </div>
+                  </label>
+                  
+                  <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                    <input type="radio" name="paymentMethod" value="bank-transfer" class="mr-3">
+                    <div>
+                      <div class="font-semibold text-gray-800">Bank Transfer</div>
+                      <div class="text-sm text-gray-600">Wire transfer to conference account</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              
+              <!-- Terms and Conditions -->
+              <div class="mb-6">
+                <label class="flex items-start">
+                  <input type="checkbox" id="termsAccepted" name="termsAccepted" required class="mt-1 mr-3">
+                  <span class="text-sm text-gray-700">
+                    I agree to the <a href="#" class="text-primary hover:underline">Terms and Conditions</a> 
+                    and <a href="#" class="text-primary hover:underline">Privacy Policy</a>. 
+                    I understand the cancellation and refund policies.
+                  </span>
+                </label>
+              </div>
+              
+              <!-- Newsletter Subscription -->
+              <div class="mb-6">
+                <label class="flex items-start">
+                  <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 mr-3">
+                  <span class="text-sm text-gray-700">
+                    Subscribe to conference newsletter for updates and future events.
+                  </span>
+                </label>
+              </div>
+              
+              <div class="mt-8 flex justify-between">
+                <button type="button" onclick="previousStep(2)" class="bg-gray-500 hover:bg-gray-600 text-white font-bold px-8 py-3 rounded-lg transition-colors">
+                  <i class="fas fa-arrow-left mr-2"></i> Previous
+                </button>
+                <button type="submit" class="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3 rounded-lg transition-colors">
+                  <i class="fas fa-credit-card mr-2"></i> Proceed to Payment
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Benefits -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">What's Included</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Your registration includes access to all conference activities and exclusive benefits.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Benefit 1 -->
+          <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 card-hover animate-fadeUp">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-users text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">All Sessions Access</h3>
+            <p class="text-gray-600">
+              Complete access to keynote presentations, technical sessions, panel discussions, 
+              and workshops over two days.
+            </p>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.2s;">
+            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-gift text-accent text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Conference Kit</h3>
+            <p class="text-gray-600">
+              Premium conference materials including proceedings, notebook, branded items, 
+              and digital resources.
+            </p>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.4s;">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-utensils text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Meals & Refreshments</h3>
+            <p class="text-gray-600">
+              All meals, coffee breaks, and refreshments during the conference period. 
+              Special dietary requirements accommodated.
+            </p>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="bg-gradient-to-br from-accent/5 to-primary/5 rounded-xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.6s;">
+            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-certificate text-accent text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Certificate</h3>
+            <p class="text-gray-600">
+              Official certificate of participation from Kalam Institute of Technology 
+              for professional development records.
+            </p>
+          </div>
+
+          <!-- Benefit 5 -->
+          <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.8s;">
+            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-handshake text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Networking</h3>
+            <p class="text-gray-600">
+              Structured networking sessions, informal meetups, and access to the 
+              exclusive attendee directory and mobile app.
+            </p>
+          </div>
+
+          <!-- Benefit 6 -->
+          <div class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-xl p-8 card-hover animate-fadeUp" style="animation-delay: 1s;">
+            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+              <i class="fas fa-book text-accent text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">IEEE Publication</h3>
+            <p class="text-gray-600">
+              Access to conference proceedings published in IEEE Xplore with global 
+              visibility and indexing (Academic & Industry categories).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Support -->
+    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="animate-fadeUp">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">Need Help with Registration?</h2>
+          <p class="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
+            Our registration support team is here to assist you with any questions or issues.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+              <i class="fas fa-envelope text-primary text-3xl mb-4"></i>
+              <h3 class="text-lg font-bold text-gray-800 mb-2">Email Support</h3>
+              <p class="text-gray-600 text-sm mb-3">Get help via email</p>
+              <a href="mailto:registration@greeninnovation2025.kit.ac.in" class="text-primary font-semibold hover:underline">
+                registration@greeninnovation2025.kit.ac.in
+              </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+              <i class="fas fa-phone text-accent text-3xl mb-4"></i>
+              <h3 class="text-lg font-bold text-gray-800 mb-2">Phone Support</h3>
+              <p class="text-gray-600 text-sm mb-3">Speak directly with our team</p>
+              <a href="tel:+916802345681" class="text-accent font-semibold hover:underline">
+                +91-680-2345681
+              </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+              <i class="fas fa-clock text-primary text-3xl mb-4"></i>
+              <h3 class="text-lg font-bold text-gray-800 mb-2">Office Hours</h3>
+              <p class="text-gray-600 text-sm mb-3">Monday - Friday</p>
+              <p class="text-primary font-semibold">9:00 AM - 6:00 PM IST</p>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              <i class="fas fa-info-circle text-primary mr-2"></i>
+              Important Information
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left text-sm text-gray-700">
+              <div>
+                <p><strong>Cancellation Policy:</strong> Full refund until Oct 15, 2025. 50% refund until Nov 1, 2025.</p>
+              </div>
+              <div>
+                <p><strong>Group Discounts:</strong> 10% discount for groups of 5+. Contact us for details.</p>
+              </div>
+              <div>
+                <p><strong>Payment Methods:</strong> All major cards, UPI, net banking, and wire transfer accepted.</p>
+              </div>
+              <div>
+                <p><strong>Receipt:</strong> Electronic receipt and invoice provided immediately after payment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-100 pt-16 pb-8 mt-20">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <h3 class="text-2xl font-bold mb-4 text-primary">Green Innovation Conference</h3>
+        <p class="text-gray-300 text-lg mb-4">
+          International Conference on Sustainable Business Technology
+        </p>
+        <p class="text-gray-300">
+          <i class="fas fa-calendar-alt text-primary mr-2"></i>14–15 November 2025<br>
+          <i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur<br>
+          <i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology
+        </p>
+      </div>
+
+      <nav class="flex flex-col gap-3">
+        <h4 class="font-semibold text-lg mb-2 text-gray-200">Quick Links</h4>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="speakers.html" class="footer-link">Speakers</a>
+        <a href="committee.html" class="footer-link">Committee</a>
+        <a href="call-for-papers.html" class="footer-link">Call for Papers</a>
+        <a href="agenda.html" class="footer-link">Agenda</a>
+        <a href="venue.html" class="footer-link">Venue</a>
+        <a href="registration.html" class="footer-link text-primary">Register</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </nav>
+
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
+        <form action="#" class="mb-4">
+          <div class="flex">
+            <input type="email" placeholder="Enter your email"
+                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
+                   aria-label="Email for newsletter">
+            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
+            <i class="fab fa-facebook text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-700 pt-8 text-center">
+      <p class="text-gray-300 mb-2">
+        © 2025 Green Innovation Conference — Hosted by Kalam Institute of Technology. All rights reserved.
+      </p>
+      <p class="text-sm text-gray-400">
+        Built and maintained by 
+        <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+          Pixlight LLP
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Registration Flow -->
+  <script>
+    let selectedCategory = '';
+    let selectedFee = 0;
+
+    function selectCategory(category, fee) {
+      selectedCategory = category;
+      selectedFee = fee;
+      
+      // Show registration form
+      document.getElementById('registration-form').style.display = 'block';
+      
+      // Update summary
+      document.getElementById('summary-category').textContent = category.charAt(0).toUpperCase() + category.slice(1);
+      document.getElementById('summary-fee').textContent = fee > 200 ? `$${fee}` : `₹${fee}`;
+      document.getElementById('summary-total').textContent = fee > 200 ? `$${fee + 10}` : `₹${fee + 200}`;
+      
+      // Scroll to form
+      document.getElementById('registration-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function nextStep(step) {
+      // Hide current step
+      document.querySelectorAll('.registration-step').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      // Show next step
+      document.getElementById(`step${step}`).classList.add('active');
+      
+      // Update indicators
+      updateStepIndicators(step);
+    }
+
+    function previousStep(step) {
+      // Hide current step
+      document.querySelectorAll('.registration-step').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      // Show previous step
+      document.getElementById(`step${step}`).classList.add('active');
+      
+      // Update indicators
+      updateStepIndicators(step);
+    }
+
+    function updateStepIndicators(currentStep) {
+      for (let i = 1; i <= 3; i++) {
+        const indicator = document.getElementById(`step${i}-indicator`);
+        if (i < currentStep) {
+          indicator.className = 'step-indicator completed';
+          indicator.innerHTML = '<i class="fas fa-check"></i>';
+        } else if (i === currentStep) {
+          indicator.className = 'step-indicator active';
+          indicator.textContent = i;
+        } else {
+          indicator.className = 'step-indicator inactive';
+          indicator.textContent = i;
+        }
+      }
+    }
+
+    // Form submission
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // In a real application, this would process the payment
+      alert('Registration submitted successfully! You will be redirected to the payment gateway.');
+      
+      // Here you would integrate with a payment processor like Razorpay, Stripe, etc.
+    });
+  </script>
+
+</body>
+</html>
