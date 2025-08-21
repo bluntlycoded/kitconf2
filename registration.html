@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Registration | GITDFSB Conference</title>
 
   <!-- Tailwind CSS CDN -->
@@ -11,7 +11,7 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Custom Tailwind config -->
+  <!-- Custom Tailwind config (for colors/fonts/animations only) -->
   <script>
     tailwind.config = {
       theme: {
@@ -50,9 +50,9 @@
   <link rel="icon" href="assets/favicon.ico" />
 
   <!-- Meta SEO -->
-  <meta name="description" content="Register for the GITDFSB Conference 2025. View categories and fees, and proceed to payment." />
+  <meta name="description" content="Register for the GITDFSB Conference 2025. View categories and fees (Students ₹5000, Academicians ₹6000, Industry Professionals ₹7000, Foreign Authors 92 USD) and proceed to payment." />
 
-  <!-- Minimal custom styles to enhance hover effects -->
+  <!-- Minimal custom styles (safe for CDN Tailwind) -->
   <style>
     html { scroll-behavior: smooth; }
     .nav-link, .footer-link { color: #d1d5db; transition: color .3s; }
@@ -79,22 +79,22 @@
 
   <!-- Navbar -->
   <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-2">
       <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
         GITDFSB
       </a>
 
+      <!-- Mobile menu toggle -->
       <input id="nav-toggle" type="checkbox" class="hidden peer" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </label>
 
-      <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
+      <nav class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
         <a href="about.html" class="nav-link">About</a>
         <a href="speakers.html" class="nav-link">Speakers</a>
         <a href="committee.html" class="nav-link">Committee</a>
         <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
-
         <a href="venue.html" class="nav-link">Venue</a>
         <a href="registration.html" class="nav-link text-primary">Register</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -107,102 +107,86 @@
 
     <!-- Hero Section -->
     <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
-      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
-      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
+      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float" aria-hidden="true"></div>
+      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;" aria-hidden="true"></div>
       
       <div class="max-w-6xl mx-auto px-6 text-center">
         <div class="animate-fadeUp">
           <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
             Conference Registration
           </h1>
-          <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-2">
+          <p class="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto">
             Secure your spot at the GITDFSB Conference 2025. Review the categories and fees below.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Registration Categories (Costs Only) -->
-    <section class="py-20 bg-white">
+    <!-- Registration Categories -->
+    <section class="py-16 md:py-20 bg-white">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Registration Categories</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            These are the official fees. Use the button below to proceed to payment (no form required on this page).
+        <div class="text-center mb-12 md:mb-16 animate-fadeUp">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Registration Fees</h2>
+          <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+            Official fee structure based on the conference notice.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Research Scholars -->
-          <div class="pricing-card featured rounded-2xl shadow-xl p-8 card-hover animate-fadeUp">
+        <!-- Grid: 1 col (sm), 2 cols (md+), 4 cols (xl) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+          <!-- Students & Research Scholars -->
+          <article class="pricing-card featured rounded-2xl shadow-xl p-8 card-hover animate-fadeUp">
             <div class="text-center">
               <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-                <i class="fas fa-flask text-primary text-2xl"></i>
+                <i class="fas fa-user-graduate text-primary text-2xl" aria-hidden="true"></i>
               </div>
               <span class="bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold mb-4 inline-block">
-                RECOMMENDED
+                MOST POPULAR
               </span>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Research Scholars</h3>
-              <p class="text-gray-600 text-sm mb-6">PhD & Research Fellows</p>
-              <div class="mb-6">
-                <div class="text-3xl font-extrabold text-primary mb-2">₹5,000</div>
-              </div>
-              <ul class="text-left text-gray-600 space-y-2">
-                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>All conference sessions</li>
-                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Conference kit & materials</li>
-                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Lunch & refreshments</li>
-                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Certificate of participation</li>
-                <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>CRC Press publication (as applicable)</li>
-              </ul>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Students & Research Scholars</h3>
+              <p class="text-gray-600 text-sm mb-6">PhD, M.Tech, Research Fellows</p>
+              <p class="text-3xl font-extrabold text-primary">₹5,000</p>
             </div>
-          </div>
+          </article>
 
-          <!-- Academician -->
-          <div class="pricing-card rounded-2xl shadow-xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.15s;">
+          <!-- Academicians -->
+          <article class="pricing-card rounded-2xl shadow-xl p-8 card-hover animate-fadeUp" style="animation-delay:.1s">
             <div class="text-center">
               <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-                <i class="fas fa-chalkboard-teacher text-accent text-2xl"></i>
+                <i class="fas fa-chalkboard-teacher text-accent text-2xl" aria-hidden="true"></i>
               </div>
-              <div class="mb-4 h-6"></div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Academician</h3>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Academicians</h3>
               <p class="text-gray-600 text-sm mb-6">Faculty & Teaching Professionals</p>
-              <div class="mb-6">
-                <div class="text-3xl font-extrabold text-accent mb-2">₹6,000</div>
-              </div>
-              <ul class="text-left text-gray-600 space-y-2">
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>All conference sessions</li>
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Premium conference kit</li>
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Lunch & refreshments</li>
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Certificate of participation</li>
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>CRC Press publication (as applicable)</li>
-              </ul>
+              <p class="text-3xl font-extrabold text-accent">₹6,000</p>
             </div>
-          </div>
+          </article>
 
-          <!-- Foreign Author -->
-          <div class="pricing-card rounded-2xl shadow-xl p-8 card-hover animate-fadeUp" style="animation-delay: 0.3s;">
+          <!-- Industry Professionals -->
+          <article class="pricing-card rounded-2xl shadow-xl p-8 card-hover animate-fadeUp" style="animation-delay:.2s">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-industry text-primary text-2xl" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Industry Professionals</h3>
+              <p class="text-gray-600 text-sm mb-6">Corporate / Startup / R&D</p>
+              <p class="text-3xl font-extrabold text-primary">₹7,000</p>
+            </div>
+          </article>
+
+          <!-- Foreign Authors -->
+          <article class="pricing-card rounded-2xl shadow-xl p-8 card-hover animate-fadeUp" style="animation-delay:.3s">
             <div class="text-center">
               <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-                <i class="fas fa-globe text-accent text-2xl"></i>
+                <i class="fas fa-globe text-accent text-2xl" aria-hidden="true"></i>
               </div>
-              <div class="mb-4 h-6"></div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Foreign Author</h3>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Foreign Authors</h3>
               <p class="text-gray-600 text-sm mb-6">International Participants</p>
-              <div class="mb-6">
-                <div class="text-3xl font-extrabold text-accent mb-2">$95</div>
-              </div>
-              <ul class="text-left text-gray-600 space-y-2">
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>All conference sessions</li>
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Premium conference kit</li>
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Lunch & refreshments</li>
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Certificate of participation</li>
-                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>CRC Press publication (as applicable)</li>
-              </ul>
+              <p class="text-3xl font-extrabold text-accent">92&nbsp;USD</p>
             </div>
-          </div>
+          </article>
         </div>
 
-        <!-- Common Pay Now Button -->
+        <!-- Pay Now -->
         <div class="mt-12 text-center animate-fadeUp">
           <a href="#" class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-colors text-lg" aria-label="Proceed to payment">
             <i class="fas fa-credit-card"></i>
@@ -213,12 +197,12 @@
       </div>
     </section>
 
-    <!-- Registration Benefits (optional marketing) -->
-    <section class="py-20 bg-white">
+    <!-- What's Included -->
+    <section class="py-16 md:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">What's Included</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        <div class="text-center mb-12 md:mb-16 animate-fadeUp">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What's Included</h2>
+          <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             Your registration includes access to all conference activities and exclusive benefits.
           </p>
         </div>
@@ -226,23 +210,23 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 card-hover animate-fadeUp">
             <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-users text-primary text-2xl"></i>
+              <i class="fas fa-users text-primary text-2xl" aria-hidden="true"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-800 mb-3">All Sessions Access</h3>
             <p class="text-gray-600">Keynotes, technical sessions, panels, and workshops over two days.</p>
           </div>
 
-          <div class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-xl p-8 card-hover animate-fadeUp" style="animation-delay: .15s;">
+          <div class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-xl p-8 card-hover animate-fadeUp" style="animation-delay:.15s">
             <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-gift text-accent text-2xl"></i>
+              <i class="fas fa-gift text-accent text-2xl" aria-hidden="true"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-800 mb-3">Conference Kit</h3>
             <p class="text-gray-600">Proceedings, notebook, branded items, and digital resources.</p>
           </div>
 
-          <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl p-8 card-hover animate-fadeUp" style="animation-delay: .3s;">
+          <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl p-8 card-hover animate-fadeUp" style="animation-delay:.3s">
             <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-utensils text-primary text-2xl"></i>
+              <i class="fas fa-utensils text-primary text-2xl" aria-hidden="true"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-800 mb-3">Meals & Refreshments</h3>
             <p class="text-gray-600">All meals, coffee breaks, and refreshments during the conference.</p>
@@ -274,40 +258,12 @@
         <a href="speakers.html" class="footer-link">Speakers</a>
         <a href="committee.html" class="footer-link">Committee</a>
         <a href="call-for-papers.html" class="footer-link">Call for Papers</a>
-
         <a href="venue.html" class="footer-link">Venue</a>
         <a href="registration.html" class="footer-link text-primary">Register</a>
         <a href="contact.html" class="footer-link">Contact</a>
       </nav>
 
-      <div>
-        <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
-        <form action="#" class="mb-4">
-          <div class="flex">
-            <input type="email" placeholder="Enter your email"
-                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
-                   aria-label="Email for newsletter">
-            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </form>
-        <div class="flex gap-4">
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
-            <i class="fab fa-twitter text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
-            <i class="fab fa-facebook text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
-            <i class="fab fa-linkedin text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
-            <i class="fab fa-instagram text-xl"></i>
-          </a>
-        </div>
-      </div>
-    </div>
+ 
 
     <div class="mt-12 border-t border-gray-700 pt-8 text-center">
       <p class="text-gray-300 mb-2">
