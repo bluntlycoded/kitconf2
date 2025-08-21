@@ -16,13 +16,9 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-          },
-          colors: {
-            primary: '#16a34a',
-            accent:  '#2563eb',
-          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: { primary: '#16a34a', accent: '#2563eb' },
+          screens: { xs: '420px' }
         },
       },
     };
@@ -38,127 +34,76 @@
   <!-- Meta SEO -->
   <meta name="description" content="Meet our distinguished keynote speakers and industry experts at the GITDFSB Conference 2025." />
 
-  <!-- Custom Styles -->
+  <!-- Custom Styles (CDN-safe: no @apply) -->
   <style>
     html { scroll-behavior: smooth; }
-    
-    @keyframes fadeUp {
-      0%   { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .animate-fadeUp { animation: fadeUp .8s ease-out both; }
     .animate-float { animation: float 3s ease-in-out infinite; }
-    
-    .nav-link, .footer-link {
-      @apply text-gray-300 hover:text-primary transition-colors duration-300;
-    }
-    
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-    
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
 
-    .speaker-card {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
-      backdrop-filter: blur(10px);
-    }
+    .nav-link,.footer-link { color:#d1d5db; transition: color .3s ease; }
+    .nav-link:hover,.footer-link:hover { color:#16a34a; }
 
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(5px);
-    }
+    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
 
-    .modal.active {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    .speaker-card { background: linear-gradient(135deg, rgba(255,255,255,.95) 0%, rgba(249,250,251,.95) 100%); backdrop-filter: blur(10px); }
 
-    .modal-content {
-      background: white;
-      margin: 5% auto;
-      padding: 0;
-      border-radius: 1rem;
-      max-width: 600px;
-      width: 90%;
-      max-height: 80vh;
-      overflow-y: auto;
-      animation: fadeUp 0.3s ease-out;
-    }
+    /* Modal */
+    .modal { display:none; position: fixed; inset:0; z-index:1000; background-color: rgba(0,0,0,.5); backdrop-filter: blur(5px); }
+    .modal.active { display:flex; align-items:center; justify-content:center; }
   </style>
 </head>
 
 <body class="font-sans bg-white text-gray-900 antialiased">
 
   <!-- Skip link -->
-  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
-    Skip to main content
-  </a>
+  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">Skip to main content</a>
 
   <!-- Navbar -->
   <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
-      <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
-        GITDFSB
-      </a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
+      <a href="index.html" class="text-lg xs:text-xl font-semibold tracking-tight hover:text-primary transition-colors">GITDFSB</a>
 
-      <input id="nav-toggle" type="checkbox" class="hidden peer" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
+      <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
-      <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
-        <a href="about.html" class="nav-link">About</a>
-        <a href="speakers.html" class="nav-link text-primary">Speakers</a>
-        <a href="committee.html" class="nav-link">Committee</a>
-        <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
-
-        <a href="venue.html" class="nav-link">Venue</a>
-        <a href="registration.html" class="nav-link">Register</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <nav id="main-nav" class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
+        <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
+        <a href="speakers.html" class="nav-link text-primary text-sm sm:text-base">Speakers</a>
+        <a href="committee.html" class="nav-link text-sm sm:text-base">Committee</a>
+        <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
+        <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
+        <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
+        <a href="contact.html" class="nav-link text-sm sm:text-base">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Main -->
-  <main id="main" class="pt-20">
+  <main id="main" class="pt-20 sm:pt-24">
 
     <!-- Hero Section -->
-    <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
-      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
-      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
+    <section class="relative py-16 sm:py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+      <div class="absolute top-10 right-10 w-24 sm:w-32 h-24 sm:h-32 bg-primary/10 rounded-full animate-float" aria-hidden="true"></div>
+      <div class="absolute bottom-10 left-10 w-20 sm:w-24 h-20 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;" aria-hidden="true"></div>
       
-      <div class="max-w-6xl mx-auto px-6 text-center">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
         <div class="animate-fadeUp">
-          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
-            Keynote Speakers
-          </h1>
-          <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+          <h1 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4 md:mb-6">Keynote Speakers</h1>
+          <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6 md:mb-8">
             Meet our distinguished speakers who are leading the charge in sustainable business innovation 
             and green technology solutions worldwide.
           </p>
           <div class="flex justify-center">
-            <div class="bg-primary/10 px-6 py-3 rounded-full">
+            <div class="bg-primary/10 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full">
               <span class="text-primary font-semibold">
-                <i class="fas fa-users mr-2"></i>
-Industry Experts & Researchers
+                <i class="fas fa-users mr-2"></i>Industry Experts &amp; Researchers
               </span>
             </div>
           </div>
@@ -167,148 +112,106 @@ Industry Experts & Researchers
     </section>
 
     <!-- Keynote Speakers -->
-   <section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-4 text-gray-800 animate-fadeUp">Keynote Speakers</h2>
-    <p class="text-center text-gray-600 mb-12 animate-fadeUp">Featured speakers delivering transformative insights</p>
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-3 md:mb-4 text-gray-800 animate-fadeUp">Keynote Speakers</h2>
+        <p class="text-center text-gray-600 mb-10 md:mb-12 animate-fadeUp">Featured speakers delivering transformative insights</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Keynote Speaker 1 -->
-      <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal1')">
-        <div class="h-80 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center relative">
-          <div class="w-40 h-40 bg-primary/20 rounded-full flex items-center justify-center">
-            <span class="text-5xl font-bold text-primary">FM</span>
-          </div>
-          <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-            Keynote
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Fernando Moreira</h3>
-          <p class="text-primary font-semibold mb-2">
-            <i class="fas fa-chalkboard-teacher mr-2"></i>Full Professor, REMIT & IJP
-          </p>
-          <p class="text-gray-600 mb-4">Renowned academic and researcher with contributions across information systems and management studies.</p>
-          <div class="flex items-center text-sm text-gray-500">
-            <i class="fas fa-university mr-2"></i>
-            Portucalense University, Portugal
-          </div>
-        </div>
-      </article>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <!-- Keynote Speaker 1 -->
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal1')" tabindex="0" role="button" aria-label="Open details for Dr. Fernando Moreira">
+            <div class="h-72 sm:h-80 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center relative">
+              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-primary/20 rounded-full flex items-center justify-center">
+                <span class="text-4xl sm:text-5xl font-bold text-primary">FM</span>
+              </div>
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Fernando Moreira</h3>
+              <p class="text-primary font-semibold mb-2"><i class="fas fa-chalkboard-teacher mr-2"></i>Full Professor, REMIT &amp; IJP</p>
+              <p class="text-gray-600 mb-3">Renowned academic and researcher with contributions across information systems and management studies.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>Portucalense University, Portugal</div>
+            </div>
+          </article>
 
-      <!-- Keynote Speaker 2 -->
-      <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal2')" style="animation-delay: 0.2s;">
-        <div class="h-80 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative">
-          <div class="w-40 h-40 bg-accent/20 rounded-full flex items-center justify-center">
-            <span class="text-5xl font-bold text-accent">GT</span>
-          </div>
-          <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-            Keynote
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Gyanaranjan Tripathy</h3>
-          <p class="text-accent font-semibold mb-2">
-            <i class="fas fa-flask mr-2"></i>Associate Professor
-          </p>
-          <p class="text-gray-600 mb-4">Specialist in advanced scientific research, with extensive teaching and mentoring experience.</p>
-          <div class="flex items-center text-sm text-gray-500">
-            <i class="fas fa-university mr-2"></i>
-            IISER Pune
-          </div>
-        </div>
-      </article>
+          <!-- Keynote Speaker 2 -->
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal2')" style="animation-delay:.2s;" tabindex="0" role="button" aria-label="Open details for Dr. Gyanaranjan Tripathy">
+            <div class="h-72 sm:h-80 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative">
+              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-accent/20 rounded-full flex items-center justify-center">
+                <span class="text-4xl sm:text-5xl font-bold text-accent">GT</span>
+              </div>
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Gyanaranjan Tripathy</h3>
+              <p class="text-accent font-semibold mb-2"><i class="fas fa-flask mr-2"></i>Associate Professor</p>
+              <p class="text-gray-600 mb-3">Specialist in advanced scientific research, with extensive teaching and mentoring experience.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>IISER Pune</div>
+            </div>
+          </article>
 
-      <!-- Keynote Speaker 3 -->
-      <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal3')" style="animation-delay: 0.4s;">
-        <div class="h-80 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center relative">
-          <div class="w-40 h-40 bg-primary/20 rounded-full flex items-center justify-center">
-            <span class="text-5xl font-bold text-primary">AM</span>
-          </div>
-          <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-            Keynote
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Amrut Phalguni Mahanty</h3>
-          <p class="text-primary font-semibold mb-2">
-            <i class="fas fa-briefcase mr-2"></i>Associate Professor
-          </p>
-          <p class="text-gray-600 mb-4">Expert in management sciences, focusing on leadership, innovation, and business sustainability.</p>
-          <div class="flex items-center text-sm text-gray-500">
-            <i class="fas fa-university mr-2"></i>
-            IIM Sambalpur
-          </div>
-        </div>
-      </article>
+          <!-- Keynote Speaker 3 -->
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal3')" style="animation-delay:.4s;" tabindex="0" role="button" aria-label="Open details for Dr. Amrut Phalguni Mahanty">
+            <div class="h-72 sm:h-80 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center relative">
+              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-primary/20 rounded-full flex items-center justify-center">
+                <span class="text-4xl sm:text-5xl font-bold text-primary">AM</span>
+              </div>
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Amrut Phalguni Mahanty</h3>
+              <p class="text-primary font-semibold mb-2"><i class="fas fa-briefcase mr-2"></i>Associate Professor</p>
+              <p class="text-gray-600 mb-3">Expert in management sciences, focusing on leadership, innovation, and business sustainability.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>IIM Sambalpur</div>
+            </div>
+          </article>
 
-      <!-- Keynote Speaker 4 -->
-      <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal4')" style="animation-delay: 0.6s;">
-        <div class="h-80 bg-gradient-to-br from-yellow-100 to-green-100 flex items-center justify-center relative">
-          <div class="w-40 h-40 bg-primary/20 rounded-full flex items-center justify-center">
-            <span class="text-5xl font-bold text-primary">CB</span>
-          </div>
-          <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-            Keynote
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Chandra Sekhar Bahinipati</h3>
-          <p class="text-primary font-semibold mb-2">
-            <i class="fas fa-lightbulb mr-2"></i>Associate Professor
-          </p>
-          <p class="text-gray-600 mb-4">Known for impactful research and teaching in the field of economics and development studies.</p>
-          <div class="flex items-center text-sm text-gray-500">
-            <i class="fas fa-university mr-2"></i>
-            IIT Tirupati
-          </div>
-        </div>
-      </article>
+          <!-- Keynote Speaker 4 -->
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal4')" style="animation-delay:.6s;" tabindex="0" role="button" aria-label="Open details for Dr. Chandra Sekhar Bahinipati">
+            <div class="h-72 sm:h-80 bg-gradient-to-br from-yellow-100 to-green-100 flex items-center justify-center relative">
+              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-primary/20 rounded-full flex items-center justify-center">
+                <span class="text-4xl sm:text-5xl font-bold text-primary">CB</span>
+              </div>
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Chandra Sekhar Bahinipati</h3>
+              <p class="text-primary font-semibold mb-2"><i class="fas fa-lightbulb mr-2"></i>Associate Professor</p>
+              <p class="text-gray-600 mb-3">Known for impactful research and teaching in the field of economics and development studies.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>IIT Tirupati</div>
+            </div>
+          </article>
 
-      <!-- Keynote Speaker 5 -->
-      <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal5')" style="animation-delay: 0.8s;">
-        <div class="h-80 bg-gradient-to-br from-red-100 to-yellow-100 flex items-center justify-center relative">
-          <div class="w-40 h-40 bg-accent/20 rounded-full flex items-center justify-center">
-            <span class="text-5xl font-bold text-accent">DS</span>
-          </div>
-          <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-            Keynote
-          </div>
+          <!-- Keynote Speaker 5 -->
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal5')" style="animation-delay:.8s;" tabindex="0" role="button" aria-label="Open details for Dr. Dukhabandhu Sahu">
+            <div class="h-72 sm:h-80 bg-gradient-to-br from-red-100 to-yellow-100 flex items-center justify-center relative">
+              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-accent/20 rounded-full flex items-center justify-center">
+                <span class="text-4xl sm:text-5xl font-bold text-accent">DS</span>
+              </div>
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Dukhabandhu Sahu</h3>
+              <p class="text-accent font-semibold mb-2"><i class="fas fa-cogs mr-2"></i>Associate Professor</p>
+              <p class="text-gray-600 mb-3">Researcher and academic focusing on applied sciences and technology-driven innovations.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>IIT Bhubaneswar</div>
+            </div>
+          </article>
         </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Dukhabandhu Sahu</h3>
-          <p class="text-accent font-semibold mb-2">
-            <i class="fas fa-cogs mr-2"></i>Associate Professor
-          </p>
-          <p class="text-gray-600 mb-4">Researcher and academic focusing on applied sciences and technology-driven innovations.</p>
-          <div class="flex items-center text-sm text-gray-500">
-            <i class="fas fa-university mr-2"></i>
-            IIT Bhubaneshwar
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-    <!-- Industry Experts -->
-  
+      </div>
+    </section>
 
     <!-- Call to Action -->
-    <section class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-6 text-center">
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div class="animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-6">Join the Conversation</h2>
-          <p class="text-xl text-gray-700 mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">Join the Conversation</h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-6 md:mb-8">
             Don't miss the opportunity to learn from these industry leaders and network with fellow sustainability advocates.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="registration.html"
-               class="bg-primary hover:bg-primary/90 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-               Register Now
+            <a href="registration.html" class="bg-primary hover:bg-primary/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              Register Now
             </a>
           </div>
         </div>
@@ -318,90 +221,170 @@ Industry Experts & Researchers
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-100 pt-16 pb-8 mt-20">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+  <footer class="bg-gray-900 text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-2xl font-bold mb-4 text-primary">GITDFSB Conference</h3>
-        <p class="text-gray-300 text-lg mb-4">
-          International Conference on Sustainable Business Technology
-        </p>
-        <p class="text-gray-300">
-          <i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025<br>
-          <i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur<br>
-          <i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-primary">GITDFSB Conference</h3>
+        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">International Conference on Sustainable Business Technology</p>
+        <p class="text-gray-300 text-sm md:text-base space-y-1">
+          <span class="block"><i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025</span>
+          <span class="block"><i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur</span>
+          <span class="block"><i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology</span>
         </p>
       </div>
 
-      <nav class="flex flex-col gap-3">
-        <h4 class="font-semibold text-lg mb-2 text-gray-200">Quick Links</h4>
-        <a href="about.html" class="footer-link">About</a>
-        <a href="speakers.html" class="footer-link text-primary">Speakers</a>
-        <a href="committee.html" class="footer-link">Committee</a>
-        <a href="call-for-papers.html" class="footer-link">Call for Papers</a>
-
-        <a href="venue.html" class="footer-link">Venue</a>
-        <a href="registration.html" class="footer-link">Register</a>
+      <nav class="flex flex-col gap-2.5 md:gap-3">
+        <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
+        <a href="about.html" class="footer-link text-sm md:text-base">About</a>
+        <a href="speakers.html" class="footer-link text-primary text-sm md:text-base">Speakers</a>
+        <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
+        <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
+        <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
+        <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
       </nav>
 
       <div>
-        <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
+        <h4 class="font-semibold text-base md:text-lg mb-3 md:mb-4 text-gray-200">Stay Connected</h4>
         <form action="#" class="mb-4">
           <div class="flex">
-            <input type="email" placeholder="Enter your email"
-                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
-                   aria-label="Email for newsletter">
-            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
-              Subscribe
-            </button>
+            <input type="email" placeholder="Enter your email" class="flex-1 rounded-l-lg px-3 md:px-4 py-2.5 md:py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Email for newsletter">
+            <button class="bg-primary hover:bg-primary/90 text-white px-4 md:px-6 rounded-r-lg transition-colors text-sm md:text-base">Subscribe</button>
           </div>
         </form>
-        <div class="flex gap-4">
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
-            <i class="fab fa-twitter text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
-            <i class="fab fa-facebook text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
-            <i class="fab fa-linkedin text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
-            <i class="fab fa-instagram text-xl"></i>
-          </a>
+        <div class="flex gap-3 md:gap-4">
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter"><i class="fab fa-twitter text-lg md:text-xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook"><i class="fab fa-facebook text-lg md:text-xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin text-lg md:text-xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram"><i class="fab fa-instagram text-lg md:text-xl"></i></a>
         </div>
       </div>
     </div>
 
-    <div class="mt-12 border-t border-gray-700 pt-8 text-center">
-      <p class="text-gray-300 mb-2">
-        © 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology. All rights reserved.
-      </p>
-      <p class="text-sm text-gray-400">
-        Built and maintained by 
-        <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">
-          Pixlight LLP
-        </a>
+    <div class="mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center px-4">
+      <p class="text-gray-300 text-xs md:text-sm mb-1.5">© 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology. All rights reserved.</p>
+      <p class="text-xs md:text-sm text-gray-400">Built and maintained by 
+        <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">Pixlight LLP</a>
       </p>
     </div>
   </footer>
 
+  <!-- Speaker Modals -->
+  <!-- Modal Template duplicated per speaker with unique IDs -->
+  <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" aria-describedby="modal1-desc">
+    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+      <div class="flex justify-between items-start gap-3">
+        <h3 id="modal1-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Fernando Moreira</h3>
+        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal1')">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+      <p id="modal1-desc" class="mt-2 text-gray-600">Full Professor, REMIT &amp; IJP — Portucalense University, Portugal.</p>
+      <div class="mt-4 text-gray-700 space-y-3">
+        <p><strong>Topic preview:</strong> Digital transformation for sustainable enterprises.</p>
+        <p><strong>Bio:</strong> Dr. Moreira’s research spans information systems, management science, and technology adoption with a focus on sustainability outcomes.</p>
+      </div>
+      <div class="mt-6 text-right">
+        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal1')">Close</button>
+      </div>
+    </div>
+  </div>
 
+  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" aria-describedby="modal2-desc">
+    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+      <div class="flex justify-between items-start gap-3">
+        <h3 id="modal2-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Gyanaranjan Tripathy</h3>
+        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal2')">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+      <p id="modal2-desc" class="mt-2 text-gray-600">Associate Professor — IISER Pune.</p>
+      <div class="mt-4 text-gray-700 space-y-3">
+        <p><strong>Topic preview:</strong> Materials &amp; data-driven approaches for clean energy.</p>
+        <p><strong>Bio:</strong> Dr. Tripathy’s work bridges fundamental science and translational research in energy and environment.</p>
+      </div>
+      <div class="mt-6 text-right">
+        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal2')">Close</button>
+      </div>
+    </div>
+  </div>
 
-  <!-- Additional modals for industry experts (modal4-modal7) would follow similar pattern -->
+  <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" aria-describedby="modal3-desc">
+    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+      <div class="flex justify-between items-start gap-3">
+        <h3 id="modal3-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Amrut Phalguni Mahanty</h3>
+        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal3')">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+      <p id="modal3-desc" class="mt-2 text-gray-600">Associate Professor — IIM Sambalpur.</p>
+      <div class="mt-4 text-gray-700 space-y-3">
+        <p><strong>Topic preview:</strong> Leadership &amp; innovation strategies for green growth.</p>
+        <p><strong>Bio:</strong> Dr. Mahanty researches organizational behavior, innovation ecosystems, and sustainability in emerging markets.</p>
+      </div>
+      <div class="mt-6 text-right">
+        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal3')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal4-title" aria-describedby="modal4-desc">
+    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+      <div class="flex justify-between items-start gap-3">
+        <h3 id="modal4-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Chandra Sekhar Bahinipati</h3>
+        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal4')">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+      <p id="modal4-desc" class="mt-2 text-gray-600">Associate Professor — IIT Tirupati.</p>
+      <div class="mt-4 text-gray-700 space-y-3">
+        <p><strong>Topic preview:</strong> Climate economics &amp; policy for resilient development.</p>
+        <p><strong>Bio:</strong> Dr. Bahinipati focuses on climate risk, adaptation, and socio-economic resilience.</p>
+      </div>
+      <div class="mt-6 text-right">
+        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal4')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal5-title" aria-describedby="modal5-desc">
+    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+      <div class="flex justify-between items-start gap-3">
+        <h3 id="modal5-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Dukhabandhu Sahu</h3>
+        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal5')">
+          <i class="fas fa-times text-lg"></i>
+        </button>
+      </div>
+      <p id="modal5-desc" class="mt-2 text-gray-600">Associate Professor — IIT Bhubaneswar.</p>
+      <div class="mt-4 text-gray-700 space-y-3">
+        <p><strong>Topic preview:</strong> Tech-driven pathways to low-carbon industry.</p>
+        <p><strong>Bio:</strong> Dr. Sahu’s scholarship connects engineering innovation with sustainability outcomes.</p>
+      </div>
+      <div class="mt-6 text-right">
+        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal5')">Close</button>
+      </div>
+    </div>
+  </div>
 
   <!-- JavaScript for Modals -->
   <script>
     function openModal(modalId) {
-      document.getElementById(modalId).classList.add('active');
+      const el = document.getElementById(modalId);
+      if (!el) return;
+      el.classList.add('active');
       document.body.style.overflow = 'hidden';
+      // Set focus to close button for accessibility
+      const btn = el.querySelector('button[aria-label="Close"]');
+      if (btn) btn.focus();
     }
 
     function closeModal(modalId) {
-      document.getElementById(modalId).classList.remove('active');
+      const el = document.getElementById(modalId);
+      if (!el) return;
+      el.classList.remove('active');
       document.body.style.overflow = 'auto';
     }
 
-    // Close modal when clicking outside
+    // Close modal when clicking backdrop
     window.addEventListener('click', function(event) {
       if (event.target.classList.contains('modal')) {
         event.target.classList.remove('active');
