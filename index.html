@@ -16,13 +16,9 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-          },
-          colors: {
-            primary: '#16a34a',
-            accent:  '#2563eb',
-          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: { primary: '#16a34a', accent: '#2563eb' },
+          screens: { xs: '420px' }
         },
       },
     };
@@ -38,147 +34,49 @@
   <!-- Meta SEO -->
   <meta name="description" content="Second International Conference on Green Innovation: The Tech-Driven Future of Sustainable Business 2025. 14–15 Nov 2025, KIT Auditorium, Berhampur." />
 
-  <!-- Custom Styles -->
+  <!-- Minimal custom CSS (no @apply; CDN-safe) -->
   <style>
     html { scroll-behavior: smooth; }
-    
-    @keyframes fadeUp {
-      0%   { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
-    @keyframes slideIn {
-      0% { opacity: 0; transform: scale(1.1); }
-      100% { opacity: 1; transform: scale(1); }
-    }
+    @keyframes fadeUp { 0% {opacity:0; transform: translateY(20px);} 100% {opacity:1; transform: translateY(0);} }
+    @keyframes float { 0%,100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
+    @keyframes pulse { 0%,100% {opacity: 1;} 50% {opacity: .7;} }
+    @keyframes slideIn { 0% {opacity:0; transform: scale(1.05);} 100% {opacity:1; transform: scale(1);} }
 
-    @keyframes slideOut {
-      0% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(1.1); }
-    }
-    
-    .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
+    .animate-fadeUp { animation: fadeUp .8s ease-out both; }
     .animate-float { animation: float 3s ease-in-out infinite; }
     .animate-pulse-slow { animation: pulse 2s ease-in-out infinite; }
-    
-    /* Image Slider Styles */
-    .slider-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-    }
 
-    .slider-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out;
-    }
+    /* Slider */
+    .slider-container { position:absolute; inset:0; overflow:hidden; z-index:1; }
+    .slider-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition: opacity 1.2s ease-in-out; }
+    .slider-image.active { opacity:1; animation: slideIn 1.2s ease-in-out; }
+    .slider-overlay { position:absolute; inset:0; background: rgba(0,0,0,.35); z-index:2; }
+    .hero-content { position:relative; z-index:10; }
 
-    .slider-image.active {
-      opacity: 1;
-      animation: slideIn 1.5s ease-in-out;
-    }
+    /* Dots */
+    .slider-dots { position:absolute; bottom:24px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:15; }
+    .slider-dot { width:12px; height:12px; border-radius:50%; background: rgba(255,255,255,.55); cursor:pointer; transition: all .3s ease; }
+    .slider-dot.active { background:#fff; transform: scale(1.15); }
+    .slider-dot:hover { background: rgba(255,255,255,.85); }
 
-    .slider-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 2;
-}
+    /* Link hovers (replacement for @apply) */
+    .nav-link,.footer-link { color:#d1d5db; transition: color .3s ease; }
+    .nav-link:hover,.footer-link:hover { color:#16a34a; }
 
-    
-    .hero-content {
-      position: relative;
-      z-index: 10;
-    }
-    
-    .nav-link, .footer-link {
-      @apply text-gray-300 hover:text-primary transition-colors duration-300;
-    }
-    
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-    
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
+    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
 
-    .committee-card {
-      background: linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%);
-      border: 1px solid rgba(22, 163, 74, 0.1);
-    }
+    .committee-card { background: linear-gradient(135deg, rgba(22,163,74,.05) 0%, rgba(37,99,235,.05) 100%); border: 1px solid rgba(22,163,74,.1); }
+    .kit-card { background: linear-gradient(135deg, rgba(37,99,235,.05) 0%, rgba(22,163,74,.05) 100%); border: 1px solid rgba(37,99,235,.1); }
 
-    .kit-card {
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(22, 163, 74, 0.05) 100%);
-      border: 1px solid rgba(37, 99, 235, 0.1);
-    }
-
-    /* Slider Navigation Dots */
-    .slider-dots {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 12px;
-      z-index: 15;
-    }
-
-    .slider-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .slider-dot.active {
-      background: white;
-      transform: scale(1.2);
-    }
-
-    .slider-dot:hover {
-      background: rgba(255, 255, 255, 0.8);
-    }
-
-    /* Responsive text adjustments */
+    /* Responsive hero title tweaks */
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-        line-height: 1.2;
-      }
+      .hero-title { font-size: 2.25rem; line-height: 1.2; }
     }
-
     @media (max-width: 640px) {
-      .hero-title {
-        font-size: 2rem;
-        line-height: 1.3;
-      }
+      .hero-title { font-size: 1.875rem; line-height: 1.3; }
     }
   </style>
 </head>
@@ -192,46 +90,44 @@
 
   <!-- Navbar -->
   <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
-      <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
+      <a href="index.html" class="text-lg xs:text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
         GITDFSB
       </a>
 
-      <input id="nav-toggle" type="checkbox" class="hidden peer" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
+      <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
-      <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
-        <a href="about.html" class="nav-link">About</a>
-        <a href="speakers.html" class="nav-link">Speakers</a>
-        <a href="committee.html" class="nav-link">Committee</a>
-        <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
-
-        <a href="venue.html" class="nav-link">Venue</a>
-        <a href="registration.html" class="nav-link">Register</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <nav id="main-nav" class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
+        <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
+        <a href="speakers.html" class="nav-link text-sm sm:text-base">Speakers</a>
+        <a href="committee.html" class="nav-link text-sm sm:text-base">Committee</a>
+        <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
+        <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
+        <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
+        <a href="contact.html" class="nav-link text-sm sm:text-base">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Main -->
-  <main id="main">
+  <main id="main" class="pt-20 sm:pt-24">
 
     <!-- Hero Section with Image Slider Background -->
-    <section class="relative flex flex-col items-center justify-center text-center py-24 md:py-36 overflow-hidden min-h-screen">
-      
+    <section class="relative flex flex-col items-center justify-center text-center py-24 md:py-36 overflow-hidden min-h-[80vh] sm:min-h-[90vh]">
       <!-- Image Slider Background -->
-      <div class="slider-container">
-        <img src="img1.jpeg" alt="GITDFSB Conference" class="slider-image active" />
-        <img src="img2.jpeg" alt="Sustainable Technology" class="slider-image" />
-        <img src="img3.jpeg" alt="Business Innovation" class="slider-image" />
+      <div class="slider-container" aria-hidden="true">
+        <img src="img1.jpeg" alt="" class="slider-image active" />
+        <img src="img2.jpeg" alt="" class="slider-image" />
+        <img src="img3.jpeg" alt="" class="slider-image" />
       </div>
-      
-      <!-- Gradient overlay -->
-      <div class="slider-overlay"></div>
 
-      <div class="hero-content max-w-6xl px-4 animate-fadeUp">
+      <!-- Gradient overlay -->
+      <div class="slider-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content max-w-6xl px-4 sm:px-6 animate-fadeUp">
         <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-6 text-white animate-float">
           Second International Conference on<br>
           <span class="text-yellow-300 animate-pulse-slow">"Green Innovation:</span><br>
@@ -242,156 +138,94 @@
         <p class="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto font-medium">
           International Conference · <strong class="text-yellow-300">14 – 15 November 2025</strong> · KIT Auditorium, Berhampur
         </p>
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <a href="registration.html"
-             class="bg-primary hover:bg-primary/90 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-             Register Now
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+          <a href="registration.html" class="bg-primary hover:bg-primary/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            Register Now
           </a>
-          <a href="call-for-papers.html"
-             class="bg-accent hover:bg-accent/90 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-             Submit Paper
+          <a href="call-for-papers.html" class="bg-accent hover:bg-accent/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            Submit Paper
           </a>
-          <!-- <a href="assets/GreenInnovation_Brochure.pdf" download
-             class="border-2 border-white text-white hover:bg-white hover:text-primary font-bold px-10 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-             Download Brochure
-          </a> -->
         </div>
       </div>
 
       <!-- Slider Navigation Dots -->
       <div class="slider-dots">
-        <div class="slider-dot active" onclick="currentSlide(1)"></div>
-        <div class="slider-dot" onclick="currentSlide(2)"></div>
-        <div class="slider-dot" onclick="currentSlide(3)"></div>
+        <button class="slider-dot active" aria-label="Slide 1" onclick="currentSlide(1)"></button>
+        <button class="slider-dot" aria-label="Slide 2" onclick="currentSlide(2)"></button>
+        <button class="slider-dot" aria-label="Slide 3" onclick="currentSlide(3)"></button>
       </div>
 
       <!-- Floating Elements -->
-      <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
-      <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/10 rounded-full animate-float" style="animation-delay: -2s;"></div>
-      <div class="absolute top-1/2 left-20 w-12 h-12 bg-white/10 rounded-full animate-float" style="animation-delay: -0.5s;"></div>
+      <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float" style="animation-delay:-1s;" aria-hidden="true"></div>
+      <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/10 rounded-full animate-float" style="animation-delay:-2s;" aria-hidden="true"></div>
+      <div class="absolute top-1/2 left-20 w-12 h-12 bg-white/10 rounded-full animate-float" style="animation-delay:-.5s;" aria-hidden="true"></div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="max-w-6xl mx-auto py-20 px-6 text-center">
+    <section id="about" class="max-w-6xl mx-auto py-16 sm:py-20 px-4 sm:px-6 text-center">
       <div class="animate-fadeUp">
-        <h2 class="text-4xl font-bold mb-6 text-gray-800">About the Conference</h2>
-        <p class="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-gray-800">About the Conference</h2>
+        <p class="text-base md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-6 md:mb-8">
           Join visionary leaders, researchers, and entrepreneurs as we unveil cutting-edge technologies
           reshaping sustainable business. Hosted by <span class="font-bold text-primary">Kalam Institute of Technology</span>,
           Green Innovation 2025 is your gateway to actionable insights, impactful networking, and
           transformative ideas that will define the future of sustainable enterprise.
         </p>
-        <a href="about.html"
-           class="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors group">
-           Learn more 
-           <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-           </svg>
+        <a href="about.html" class="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors group">
+          Learn more
+          <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
     </section>
 
-    <!-- About Kalam Institute of Technology Section -->
-    <section id="about-kit" class="bg-gradient-to-r from-blue-50 to-green-50 py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-4xl font-bold mb-12 text-center text-gray-800 animate-fadeUp">About Kalam Institute of Technology</h2>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- About KIT -->
+    <section id="about-kit" class="bg-gradient-to-r from-blue-50 to-green-50 py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-gray-800 animate-fadeUp">About Kalam Institute of Technology</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <!-- Content -->
           <div class="animate-fadeUp">
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6">
               <span class="font-bold text-accent">Kalam Institute of Technology (KIT), Berhampur</span> stands as a beacon of excellence in technical education and innovation. Named after the visionary Dr. A.P.J. Abdul Kalam, our institute embodies his spirit of scientific inquiry and technological advancement.
             </p>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6">
               Established with the mission to nurture tomorrow's engineers and innovators, KIT has consistently been at the forefront of promoting sustainable technology solutions and green innovation in education and research.
             </p>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-              <div class="kit-card p-4 rounded-lg">
-                <h4 class="font-bold text-accent mb-2 flex items-center">
-                  <i class="fas fa-graduation-cap text-lg mr-2"></i>
-                  Academic Excellence
-                </h4>
-                <p class="text-gray-700 text-sm">Leading programs in engineering, technology, and sustainable innovation.</p>
-              </div>
-              <div class="kit-card p-4 rounded-lg">
-                <h4 class="font-bold text-primary mb-2 flex items-center">
-                  <i class="fas fa-microscope text-lg mr-2"></i>
-                  Research Focus
-                </h4>
-                <p class="text-gray-700 text-sm">Cutting-edge research in green technology and environmental solutions.</p>
-              </div>
-              <div class="kit-card p-4 rounded-lg">
-                <h4 class="font-bold text-accent mb-2 flex items-center">
-                  <i class="fas fa-leaf text-lg mr-2"></i>
-                  Sustainability
-                </h4>
-                <p class="text-gray-700 text-sm">Pioneering sustainable practices in education and campus operations.</p>
-              </div>
-              <div class="kit-card p-4 rounded-lg">
-                <h4 class="font-bold text-primary mb-2 flex items-center">
-                  <i class="fas fa-handshake text-lg mr-2"></i>
-                  Industry Connect
-                </h4>
-                <p class="text-gray-700 text-sm">Strong partnerships with industry leaders and global institutions.</p>
-              </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 md:mt-8">
+              <div class="kit-card p-4 rounded-lg"><h4 class="font-bold text-accent mb-2 flex items-center"><i class="fas fa-graduation-cap text-lg mr-2"></i>Academic Excellence</h4><p class="text-gray-700 text-sm">Leading programs in engineering, technology, and sustainable innovation.</p></div>
+              <div class="kit-card p-4 rounded-lg"><h4 class="font-bold text-primary mb-2 flex items-center"><i class="fas fa-microscope text-lg mr-2"></i>Research Focus</h4><p class="text-gray-700 text-sm">Cutting-edge research in green technology and environmental solutions.</p></div>
+              <div class="kit-card p-4 rounded-lg"><h4 class="font-bold text-accent mb-2 flex items-center"><i class="fas fa-leaf text-lg mr-2"></i>Sustainability</h4><p class="text-gray-700 text-sm">Pioneering sustainable practices in education and campus operations.</p></div>
+              <div class="kit-card p-4 rounded-lg"><h4 class="font-bold text-primary mb-2 flex items-center"><i class="fas fa-handshake text-lg mr-2"></i>Industry Connect</h4><p class="text-gray-700 text-sm">Strong partnerships with industry leaders and global institutions.</p></div>
             </div>
           </div>
 
-          <!-- Stats & Highlights -->
-          <div class="animate-fadeUp" style="animation-delay: 0.3s;">
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">KIT at a Glance</h3>
-              
-              <div class="space-y-6">
+          <!-- Stats -->
+          <div class="animate-fadeUp" style="animation-delay:.3s;">
+            <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">KIT at a Glance</h3>
+              <div class="space-y-5 sm:space-y-6">
                 <div class="flex items-center gap-4">
-                  <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span class="text-2xl font-bold text-primary">25+</span>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-gray-800">Years of Excellence</h4>
-                    <p class="text-gray-600 text-sm">Serving quality education since establishment</p>
-                  </div>
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center"><span class="text-xl sm:text-2xl font-bold text-primary">25+</span></div>
+                  <div><h4 class="font-semibold text-gray-800">Years of Excellence</h4><p class="text-gray-600 text-sm">Serving quality education since establishment</p></div>
                 </div>
-
                 <div class="flex items-center gap-4">
-                  <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center">
-                    <span class="text-2xl font-bold text-accent">5K+</span>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-gray-800">Alumni Network</h4>
-                    <p class="text-gray-600 text-sm">Graduates making impact globally</p>
-                  </div>
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 bg-accent/10 rounded-full flex items-center justify-center"><span class="text-xl sm:text-2xl font-bold text-accent">5K+</span></div>
+                  <div><h4 class="font-semibold text-gray-800">Alumni Network</h4><p class="text-gray-600 text-sm">Graduates making impact globally</p></div>
                 </div>
-
                 <div class="flex items-center gap-4">
-                  <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span class="text-2xl font-bold text-primary">15+</span>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-gray-800">Departments</h4>
-                    <p class="text-gray-600 text-sm">Diverse engineering and technology programs</p>
-                  </div>
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center"><span class="text-xl sm:text-2xl font-bold text-primary">15+</span></div>
+                  <div><h4 class="font-semibold text-gray-800">Departments</h4><p class="text-gray-600 text-sm">Diverse engineering and technology programs</p></div>
                 </div>
-
                 <div class="flex items-center gap-4">
-                  <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center">
-                    <span class="text-2xl font-bold text-accent">100+</span>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-gray-800">Research Projects</h4>
-                    <p class="text-gray-600 text-sm">Active research in sustainability and innovation</p>
-                  </div>
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 bg-accent/10 rounded-full flex items-center justify-center"><span class="text-xl sm:text-2xl font-bold text-accent">100+</span></div>
+                  <div><h4 class="font-semibold text-gray-800">Research Projects</h4><p class="text-gray-600 text-sm">Active research in sustainability and innovation</p></div>
                 </div>
               </div>
-
-              <div class="mt-8 text-center">
-                <a href="https://kit.edu.in" target="_blank" 
-                   class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition-colors group">
-                   Visit KIT Website 
-                   <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                   </svg>
+              <div class="mt-6 sm:mt-8 text-center">
+                <a href="https://kit.edu.in" target="_blank" class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition-colors group">
+                  Visit KIT Website
+                  <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
               </div>
             </div>
@@ -400,43 +234,40 @@
       </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="bg-gradient-to-r from-green-50 to-blue-50 py-20">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center px-6">
+    <!-- Stats -->
+    <section class="bg-gradient-to-r from-green-50 to-blue-50 py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 text-center px-4 sm:px-6">
         <div class="animate-fadeUp">
-          <div class="text-6xl font-extrabold text-primary mb-4 animate-pulse-slow">2</div>
-          <h3 class="text-xl font-semibold text-gray-800">Days of Innovation</h3>
-          <p class="text-gray-600">Intensive learning experience</p>
+          <div class="text-5xl md:text-6xl font-extrabold text-primary mb-3 md:mb-4 animate-pulse-slow">2</div>
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800">Days of Innovation</h3>
+          <p class="text-gray-600 text-sm md:text-base">Intensive learning experience</p>
         </div>
-        <div class="animate-fadeUp" style="animation-delay: 0.2s;">
-          <div class="text-6xl font-extrabold text-accent mb-4 animate-pulse-slow">5+</div>
-          <h3 class="text-xl font-semibold text-gray-800">Expert Speakers</h3>
-          <p class="text-gray-600">Industry leaders & researchers</p>
+        <div class="animate-fadeUp" style="animation-delay:.2s;">
+          <div class="text-5xl md:text-6xl font-extrabold text-accent mb-3 md:mb-4 animate-pulse-slow">5+</div>
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800">Expert Speakers</h3>
+          <p class="text-gray-600 text-sm md:text-base">Industry leaders & researchers</p>
         </div>
-        <div class="animate-fadeUp" style="animation-delay: 0.4s;">
-          <div class="text-6xl font-extrabold text-primary mb-4 animate-pulse-slow">100+</div>
-          <h3 class="text-xl font-semibold text-gray-800">Participants</h3>
-          <p class="text-gray-600">Networking opportunities</p>
+        <div class="animate-fadeUp" style="animation-delay:.4s;">
+          <div class="text-5xl md:text-6xl font-extrabold text-primary mb-3 md:mb-4 animate-pulse-slow">100+</div>
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800">Participants</h3>
+          <p class="text-gray-600 text-sm md:text-base">Networking opportunities</p>
         </div>
       </div>
     </section>
 
-    <!-- Call for Papers Section -->
-    <section id="call-for-papers" class="bg-white py-20">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-8 text-gray-800 animate-fadeUp">Call for Papers</h2>
-        <p class="text-xl text-gray-700 mb-12 max-w-4xl mx-auto animate-fadeUp">
+    <!-- CFP -->
+    <section id="call-for-papers" class="bg-white py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-gray-800 animate-fadeUp">Call for Papers</h2>
+        <p class="text-base md:text-xl text-gray-700 mb-8 md:mb-12 max-w-4xl mx-auto animate-fadeUp">
           We invite researchers, academics, and industry professionals to submit original research papers 
           on sustainable business technologies and green innovation.
         </p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12">
           <div class="p-6 rounded-lg bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 animate-fadeUp">
-            <h3 class="text-xl font-bold text-primary mb-4 flex items-center justify-center">
-              <i class="fas fa-search text-lg mr-2"></i>
-              Research Topics
-            </h3>
-            <ul class="text-left text-gray-700 space-y-2">
+            <h3 class="text-xl font-bold text-primary mb-4 flex items-center justify-center"><i class="fas fa-search text-lg mr-2"></i>Research Topics</h3>
+            <ul class="text-left text-gray-700 space-y-2 text-sm md:text-base">
               <li class="flex items-center"><i class="fas fa-chevron-right text-primary text-xs mr-2"></i>Sustainable Manufacturing</li>
               <li class="flex items-center"><i class="fas fa-chevron-right text-primary text-xs mr-2"></i>Green Energy Solutions</li>
               <li class="flex items-center"><i class="fas fa-chevron-right text-primary text-xs mr-2"></i>Circular Economy Models</li>
@@ -444,27 +275,20 @@
             </ul>
           </div>
           
-          <div class="p-6 rounded-lg bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 animate-fadeUp" style="animation-delay: 0.2s;">
-            <h3 class="text-xl font-bold text-accent mb-4 flex items-center justify-center">
-              <i class="fas fa-calendar-alt text-lg mr-2"></i>
-              Important Dates
-            </h3>
-            <ul class="text-left text-gray-700 space-y-2">
-  <li class="flex items-center"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Deadline for Paper Submission: Oct 05, 2025</li>
-  <li class="flex items-center"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Full Paper Acceptance Notification: Oct 15, 2025</li>
-  <li class="flex items-center"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Camera Ready Submission: Oct 25, 2025</li>
-  <li class="flex items-center"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Registration Last Date: Nov 01, 2025</li>
-  <li class="flex items-center font-bold text-accent"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Conference Date: Nov 7-8, 2025</li>
-</ul>
-
+          <div class="p-6 rounded-lg bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 animate-fadeUp" style="animation-delay:.2s;">
+            <h3 class="text-xl font-bold text-accent mb-4 flex items-center justify-center"><i class="fas fa-calendar-alt text-lg mr-2"></i>Important Dates</h3>
+            <ul class="text-left text-gray-700 space-y-2 text-sm md:text-base">
+              <li class="flex items-center"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Deadline for Paper Submission: Oct 05, 2025</li>
+              <li class="flex items-center"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Full Paper Acceptance Notification: Oct 15, 2025</li>
+              <li class="flex items-center"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Camera Ready Submission: Oct 25, 2025</li>
+              <li class="flex items-center"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Registration Last Date: Nov 01, 2025</li>
+              <li class="flex items-center font-bold text-accent"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Conference Date: Nov 7-8, 2025</li>
+            </ul>
           </div>
           
-          <div class="p-6 rounded-lg bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20 animate-fadeUp" style="animation-delay: 0.4s;">
-            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-              <i class="fas fa-file-alt text-lg mr-2"></i>
-              Submission Guidelines
-            </h3>
-            <ul class="text-left text-gray-700 space-y-2">
+          <div class="p-6 rounded-lg bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20 animate-fadeUp" style="animation-delay:.4s;">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center justify-center"><i class="fas fa-file-alt text-lg mr-2"></i>Submission Guidelines</h3>
+            <ul class="text-left text-gray-700 space-y-2 text-sm md:text-base">
               <li class="flex items-center"><i class="fas fa-chevron-right text-gray-600 text-xs mr-2"></i>Max 8 pages (CRC Press format)</li>
               <li class="flex items-center"><i class="fas fa-chevron-right text-gray-600 text-xs mr-2"></i>Original research only</li>
               <li class="flex items-center"><i class="fas fa-chevron-right text-gray-600 text-xs mr-2"></i>Peer review process</li>
@@ -473,171 +297,130 @@
           </div>
         </div>
         
-        <a href="call-for-papers.html"
-           class="bg-accent hover:bg-accent/90 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-           Submit Your Paper
+        <a href="call-for-papers.html" class="bg-accent hover:bg-accent/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+          Submit Your Paper
         </a>
       </div>
     </section>
 
-    <!-- Speakers Section -->
-   <section id="speakers" class="max-w-7xl mx-auto py-20 px-6 text-center bg-gradient-to-r from-green-50/50 to-blue-50/50">
-  <h2 class="text-4xl font-bold mb-12 animate-fadeUp text-gray-800">Keynote Speakers</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-    
-    <!-- Speaker Card 1 -->
-    <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp">
-      <div class="h-64 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-        <div class="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center">
-          <span class="text-4xl font-bold text-primary">FM</span>
-        </div>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Dr. Fernando Moreira</h3>
-        <p class="text-primary font-semibold mb-2">Full Professor, REMIT, IJP</p>
-        <p class="text-gray-600 text-sm">Portucalense University, Portugal</p>
-      </div>
-    </article>
-
-    <!-- Speaker Card 2 -->
-    <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp" style="animation-delay: 0.2s;">
-      <div class="h-64 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-        <div class="w-32 h-32 bg-accent/20 rounded-full flex items-center justify-center">
-          <span class="text-4xl font-bold text-accent">GT</span>
-        </div>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Dr. Gyanaranjan Tripathy</h3>
-        <p class="text-accent font-semibold mb-2">Associate Professor</p>
-        <p class="text-gray-600 text-sm">Indian Institute of Science Education and Research (IISER), Pune</p>
-      </div>
-    </article>
-
-    <!-- Speaker Card 3 -->
-    <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp" style="animation-delay: 0.4s;">
-      <div class="h-64 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
-        <div class="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center">
-          <span class="text-4xl font-bold text-primary">AM</span>
-        </div>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Dr. Amrut Phalguni Mahanty</h3>
-        <p class="text-primary font-semibold mb-2">Associate Professor</p>
-        <p class="text-gray-600 text-sm">Indian Institute of Management (IIM), Sambalpur</p>
-      </div>
-    </article>
-
-  </div>
-  
-  <a href="speakers.html"
-     class="mt-12 inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors group">
-     Meet all speakers 
-     <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-     </svg>
-  </a>
-</section>
-
-
-    <!-- Committee Section -->
-    <section id="committee" class="bg-white py-20">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-12 text-gray-800 animate-fadeUp">Organizing Committee</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Committee Member 1 -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp">
-            <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl font-bold text-primary">PC</span>
+    <!-- Speakers -->
+    <section id="speakers" class="max-w-7xl mx-auto py-16 sm:py-20 px-4 sm:px-6 text-center bg-gradient-to-r from-green-50/50 to-blue-50/50">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 animate-fadeUp text-gray-800">Keynote Speakers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-5xl mx-auto">
+        <!-- Speaker 1 -->
+        <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp">
+          <div class="h-56 sm:h-64 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 bg-primary/20 rounded-full flex items-center justify-center">
+              <span class="text-3xl sm:text-4xl font-bold text-primary">FM</span>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Prof. Charan Sahu</h3>
-            <p class="text-primary font-semibold mb-2">Conference Chair</p>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1.5">Dr. Fernando Moreira</h3>
+            <p class="text-primary font-semibold mb-1.5">Full Professor, REMIT, IJP</p>
+            <p class="text-gray-600 text-sm">Portucalense University, Portugal</p>
+          </div>
+        </article>
+        <!-- Speaker 2 -->
+        <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp" style="animation-delay:.2s;">
+          <div class="h-56 sm:h-64 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 bg-accent/20 rounded-full flex items-center justify-center">
+              <span class="text-3xl sm:text-4xl font-bold text-accent">GT</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1.5">Dr. Gyanaranjan Tripathy</h3>
+            <p class="text-accent font-semibold mb-1.5">Associate Professor</p>
+            <p class="text-gray-600 text-sm">Indian Institute of Science Education and Research (IISER), Pune</p>
+          </div>
+        </article>
+        <!-- Speaker 3 -->
+        <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp" style="animation-delay:.4s;">
+          <div class="h-56 sm:h-64 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 bg-primary/20 rounded-full flex items-center justify-center">
+              <span class="text-3xl sm:text-4xl font-bold text-primary">AM</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1.5">Dr. Amrut Phalguni Mahanty</h3>
+            <p class="text-primary font-semibold mb-1.5">Associate Professor</p>
+            <p class="text-gray-600 text-sm">Indian Institute of Management (IIM), Sambalpur</p>
+          </div>
+        </article>
+      </div>
+      <a href="speakers.html" class="mt-10 sm:mt-12 inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors group">
+        Meet all speakers
+        <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </section>
+
+    <!-- Committee -->
+    <section id="committee" class="bg-white py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-gray-800 animate-fadeUp">Organizing Committee</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"><span class="text-xl sm:text-2xl font-bold text-primary">PC</span></div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1.5">Prof. Charan Sahu</h3>
+            <p class="text-primary font-semibold mb-1.5">Conference Chair</p>
             <p class="text-gray-600 text-sm">Kalam Institute of Technology</p>
           </div>
-
-          <!-- Committee Member 2 -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.2s;">
-            <div class="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl font-bold text-accent">RN</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Rahul Nayak</h3>
-            <p class="text-accent font-semibold mb-2">Technical Chair</p>
+          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay:.2s;">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"><span class="text-xl sm:text-2xl font-bold text-accent">RN</span></div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1.5">Rahul Nayak</h3>
+            <p class="text-accent font-semibold mb-1.5">Technical Chair</p>
             <p class="text-gray-600 text-sm">Program Coordinator</p>
           </div>
-
-          <!-- Committee Member 3 -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.4s;">
-            <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl font-bold text-primary">AS</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Dr. Anita Sharma</h3>
-            <p class="text-primary font-semibold mb-2">Program Chair</p>
+          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay:.4s;">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"><span class="text-xl sm:text-2xl font-bold text-primary">AS</span></div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1.5">Dr. Anita Sharma</h3>
+            <p class="text-primary font-semibold mb-1.5">Program Chair</p>
             <p class="text-gray-600 text-sm">Research Coordinator</p>
           </div>
-
-          <!-- Committee Member 4 -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.6s;">
-            <div class="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl font-bold text-accent">VK</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Dr. Vikash Kumar</h3>
-            <p class="text-accent font-semibold mb-2">Publication Chair</p>
+          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay:.6s;">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"><span class="text-xl sm:text-2xl font-bold text-accent">VK</span></div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1.5">Dr. Vikash Kumar</h3>
+            <p class="text-accent font-semibold mb-1.5">Publication Chair</p>
             <p class="text-gray-600 text-sm">Editorial Board</p>
           </div>
-
-          <!-- Committee Member 5 -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.8s;">
-            <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl font-bold text-primary">SM</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Prof. Sunita Mishra</h3>
-            <p class="text-primary font-semibold mb-2">Registration Chair</p>
+          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay:.8s;">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"><span class="text-xl sm:text-2xl font-bold text-primary">SM</span></div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1.5">Prof. Sunita Mishra</h3>
+            <p class="text-primary font-semibold mb-1.5">Registration Chair</p>
             <p class="text-gray-600 text-sm">Finance Committee</p>
           </div>
-
-          <!-- Committee Member 6 -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 1s;">
-            <div class="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl font-bold text-accent">RD</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Dr. Rajesh Das</h3>
-            <p class="text-accent font-semibold mb-2">Local Arrangements</p>
+          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay:1s;">
+            <div class="w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"><span class="text-xl sm:text-2xl font-bold text-accent">RD</span></div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1.5">Dr. Rajesh Das</h3>
+            <p class="text-accent font-semibold mb-1.5">Local Arrangements</p>
             <p class="text-gray-600 text-sm">Hospitality Committee</p>
           </div>
         </div>
-        
-        <a href="committee.html"
-           class="mt-12 inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors group">
-           View Full Committee 
-           <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-           </svg>
+        <a href="committee.html" class="mt-10 sm:mt-12 inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors group">
+          View Full Committee
+          <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
     </section>
 
-    <!-- Call-to-Action Section -->
-    <section class="relative py-24 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-white to-accent/10"></div>
-      <div class="absolute top-0 left-0 w-full h-full">
-        <div class="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
-        <div class="absolute bottom-10 right-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
-        <div class="absolute top-1/2 right-20 w-16 h-16 bg-green-300/20 rounded-full animate-float" style="animation-delay: -2s;"></div>
+    <!-- CTA -->
+    <section class="relative py-20 sm:py-24 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-white to-accent/10" aria-hidden="true"></div>
+      <div class="absolute inset-0" aria-hidden="true">
+        <div class="absolute top-10 left-10 w-28 h-28 sm:w-32 sm:h-32 bg-primary/10 rounded-full animate-float"></div>
+        <div class="absolute bottom-10 right-10 w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;"></div>
+        <div class="absolute top-1/2 right-16 w-12 h-12 sm:w-16 sm:h-16 bg-green-300/20 rounded-full animate-float" style="animation-delay:-2s;"></div>
       </div>
-      
-      <div class="relative z-10 max-w-4xl mx-auto text-center px-6 animate-fadeUp">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Don't Miss Out!</h2>
-        <p class="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
+      <div class="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 animate-fadeUp">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-gray-800">Don't Miss Out!</h2>
+        <p class="text-base md:text-xl text-gray-700 mb-8 md:mb-10 max-w-2xl mx-auto">
           Secure your seat and become part of the global movement shaping the sustainable businesses of tomorrow.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="registration.html"
-             class="bg-primary hover:bg-primary/90 text-white font-bold px-12 py-5 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-block text-xl">
-             Register Today
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+          <a href="registration.html" class="bg-primary hover:bg-primary/90 text-white font-bold px-10 md:px-12 py-4 md:py-5 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-block text-lg md:text-xl">
+            Register Today
           </a>
-          <a href="call-for-papers.html"
-             class="bg-accent hover:bg-accent/90 text-white font-bold px-12 py-5 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-block text-xl">
-             Submit Paper
+          <a href="call-for-papers.html" class="bg-accent hover:bg-accent/90 text-white font-bold px-10 md:px-12 py-4 md:py-5 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-block text-lg md:text-xl">
+            Submit Paper
           </a>
         </div>
       </div>
@@ -646,65 +429,37 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-100 pt-16 pb-8 mt-20">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+  <footer class="bg-gray-900 text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-2xl font-bold mb-4 text-primary">GITDFSB Conference</h3>
-        <p class="text-gray-300 text-lg mb-4">
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-primary">GITDFSB Conference</h3>
+        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">
           Second International Conference on Sustainable Business Technology
         </p>
-        <p class="text-gray-300">
-          <i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025<br>
-          <i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur<br>
-          <i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology
+        <p class="text-gray-300 text-sm md:text-base space-y-1">
+          <span class="block"><i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025</span>
+          <span class="block"><i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur</span>
+          <span class="block"><i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology</span>
         </p>
       </div>
 
-      <nav class="flex flex-col gap-3">
-        <h4 class="font-semibold text-lg mb-2 text-gray-200">Quick Links</h4>
-        <a href="about.html" class="footer-link">About</a>
-        <a href="speakers.html" class="footer-link">Speakers</a>
-        <a href="committee.html" class="footer-link">Committee</a>
-        <a href="call-for-papers.html" class="footer-link">Call for Papers</a>
-
-        <a href="venue.html" class="footer-link">Venue</a>
-        <a href="registration.html" class="footer-link">Register</a>
+      <nav class="flex flex-col gap-2.5 md:gap-3">
+        <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
+        <a href="about.html" class="footer-link text-sm md:text-base">About</a>
+        <a href="speakers.html" class="footer-link text-sm md:text-base">Speakers</a>
+        <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
+        <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
+        <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
+        <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
       </nav>
 
-      <div>
-        <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
-        <form action="#" class="mb-4">
-          <div class="flex">
-            <input type="email" placeholder="Enter your email"
-                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
-                   aria-label="Email for newsletter">
-            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </form>
-        <div class="flex gap-4">
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
-            <i class="fab fa-twitter text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
-            <i class="fab fa-facebook text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
-            <i class="fab fa-linkedin text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
-            <i class="fab fa-instagram text-xl"></i>
-          </a>
-        </div>
-      </div>
-    </div>
+    
 
-    <div class="mt-12 border-t border-gray-700 pt-8 text-center">
-      <p class="text-gray-300 mb-2">
+    <div class="mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center px-4">
+      <p class="text-gray-300 text-xs md:text-sm mb-1.5">
         © 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology. All rights reserved.
       </p>
-      <p class="text-sm text-gray-400">
+      <p class="text-xs md:text-sm text-gray-400">
         Built and maintained by 
         <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">
           Pixlight LLP
@@ -715,46 +470,44 @@
 
   <!-- Image Slider Script -->
   <script>
-    let currentSlideIndex = 0;
-    const slides = document.querySelectorAll('.slider-image');
-    const dots = document.querySelectorAll('.slider-dot');
-    const totalSlides = slides.length;
+    // Run after DOM is ready so elements exist
+    document.addEventListener('DOMContentLoaded', function () {
+      let currentSlideIndex = 0;
+      const slides = document.querySelectorAll('.slider-image');
+      const dots = document.querySelectorAll('.slider-dot');
+      const totalSlides = slides.length;
 
-    function showSlide(index) {
-      // Hide all slides
-      slides.forEach(slide => {
-        slide.classList.remove('active');
-      });
+      function showSlide(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+      }
 
-      // Remove active class from all dots
+      function nextSlide() {
+        currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+        showSlide(currentSlideIndex);
+      }
+
+      // Expose to inline onclick handlers
+      window.currentSlide = function (n) {
+        // incoming is 1-based from HTML
+        const idx = Math.max(0, Math.min(totalSlides - 1, n - 1));
+        currentSlideIndex = idx;
+        showSlide(currentSlideIndex);
+      };
+
+      // Auto-advance every 5s
+      let intervalId = setInterval(nextSlide, 5000);
+
+      // Pause on hover over dots (better UX)
       dots.forEach(dot => {
-        dot.classList.remove('active');
+        dot.addEventListener('mouseenter', () => clearInterval(intervalId));
+        dot.addEventListener('mouseleave', () => intervalId = setInterval(nextSlide, 5000));
       });
 
-      // Show current slide and activate corresponding dot
-      slides[index].classList.add('active');
-      dots[index].classList.add('active');
-    }
-
-    function nextSlide() {
-      currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-      showSlide(currentSlideIndex);
-    }
-
-    function currentSlide(index) {
-      currentSlideIndex = index - 1;
-      showSlide(currentSlideIndex);
-    }
-
-    // Auto-advance slides every 5 seconds
-    setInterval(nextSlide, 5000);
-
-    // Initialize first slide
-    showSlide(0);
-
-    // Add smooth fade transition for better user experience
-    slides.forEach((slide, index) => {
-      slide.style.transition = 'opacity 1.5s ease-in-out';
+      // Init
+      showSlide(0);
     });
   </script>
 
