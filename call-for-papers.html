@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Call for Papers | Green Innovation Conference</title>
+  <title>Call for Papers | GITDFSB Conference</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -36,72 +36,29 @@
   <link rel="icon" href="assets/favicon.ico" />
 
   <!-- Meta SEO -->
-  <meta name="description" content="Submit your research papers for the Green Innovation Conference 2025. Explore sustainable business technologies and contribute to green innovation." />
+  <meta name="description" content="Submit your research papers for the GITDFSB Conference 2025. Explore sustainable business technologies and contribute to green innovation." />
 
   <!-- Custom Styles -->
   <style>
     html { scroll-behavior: smooth; }
-    
     @keyframes fadeUp {
       0%   { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
-    
     .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
     .animate-float { animation: float 3s ease-in-out infinite; }
-    
-    .nav-link, .footer-link {
-      @apply text-gray-300 hover:text-primary transition-colors duration-300;
-    }
-    
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-    
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.5rem;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #16a34a;
-    }
-
-    .timeline-item::after {
-      content: '';
-      position: absolute;
-      left: 5px;
-      top: 1.5rem;
-      width: 2px;
-      height: calc(100% - 1rem);
-      background: #e5e7eb;
-    }
-
-    .timeline-item:last-child::after {
-      display: none;
-    }
-
-    .benefit-card {
-      background: linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%);
-      border: 1px solid rgba(22, 163, 74, 0.1);
-    }
+    .nav-link, .footer-link { @apply text-gray-300 hover:text-primary transition-colors duration-300; }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    .timeline-item { position: relative; padding-left: 2rem; }
+    .timeline-item::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: #16a34a; }
+    .timeline-item::after { content: ''; position: absolute; left: 5px; top: 1.5rem; width: 2px; height: calc(100% - 1rem); background: #e5e7eb; }
+    .timeline-item:last-child::after { display: none; }
+    .benefit-card { background: linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%); border: 1px solid rgba(22, 163, 74, 0.1); }
   </style>
 </head>
 
@@ -116,20 +73,17 @@
   <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
       <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
-        Green Innovation
+        GITDFSB
       </a>
-
       <input id="nav-toggle" type="checkbox" class="hidden peer" />
       <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
         <i class="fas fa-bars"></i>
       </label>
-
       <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
         <a href="about.html" class="nav-link">About</a>
         <a href="speakers.html" class="nav-link">Speakers</a>
         <a href="committee.html" class="nav-link">Committee</a>
         <a href="call-for-papers.html" class="nav-link text-primary">Call for Papers</a>
-        <a href="agenda.html" class="nav-link">Agenda</a>
         <a href="venue.html" class="nav-link">Venue</a>
         <a href="registration.html" class="nav-link">Register</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -144,245 +98,25 @@
     <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
       <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
       <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
-      
       <div class="max-w-6xl mx-auto px-6 text-center">
         <div class="animate-fadeUp">
-          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
-            Call for Papers
-          </h1>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">Call for Papers</h1>
           <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
             We invite researchers, academics, and industry professionals to submit original research papers 
-            on sustainable business technologies and green innovation for presentation at the Green Innovation Conference 2025.
+            on sustainable business technologies and green innovation for presentation at the GITDFSB Conference 2025.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <div class="bg-primary/10 px-6 py-3 rounded-full">
               <span class="text-primary font-semibold">
                 <i class="fas fa-calendar-alt mr-2"></i>
-                Submission Deadline: October 15, 2025
+                Submission Deadline: October 5, 2025
               </span>
             </div>
             <div class="bg-accent/10 px-6 py-3 rounded-full">
               <span class="text-accent font-semibold">
                 <i class="fas fa-file-alt mr-2"></i>
-                IEEE Format Required
+                CRC Press Format Required
               </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Conference Themes -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Research Topics & Themes</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Papers are invited on innovative research and development in the following areas related to sustainable business and green technology.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Theme 1 -->
-          <div class="benefit-card p-6 rounded-xl card-hover animate-fadeUp">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                <i class="fas fa-industry text-primary text-xl"></i>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800">Sustainable Manufacturing</h3>
-            </div>
-            <ul class="text-gray-600 space-y-2 text-sm">
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Green production technologies</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Waste reduction strategies</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Eco-friendly materials</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Industry 4.0 for sustainability</li>
-            </ul>
-          </div>
-
-          <!-- Theme 2 -->
-          <div class="benefit-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.2s;">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
-                <i class="fas fa-solar-panel text-accent text-xl"></i>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800">Renewable Energy Systems</h3>
-            </div>
-            <ul class="text-gray-600 space-y-2 text-sm">
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Solar and wind technologies</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Energy storage solutions</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Smart grid integration</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Microgrids and distributed energy</li>
-            </ul>
-          </div>
-
-          <!-- Theme 3 -->
-          <div class="benefit-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.4s;">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                <i class="fas fa-recycle text-primary text-xl"></i>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800">Circular Economy</h3>
-            </div>
-            <ul class="text-gray-600 space-y-2 text-sm">
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Resource optimization</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Waste-to-resource technologies</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Product lifecycle management</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Sharing economy models</li>
-            </ul>
-          </div>
-
-          <!-- Theme 4 -->
-          <div class="benefit-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.6s;">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
-                <i class="fas fa-chart-line text-accent text-xl"></i>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800">Green Finance & Investment</h3>
-            </div>
-            <ul class="text-gray-600 space-y-2 text-sm">
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>ESG investment strategies</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Green bonds and financing</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Carbon markets</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Sustainable business models</li>
-            </ul>
-          </div>
-
-          <!-- Theme 5 -->
-          <div class="benefit-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.8s;">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
-                <i class="fas fa-brain text-primary text-xl"></i>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800">AI for Sustainability</h3>
-            </div>
-            <ul class="text-gray-600 space-y-2 text-sm">
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Machine learning applications</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Predictive analytics</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>IoT for environmental monitoring</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-primary text-xs mt-2 mr-2"></i>Optimization algorithms</li>
-            </ul>
-          </div>
-
-          <!-- Theme 6 -->
-          <div class="benefit-card p-6 rounded-xl card-hover animate-fadeUp" style="animation-delay: 1s;">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
-                <i class="fas fa-truck text-accent text-xl"></i>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800">Sustainable Supply Chain</h3>
-            </div>
-            <ul class="text-gray-600 space-y-2 text-sm">
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Green logistics</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Supplier sustainability</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Carbon footprint reduction</li>
-              <li class="flex items-start"><i class="fas fa-dot-circle text-accent text-xs mt-2 mr-2"></i>Transparency and traceability</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Submission Guidelines -->
-    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Submission Guidelines</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Please follow these guidelines carefully to ensure your submission is considered for review.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Paper Format -->
-          <div class="animate-fadeUp">
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="fas fa-file-alt text-primary mr-3"></i>
-                Paper Format
-              </h3>
-              <div class="space-y-4">
-                <div class="flex items-start">
-                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
-                  <div>
-                    <p class="font-semibold text-gray-800">Length Requirement</p>
-                    <p class="text-gray-600 text-sm">Maximum 8 pages including references and appendices</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
-                  <div>
-                    <p class="font-semibold text-gray-800">Format Standard</p>
-                    <p class="text-gray-600 text-sm">IEEE two-column conference format (A4 size)</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
-                  <div>
-                    <p class="font-semibold text-gray-800">Language</p>
-                    <p class="text-gray-600 text-sm">Papers must be written in English</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
-                  <div>
-                    <p class="font-semibold text-gray-800">File Format</p>
-                    <p class="text-gray-600 text-sm">Submit as PDF format only</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 p-4 bg-blue-50 rounded-lg">
-                <p class="text-sm text-blue-800">
-                  <i class="fas fa-info-circle mr-2"></i>
-                  <strong>Template Download:</strong> IEEE conference paper template available at 
-                  <a href="#" class="underline hover:text-blue-600">ieee.org/templates</a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review Process -->
-          <div class="animate-fadeUp" style="animation-delay: 0.3s;">
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="fas fa-search text-accent mr-3"></i>
-                Review Process
-              </h3>
-              <div class="space-y-4">
-                <div class="flex items-start">
-                  <i class="fas fa-users text-accent mt-1 mr-3"></i>
-                  <div>
-                    <p class="font-semibold text-gray-800">Double-Blind Peer Review</p>
-                    <p class="text-gray-600 text-sm">Each paper reviewed by at least 3 experts</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-clipboard-check text-accent mt-1 mr-3"></i>
-                  <div>
-                    <p class="font-semibold text-gray-800">Review Criteria</p>
-                    <p class="text-gray-600 text-sm">Originality, technical quality, relevance, and clarity</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-clock text-accent mt-1 mr-3"></i>
-                  <div>
-                    <p class="font-semibold text-gray-800">Review Timeline</p>
-                    <p class="text-gray-600 text-sm">4-6 weeks from submission deadline</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-certificate text-accent mt-1 mr-3"></i>
-                  <div>
-                    <p class="font-semibold text-gray-800">Publication</p>
-                    <p class="text-gray-600 text-sm">Accepted papers published in IEEE Xplore</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 p-4 bg-green-50 rounded-lg">
-                <p class="text-sm text-green-800">
-                  <i class="fas fa-award mr-2"></i>
-                  <strong>Best Paper Awards:</strong> Outstanding papers will receive recognition and prizes
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -394,104 +128,51 @@
       <div class="max-w-4xl mx-auto px-6">
         <div class="text-center mb-16 animate-fadeUp">
           <h2 class="text-3xl font-bold text-gray-800 mb-4">Important Dates</h2>
-          <p class="text-lg text-gray-600">
-            Mark your calendar with these key deadlines for paper submission and conference participation.
-          </p>
+          <p class="text-lg text-gray-600">Mark your calendar with these key deadlines for paper submission and conference participation.</p>
         </div>
-
         <div class="space-y-8">
-          <!-- Timeline Item 1 -->
+          <!-- Updated Dates -->
           <div class="timeline-item animate-fadeUp">
             <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h3 class="text-lg font-bold text-gray-800 mb-2">Abstract Submission Opens</h3>
-                  <p class="text-gray-600">Authors can begin submitting abstracts and full papers</p>
-                </div>
-                <div class="text-right mt-4 sm:mt-0">
-                  <div class="text-2xl font-bold text-primary">August 1</div>
-                  <div class="text-sm text-gray-500">2025</div>
-                </div>
+                <div><h3 class="text-lg font-bold text-gray-800 mb-2">Paper Submission Deadline</h3><p class="text-gray-600">Complete papers with all requirements must be submitted</p></div>
+                <div class="text-right mt-4 sm:mt-0"><div class="text-2xl font-bold text-primary">October 5</div><div class="text-sm text-gray-500">2025</div></div>
               </div>
             </div>
           </div>
 
-          <!-- Timeline Item 2 -->
           <div class="timeline-item animate-fadeUp" style="animation-delay: 0.2s;">
             <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-accent">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h3 class="text-lg font-bold text-gray-800 mb-2">Abstract Submission Deadline</h3>
-                  <p class="text-gray-600">Extended abstracts (500-800 words) due</p>
-                </div>
-                <div class="text-right mt-4 sm:mt-0">
-                  <div class="text-2xl font-bold text-accent">September 15</div>
-                  <div class="text-sm text-gray-500">2025</div>
-                </div>
+                <div><h3 class="text-lg font-bold text-gray-800 mb-2">Acceptance Notification</h3><p class="text-gray-600">Authors receive acceptance/rejection notification</p></div>
+                <div class="text-right mt-4 sm:mt-0"><div class="text-2xl font-bold text-accent">October 15</div><div class="text-sm text-gray-500">2025</div></div>
               </div>
             </div>
           </div>
 
-          <!-- Timeline Item 3 -->
           <div class="timeline-item animate-fadeUp" style="animation-delay: 0.4s;">
-            <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-red-500">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h3 class="text-lg font-bold text-gray-800 mb-2">Full Paper Submission Deadline</h3>
-                  <p class="text-gray-600">Complete papers with all requirements must be submitted</p>
-                </div>
-                <div class="text-right mt-4 sm:mt-0">
-                  <div class="text-2xl font-bold text-red-500">October 15</div>
-                  <div class="text-sm text-gray-500">2025</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Timeline Item 4 -->
-          <div class="timeline-item animate-fadeUp" style="animation-delay: 0.6s;">
             <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-yellow-500">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h3 class="text-lg font-bold text-gray-800 mb-2">Review Notification</h3>
-                  <p class="text-gray-600">Authors receive acceptance/rejection notification</p>
-                </div>
-                <div class="text-right mt-4 sm:mt-0">
-                  <div class="text-2xl font-bold text-yellow-600">November 1</div>
-                  <div class="text-sm text-gray-500">2025</div>
-                </div>
+                <div><h3 class="text-lg font-bold text-gray-800 mb-2">Camera-Ready Submission</h3><p class="text-gray-600">Final versions of accepted papers due</p></div>
+                <div class="text-right mt-4 sm:mt-0"><div class="text-2xl font-bold text-yellow-600">October 25</div><div class="text-sm text-gray-500">2025</div></div>
               </div>
             </div>
           </div>
 
-          <!-- Timeline Item 5 -->
-          <div class="timeline-item animate-fadeUp" style="animation-delay: 0.8s;">
-            <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
+          <div class="timeline-item animate-fadeUp" style="animation-delay: 0.6s;">
+            <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-red-500">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h3 class="text-lg font-bold text-gray-800 mb-2">Camera-Ready Submission</h3>
-                  <p class="text-gray-600">Final versions of accepted papers due</p>
-                </div>
-                <div class="text-right mt-4 sm:mt-0">
-                  <div class="text-2xl font-bold text-primary">November 10</div>
-                  <div class="text-sm text-gray-500">2025</div>
-                </div>
+                <div><h3 class="text-lg font-bold text-gray-800 mb-2">Registration Deadline</h3><p class="text-gray-600">Last date to register for the conference</p></div>
+                <div class="text-right mt-4 sm:mt-0"><div class="text-2xl font-bold text-red-500">November 1</div><div class="text-sm text-gray-500">2025</div></div>
               </div>
             </div>
           </div>
 
-          <!-- Timeline Item 6 -->
-          <div class="timeline-item animate-fadeUp" style="animation-delay: 1s;">
+          <div class="timeline-item animate-fadeUp" style="animation-delay: 0.8s;">
             <div class="bg-gradient-to-r from-primary to-accent rounded-lg shadow-lg p-6 text-white">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h3 class="text-lg font-bold mb-2">Conference Dates</h3>
-                  <p>Green Innovation Conference 2025</p>
-                </div>
-                <div class="text-right mt-4 sm:mt-0">
-                  <div class="text-2xl font-bold">November 14-15</div>
-                  <div class="text-sm opacity-90">2025</div>
-                </div>
+                <div><h3 class="text-lg font-bold mb-2">Conference Dates</h3><p>GITDFSB Conference 2025</p></div>
+                <div class="text-right mt-4 sm:mt-0"><div class="text-2xl font-bold">November 7-8</div><div class="text-sm opacity-90">2025</div></div>
               </div>
             </div>
           </div>
@@ -499,120 +180,36 @@
       </div>
     </section>
 
-    <!-- Benefits of Participation -->
-    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Submit to Green Innovation 2025?</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Join a prestigious platform that connects researchers, industry leaders, and policy makers in sustainable innovation.
-          </p>
-        </div>
+<section class="bg-gray-50 py-12 px-6 md:px-12">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">Declaration</h2>
+    <p class="text-gray-700 leading-relaxed">
+      The <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer" 
+      class="text-primary font-semibold hover:underline">
+      Microsoft Conference Management Toolkit (CMT)</a> service was used for managing 
+      the peer-reviewing process of this conference. This service was provided 
+      <strong>free of charge</strong> by Microsoft. Microsoft also bore all associated 
+      expenses, including the costs for <em>Azure cloud services</em>, as well as for 
+      <em>software development</em> and <em>technical support</em>.
+    </p>
+  </div>
+</section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Benefit 1 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp">
-            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <i class="fas fa-award text-primary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Prestigious Publication</h3>
-            <p class="text-gray-600 text-center">Papers published in IEEE Xplore with global visibility and indexing</p>
-          </div>
 
-          <!-- Benefit 2 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp" style="animation-delay: 0.2s;">
-            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <i class="fas fa-users text-accent text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Expert Networking</h3>
-            <p class="text-gray-600 text-center">Connect with leading researchers and industry professionals globally</p>
-          </div>
 
-          <!-- Benefit 3 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp" style="animation-delay: 0.4s;">
-            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <i class="fas fa-trophy text-primary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Best Paper Awards</h3>
-            <p class="text-gray-600 text-center">Recognition and monetary prizes for outstanding research contributions</p>
-          </div>
-
-          <!-- Benefit 4 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp" style="animation-delay: 0.6s;">
-            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <i class="fas fa-microphone text-accent text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Presentation Platform</h3>
-            <p class="text-gray-600 text-center">Present your research to an international audience of experts</p>
-          </div>
-
-          <!-- Benefit 5 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp" style="animation-delay: 0.8s;">
-            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <i class="fas fa-handshake text-primary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Collaboration Opportunities</h3>
-            <p class="text-gray-600 text-center">Discover potential research partnerships and funding opportunities</p>
-          </div>
-
-          <!-- Benefit 6 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp" style="animation-delay: 1s;">
-            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <i class="fas fa-globe text-accent text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Global Impact</h3>
-            <p class="text-gray-600 text-center">Contribute to the global sustainability movement and policy development</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Submission Portal -->
-    <section class="py-20 bg-white">
+        <section class="py-16 bg-white">
       <div class="max-w-4xl mx-auto px-6 text-center">
-        <div class="animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-6">Ready to Submit Your Paper?</h2>
-          <p class="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
-            Join the global conversation on sustainable business innovation. Submit your research and be part of shaping the future.
-          </p>
-          
-          <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 mb-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div class="text-3xl font-bold text-primary mb-2">500+</div>
-                <div class="text-gray-600">Expected Submissions</div>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-accent mb-2">30%</div>
-                <div class="text-gray-600">Acceptance Rate</div>
-              </div>
-              <div>
-                <div class="text-3xl font-bold text-primary mb-2">40+</div>
-                <div class="text-gray-600">Countries Represented</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#" 
-               class="bg-primary hover:bg-primary/90 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
-               <i class="fas fa-upload mr-2"></i>
-               Submit Your Paper
-            </a>
-            <a href="assets/CFP_Guidelines.pdf" download
-               class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-10 py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
-               <i class="fas fa-download mr-2"></i>
-               Download Guidelines
-            </a>
-          </div>
-          
-          <div class="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <p class="text-sm text-yellow-800">
-              <i class="fas fa-exclamation-triangle mr-2"></i>
-              <strong>Note:</strong> Submission system will be available from August 1, 2025. 
-              For questions, contact: <a href="mailto:papers@greeninnovation2025.com" class="underline hover:text-yellow-600">papers@greeninnovation2025.com</a>
-            </p>
-          </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ready to Submit?</h2>
+        <p class="text-lg text-gray-600 mb-8">Join the global conversation on sustainable innovation.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#" target="_blank" rel="noopener"
+             class="bg-accent hover:bg-accent/90 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all">
+            <i class="fas fa-upload mr-2"></i> Submit via CMT
+          </a>
+          <a href="registration.html"
+             class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-10 py-4 rounded-lg shadow-lg transition-all">
+            <i class="fas fa-ticket mr-2"></i> Register Now
+          </a>
         </div>
       </div>
     </section>
@@ -623,67 +220,45 @@
   <footer class="bg-gray-900 text-gray-100 pt-16 pb-8 mt-20">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-2xl font-bold mb-4 text-primary">Green Innovation Conference</h3>
-        <p class="text-gray-300 text-lg mb-4">
-          International Conference on Sustainable Business Technology
-        </p>
+        <h3 class="text-2xl font-bold mb-4 text-primary">GITDFSB Conference</h3>
+        <p class="text-gray-300 text-lg mb-4">International Conference on Sustainable Business Technology</p>
         <p class="text-gray-300">
-          <i class="fas fa-calendar-alt text-primary mr-2"></i>14–15 November 2025<br>
+          <i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025<br>
           <i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur<br>
           <i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology
         </p>
       </div>
-
       <nav class="flex flex-col gap-3">
         <h4 class="font-semibold text-lg mb-2 text-gray-200">Quick Links</h4>
         <a href="about.html" class="footer-link">About</a>
         <a href="speakers.html" class="footer-link">Speakers</a>
         <a href="committee.html" class="footer-link">Committee</a>
         <a href="call-for-papers.html" class="footer-link text-primary">Call for Papers</a>
-        <a href="agenda.html" class="footer-link">Agenda</a>
+
         <a href="venue.html" class="footer-link">Venue</a>
         <a href="registration.html" class="footer-link">Register</a>
       </nav>
-
       <div>
         <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
         <form action="#" class="mb-4">
           <div class="flex">
             <input type="email" placeholder="Enter your email"
-                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
-                   aria-label="Email for newsletter">
-            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
-              Subscribe
-            </button>
+              class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
+              aria-label="Email for newsletter">
+            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">Subscribe</button>
           </div>
         </form>
         <div class="flex gap-4">
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
-            <i class="fab fa-twitter text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
-            <i class="fab fa-facebook text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
-            <i class="fab fa-linkedin text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
-            <i class="fab fa-instagram text-xl"></i>
-          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-instagram text-xl"></i></a>
         </div>
       </div>
     </div>
-
     <div class="mt-12 border-t border-gray-700 pt-8 text-center">
-      <p class="text-gray-300 mb-2">
-        © 2025 Green Innovation Conference — Hosted by Kalam Institute of Technology. All rights reserved.
-      </p>
-      <p class="text-sm text-gray-400">
-        Built and maintained by 
-        <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">
-          Pixlight LLP
-        </a>
-      </p>
+      <p class="text-gray-300 mb-2">© 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology. All rights reserved.</p>
+      <p class="text-sm text-gray-400">Built and maintained by <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80">Pixlight LLP</a></p>
     </div>
   </footer>
 
