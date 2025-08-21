@@ -23,6 +23,9 @@
             primary: '#16a34a',
             accent:  '#2563eb',
           },
+          screens: {
+            'xs': '420px'
+          }
         },
       },
     };
@@ -38,46 +41,45 @@
   <!-- Meta SEO -->
   <meta name="description" content="Discover the venue for GITDFSB Conference 2025 at KIT Auditorium, Berhampur. Get directions, accommodation details, and travel information." />
 
-  <!-- Custom Styles -->
+  <!-- Minimal custom CSS (no @apply; works with CDN Tailwind) -->
   <style>
     html { scroll-behavior: smooth; }
-    
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
     @keyframes fadeUp {
       0%   { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
-    
     .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
     .animate-float { animation: float 3s ease-in-out infinite; }
-    
-    .nav-link, .footer-link {
-      @apply text-gray-300 hover:text-primary transition-colors duration-300;
-    }
-    
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-    
+
+    /* Replace @apply with plain CSS so it works without building */
+    .nav-link,
+    .footer-link { color: #d1d5db; transition: color .3s ease; }
+    .nav-link:hover,
+    .footer-link:hover { color: #16a34a; }
+
+    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
     .card-hover:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
 
     .venue-card {
       background: linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%);
       border: 1px solid rgba(22, 163, 74, 0.1);
     }
-
     .facility-card {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
       backdrop-filter: blur(10px);
     }
-
     .accommodation-card {
       background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(22, 163, 74, 0.05) 100%);
       border: 1px solid rgba(37, 99, 235, 0.1);
@@ -86,7 +88,6 @@
 </head>
 
 <body class="font-sans bg-white text-gray-900 antialiased">
-
   <!-- Skip link -->
   <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
     Skip to main content
@@ -94,55 +95,56 @@
 
   <!-- Navbar -->
   <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
-      <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
+      <a href="index.html" class="text-lg xs:text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
         GITDFSB
       </a>
 
-      <input id="nav-toggle" type="checkbox" class="hidden peer" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
+      <!-- Mobile menu toggle (checkbox + label; no JS required) -->
+      <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl"
+             aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
-      <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
-        <a href="about.html" class="nav-link">About</a>
-        <a href="speakers.html" class="nav-link">Speakers</a>
-        <a href="committee.html" class="nav-link">Committee</a>
-        <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
-
-        <a href="venue.html" class="nav-link text-primary">Venue</a>
-        <a href="registration.html" class="nav-link">Register</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <nav id="main-nav"
+           class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
+        <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
+        <a href="speakers.html" class="nav-link text-sm sm:text-base">Speakers</a>
+        <a href="committee.html" class="nav-link text-sm sm:text-base">Committee</a>
+        <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
+        <a href="venue.html" class="nav-link text-primary font-semibold text-sm sm:text-base">Venue</a>
+        <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
+        <a href="contact.html" class="nav-link text-sm sm:text-base">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Main -->
-  <main id="main" class="pt-20">
-
+  <main id="main" class="pt-20 sm:pt-24">
     <!-- Hero Section -->
-    <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
-      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
-      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
-      
-      <div class="max-w-6xl mx-auto px-6 text-center">
+    <section class="relative py-16 sm:py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+      <div class="pointer-events-none absolute top-6 right-6 w-24 h-24 sm:w-32 sm:h-32 bg-primary/10 rounded-full animate-float"></div>
+      <div class="pointer-events-none absolute bottom-6 left-6 w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
         <div class="animate-fadeUp">
-          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+          <h1 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4 md:mb-6">
             Conference Venue
           </h1>
-          <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
-            Join us at the prestigious Kalam Institute of Technology Auditorium in Berhampur, Odisha - 
+          <p class="text-base md:text-xl text-gray-700 max-w-3xl md:max-w-4xl mx-auto mb-6 md:mb-8">
+            Join us at the prestigious Kalam Institute of Technology Auditorium in Berhampur, Odisha—
             a state-of-the-art facility equipped with modern amenities for an exceptional conference experience.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <div class="bg-primary/10 px-6 py-3 rounded-full">
-              <span class="text-primary font-semibold">
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
+            <div class="bg-primary/10 px-5 py-2.5 sm:py-3 rounded-full">
+              <span class="text-primary font-semibold text-sm sm:text-base">
                 <i class="fas fa-map-marker-alt mr-2"></i>
                 KIT Auditorium, Berhampur
               </span>
             </div>
-            <div class="bg-accent/10 px-6 py-3 rounded-full">
-              <span class="text-accent font-semibold">
+            <div class="bg-accent/10 px-5 py-2.5 sm:py-3 rounded-full">
+              <span class="text-accent font-semibold text-sm sm:text-base">
                 <i class="fas fa-users mr-2"></i>
                 Capacity: 800+ Delegates
               </span>
@@ -153,59 +155,59 @@
     </section>
 
     <!-- Main Venue Information -->
-    <section class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <!-- Venue Details -->
           <div class="animate-fadeUp">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">KIT Auditorium Complex</h2>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-              The Kalam Institute of Technology Auditorium stands as one of Odisha's premier conference 
-              facilities, offering a perfect blend of modern architecture and cutting-edge technology. 
-              Located in the heart of the KIT campus, this venue provides an inspiring environment 
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-6">KIT Auditorium Complex</h2>
+            <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-5 md:mb-6">
+              The Kalam Institute of Technology Auditorium stands as one of Odisha's premier conference
+              facilities, offering a perfect blend of modern architecture and cutting-edge technology.
+              Located in the heart of the KIT campus, this venue provides an inspiring environment
               for academic and professional gatherings.
             </p>
-            
+
             <div class="space-y-4">
               <div class="flex items-start">
-                <i class="fas fa-building text-primary text-xl mr-4 mt-1"></i>
+                <i class="fas fa-building text-primary text-lg md:text-xl mr-3 md:mr-4 mt-1"></i>
                 <div>
                   <h3 class="font-semibold text-gray-800 mb-1">Main Auditorium</h3>
-                  <p class="text-gray-600">800-seat capacity with advanced audio-visual systems</p>
+                  <p class="text-gray-600 text-sm md:text-base">800-seat capacity with advanced audio-visual systems</p>
                 </div>
               </div>
-              
+
               <div class="flex items-start">
-                <i class="fas fa-microphone text-primary text-xl mr-4 mt-1"></i>
+                <i class="fas fa-microphone text-primary text-lg md:text-xl mr-3 md:mr-4 mt-1"></i>
                 <div>
                   <h3 class="font-semibold text-gray-800 mb-1">Technical Facilities</h3>
-                  <p class="text-gray-600">State-of-the-art presentation equipment and live streaming capabilities</p>
+                  <p class="text-gray-600 text-sm md:text-base">State-of-the-art presentation equipment and live streaming capabilities</p>
                 </div>
               </div>
-              
+
               <div class="flex items-start">
-                <i class="fas fa-wifi text-primary text-xl mr-4 mt-1"></i>
+                <i class="fas fa-wifi text-primary text-lg md:text-xl mr-3 md:mr-4 mt-1"></i>
                 <div>
                   <h3 class="font-semibold text-gray-800 mb-1">Connectivity</h3>
-                  <p class="text-gray-600">High-speed Wi-Fi throughout the venue with dedicated bandwidth</p>
+                  <p class="text-gray-600 text-sm md:text-base">High-speed Wi-Fi throughout the venue with dedicated bandwidth</p>
                 </div>
               </div>
-              
+
               <div class="flex items-start">
-                <i class="fas fa-parking text-primary text-xl mr-4 mt-1"></i>
+                <i class="fas fa-parking text-primary text-lg md:text-xl mr-3 md:mr-4 mt-1"></i>
                 <div>
                   <h3 class="font-semibold text-gray-800 mb-1">Parking & Access</h3>
-                  <p class="text-gray-600">Ample parking space and wheelchair accessibility</p>
+                  <p class="text-gray-600 text-sm md:text-base">Ample parking space and wheelchair accessibility</p>
                 </div>
               </div>
             </div>
-            
-            <div class="mt-8 p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg">
-              <h3 class="font-bold text-gray-800 mb-3">
+
+            <div class="mt-6 md:mt-8 p-5 md:p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg">
+              <h3 class="font-bold text-gray-800 mb-2 md:mb-3">
                 <i class="fas fa-map-marked-alt text-primary mr-2"></i>
                 Complete Address
               </h3>
-              <p class="text-gray-700">
+              <p class="text-gray-700 text-sm md:text-base">
                 <strong>Kalam Institute of Technology Auditorium</strong><br>
                 Bhubaneswar-Berhampur Highway<br>
                 Berhampur, Ganjam District<br>
@@ -216,11 +218,11 @@
 
           <!-- Venue Image Placeholder -->
           <div class="animate-fadeUp" style="animation-delay: 0.3s;">
-            <div class="bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl h-96 flex items-center justify-center">
+            <div class="bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl min-h-[240px] sm:min-h-[320px] md:min-h-[380px] lg:min-h-[420px] flex items-center justify-center p-6">
               <div class="text-center">
-                <i class="fas fa-building text-6xl text-primary mb-4"></i>
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">KIT Auditorium</h3>
-                <p class="text-gray-600">Modern Conference Facility</p>
+                <i class="fas fa-building text-5xl md:text-6xl text-primary mb-3 md:mb-4"></i>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1 md:mb-2">KIT Auditorium</h3>
+                <p class="text-gray-600 text-sm md:text-base">Modern Conference Facility</p>
               </div>
             </div>
           </div>
@@ -228,30 +230,30 @@
       </div>
     </section>
 
-
-        <section class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Location & Directions</h2>
-          <p class="text-lg text-gray-600">
+    <!-- Location & Directions -->
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 sm:mb-12 animate-fadeUp">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">Location & Directions</h2>
+          <p class="text-base md:text-lg text-gray-600">
             Find us easily with our interactive location guide and detailed directions.
           </p>
         </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <!-- Map Placeholder -->
           <div class="animate-fadeUp">
-            <div class="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl h-96 flex items-center justify-center">
+            <div class="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl min-h-[240px] sm:min-h-[320px] md:min-h-[380px] flex items-center justify-center p-6">
               <div class="text-center">
-                <i class="fas fa-map-marked-alt text-6xl text-primary mb-4"></i>
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Interactive Map</h3>
-                <p class="text-gray-600 mb-4">
+                <i class="fas fa-map-marked-alt text-5xl md:text-6xl text-primary mb-3 md:mb-4"></i>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">Interactive Map</h3>
+                <p class="text-gray-600 text-sm md:text-base mb-4">
                   KIT Campus, Berhampur<br>
                   Odisha - 760010
                 </p>
-                <a href="https://maps.google.com/?q=Kalam+Institute+of+Technology+Berhampur" 
-                   target="_blank" 
-                   class="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                <a href="https://maps.google.com/?q=Kalam+Institute+of+Technology+Berhampur"
+                   target="_blank"
+                   class="inline-block bg-primary text-white px-5 md:px-6 py-2.5 md:py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm md:text-base">
                   <i class="fas fa-external-link-alt mr-2"></i>
                   Open in Google Maps
                 </a>
@@ -261,40 +263,40 @@
 
           <!-- Directions -->
           <div class="animate-fadeUp" style="animation-delay: 0.3s;">
-            <h3 class="text-2xl font-bold text-gray-800 mb-6">Detailed Directions</h3>
-            
-            <div class="space-y-6">
-              <div class="border-l-4 border-primary pl-6">
-                <h4 class="font-semibold text-gray-800 mb-2">From Berhampur Railway Station</h4>
-                <p class="text-gray-600 text-sm">
-                  Take NH-16 towards Bhubaneswar for 12 km. Turn right at KIT signboard. 
+            <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Detailed Directions</h3>
+
+            <div class="space-y-5 md:space-y-6">
+              <div class="border-l-4 border-primary pl-4 md:pl-6">
+                <h4 class="font-semibold text-gray-800 mb-1.5 md:mb-2">From Berhampur Railway Station</h4>
+                <p class="text-gray-600 text-sm md:text-base">
+                  Take NH-16 towards Bhubaneswar for 12 km. Turn right at KIT signboard.
                   The auditorium is located in the main campus building.
                 </p>
               </div>
-              
-              <div class="border-l-4 border-accent pl-6">
-                <h4 class="font-semibold text-gray-800 mb-2">From Bhubaneswar Airport</h4>
-                <p class="text-gray-600 text-sm">
-                  Take NH-16 southbound for approximately 180 km. Exit at Berhampur and 
-                  follow signs to KIT campus. Journey time: 3.5 hours.
+
+              <div class="border-l-4 border-accent pl-4 md:pl-6">
+                <h4 class="font-semibold text-gray-800 mb-1.5 md:mb-2">From Bhubaneswar Airport</h4>
+                <p class="text-gray-600 text-sm md:text-base">
+                  Take NH-16 southbound for approximately 180 km. Exit at Berhampur and
+                  follow signs to KIT campus. Journey time: ~3.5 hours.
                 </p>
               </div>
-              
-              <div class="border-l-4 border-primary pl-6">
-                <h4 class="font-semibold text-gray-800 mb-2">Local Transportation</h4>
-                <p class="text-gray-600 text-sm">
-                  Auto-rickshaws and buses are available from Berhampur city center. 
+
+              <div class="border-l-4 border-primary pl-4 md:pl-6">
+                <h4 class="font-semibold text-gray-800 mb-1.5 md:mb-2">Local Transportation</h4>
+                <p class="text-gray-600 text-sm md:text-base">
+                  Auto-rickshaws and buses are available from Berhampur city center.
                   Taxi services can be arranged through the conference team.
                 </p>
               </div>
             </div>
-            
-            <div class="mt-8 p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg">
-              <h4 class="font-bold text-gray-800 mb-3">
+
+            <div class="mt-6 md:mt-8 p-5 md:p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg">
+              <h4 class="font-bold text-gray-800 mb-2 md:mb-3">
                 <i class="fas fa-car text-primary mr-2"></i>
                 GPS Coordinates
               </h4>
-              <p class="text-gray-700 font-mono">
+              <p class="text-gray-700 font-mono text-sm md:text-base">
                 Latitude: 19.3149° N<br>
                 Longitude: 84.8000° E
               </p>
@@ -305,23 +307,23 @@
     </section>
 
     <!-- Venue Facilities -->
-    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Venue Facilities</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+    <section class="py-16 sm:py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 md:mb-16 animate-fadeUp">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">Venue Facilities</h2>
+          <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             Our conference venue is equipped with world-class facilities to ensure a comfortable and productive experience for all attendees.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <!-- Facility 1 -->
-          <div class="facility-card p-6 rounded-xl shadow-lg card-hover animate-fadeUp">
-            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-desktop text-primary text-2xl"></i>
+          <div class="facility-card p-5 md:p-6 rounded-xl shadow-lg card-hover animate-fadeUp">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+              <i class="fas fa-desktop text-primary text-xl md:text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Audio-Visual Equipment</h3>
-            <ul class="text-gray-600 space-y-2 text-sm">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">Audio-Visual Equipment</h3>
+            <ul class="text-gray-600 space-y-1.5 md:space-y-2 text-sm">
               <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>4K projection systems</li>
               <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Professional sound system</li>
               <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Wireless microphones</li>
@@ -330,12 +332,12 @@
           </div>
 
           <!-- Facility 2 -->
-          <div class="facility-card p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.2s;">
-            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-users text-accent text-2xl"></i>
+          <div class="facility-card p-5 md:p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.2s;">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+              <i class="fas fa-users text-accent text-xl md:text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Seating & Comfort</h3>
-            <ul class="text-gray-600 space-y-2 text-sm">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">Seating & Comfort</h3>
+            <ul class="text-gray-600 space-y-1.5 md:space-y-2 text-sm">
               <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Ergonomic seating for 800</li>
               <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Climate-controlled environment</li>
               <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Excellent acoustics</li>
@@ -344,12 +346,12 @@
           </div>
 
           <!-- Facility 3 -->
-          <div class="facility-card p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.4s;">
-            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-coffee text-primary text-2xl"></i>
+          <div class="facility-card p-5 md:p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.4s;">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+              <i class="fas fa-coffee text-primary text-xl md:text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Catering & Breaks</h3>
-            <ul class="text-gray-600 space-y-2 text-sm">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">Catering & Breaks</h3>
+            <ul class="text-gray-600 space-y-1.5 md:space-y-2 text-sm">
               <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Spacious foyer area</li>
               <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Professional catering services</li>
               <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Multiple refreshment stations</li>
@@ -358,12 +360,12 @@
           </div>
 
           <!-- Facility 4 -->
-          <div class="facility-card p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.6s;">
-            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-door-open text-accent text-2xl"></i>
+          <div class="facility-card p-5 md:p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.6s;">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+              <i class="fas fa-door-open text-accent text-xl md:text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Additional Halls</h3>
-            <ul class="text-gray-600 space-y-2 text-sm">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">Additional Halls</h3>
+            <ul class="text-gray-600 space-y-1.5 md:space-y-2 text-sm">
               <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Hall A - 200 seats</li>
               <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Hall B - 150 seats</li>
               <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Workshop rooms</li>
@@ -372,12 +374,12 @@
           </div>
 
           <!-- Facility 5 -->
-          <div class="facility-card p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.8s;">
-            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-shield-alt text-primary text-2xl"></i>
+          <div class="facility-card p-5 md:p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 0.8s;">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+              <i class="fas fa-shield-alt text-primary text-xl md:text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Safety & Security</h3>
-            <ul class="text-gray-600 space-y-2 text-sm">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">Safety & Security</h3>
+            <ul class="text-gray-600 space-y-1.5 md:space-y-2 text-sm">
               <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>24/7 security personnel</li>
               <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>CCTV surveillance</li>
               <li class="flex items-center"><i class="fas fa-check text-primary mr-2"></i>Emergency exits</li>
@@ -386,12 +388,12 @@
           </div>
 
           <!-- Facility 6 -->
-          <div class="facility-card p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 1s;">
-            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-universal-access text-accent text-2xl"></i>
+          <div class="facility-card p-5 md:p-6 rounded-xl shadow-lg card-hover animate-fadeUp" style="animation-delay: 1s;">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+              <i class="fas fa-universal-access text-accent text-xl md:text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Accessibility</h3>
-            <ul class="text-gray-600 space-y-2 text-sm">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">Accessibility</h3>
+            <ul class="text-gray-600 space-y-1.5 md:space-y-2 text-sm">
               <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Wheelchair accessible</li>
               <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Accessible restrooms</li>
               <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>Reserved seating areas</li>
@@ -403,83 +405,83 @@
     </section>
 
     <!-- Getting There -->
-    <section class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Getting There</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 animate-fadeUp">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">Getting There</h2>
+          <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             KIT is conveniently located and easily accessible by various modes of transportation.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <!-- By Air -->
-          <div class="venue-card p-8 rounded-xl card-hover animate-fadeUp">
-            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-plane text-primary text-2xl"></i>
+          <div class="venue-card p-6 md:p-8 rounded-xl card-hover animate-fadeUp">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+              <i class="fas fa-plane text-primary text-xl md:text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">By Air</h3>
-            <div class="space-y-3 text-gray-600">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">By Air</h3>
+            <div class="space-y-2.5 md:space-y-3 text-gray-600">
               <div class="flex items-start">
-                <i class="fas fa-map-marker-alt text-primary mr-3 mt-1"></i>
+                <i class="fas fa-map-marker-alt text-primary mr-2.5 md:mr-3 mt-1"></i>
                 <div>
-                  <p class="font-semibold">Biju Patnaik Airport (BBI)</p>
-                  <p class="text-sm">Bhubaneswar - 180 km (3.5 hours drive)</p>
+                  <p class="font-semibold text-sm md:text-base">Biju Patnaik Airport (BBI)</p>
+                  <p class="text-xs md:text-sm">Bhubaneswar - 180 km (3.5 hours drive)</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <i class="fas fa-car text-primary mr-3 mt-1"></i>
+                <i class="fas fa-car text-primary mr-2.5 md:mr-3 mt-1"></i>
                 <div>
-                  <p class="font-semibold">Ground Transportation</p>
-                  <p class="text-sm">Taxi, rental car, or organized shuttle service available</p>
+                  <p class="font-semibold text-sm md:text-base">Ground Transportation</p>
+                  <p class="text-xs md:text-sm">Taxi, rental car, or organized shuttle service available</p>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- By Train -->
-          <div class="venue-card p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.2s;">
-            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-train text-accent text-2xl"></i>
+          <div class="venue-card p-6 md:p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.2s;">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+              <i class="fas fa-train text-accent text-xl md:text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">By Train</h3>
-            <div class="space-y-3 text-gray-600">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">By Train</h3>
+            <div class="space-y-2.5 md:space-y-3 text-gray-600">
               <div class="flex items-start">
-                <i class="fas fa-map-marker-alt text-accent mr-3 mt-1"></i>
+                <i class="fas fa-map-marker-alt text-accent mr-2.5 md:mr-3 mt-1"></i>
                 <div>
-                  <p class="font-semibold">Berhampur Railway Station</p>
-                  <p class="text-sm">15 km from KIT campus (30 minutes drive)</p>
+                  <p class="font-semibold text-sm md:text-base">Berhampur Railway Station</p>
+                  <p class="text-xs md:text-sm">15 km from KIT campus (30 minutes drive)</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <i class="fas fa-clock text-accent mr-3 mt-1"></i>
+                <i class="fas fa-clock text-accent mr-2.5 md:mr-3 mt-1"></i>
                 <div>
-                  <p class="font-semibold">Major Connections</p>
-                  <p class="text-sm">Direct trains from Delhi, Mumbai, Chennai, Kolkata</p>
+                  <p class="font-semibold text-sm md:text-base">Major Connections</p>
+                  <p class="text-xs md:text-sm">Direct trains from Delhi, Mumbai, Chennai, Kolkata</p>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- By Road -->
-          <div class="venue-card p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.4s;">
-            <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-              <i class="fas fa-road text-primary text-2xl"></i>
+          <div class="venue-card p-6 md:p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay: 0.4s;">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+              <i class="fas fa-road text-primary text-xl md:text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">By Road</h3>
-            <div class="space-y-3 text-gray-600">
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">By Road</h3>
+            <div class="space-y-2.5 md:space-y-3 text-gray-600">
               <div class="flex items-start">
-                <i class="fas fa-route text-primary mr-3 mt-1"></i>
+                <i class="fas fa-route text-primary mr-2.5 md:mr-3 mt-1"></i>
                 <div>
-                  <p class="font-semibold">NH-16 Highway</p>
-                  <p class="text-sm">Located on Bhubaneswar-Berhampur Highway</p>
+                  <p class="font-semibold text-sm md:text-base">NH-16 Highway</p>
+                  <p class="text-xs md:text-sm">Located on Bhubaneswar-Berhampur Highway</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <i class="fas fa-bus text-primary mr-3 mt-1"></i>
+                <i class="fas fa-bus text-primary mr-2.5 md:mr-3 mt-1"></i>
                 <div>
-                  <p class="font-semibold">Public Transport</p>
-                  <p class="text-sm">Regular bus services from major cities</p>
+                  <p class="font-semibold text-sm md:text-base">Public Transport</p>
+                  <p class="text-xs md:text-sm">Regular bus services from major cities</p>
                 </div>
               </div>
             </div>
@@ -488,83 +490,75 @@
       </div>
     </section>
 
-    <!-- Accommodation -->
-
-
-    <!-- Interactive Map -->
-
-
-
+    <!-- (Optional) Accommodation / Interactive Map sections placeholder retained -->
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-100 pt-16 pb-8 mt-20">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+  <footer class="bg-gray-900 text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-2xl font-bold mb-4 text-primary">GITDFSB Conference</h3>
-        <p class="text-gray-300 text-lg mb-4">
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-primary">GITDFSB Conference</h3>
+        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">
           International Conference on Sustainable Business Technology
         </p>
-        <p class="text-gray-300">
-          <i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025<br>
-          <i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur<br>
-          <i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology
+        <p class="text-gray-300 text-sm md:text-base space-y-1">
+          <span class="block"><i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025</span>
+          <span class="block"><i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur</span>
+          <span class="block"><i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology</span>
         </p>
       </div>
 
-      <nav class="flex flex-col gap-3">
-        <h4 class="font-semibold text-lg mb-2 text-gray-200">Quick Links</h4>
-        <a href="about.html" class="footer-link">About</a>
-        <a href="speakers.html" class="footer-link">Speakers</a>
-        <a href="committee.html" class="footer-link">Committee</a>
-        <a href="call-for-papers.html" class="footer-link">Call for Papers</a>
-
-        <a href="venue.html" class="footer-link text-primary">Venue</a>
-        <a href="registration.html" class="footer-link">Register</a>
-        <a href="contact.html" class="footer-link">Contact</a>
+      <nav class="flex flex-col gap-2.5 md:gap-3">
+        <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
+        <a href="about.html" class="footer-link text-sm md:text-base">About</a>
+        <a href="speakers.html" class="footer-link text-sm md:text-base">Speakers</a>
+        <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
+        <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
+        <a href="venue.html" class="footer-link text-primary font-semibold text-sm md:text-base">Venue</a>
+        <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
+        <a href="contact.html" class="footer-link text-sm md:text-base">Contact</a>
       </nav>
 
       <div>
-        <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
+        <h4 class="font-semibold text-base md:text-lg mb-3 md:mb-4 text-gray-200">Stay Connected</h4>
         <form action="#" class="mb-4">
           <div class="flex">
             <input type="email" placeholder="Enter your email"
-                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
+                   class="flex-1 rounded-l-lg px-3 md:px-4 py-2.5 md:py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
                    aria-label="Email for newsletter">
-            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
+            <button class="bg-primary hover:bg-primary/90 text-white px-4 md:px-6 rounded-r-lg transition-colors text-sm md:text-base">
               Subscribe
             </button>
           </div>
         </form>
-        <div class="flex gap-4">
+        <div class="flex gap-3 md:gap-4">
           <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
-            <i class="fab fa-twitter text-xl"></i>
+            <i class="fab fa-twitter text-lg md:text-xl"></i>
           </a>
           <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
-            <i class="fab fa-facebook text-xl"></i>
+            <i class="fab fa-facebook text-lg md:text-xl"></i>
           </a>
           <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
-            <i class="fab fa-linkedin text-xl"></i>
+            <i class="fab fa-linkedin text-lg md:text-xl"></i>
           </a>
           <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
-            <i class="fab fa-instagram text-xl"></i>
+            <i class="fab fa-instagram text-lg md:text-xl"></i>
           </a>
         </div>
       </div>
     </div>
 
-    <div class="mt-12 border-t border-gray-700 pt-8 text-center">
-      <p class="text-gray-300 mb-2">
+    <div class="mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center px-4">
+      <p class="text-gray-300 text-xs md:text-sm mb-1.5">
         © 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology. All rights reserved.
       </p>
-      <p class="text-sm text-gray-400">
-        Built and maintained by 
+      <p class="text-xs md:text-sm text-gray-400">
+        Built and maintained by
         <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">
           Pixlight LLP
         </a>
       </p>
     </div>
   </footer>
-
 </body>
 </html>
