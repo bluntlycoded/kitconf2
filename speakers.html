@@ -52,6 +52,11 @@
 
     .speaker-card { background: linear-gradient(135deg, rgba(255,255,255,.95) 0%, rgba(249,250,251,.95) 100%); backdrop-filter: blur(10px); }
 
+    /* Photo wrappers keep consistent aspect & overlay badge readable */
+    .speaker-photo-wrap { position: relative; height: 18rem; }
+    @media (min-width: 640px) { .speaker-photo-wrap { height: 20rem; } }
+    .speaker-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
     /* Modal */
     .modal { display:none; position: fixed; inset:0; z-index:1000; background-color: rgba(0,0,0,.5); backdrop-filter: blur(5px); }
     .modal.active { display:flex; align-items:center; justify-content:center; }
@@ -120,10 +125,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <!-- Keynote Speaker 1 -->
           <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal1')" tabindex="0" role="button" aria-label="Open details for Dr. Fernando Moreira">
-            <div class="h-72 sm:h-80 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center relative">
-              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-primary/20 rounded-full flex items-center justify-center">
-                <span class="text-4xl sm:text-5xl font-bold text-primary">FM</span>
-              </div>
+            <div class="speaker-photo-wrap">
+              <img src="assets/speakers/fernando-moreira.jpg" alt="Photo of Dr. Fernando Moreira" class="speaker-photo" loading="lazy" decoding="async" />
+              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
             </div>
             <div class="p-6">
@@ -136,10 +140,9 @@
 
           <!-- Keynote Speaker 2 -->
           <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal2')" style="animation-delay:.2s;" tabindex="0" role="button" aria-label="Open details for Dr. Gyanaranjan Tripathy">
-            <div class="h-72 sm:h-80 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative">
-              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-accent/20 rounded-full flex items-center justify-center">
-                <span class="text-4xl sm:text-5xl font-bold text-accent">GT</span>
-              </div>
+            <div class="speaker-photo-wrap">
+              <img src="assets/speakers/gyanaranjan-tripathy.jpg" alt="Photo of Dr. Gyanaranjan Tripathy" class="speaker-photo" loading="lazy" decoding="async" />
+              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
             </div>
             <div class="p-6">
@@ -152,10 +155,9 @@
 
           <!-- Keynote Speaker 3 -->
           <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal3')" style="animation-delay:.4s;" tabindex="0" role="button" aria-label="Open details for Dr. Amrut Phalguni Mahanty">
-            <div class="h-72 sm:h-80 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center relative">
-              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-primary/20 rounded-full flex items-center justify-center">
-                <span class="text-4xl sm:text-5xl font-bold text-primary">AM</span>
-              </div>
+            <div class="speaker-photo-wrap">
+              <img src="assets/speakers/amrut-phalguni-mahanty.jpg" alt="Photo of Dr. Amrut Phalguni Mahanty" class="speaker-photo" loading="lazy" decoding="async" />
+              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
             </div>
             <div class="p-6">
@@ -168,10 +170,9 @@
 
           <!-- Keynote Speaker 4 -->
           <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal4')" style="animation-delay:.6s;" tabindex="0" role="button" aria-label="Open details for Dr. Chandra Sekhar Bahinipati">
-            <div class="h-72 sm:h-80 bg-gradient-to-br from-yellow-100 to-green-100 flex items-center justify-center relative">
-              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-primary/20 rounded-full flex items-center justify-center">
-                <span class="text-4xl sm:text-5xl font-bold text-primary">CB</span>
-              </div>
+            <div class="speaker-photo-wrap">
+              <img src="assets/speakers/chandra-sekhar-bahinipati.jpg" alt="Photo of Dr. Chandra Sekhar Bahinipati" class="speaker-photo" loading="lazy" decoding="async" />
+              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
             </div>
             <div class="p-6">
@@ -184,10 +185,9 @@
 
           <!-- Keynote Speaker 5 -->
           <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal5')" style="animation-delay:.8s;" tabindex="0" role="button" aria-label="Open details for Dr. Dukhabandhu Sahoo">
-            <div class="h-72 sm:h-80 bg-gradient-to-br from-red-100 to-yellow-100 flex items-center justify-center relative">
-              <div class="w-32 h-32 sm:w-40 sm:h-40 bg-accent/20 rounded-full flex items-center justify-center">
-                <span class="text-4xl sm:text-5xl font-bold text-accent">DS</span>
-              </div>
+            <div class="speaker-photo-wrap">
+              <img src="assets/speakers/dukhabandhu-sahoo.jpg" alt="Photo of Dr. Dukhabandhu Sahoo" class="speaker-photo" loading="lazy" decoding="async" />
+              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
             </div>
             <div class="p-6">
@@ -242,8 +242,7 @@
         <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
         <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
       </nav>
-
-
+    </div>
 
     <div class="mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center px-4">
       <p class="text-gray-300 text-xs md:text-sm mb-1.5">© 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology. All rights reserved.</p>
@@ -257,95 +256,110 @@
   <!-- Modal Template duplicated per speaker with unique IDs -->
   <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" aria-describedby="modal1-desc">
     <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
-      <div class="flex justify-between items-start gap-3">
-        <h3 id="modal1-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Fernando Moreira</h3>
-        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal1')">
+      <div class="relative">
+        <img src="assets/speakers/fernando-moreira.jpg" alt="Photo of Dr. Fernando Moreira" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal1')">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
-      <p id="modal1-desc" class="mt-2 text-gray-600">Full Professor, REMIT &amp; IJP — Portucalense University, Portugal.</p>
-      <div class="mt-4 text-gray-700 space-y-3">
-        <p><strong>Topic preview:</strong> Digital transformation for sustainable enterprises.</p>
-        <p><strong>Bio:</strong> Dr. Moreira’s research spans information systems, management science, and technology adoption with a focus on sustainability outcomes.</p>
-      </div>
-      <div class="mt-6 text-right">
-        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal1')">Close</button>
+      <div class="mt-4">
+        <h3 id="modal1-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Fernando Moreira</h3>
+        <p id="modal1-desc" class="mt-1 text-gray-600">Full Professor, REMIT &amp; IJP — Portucalense University, Portugal.</p>
+        <div class="mt-4 text-gray-700 space-y-3">
+          <p><strong>Topic preview:</strong> Digital transformation for sustainable enterprises.</p>
+          <p><strong>Bio:</strong> Dr. Moreira’s research spans information systems, management science, and technology adoption with a focus on sustainability outcomes.</p>
+        </div>
+        <div class="mt-6 text-right">
+          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal1')">Close</button>
+        </div>
       </div>
     </div>
   </div>
 
   <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" aria-describedby="modal2-desc">
     <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
-      <div class="flex justify-between items-start gap-3">
-        <h3 id="modal2-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Gyanaranjan Tripathy</h3>
-        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal2')">
+      <div class="relative">
+        <img src="assets/speakers/gyanaranjan-tripathy.jpg" alt="Photo of Dr. Gyanaranjan Tripathy" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal2')">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
-      <p id="modal2-desc" class="mt-2 text-gray-600">Associate Professor — IISER Pune.</p>
-      <div class="mt-4 text-gray-700 space-y-3">
-        <p><strong>Topic preview:</strong> Materials &amp; data-driven approaches for clean energy.</p>
-        <p><strong>Bio:</strong> Dr. Tripathy’s work bridges fundamental science and translational research in energy and environment.</p>
-      </div>
-      <div class="mt-6 text-right">
-        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal2')">Close</button>
+      <div class="mt-4">
+        <h3 id="modal2-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Gyanaranjan Tripathy</h3>
+        <p id="modal2-desc" class="mt-1 text-gray-600">Associate Professor — IISER Pune.</p>
+        <div class="mt-4 text-gray-700 space-y-3">
+          <p><strong>Topic preview:</strong> Materials &amp; data-driven approaches for clean energy.</p>
+          <p><strong>Bio:</strong> Dr. Tripathy’s work bridges fundamental science and translational research in energy and environment.</p>
+        </div>
+        <div class="mt-6 text-right">
+          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal2')">Close</button>
+        </div>
       </div>
     </div>
   </div>
 
   <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" aria-describedby="modal3-desc">
     <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
-      <div class="flex justify-between items-start gap-3">
-        <h3 id="modal3-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Amrut Phalguni Mahanty</h3>
-        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal3')">
+      <div class="relative">
+        <img src="assets/speakers/amrut-phalguni-mahanty.jpg" alt="Photo of Dr. Amrut Phalguni Mahanty" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal3')">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
-      <p id="modal3-desc" class="mt-2 text-gray-600">Associate Professor — IIM Sambalpur.</p>
-      <div class="mt-4 text-gray-700 space-y-3">
-        <p><strong>Topic preview:</strong> Leadership &amp; innovation strategies for green growth.</p>
-        <p><strong>Bio:</strong> Dr. Mahanty researches organizational behavior, innovation ecosystems, and sustainability in emerging markets.</p>
-      </div>
-      <div class="mt-6 text-right">
-        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal3')">Close</button>
+      <div class="mt-4">
+        <h3 id="modal3-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Amrut Phalguni Mahanty</h3>
+        <p id="modal3-desc" class="mt-1 text-gray-600">Associate Professor — IIM Sambalpur.</p>
+        <div class="mt-4 text-gray-700 space-y-3">
+          <p><strong>Topic preview:</strong> Leadership &amp; innovation strategies for green growth.</p>
+          <p><strong>Bio:</strong> Dr. Mahanty researches organizational behavior, innovation ecosystems, and sustainability in emerging markets.</p>
+        </div>
+        <div class="mt-6 text-right">
+          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal3')">Close</button>
+        </div>
       </div>
     </div>
   </div>
 
   <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal4-title" aria-describedby="modal4-desc">
     <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
-      <div class="flex justify-between items-start gap-3">
-        <h3 id="modal4-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Chandra Sekhar Bahinipati</h3>
-        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal4')">
+      <div class="relative">
+        <img src="assets/speakers/chandra-sekhar-bahinipati.jpg" alt="Photo of Dr. Chandra Sekhar Bahinipati" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal4')">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
-      <p id="modal4-desc" class="mt-2 text-gray-600">Associate Professor — IIT Tirupati.</p>
-      <div class="mt-4 text-gray-700 space-y-3">
-        <p><strong>Topic preview:</strong> Climate economics &amp; policy for resilient development.</p>
-        <p><strong>Bio:</strong> Dr. Bahinipati focuses on climate risk, adaptation, and socio-economic resilience.</p>
-      </div>
-      <div class="mt-6 text-right">
-        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal4')">Close</button>
+      <div class="mt-4">
+        <h3 id="modal4-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Chandra Sekhar Bahinipati</h3>
+        <p id="modal4-desc" class="mt-1 text-gray-600">Associate Professor — IIT Tirupati.</p>
+        <div class="mt-4 text-gray-700 space-y-3">
+          <p><strong>Topic preview:</strong> Climate economics &amp; policy for resilient development.</p>
+          <p><strong>Bio:</strong> Dr. Bahinipati focuses on climate risk, adaptation, and socio-economic resilience.</p>
+        </div>
+        <div class="mt-6 text-right">
+          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal4')">Close</button>
+        </div>
       </div>
     </div>
   </div>
 
   <div id="modal5" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal5-title" aria-describedby="modal5-desc">
     <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
-      <div class="flex justify-between items-start gap-3">
-        <h3 id="modal5-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Dukhabandhu Sahoo</h3>
-        <button class="text-gray-500 hover:text-gray-700" aria-label="Close" onclick="closeModal('modal5')">
+      <div class="relative">
+        <img src="assets/speakers/dukhabandhu-sahoo.jpg" alt="Photo of Dr. Dukhabandhu Sahoo" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal5')">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
-      <p id="modal5-desc" class="mt-2 text-gray-600">Associate Professor — IIT Bhubaneswar.</p>
-      <div class="mt-4 text-gray-700 space-y-3">
-        <p><strong>Topic preview:</strong> Tech-driven pathways to low-carbon industry.</p>
-        <p><strong>Bio:</strong> Dr. Sahoo’s scholarship connects engineering innovation with sustainability outcomes.</p>
-      </div>
-      <div class="mt-6 text-right">
-        <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal5')">Close</button>
+      <div class="mt-4">
+        <h3 id="modal5-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Dukhabandhu Sahoo</h3>
+        <p id="modal5-desc" class="mt-1 text-gray-600">Associate Professor — IIT Bhubaneswar.</p>
+        <div class="mt-4 text-gray-700 space-y-3">
+          <p><strong>Topic preview:</strong> Tech-driven pathways to low-carbon industry.</p>
+          <p><strong>Bio:</strong> Dr. Sahoo’s scholarship connects engineering innovation with sustainability outcomes.</p>
+        </div>
+        <div class="mt-6 text-right">
+          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal5')">Close</button>
+        </div>
       </div>
     </div>
   </div>
