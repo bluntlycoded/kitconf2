@@ -2,43 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Committee | Green Innovation Conference</title>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-   <script>
+  <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-          },
-          colors: {
-            primary: '#16a34a',
-            accent:  '#2563eb',
-          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: { primary: '#16a34a', accent: '#2563eb' },
           screens: { xs: '420px' }
-        },
-      },
-    };
+        }
+      }
+    }
   </script>
 
   <!-- Google Font: Inter -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <!-- Favicon -->
   <link rel="icon" href="assets/favicon.ico" />
 
   <style>
     html { scroll-behavior: smooth; }
-    .section-title {
-      @apply text-2xl md:text-3xl font-bold text-gray-800 mb-4;
-    }
-    .person-list {
-      @apply list-disc pl-6 space-y-2 text-gray-700;
-    }
+    /* So anchored sections don't hide under fixed header */
+    :target { scroll-margin-top: 6rem; }
   </style>
 </head>
 
@@ -47,158 +41,163 @@
   <!-- Navbar -->
   <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
-      <a href="index.html" class="text-lg xs:text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
+      <a href="index.html" class="text-lg xs:text-xl font-bold tracking-tight hover:text-primary transition-colors duration-300">
         GITDFSB
       </a>
 
       <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
+      <label for="nav-toggle"
+             class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl"
+             aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
       <nav id="main-nav"
            class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
-        <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
-        <a href="speakers.html" class="nav-link text-sm sm:text-base">Speakers</a>
-        <a href="committee.html" class="nav-link text-primary font-semibold text-sm sm:text-base">Committee</a>
-        <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
-        <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
-        <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
-        <a href="contact.html" class="nav-link text-sm sm:text-base">Contact</a>
+        <a href="about.html" class="text-sm sm:text-base text-gray-300 hover:text-primary transition-colors">About</a>
+        <a href="speakers.html" class="text-sm sm:text-base text-gray-300 hover:text-primary transition-colors">Speakers</a>
+        <a href="committee.html" class="text-sm sm:text-base text-primary font-bold">Committee</a>
+        <a href="call-for-papers.html" class="text-sm sm:text-base text-gray-300 hover:text-primary transition-colors">Call for Papers</a>
+        <a href="venue.html" class="text-sm sm:text-base text-gray-300 hover:text-primary transition-colors">Venue</a>
+        <a href="registration.html" class="text-sm sm:text-base text-gray-300 hover:text-primary transition-colors">Register</a>
+        <a href="contact.html" class="text-sm sm:text-base text-gray-300 hover:text-primary transition-colors">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Main -->
-  <main id="main" class="pt-24 pb-20 max-w-5xl mx-auto px-6">
-    
-    <h1 class="text-4xl font-extrabold text-center mb-12 text-gray-800">
+  <main id="main" class="pt-24 pb-20 max-w-6xl mx-auto px-4 sm:px-6">
+    <h1 class="text-3xl xs:text-4xl font-extrabold text-center mb-12 text-gray-900">
       Organizing Committee
     </h1>
 
+    <!-- helper classes (used directly below):
+         section title: text-2xl md:text-3xl font-bold text-gray-900 mb-4
+         list: grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5 -->
+
     <!-- Chief Patron -->
     <section class="mb-12">
-      <h2 class="section-title">Chief Patron</h2>
-      <ul class="person-list">
-        <li>Shri Kanhu Charan Choudhury, Chairman, Kalam Institute of Technology, India</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Chief Patron</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Shri Kanhu Charan Choudhury</span>, Chairman, Kalam Institute of Technology, India</li>
       </ul>
     </section>
 
     <!-- Patrons -->
     <section class="mb-12">
-      <h2 class="section-title">Patrons</h2>
-      <ul class="person-list">
-        <li>Dr. Pabitra Kumar Tripathy, Principal, Kalam Institute of Technology, India</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Patrons</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Dr. Pabitra Kumar Tripathy</span>, Principal, Kalam Institute of Technology, India</li>
       </ul>
     </section>
 
     <!-- General Chairs -->
     <section class="mb-12">
-      <h2 class="section-title">General Chairs</h2>
-      <ul class="person-list">
-        <li>Dr. Sachi Nandan Mohanty, VIT-AP University, India</li>
-        <li>Dr. Umesh Chandra Panigrahy, KIT</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">General Chairs</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Dr. Sachi Nandan Mohanty</span>, VIT-AP University, India</li>
+        <li><span class="font-bold">Dr. Umesh Chandra Panigrahy</span>, KIT</li>
       </ul>
     </section>
 
-    <!-- General Co-chair -->
+    <!-- General Co-chairs -->
     <section class="mb-12">
-      <h2 class="section-title">General Co-chairs</h2>
-      <ul class="person-list">
-        <li>Dr. Shu Hu, Purdue University, USA</li>
-        <li>Dr. Anil Kumar Patra, KIT, India</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">General Co-chairs</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Dr. Shu Hu</span>, Purdue University, USA</li>
+        <li><span class="font-bold">Dr. Anil Kumar Patra</span>, KIT, India</li>
       </ul>
     </section>
 
     <!-- Technical Program Chairs -->
     <section class="mb-12">
-      <h2 class="section-title">Technical Program Chairs</h2>
-      <ul class="person-list">
-        <li>Dr. D Chandrasekhar Rao, Associate Professor, BPUT, India</li>
-        <li>Ming Yang, Kennesaw State University, Atlanta, USA</li>
-        <li>Sanjay Misra, Covenant University, Ota, Nigeria</li>
-        <li>Georgios Tsaramirsis, Higher Colleges of Technology, Abu Dhabi</li>
-        <li>Sven Groppe, University of Lübeck, Germany</li>
-        <li>Neha Mohanty, Department of CSE, NJIT, USA</li>
-        <li>Gourav Gupta, Massey University, Palmerston North, New Zealand</li>
-        <li>Habib Hamam, Faculty of Engineering, Université de Moncton, Canada</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Technical Program Chairs</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Dr. D Chandrasekhar Rao</span>, Associate Professor, BPUT, India</li>
+        <li><span class="font-bold">Ming Yang</span>, Kennesaw State University, Atlanta, USA</li>
+        <li><span class="font-bold">Sanjay Misra</span>, Covenant University, Ota, Nigeria</li>
+        <li><span class="font-bold">Georgios Tsaramirsis</span>, Higher Colleges of Technology, Abu Dhabi</li>
+        <li><span class="font-bold">Sven Groppe</span>, University of Lübeck, Germany</li>
+        <li><span class="font-bold">Neha Mohanty</span>, Department of CSE, NJIT, USA</li>
+        <li><span class="font-bold">Gourav Gupta</span>, Massey University, Palmerston North, New Zealand</li>
+        <li><span class="font-bold">Habib Hamam</span>, Faculty of Engineering, Université de Moncton, Canada</li>
       </ul>
     </section>
 
-    <!-- Publicity -->
+    <!-- Publicity and Social Media Chairs -->
     <section class="mb-12">
-      <h2 class="section-title">Publicity and Social Media Chairs</h2>
-      <ul class="person-list">
-        <li>Sudan Jha, Kathmandu University, Nepal</li>
-        <li>Uma Sankar Mahanty, India</li>
-        <li>Sanjiv Kumar Sethi, Kalam Institute of Technology, India</li>
-        <li>Narayan Tripathy, Kalam Institute of Technology, India</li>
-        <li>Shreyas Rajendra Hole, Dayananda Sagar University, Karnataka, India</li>
-        <li>Princy Randhawa, Manipal University, Jaipur, India</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Publicity and Social Media Chairs</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Sudan Jha</span>, Kathmandu University, Nepal</li>
+        <li><span class="font-bold">Uma Sankar Mahanty</span>, India</li>
+        <li><span class="font-bold">Sanjiv Kumar Sethi</span>, Kalam Institute of Technology, India</li>
+        <li><span class="font-bold">Narayan Tripathy</span>, Kalam Institute of Technology, India</li>
+        <li><span class="font-bold">Shreyas Rajendra Hole</span>, Dayananda Sagar University, Karnataka, India</li>
+        <li><span class="font-bold">Princy Randhawa</span>, Manipal University, Jaipur, India</li>
       </ul>
     </section>
 
-    <!-- Publication Chair -->
+    <!-- Publication Chairs -->
     <section class="mb-12">
-      <h2 class="section-title">Publication Chairs</h2>
-      <ul class="person-list">
-        <li>Suneeta Satpathy, SOA University, Odisha, India</li>
-        <li>Padma Charan Sahu, Kalam Institute of Technology, India</li>
-        <li>Shuchishree Panigrahy, Kalam Institute of Technology, India</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Publication Chairs</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Suneeta Satpathy</span>, SOA University, Odisha, India</li>
+        <li><span class="font-bold">Padma Charan Sahu</span>, Kalam Institute of Technology, India</li>
+        <li><span class="font-bold">Shuchishree Panigrahy</span>, Kalam Institute of Technology, India</li>
       </ul>
     </section>
 
     <!-- Registration Chairs -->
     <section class="mb-12">
-      <h2 class="section-title">Registration Chairs</h2>
-      <ul class="person-list">
-        <li>Gauri Sankar Patnaik, KIT</li>
-        <li>Bhabani Sankar Raulo, KIT</li>
-        <li>Balakrushna Nayak, KIT</li>
-        <li>Salima Padhy, KIT</li>
-        <li>Asish Kumar Behera, KIT</li>
-        <li>Raj Kumar Padhy, KIT</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Registration Chairs</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Gauri Sankar Patnaik</span>, KIT</li>
+        <li><span class="font-bold">Bhabani Sankar Raulo</span>, KIT</li>
+        <li><span class="font-bold">Balakrushna Nayak</span>, KIT</li>
+        <li><span class="font-bold">Salima Padhy</span>, KIT</li>
+        <li><span class="font-bold">Asish Kumar Behera</span>, KIT</li>
+        <li><span class="font-bold">Raj Kumar Padhy</span>, KIT</li>
       </ul>
     </section>
 
     <!-- Session Management Chair -->
     <section class="mb-12">
-      <h2 class="section-title">Session Management Chair</h2>
-      <ul class="person-list">
-        <li>Sameer Kumar Mahapatra, KIT</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Session Management Chair</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Sameer Kumar Mahapatra</span>, KIT</li>
       </ul>
     </section>
 
-    <!-- International Liaison -->
+    <!-- International Liaison Chairs -->
     <section class="mb-12">
-      <h2 class="section-title">International Liaison Chairs</h2>
-      <ul class="person-list">
-        <li>Mukesh Misra, Massey University, New Zealand</li>
-        <li>Lie Li, Kennesaw State University, Atlanta, USA</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">International Liaison Chairs</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Mukesh Misra</span>, Massey University, New Zealand</li>
+        <li><span class="font-bold">Lie Li</span>, Kennesaw State University, Atlanta, USA</li>
       </ul>
     </section>
 
     <!-- Local Organizers -->
     <section class="mb-12">
-      <h2 class="section-title">Local Organizers</h2>
-      <ul class="person-list">
-        <li>Prangya Paramita Mahunta, KIT, India</li>
-        <li>Dr. Himanshu Sekhar Tripathy, KIT, India</li>
-        <li>Dr. Ramesh Kumar Behera, KIT, India</li>
-        <li>Dr. Bijaya Kumar Mishra, KIT, India</li>
-        <li>Keshab Chandra Behera, KIT, India</li>
-        <li>Rabi Kumar Mahapatra, KIT, India</li>
-        <li>Suprabha Nanda, KIT, India</li>
-        <li>Bichitrananda Behera, KIT, India</li>
-        <li>Chittaranjan Sethy, KIT, India</li>
-        <li>Ushashree Nayak, KIT, India</li>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Local Organizers</h2>
+      <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700 list-disc pl-5">
+        <li><span class="font-bold">Prangya Paramita Mahunta</span>, KIT, India</li>
+        <li><span class="font-bold">Dr. Himanshu Sekhar Tripathy</span>, KIT, India</li>
+        <li><span class="font-bold">Dr. Ramesh Kumar Behera</span>, KIT, India</li>
+        <li><span class="font-bold">Dr. Bijaya Kumar Mishra</span>, KIT, India</li>
+        <li><span class="font-bold">Keshab Chandra Behera</span>, KIT, India</li>
+        <li><span class="font-bold">Rabi Kumar Mahapatra</span>, KIT, India</li>
+        <li><span class="font-bold">Suprabha Nanda</span>, KIT, India</li>
+        <li><span class="font-bold">Bichitrananda Behera</span>, KIT, India</li>
+        <li><span class="font-bold">Chittaranjan Sethy</span>, KIT, India</li>
+        <li><span class="font-bold">Ushashree Nayak</span>, KIT, India</li>
       </ul>
     </section>
 
   </main>
 
   <!-- Footer -->
-<footer class="bg-gray-900 text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+  <footer class="bg-gray-900 text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
         <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-primary">GITDFSB Conference</h3>
@@ -214,17 +213,17 @@
 
       <nav class="flex flex-col gap-2.5 md:gap-3">
         <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
-        <a href="about.html" class="footer-link text-sm md:text-base">About</a>
-        <a href="speakers.html" class="footer-link text-sm md:text-base">Speakers</a>
-        <a href="committee.html" class="footer-link text-primary font-semibold text-sm md:text-base">Committee</a>
-        <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
-        <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
-        <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
-        <a href="contact.html" class="footer-link text-sm md:text-base">Contact</a>
+        <a href="about.html" class="text-sm md:text-base text-gray-300 hover:text-primary">About</a>
+        <a href="speakers.html" class="text-sm md:text-base text-gray-300 hover:text-primary">Speakers</a>
+        <a href="committee.html" class="text-sm md:text-base text-primary font-bold">Committee</a>
+        <a href="call-for-papers.html" class="text-sm md:text-base text-gray-300 hover:text-primary">Call for Papers</a>
+        <a href="venue.html" class="text-sm md:text-base text-gray-300 hover:text-primary">Venue</a>
+        <a href="registration.html" class="text-sm md:text-base text-gray-300 hover:text-primary">Register</a>
+        <a href="contact.html" class="text-sm md:text-base text-gray-300 hover:text-primary">Contact</a>
       </nav>
+    </div>
 
-  
-    <div class="mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center px-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center">
       <p class="text-gray-300 text-xs md:text-sm mb-1.5">
         © 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology. All rights reserved.
       </p>
