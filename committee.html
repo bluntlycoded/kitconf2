@@ -7,12 +7,7 @@
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Custom Tailwind config -->
-  <script>
+   <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -23,6 +18,7 @@
             primary: '#16a34a',
             accent:  '#2563eb',
           },
+          screens: { xs: '420px' }
         },
       },
     };
@@ -35,640 +31,211 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/favicon.ico" />
 
-  <!-- Meta SEO -->
-  <meta name="description" content="Meet the organizing committee members of the Green Innovation Conference 2025. Learn about the dedicated team making this event possible." />
-
-  <!-- Custom Styles -->
   <style>
     html { scroll-behavior: smooth; }
-    
-    @keyframes fadeUp {
-      0%   { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .section-title {
+      @apply text-2xl md:text-3xl font-bold text-gray-800 mb-4;
     }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
-    .animate-float { animation: float 3s ease-in-out infinite; }
-    
-    .nav-link, .footer-link {
-      @apply text-gray-300 hover:text-primary transition-colors duration-300;
-    }
-    
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-    
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-
-    .committee-card {
-      background: linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%);
-      border: 1px solid rgba(22, 163, 74, 0.1);
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(5px);
-    }
-
-    .modal.active {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-content {
-      background: white;
-      margin: 5% auto;
-      padding: 0;
-      border-radius: 1rem;
-      max-width: 600px;
-      width: 90%;
-      max-height: 80vh;
-      overflow-y: auto;
-      animation: fadeUp 0.3s ease-out;
+    .person-list {
+      @apply list-disc pl-6 space-y-2 text-gray-700;
     }
   </style>
 </head>
 
 <body class="font-sans bg-white text-gray-900 antialiased">
 
-  <!-- Skip link -->
-  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
-    Skip to main content
-  </a>
-
   <!-- Navbar -->
   <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
-      <a href="index.html" class="text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
-        Green Innovation
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
+      <a href="index.html" class="text-lg xs:text-xl font-semibold tracking-tight hover:text-primary transition-colors duration-300">
+        GITDFSB
       </a>
 
-      <input id="nav-toggle" type="checkbox" class="hidden peer" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl">
+      <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
-      <nav class="w-full mt-4 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-6 hidden peer-checked:flex sm:flex">
-        <a href="about.html" class="nav-link">About</a>
-        <a href="speakers.html" class="nav-link">Speakers</a>
-        <a href="committee.html" class="nav-link text-primary">Committee</a>
-        <a href="call-for-papers.html" class="nav-link">Call for Papers</a>
-        <a href="agenda.html" class="nav-link">Agenda</a>
-        <a href="venue.html" class="nav-link">Venue</a>
-        <a href="registration.html" class="nav-link">Register</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <nav id="main-nav"
+           class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
+        <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
+        <a href="speakers.html" class="nav-link text-sm sm:text-base">Speakers</a>
+        <a href="committee.html" class="nav-link text-primary font-semibold text-sm sm:text-base">Committee</a>
+        <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
+        <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
+        <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
+        <a href="contact.html" class="nav-link text-sm sm:text-base">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Main -->
-  <main id="main" class="pt-20">
+  <main id="main" class="pt-24 pb-20 max-w-5xl mx-auto px-6">
+    
+    <h1 class="text-4xl font-extrabold text-center mb-12 text-gray-800">
+      Organizing Committee
+    </h1>
 
-    <!-- Hero Section -->
-    <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
-      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float"></div>
-      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
-      
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <div class="animate-fadeUp">
-          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
-            Organizing Committee
-          </h1>
-          <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
-            Meet the dedicated team of professionals who are working tirelessly to make the Green Innovation Conference 2025 
-            a memorable and impactful experience for all participants.
-          </p>
-          <div class="flex justify-center">
-            <div class="bg-primary/10 px-6 py-3 rounded-full">
-              <span class="text-primary font-semibold">
-                <i class="fas fa-users mr-2"></i>
-                Organized by Kalam Institute of Technology
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Chief Patron -->
+    <section class="mb-12">
+      <h2 class="section-title">Chief Patron</h2>
+      <ul class="person-list">
+        <li>Shri Kanhu Charan Choudhury, Chairman, Kalam Institute of Technology, India</li>
+      </ul>
     </section>
 
-    <!-- Executive Committee -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Executive Committee</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            The executive leadership team overseeing the strategic direction and overall organization of the conference.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Conference Chair -->
-          <div class="committee-card p-8 rounded-2xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal1')">
-            <div class="text-center">
-              <div class="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span class="text-4xl font-bold text-primary">PC</span>
-              </div>
-              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
-                Chair
-              </div>
-              <h3 class="text-2xl font-bold text-gray-800 mb-2">Prof. Padma Charan Sahu</h3>
-              <p class="text-primary font-semibold mb-3 flex items-center justify-center">
-                <i class="fas fa-crown mr-2"></i>Conference Chair
-              </p>
-              <p class="text-gray-600 mb-4">Director, Kalam Institute of Technology</p>
-              <div class="flex items-center justify-center text-sm text-gray-500">
-                <i class="fas fa-envelope mr-2"></i>
-                charan.sahu@kit.ac.in
-              </div>
-            </div>
-          </div>
-
-          <!-- Technical Chair -->
-          <div class="committee-card p-8 rounded-2xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal2')" style="animation-delay: 0.2s;">
-            <div class="text-center">
-              <div class="w-32 h-32 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span class="text-4xl font-bold text-accent">RN</span>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-800 mb-2">Rahul Nayak</h3>
-              <p class="text-accent font-semibold mb-3 flex items-center justify-center">
-                <i class="fas fa-cogs mr-2"></i>Technical Chair
-              </p>
-              <p class="text-gray-600 mb-4">Program Coordinator, KIT</p>
-              <div class="flex items-center justify-center text-sm text-gray-500">
-                <i class="fas fa-envelope mr-2"></i>
-                rahul.nayak@kit.ac.in
-              </div>
-            </div>
-          </div>
-
-          <!-- Program Chair -->
-          <div class="committee-card p-8 rounded-2xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal3')" style="animation-delay: 0.4s;">
-            <div class="text-center">
-              <div class="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span class="text-4xl font-bold text-primary">AS</span>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Anita Sharma</h3>
-              <p class="text-primary font-semibold mb-3 flex items-center justify-center">
-                <i class="fas fa-calendar-alt mr-2"></i>Program Chair
-              </p>
-              <p class="text-gray-600 mb-4">Research Coordinator, KIT</p>
-              <div class="flex items-center justify-center text-sm text-gray-500">
-                <i class="fas fa-envelope mr-2"></i>
-                anita.sharma@kit.ac.in
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Patrons -->
+    <section class="mb-12">
+      <h2 class="section-title">Patrons</h2>
+      <ul class="person-list">
+        <li>Dr. Pabitra Kumar Tripathy, Principal, Kalam Institute of Technology, India</li>
+      </ul>
     </section>
 
-    <!-- Technical Committee -->
-    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Technical Committee</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Technical experts responsible for paper review, session organization, and academic quality assurance.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Publication Chair -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal4')">
-            <div class="text-center">
-              <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-accent">VK</span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1">Dr. Vikash Kumar</h3>
-              <p class="text-accent font-semibold text-sm mb-2">Publication Chair</p>
-              <p class="text-gray-600 text-sm">Editorial Board & IEEE Liaison</p>
-            </div>
-          </div>
-
-          <!-- Review Committee Head -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal5')" style="animation-delay: 0.1s;">
-            <div class="text-center">
-              <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-primary">MJ</span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1">Dr. Meera Joshi</h3>
-              <p class="text-primary font-semibold text-sm mb-2">Review Committee Head</p>
-              <p class="text-gray-600 text-sm">Peer Review Coordination</p>
-            </div>
-          </div>
-
-          <!-- Session Coordinator -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal6')" style="animation-delay: 0.2s;">
-            <div class="text-center">
-              <div class="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-accent">AK</span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1">Prof. Ajay Kumar</h3>
-              <p class="text-accent font-semibold text-sm mb-2">Session Coordinator</p>
-              <p class="text-gray-600 text-sm">Technical Sessions & Workshops</p>
-            </div>
-          </div>
-
-          <!-- Abstract Review -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal7')" style="animation-delay: 0.3s;">
-            <div class="text-center">
-              <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-primary">SP</span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1">Dr. Swati Patel</h3>
-              <p class="text-primary font-semibold text-sm mb-2">Abstract Review Chair</p>
-              <p class="text-gray-600 text-sm">Submission Quality Control</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- General Chairs -->
+    <section class="mb-12">
+      <h2 class="section-title">General Chairs</h2>
+      <ul class="person-list">
+        <li>Dr. Sachi Nandan Mohanty, VIT-AP University, India</li>
+        <li>Dr. Umesh Chandra Panigrahy, KIT</li>
+      </ul>
     </section>
 
-    <!-- Operations Committee -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Operations Committee</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            The operational team ensuring smooth logistics, registrations, and participant experience during the conference.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Registration Chair -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal8')">
-            <div class="text-center">
-              <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-primary">SM</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Prof. Sunita Mishra</h3>
-              <p class="text-primary font-semibold mb-2 flex items-center justify-center">
-                <i class="fas fa-user-check mr-2"></i>Registration Chair
-              </p>
-              <p class="text-gray-600 text-sm">Finance & Registration Management</p>
-            </div>
-          </div>
-
-          <!-- Local Arrangements -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal9')" style="animation-delay: 0.2s;">
-            <div class="text-center">
-              <div class="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-accent">RD</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Dr. Rajesh Das</h3>
-              <p class="text-accent font-semibold mb-2 flex items-center justify-center">
-                <i class="fas fa-map-marker-alt mr-2"></i>Local Arrangements
-              </p>
-              <p class="text-gray-600 text-sm">Hospitality & Logistics</p>
-            </div>
-          </div>
-
-          <!-- Publicity Chair -->
-          <div class="committee-card p-6 rounded-xl card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal10')" style="animation-delay: 0.4s;">
-            <div class="text-center">
-              <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-primary">NK</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Ms. Neha Kapoor</h3>
-              <p class="text-primary font-semibold mb-2 flex items-center justify-center">
-                <i class="fas fa-bullhorn mr-2"></i>Publicity Chair
-              </p>
-              <p class="text-gray-600 text-sm">Marketing & Communications</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- General Co-chair -->
+    <section class="mb-12">
+      <h2 class="section-title">General Co-chairs</h2>
+      <ul class="person-list">
+        <li>Dr. Shu Hu, Purdue University, USA</li>
+        <li>Dr. Anil Kumar Patra, KIT, India</li>
+      </ul>
     </section>
 
-    <!-- Advisory Board -->
-    <section class="py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16 animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Advisory Board</h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Distinguished experts providing strategic guidance and academic oversight for the conference.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Advisory Board Member 1 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp">
-            <div class="text-center">
-              <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-yellow-600">RS</span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1">Prof. R.S. Verma</h3>
-              <p class="text-yellow-600 font-semibold text-sm mb-2">Senior Advisor</p>
-              <p class="text-gray-600 text-sm">Former DRDO Scientist</p>
-            </div>
-          </div>
-
-          <!-- Advisory Board Member 2 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp" style="animation-delay: 0.1s;">
-            <div class="text-center">
-              <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-purple-600">DM</span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1">Dr. Deepa Mehta</h3>
-              <p class="text-purple-600 font-semibold text-sm mb-2">Industry Advisor</p>
-              <p class="text-gray-600 text-sm">Sustainability Consultant</p>
-            </div>
-          </div>
-
-          <!-- Advisory Board Member 3 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp" style="animation-delay: 0.2s;">
-            <div class="text-center">
-              <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-indigo-600">PT</span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1">Prof. Pradeep Tiwari</h3>
-              <p class="text-indigo-600 font-semibold text-sm mb-2">Academic Advisor</p>
-              <p class="text-gray-600 text-sm">IIT Delhi</p>
-            </div>
-          </div>
-
-          <!-- Advisory Board Member 4 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 card-hover animate-fadeUp" style="animation-delay: 0.3s;">
-            <div class="text-center">
-              <div class="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-2xl font-bold text-teal-600">SG</span>
-              </div>
-              <h3 class="text-lg font-bold text-gray-800 mb-1">Dr. Sanjay Gupta</h3>
-              <p class="text-teal-600 font-semibold text-sm mb-2">Technology Advisor</p>
-              <p class="text-gray-600 text-sm">Green Tech Innovations</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Technical Program Chairs -->
+    <section class="mb-12">
+      <h2 class="section-title">Technical Program Chairs</h2>
+      <ul class="person-list">
+        <li>Dr. D Chandrasekhar Rao, Associate Professor, BPUT, India</li>
+        <li>Ming Yang, Kennesaw State University, Atlanta, USA</li>
+        <li>Sanjay Misra, Covenant University, Ota, Nigeria</li>
+        <li>Georgios Tsaramirsis, Higher Colleges of Technology, Abu Dhabi</li>
+        <li>Sven Groppe, University of Lübeck, Germany</li>
+        <li>Neha Mohanty, Department of CSE, NJIT, USA</li>
+        <li>Gourav Gupta, Massey University, Palmerston North, New Zealand</li>
+        <li>Habib Hamam, Faculty of Engineering, Université de Moncton, Canada</li>
+      </ul>
     </section>
 
-    <!-- Contact Committee -->
-    <section class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <div class="animate-fadeUp">
-          <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact the Committee</h2>
-          <p class="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
-            Have questions about the conference? Reach out to the appropriate committee member based on your inquiry.
-          </p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-6">
-              <i class="fas fa-file-alt text-primary text-3xl mb-4"></i>
-              <h3 class="text-lg font-bold text-gray-800 mb-2">Paper Submissions</h3>
-              <p class="text-gray-600 text-sm mb-3">Questions about abstract & paper submissions</p>
-              <a href="mailto:papers@greeninnovation2025.kit.ac.in" class="text-primary font-semibold hover:underline">
-                papers@greeninnovation2025.kit.ac.in
-              </a>
-            </div>
+    <!-- Publicity -->
+    <section class="mb-12">
+      <h2 class="section-title">Publicity and Social Media Chairs</h2>
+      <ul class="person-list">
+        <li>Sudan Jha, Kathmandu University, Nepal</li>
+        <li>Uma Sankar Mahanty, India</li>
+        <li>Sanjiv Kumar Sethi, Kalam Institute of Technology, India</li>
+        <li>Narayan Tripathy, Kalam Institute of Technology, India</li>
+        <li>Shreyas Rajendra Hole, Dayananda Sagar University, Karnataka, India</li>
+        <li>Princy Randhawa, Manipal University, Jaipur, India</li>
+      </ul>
+    </section>
 
-            <div class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-xl p-6">
-              <i class="fas fa-user-check text-accent text-3xl mb-4"></i>
-              <h3 class="text-lg font-bold text-gray-800 mb-2">Registration</h3>
-              <p class="text-gray-600 text-sm mb-3">Registration and payment inquiries</p>
-              <a href="mailto:registration@greeninnovation2025.kit.ac.in" class="text-accent font-semibold hover:underline">
-                registration@greeninnovation2025.kit.ac.in
-              </a>
-            </div>
+    <!-- Publication Chair -->
+    <section class="mb-12">
+      <h2 class="section-title">Publication Chairs</h2>
+      <ul class="person-list">
+        <li>Suneeta Satpathy, SOA University, Odisha, India</li>
+        <li>Padma Charan Sahu, Kalam Institute of Technology, India</li>
+        <li>Shuchishree Panigrahy, Kalam Institute of Technology, India</li>
+      </ul>
+    </section>
 
-            <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl p-6">
-              <i class="fas fa-info-circle text-gray-600 text-3xl mb-4"></i>
-              <h3 class="text-lg font-bold text-gray-800 mb-2">General Information</h3>
-              <p class="text-gray-600 text-sm mb-3">General conference inquiries</p>
-              <a href="mailto:info@greeninnovation2025.kit.ac.in" class="text-gray-600 font-semibold hover:underline">
-                info@greeninnovation2025.kit.ac.in
-              </a>
-            </div>
-          </div>
-          
-          <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8">
-            <h3 class="text-xl font-bold text-gray-800 mb-4">
-              <i class="fas fa-building text-primary mr-2"></i>
-              Conference Secretariat
-            </h3>
-            <p class="text-gray-700 mb-4">
-              Kalam Institute of Technology<br>
-              Berhampur, Odisha, India - 760010
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div class="flex items-center">
-                <i class="fas fa-phone text-primary mr-2"></i>
-                <span class="text-gray-700">+91-680-2345678</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-fax text-accent mr-2"></i>
-                <span class="text-gray-700">+91-680-2345679</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Registration Chairs -->
+    <section class="mb-12">
+      <h2 class="section-title">Registration Chairs</h2>
+      <ul class="person-list">
+        <li>Gauri Sankar Patnaik, KIT</li>
+        <li>Bhabani Sankar Raulo, KIT</li>
+        <li>Balakrushna Nayak, KIT</li>
+        <li>Salima Padhy, KIT</li>
+        <li>Asish Kumar Behera, KIT</li>
+        <li>Raj Kumar Padhy, KIT</li>
+      </ul>
+    </section>
+
+    <!-- Session Management Chair -->
+    <section class="mb-12">
+      <h2 class="section-title">Session Management Chair</h2>
+      <ul class="person-list">
+        <li>Sameer Kumar Mahapatra, KIT</li>
+      </ul>
+    </section>
+
+    <!-- International Liaison -->
+    <section class="mb-12">
+      <h2 class="section-title">International Liaison Chairs</h2>
+      <ul class="person-list">
+        <li>Mukesh Misra, Massey University, New Zealand</li>
+        <li>Lie Li, Kennesaw State University, Atlanta, USA</li>
+      </ul>
+    </section>
+
+    <!-- Local Organizers -->
+    <section class="mb-12">
+      <h2 class="section-title">Local Organizers</h2>
+      <ul class="person-list">
+        <li>Prangya Paramita Mahunta, KIT, India</li>
+        <li>Dr. Himanshu Sekhar Tripathy, KIT, India</li>
+        <li>Dr. Ramesh Kumar Behera, KIT, India</li>
+        <li>Dr. Bijaya Kumar Mishra, KIT, India</li>
+        <li>Keshab Chandra Behera, KIT, India</li>
+        <li>Rabi Kumar Mahapatra, KIT, India</li>
+        <li>Suprabha Nanda, KIT, India</li>
+        <li>Bichitrananda Behera, KIT, India</li>
+        <li>Chittaranjan Sethy, KIT, India</li>
+        <li>Ushashree Nayak, KIT, India</li>
+      </ul>
     </section>
 
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-100 pt-16 pb-8 mt-20">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+<footer class="bg-gray-900 text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-2xl font-bold mb-4 text-primary">Green Innovation Conference</h3>
-        <p class="text-gray-300 text-lg mb-4">
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-primary">GITDFSB Conference</h3>
+        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">
           International Conference on Sustainable Business Technology
         </p>
-        <p class="text-gray-300">
-          <i class="fas fa-calendar-alt text-primary mr-2"></i>14–15 November 2025<br>
-          <i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur<br>
-          <i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology
+        <p class="text-gray-300 text-sm md:text-base space-y-1">
+          <span class="block"><i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025</span>
+          <span class="block"><i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur</span>
+          <span class="block"><i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology</span>
         </p>
       </div>
 
-      <nav class="flex flex-col gap-3">
-        <h4 class="font-semibold text-lg mb-2 text-gray-200">Quick Links</h4>
-        <a href="about.html" class="footer-link">About</a>
-        <a href="speakers.html" class="footer-link">Speakers</a>
-        <a href="committee.html" class="footer-link text-primary">Committee</a>
-        <a href="call-for-papers.html" class="footer-link">Call for Papers</a>
-        <a href="agenda.html" class="footer-link">Agenda</a>
-        <a href="venue.html" class="footer-link">Venue</a>
-        <a href="registration.html" class="footer-link">Register</a>
+      <nav class="flex flex-col gap-2.5 md:gap-3">
+        <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
+        <a href="about.html" class="footer-link text-sm md:text-base">About</a>
+        <a href="speakers.html" class="footer-link text-sm md:text-base">Speakers</a>
+        <a href="committee.html" class="footer-link text-primary font-semibold text-sm md:text-base">Committee</a>
+        <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
+        <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
+        <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
+        <a href="contact.html" class="footer-link text-sm md:text-base">Contact</a>
       </nav>
 
-      <div>
-        <h4 class="font-semibold text-lg mb-4 text-gray-200">Stay Connected</h4>
-        <form action="#" class="mb-4">
-          <div class="flex">
-            <input type="email" placeholder="Enter your email"
-                   class="flex-1 rounded-l-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
-                   aria-label="Email for newsletter">
-            <button class="bg-primary hover:bg-primary/90 text-white px-6 rounded-r-lg transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </form>
-        <div class="flex gap-4">
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Twitter">
-            <i class="fab fa-twitter text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
-            <i class="fab fa-facebook text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="LinkedIn">
-            <i class="fab fa-linkedin text-xl"></i>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-primary transition-colors" aria-label="Instagram">
-            <i class="fab fa-instagram text-xl"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-12 border-t border-gray-700 pt-8 text-center">
-      <p class="text-gray-300 mb-2">
-        © 2025 Green Innovation Conference — Hosted by Kalam Institute of Technology. All rights reserved.
+  
+    <div class="mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center px-4">
+      <p class="text-gray-300 text-xs md:text-sm mb-1.5">
+        © 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology. All rights reserved.
       </p>
-      <p class="text-sm text-gray-400">
-        Built and maintained by 
+      <p class="text-xs md:text-sm text-gray-400">
+        Built and maintained by
         <a href="https://pixlightllp.com" class="text-primary font-semibold hover:text-primary/80 transition-colors">
           Pixlight LLP
         </a>
       </p>
     </div>
   </footer>
-
-  <!-- Modals for Committee Member Details -->
-  <!-- Modal 1 - Prof. Padma Charan Sahu -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <div class="bg-gradient-to-r from-primary to-green-600 text-white p-6 relative">
-        <button onclick="closeModal('modal1')" class="absolute top-4 right-4 text-white hover:text-gray-200 text-2xl">
-          <i class="fas fa-times"></i>
-        </button>
-        <div class="flex items-center gap-4">
-          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
-            <span class="text-2xl font-bold">PC</span>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold">Prof. Padma Charan Sahu</h3>
-            <p class="text-green-100">Conference Chair</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-6">
-        <div class="mb-6">
-          <h4 class="font-bold text-lg mb-2 text-gray-800">Biography</h4>
-          <p class="text-gray-600 leading-relaxed">
-            Prof. Padma Charan Sahu serves as the Director of Kalam Institute of Technology, Berhampur. With over 25 years of experience in academia and research, he has been instrumental in promoting sustainable technology education and green innovation initiatives. His leadership has positioned KIT as a leading institution in environmental engineering and sustainable development.
-          </p>
-        </div>
-        <div class="mb-6">
-          <h4 class="font-bold text-lg mb-2 text-gray-800">Responsibilities</h4>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Overall Strategy</span>
-            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Keynote Coordination</span>
-            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Institutional Relations</span>
-          </div>
-        </div>
-        <div>
-          <h4 class="font-bold text-lg mb-2 text-gray-800">Contact</h4>
-          <p class="text-gray-600">
-            <i class="fas fa-envelope text-primary mr-2"></i>charan.sahu@kit.ac.in<br>
-            <i class="fas fa-phone text-primary mr-2"></i>+91-680-2345678 Ext. 101
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 2 - Rahul Nayak -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <div class="bg-gradient-to-r from-accent to-blue-600 text-white p-6 relative">
-        <button onclick="closeModal('modal2')" class="absolute top-4 right-4 text-white hover:text-gray-200 text-2xl">
-          <i class="fas fa-times"></i>
-        </button>
-        <div class="flex items-center gap-4">
-          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
-            <span class="text-2xl font-bold">RN</span>
-          </div>
-          <div>
-            <h3 class="text-2xl font-bold">Rahul Nayak</h3>
-            <p class="text-blue-100">Technical Chair</p>
-          </div>
-        </div>
-      </div>
-      <div class="p-6">
-        <div class="mb-6">
-          <h4 class="font-bold text-lg mb-2 text-gray-800">Biography</h4>
-          <p class="text-gray-600 leading-relaxed">
-            Rahul Nayak is the Program Coordinator at KIT with expertise in sustainable technology systems and green innovation. He has been actively involved in organizing technical conferences and managing academic programs. His technical background and organizational skills make him instrumental in ensuring the conference's technical excellence.
-          </p>
-        </div>
-        <div class="mb-6">
-          <h4 class="font-bold text-lg mb-2 text-gray-800">Responsibilities</h4>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Technical Sessions</span>
-            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Technology Demonstrations</span>
-            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Workshop Coordination</span>
-          </div>
-        </div>
-        <div>
-          <h4 class="font-bold text-lg mb-2 text-gray-800">Contact</h4>
-          <p class="text-gray-600">
-            <i class="fas fa-envelope text-accent mr-2"></i>rahul.nayak@kit.ac.in<br>
-            <i class="fas fa-phone text-accent mr-2"></i>+91-680-2345678 Ext. 205
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Additional modals for other committee members would follow similar pattern -->
-
-  <!-- JavaScript for Modals -->
-  <script>
-    function openModal(modalId) {
-      document.getElementById(modalId).classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal(modalId) {
-      document.getElementById(modalId).classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-
-    // Close modal when clicking outside
-    window.addEventListener('click', function(event) {
-      if (event.target.classList.contains('modal')) {
-        event.target.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-    });
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        const activeModal = document.querySelector('.modal.active');
-        if (activeModal) {
-          activeModal.classList.remove('active');
-          document.body.style.overflow = 'auto';
-        }
-      }
-    });
-  </script>
 
 </body>
 </html>
