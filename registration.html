@@ -108,21 +108,29 @@
   <main id="main" class="pt-20">
 
     <!-- Hero Section -->
-    <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
-      <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float" aria-hidden="true"></div>
-      <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;" aria-hidden="true"></div>
-      
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <div class="animate-fadeUp">
-          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
-            Conference Registration
-          </h1>
-          <p class="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto">
-            Secure your spot at the GITDFSB Conference 2025. Review the categories and fees below.
-          </p>
-        </div>
+   <section class="relative py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+  <div class="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full animate-float" aria-hidden="true"></div>
+  <div class="absolute bottom-10 left-10 w-24 h-24 bg-accent/10 rounded-full animate-float" style="animation-delay: -1s;" aria-hidden="true"></div>
+  
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <div class="animate-fadeUp">
+
+      <!-- Logos Row -->
+      <div class="flex justify-center items-center gap-6 mb-6">
+        <img src="logo.png" alt="Logo" class="h-20 w-auto">
+        <img src="kit.png" alt="KIT" class="h-20 w-auto">
       </div>
-    </section>
+
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+        Conference Registration
+      </h1>
+      <p class="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto">
+        Secure your spot at the GITDFSB Conference 2025. Review the categories and fees below.
+      </p>
+    </div>
+  </div>
+</section>
+
 
     <!-- Registration Categories -->
     <section class="py-16 md:py-20 bg-white">
@@ -189,13 +197,36 @@
         </div>
 
         <!-- Pay Now -->
-        <div class="mt-12 text-center animate-fadeUp">
-          <a href="#" class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-colors text-lg" aria-label="Proceed to payment">
-            <i class="fas fa-credit-card"></i>
-            Pay Now
-          </a>
-          <p class="text-sm text-gray-500 mt-3">You’ll be taken to the secure payment page.</p>
-        </div>
+       <div class="mt-12 text-center animate-fadeUp">
+  <p class="mb-6 text-lg font-semibold text-gray-800">
+    Please make the payment using the details below and email the payment receipt along with your Paper ID to 
+    <a href="mailto:conference@kit.edu.in" class="text-primary font-bold">conference@kit.edu.in</a>.
+  </p>
+
+  <div class="overflow-x-auto">
+    <table class="mx-auto table-auto border border-gray-200 rounded-lg overflow-hidden">
+      <tbody>
+        <tr class="bg-gray-100">
+          <td class="px-6 py-3 font-semibold text-left">Account Name</td>
+          <td class="px-6 py-3 text-left">Vice Principal, Kalam Institute of Technology</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-3 font-semibold text-left">Account Number</td>
+          <td class="px-6 py-3 text-left">304602000000235</td>
+        </tr>
+        <tr class="bg-gray-100">
+          <td class="px-6 py-3 font-semibold text-left">IFSC Code</td>
+          <td class="px-6 py-3 text-left">IOBA0003046</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-3 font-semibold text-left">Branch</td>
+          <td class="px-6 py-3 text-left">Keranditola, Narayanpur, Ganjam</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
       </div>
     </section>
 
