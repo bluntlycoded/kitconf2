@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Speakers | GITDFSB Conference</title>
+  <title>Speakers | NGVCAI 2026</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,8 +16,19 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
-          colors: { primary: '#16a34a', accent: '#2563eb' },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Archivo', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand:   '#14396E',
+            primary: '#1E7C88',
+            accent:  '#26709B',
+            leaf:    '#4FA83F',
+            mint:    '#7FD0D8',
+            sprout:  '#8BD97A',
+            circuit: '#35C4E8',
+          },
           screens: { xs: '420px' }
         },
       },
@@ -26,13 +37,13 @@
 
   <!-- Google Font: Inter -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" href="logo.png" />
 
   <!-- Meta SEO -->
-  <meta name="description" content="Meet our distinguished keynote speakers and industry experts at the GITDFSB Conference 2025." />
+  <meta name="description" content="Meet our distinguished keynote speakers and industry experts at the NGVCAI 2026." />
 
   <!-- Custom Styles (CDN-safe: no @apply) -->
   <style>
@@ -45,7 +56,7 @@
     .animate-float { animation: float 3s ease-in-out infinite; }
 
     .nav-link,.footer-link { color:#d1d5db; transition: color .3s ease; }
-    .nav-link:hover,.footer-link:hover { color:#16a34a; }
+    .nav-link:hover,.footer-link:hover { color:#1E7C88; }
 
     .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
     .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
@@ -61,29 +72,56 @@
     .modal { display:none; position: fixed; inset:0; z-index:1000; background-color: rgba(0,0,0,.5); backdrop-filter: blur(5px); }
     .modal.active { display:flex; align-items:center; justify-content:center; }
   </style>
+
+  <!-- NGVCAI brand type + colour system (synced to logo) -->
+  <style>
+    :root {
+      --ng-brand: #14396E;
+      --ng-primary: #1E7C88;
+      --ng-accent: #26709B;
+      --ng-leaf: #4FA83F;
+      --ng-mint: #7FD0D8;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+    }
+    /* logo sets everything in caps — headings echo it */
+    h1, h2 { text-transform: uppercase; letter-spacing: 0.005em; }
+    h3, h4 { letter-spacing: -0.005em; }
+
+    /* nav + footer links live on the navy bar */
+    .nav-link, .footer-link { color: #cbd5e1; transition: color .3s ease; }
+    .nav-link:hover, .footer-link:hover { color: var(--ng-mint); }
+
+    /* thin logo-gradient rule under the fixed header */
+    header.ng-header { border-bottom: 3px solid transparent;
+      border-image: linear-gradient(90deg, #14396E 0%, #1E7C88 45%, #4FA83F 100%) 1; }
+  </style>
 </head>
 
-<body class="font-sans bg-white text-gray-900 antialiased">
+<body class="font-sans bg-white text-slate-700 antialiased">
 
   <!-- Skip link -->
   <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">Skip to main content</a>
 
   <!-- Navbar -->
-  <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
+  <header class="ng-header fixed inset-x-0 top-0 z-40 bg-brand text-gray-100 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
-      <a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-primary transition-colors duration-300">
+      <a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-mint transition-colors duration-300">
         <img src="logo.png" alt="Logo" class="h-12 w-auto">
         <img src="kit.png" alt="KIT" class="h-12 w-auto">
       </a>
 
       <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
       <nav id="main-nav" class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
         <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
-        <a href="speakers.html" class="nav-link text-primary text-sm sm:text-base">Speakers</a>
+        <a href="speakers.html" class="nav-link text-mint text-sm sm:text-base">Speakers</a>
         <a href="committee.html" class="nav-link text-sm sm:text-base">Committee</a>
         <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
         <a href="author-guidelines.html" class="nav-link text-sm sm:text-base">Author Guidelines</a>
@@ -98,7 +136,7 @@
   <main id="main" class="pt-20 sm:pt-24">
 
     <!-- Hero Section -->
-    <section class="relative py-16 sm:py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+    <section class="relative py-16 sm:py-20 bg-gradient-to-br from-teal-50 via-white to-sky-50 overflow-hidden">
   <div class="absolute top-10 right-10 w-24 sm:w-32 h-24 sm:h-32 bg-primary/10 rounded-full animate-float" aria-hidden="true"></div>
   <div class="absolute bottom-10 left-10 w-20 sm:w-24 h-20 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;" aria-hidden="true"></div>
   
@@ -114,15 +152,15 @@
 </div>
 
 
-      <h1 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4 md:mb-6">Keynote Speakers</h1>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-brand mb-4 md:mb-6">Keynote Speakers</h1>
       <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6 md:mb-8">
-        Meet our distinguished speakers who are leading the charge in sustainable business innovation 
-        and green technology solutions worldwide.
+        Meet the researchers and practitioners shaping how artificial intelligence is applied
+        to venture capital, entrepreneurship, and technology investment.
       </p>
       <div class="flex justify-center">
         <div class="bg-primary/10 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full">
           <span class="text-primary font-semibold">
-            <i class="fas fa-users mr-2"></i>Industry Experts &amp; Researchers
+            <i class="fas fa-users mr-2"></i>Academia, Industry &amp; Government
           </span>
         </div>
       </div>
@@ -134,97 +172,59 @@
     <!-- Keynote Speakers -->
     <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-3 md:mb-4 text-gray-800 animate-fadeUp">Keynote Speakers</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-3 md:mb-4 text-brand animate-fadeUp">Keynote Speakers</h2>
         <p class="text-center text-gray-600 mb-10 md:mb-12 animate-fadeUp">Featured speakers delivering transformative insights</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <!-- Speaker 1: Bagati Sudarsan Patro (NEW FIRST) -->
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal1')" tabindex="0" role="button" aria-label="Open details for Bagati Sudarsan Patro">
-            <div class="speaker-photo-wrap">
-              <img src="assets/speakers/bagati.jpg" alt="Photo of Bagati Sudarsan Patro" class="speaker-photo" loading="lazy" decoding="async" />
-              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal1')" tabindex="0" role="button" aria-label="Open details for Dr. Sarat Chandra Tripathy">
+            <div class="speaker-photo-wrap flex items-center justify-center bg-gradient-to-br from-accent/10 to-gray-100">
+              <span class="text-5xl font-extrabold text-accent">SCT</span>
+              <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Chief Guest</div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Bagati Sudarsan Patro</h3>
-              <p class="text-primary font-semibold mb-2"><i class="fas fa-cloud mr-2"></i>Scientist ‘D’, Director</p>
-              <p class="text-gray-600 mb-3">Leads the Central AWS &amp; RADAR Calibration Laboratory at the India Meteorological Department.</p>
-              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>Ministry of Earth Sciences, Government of India</div>
+              <h3 class="text-xl md:text-2xl font-bold text-brand mb-1.5">Dr. Sarat Chandra Tripathy</h3>
+              <p class="text-accent font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Scientist &ndash; F</p>
+              <p class="text-gray-600 mb-3">PhD, DSc. Serves at the National Centre for Polar and Ocean Research under the Earth System Science Organization.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>Ministry of Earth Sciences, Government of India &middot; Goa</div>
             </div>
           </article>
 
-          <!-- Speaker 2: Dr. Gyanaranjan Tripathy -->
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal2')" style="animation-delay:.2s;" tabindex="0" role="button" aria-label="Open details for Dr. Gyanaranjan Tripathy">
-            <div class="speaker-photo-wrap">
-              <img src="assets/speakers/gyanaranjan-tripathy.jpg" alt="Photo of Dr. Gyanaranjan Tripathy" class="speaker-photo" loading="lazy" decoding="async" />
-              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal2')" style="animation-delay:.2s;" tabindex="0" role="button" aria-label="Open details for Dr. Manfred Hoerstmann">
+            <div class="speaker-photo-wrap flex items-center justify-center bg-gradient-to-br from-primary/10 to-gray-100">
+              <span class="text-5xl font-extrabold text-primary">MH</span>
               <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Gyanaranjan Tripathy</h3>
-              <p class="text-accent font-semibold mb-2"><i class="fas fa-flask mr-2"></i>Associate Professor</p>
-              <p class="text-gray-600 mb-3">Specialist in advanced scientific research, with extensive teaching and mentoring experience.</p>
-              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>IISER Pune</div>
+              <h3 class="text-xl md:text-2xl font-bold text-brand mb-1.5">Dr. Manfred Hoerstmann</h3>
+              <p class="text-primary font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Keynote Speaker</p>
+              <p class="text-gray-600 mb-3">Keynote address on next-generation venture capital and AI-led investment models.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>United States of America</div>
             </div>
           </article>
 
-          <!-- Speaker 3: Dr. Amrut Phalguni Mahanty -->
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal3')" style="animation-delay:.4s;" tabindex="0" role="button" aria-label="Open details for Dr. Amrut Phalguni Mahanty">
-            <div class="speaker-photo-wrap">
-              <img src="assets/speakers/amrut-phalguni-mahanty.jpg" alt="Photo of Dr. Amrut Phalguni Mahanty" class="speaker-photo" loading="lazy" decoding="async" />
-              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal3')" style="animation-delay:.4s;" tabindex="0" role="button" aria-label="Open details for Dr. Badri Narayan Subudhi">
+            <div class="speaker-photo-wrap flex items-center justify-center bg-gradient-to-br from-accent/10 to-gray-100">
+              <span class="text-5xl font-extrabold text-accent">BNS</span>
+              <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Amrut Phalguni Mahanty</h3>
-              <p class="text-primary font-semibold mb-2"><i class="fas fa-briefcase mr-2"></i>Associate Professor</p>
-              <p class="text-gray-600 mb-3">Expert in management sciences, focusing on leadership, innovation, and business sustainability.</p>
-              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>IIM Sambalpur</div>
+              <h3 class="text-xl md:text-2xl font-bold text-brand mb-1.5">Dr. Badri Narayan Subudhi</h3>
+              <p class="text-accent font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Keynote Speaker</p>
+              <p class="text-gray-600 mb-3">Researcher in computer vision, machine learning, and image analysis.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>Indian Institute of Technology (IIT), Jammu</div>
             </div>
           </article>
 
-          <!-- Speaker 4: Dr. Chandra Sekhar Bahinipati -->
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal4')" style="animation-delay:.6s;" tabindex="0" role="button" aria-label="Open details for Dr. Chandra Sekhar Bahinipati">
-            <div class="speaker-photo-wrap">
-              <img src="assets/speakers/chandra-sekhar-bahinipati.jpg" alt="Photo of Dr. Chandra Sekhar Bahinipati" class="speaker-photo" loading="lazy" decoding="async" />
-              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
+          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal4')" style="animation-delay:.6s;" tabindex="0" role="button" aria-label="Open details for Dr. Bibhudendra Acharya">
+            <div class="speaker-photo-wrap flex items-center justify-center bg-gradient-to-br from-primary/10 to-gray-100">
+              <span class="text-5xl font-extrabold text-primary">BA</span>
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Speaker</div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Chandra Sekhar Bahinipati</h3>
-              <p class="text-primary font-semibold mb-2"><i class="fas fa-lightbulb mr-2"></i>Associate Professor</p>
-              <p class="text-gray-600 mb-3">Known for impactful research and teaching in the field of economics and development studies.</p>
-              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>IIT Tirupati</div>
-            </div>
-          </article>
-
-          <!-- Speaker 5: Dr. Dukhabandhu Sahoo -->
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal5')" style="animation-delay:.8s;" tabindex="0" role="button" aria-label="Open details for Dr. Dukhabandhu Sahoo">
-            <div class="speaker-photo-wrap">
-              <img src="assets/speakers/dukhabandhu-sahoo.jpg" alt="Photo of Dr. Dukhabandhu Sahoo" class="speaker-photo" loading="lazy" decoding="async" />
-              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Dukhabandhu Sahoo</h3>
-              <p class="text-accent font-semibold mb-2"><i class="fas fa-cogs mr-2"></i>Associate Professor</p>
-              <p class="text-gray-600 mb-3">Researcher and academic focusing on applied sciences and technology-driven innovations.</p>
-              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>IIT Bhubaneswar</div>
-            </div>
-          </article>
-
-          <!-- Speaker 6: Dr. Fernando Moreira (MOVED LAST) -->
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal6')" style="animation-delay:1s;" tabindex="0" role="button" aria-label="Open details for Dr. Fernando Moreira">
-            <div class="speaker-photo-wrap">
-              <img src="assets/speakers/fernando-moreira.jpg" alt="Photo of Dr. Fernando Moreira" class="speaker-photo" loading="lazy" decoding="async" />
-              <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1.5">Dr. Fernando Moreira</h3>
-              <p class="text-primary font-semibold mb-2"><i class="fas fa-chalkboard-teacher mr-2"></i>Full Professor, REMIT &amp; IJP</p>
-              <p class="text-gray-600 mb-3">Renowned academic and researcher with contributions across information systems and management studies.</p>
-              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-university mr-2"></i>Portucalense University, Portugal</div>
+              <h3 class="text-xl md:text-2xl font-bold text-brand mb-1.5">Dr. Bibhudendra Acharya</h3>
+              <p class="text-primary font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Invited Speaker</p>
+              <p class="text-gray-600 mb-3">Works on VLSI design, cryptography, and secure hardware systems.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>National Institute of Technology (NIT), Raipur</div>
             </div>
           </article>
         </div>
@@ -235,12 +235,12 @@
     <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div class="animate-fadeUp">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">Join the Conversation</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand mb-4 md:mb-6">Join the Conversation</h2>
           <p class="text-lg md:text-xl text-gray-700 mb-6 md:mb-8">
-            Don't miss the opportunity to learn from these industry leaders and network with fellow sustainability advocates.
+            Learn from these leaders and connect with founders, investors, and researchers working at the edge of AI and capital.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="registration.html" class="bg-primary hover:bg-primary/90 text-black font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <a href="registration.html" class="bg-primary hover:bg-primary/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               Register Now
             </a>
           </div>
@@ -251,180 +251,176 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+  <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-primary">GITDFSB Conference</h3>
-        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">International Conference on Sustainable Business Technology</p>
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-mint">NGVCAI 2026</h3>
+        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">International Conference on Venture Capital &amp; Artificial Intelligence</p>
         <p class="text-gray-300 text-sm md:text-base space-y-1">
-          <span class="block"><i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025</span>
-          <span class="block"><i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur</span>
-          <span class="block"><i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology, Odisha, India</span>
+          <span class="block"><i class="fas fa-calendar-alt text-mint mr-2"></i>06–07 November 2026</span>
+          <span class="block"><i class="fas fa-map-marker-alt text-mint mr-2"></i>KIT Auditorium, Berhampur</span>
+          <span class="block"><i class="fas fa-building text-mint mr-2"></i>Hosted by Kalam Institute of Technology, Odisha, India</span>
         </p>
       </div>
 
       <nav class="flex flex-col gap-2.5 md:gap-3">
         <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
         <a href="about.html" class="footer-link text-sm md:text-base">About</a>
-        <a href="speakers.html" class="footer-link text-primary text-sm md:text-base">Speakers</a>
+        <a href="speakers.html" class="footer-link text-mint text-sm md:text-base">Speakers</a>
         <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
         <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
         <a href="author-guidelines.html" class="footer-link text-sm md:text-base">Author Guidelines</a>
         <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
         <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
+        <a href="contact.html" class="footer-link text-sm md:text-base">Contact</a>
       </nav>
     </div>
 
-    <div class="mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center px-4">
-      <p class="text-gray-300 text-xs md:text-sm mb-1.5">© 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.</p>
+    <div class="mt-10 md:mt-12 border-t border-white/20 pt-6 md:pt-8 text-center px-4">
+      <p class="text-gray-300 text-xs md:text-sm mb-1.5">© 2026 NGVCAI — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.</p>
       <p class="text-xs md:text-sm text-gray-400">Built and maintained by 
-        <a href="https://cipherium.in" class="text-primary font-semibold hover:text-primary/80 transition-colors">Cipherium Private Limited</a>
+        <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">Cipherium Private Limited</a>
       </p>
     </div>
   </footer>
 
   <!-- Speaker Modals -->
-  <!-- Bagati -->
   <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" aria-describedby="modal1-desc">
     <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
       <div class="relative">
-        <img src="assets/speakers/bagati.jpg" alt="Photo of Bagati Sudarsan Patro" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
+        <div class="w-full h-48 sm:h-56 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+          <span class="text-6xl font-extrabold text-primary">SCT</span>
+        </div>
         <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal1')">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
       <div class="mt-4">
-        <h3 id="modal1-title" class="text-xl md:text-2xl font-bold text-gray-800">Bagati Sudarsan Patro</h3>
-        <p id="modal1-desc" class="mt-1 text-gray-600">Scientist ‘D’ &amp; Director — Central AWS &amp; RADAR Calibration Laboratory, India Meteorological Department.</p>
+        <h3 id="modal1-title" class="text-xl md:text-2xl font-bold text-brand">Dr. Sarat Chandra Tripathy</h3>
+        <p id="modal1-desc" class="mt-1 text-gray-600">Scientist &ndash; F (PhD, DSc) &mdash; Chief Guest, NGVCAI 2026</p>
         <div class="mt-4 text-gray-700 space-y-3">
-          <p><strong>Affiliation:</strong> Ministry of Earth Sciences, Government of India.</p>
-          <p><strong>Topic preview:</strong> Weather data infrastructure for climate-resilient planning.</p>
-          <p><strong>Bio:</strong> Leads calibration, quality assurance, and modernization of IMD’s observing systems, enabling reliable analytics and forecast services nationwide.</p>
+          <p><strong>Affiliation:</strong> National Centre for Polar and Ocean Research (NCPOR)</p>
+          <p><strong>Organization:</strong> Earth System Science Organization, Ministry of Earth Sciences, Government of India</p>
+          <p><strong>Location:</strong> Headland Sada, Vasco-da-Gama, Goa &ndash; 403804</p>
+          <p><strong>Role at NGVCAI 2026:</strong> Chief Guest</p>
         </div>
         <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal1')">Close</button>
+          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal(this.closest('.modal').id)">Close</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Tripathy -->
   <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" aria-describedby="modal2-desc">
     <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
       <div class="relative">
-        <img src="assets/speakers/gyanaranjan-tripathy.jpg" alt="Photo of Dr. Gyanaranjan Tripathy" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
+        <div class="w-full h-48 sm:h-56 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+          <span class="text-6xl font-extrabold text-primary">MH</span>
+        </div>
         <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal2')">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
       <div class="mt-4">
-        <h3 id="modal2-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Gyanaranjan Tripathy</h3>
-        <p id="modal2-desc" class="mt-1 text-gray-600">Associate Professor — IISER Pune.</p>
+        <h3 id="modal2-title" class="text-xl md:text-2xl font-bold text-brand">Dr. Manfred Hoerstmann</h3>
+        <p id="modal2-desc" class="mt-1 text-gray-600">Keynote Speaker, NGVCAI 2026</p>
         <div class="mt-4 text-gray-700 space-y-3">
-          <p><strong>Topic preview:</strong> Materials &amp; data-driven approaches for clean energy.</p>
-          <p><strong>Bio:</strong> Dr. Tripathy’s work bridges fundamental science and translational research in energy and environment.</p>
+          <p><strong>Country:</strong> United States of America</p>
+          <p><strong>Role at NGVCAI 2026:</strong> Keynote Address</p>
+          <p><strong>Full profile:</strong> To be announced</p>
         </div>
         <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal2')">Close</button>
+          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal(this.closest('.modal').id)">Close</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Mahanty -->
   <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" aria-describedby="modal3-desc">
     <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
       <div class="relative">
-        <img src="assets/speakers/amrut-phalguni-mahanty.jpg" alt="Photo of Dr. Amrut Phalguni Mahanty" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
+        <div class="w-full h-48 sm:h-56 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+          <span class="text-6xl font-extrabold text-primary">BNS</span>
+        </div>
         <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal3')">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
       <div class="mt-4">
-        <h3 id="modal3-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Amrut Phalguni Mahanty</h3>
-        <p id="modal3-desc" class="mt-1 text-gray-600">Associate Professor — IIM Sambalpur.</p>
+        <h3 id="modal3-title" class="text-xl md:text-2xl font-bold text-brand">Dr. Badri Narayan Subudhi</h3>
+        <p id="modal3-desc" class="mt-1 text-gray-600">Keynote Speaker, NGVCAI 2026</p>
         <div class="mt-4 text-gray-700 space-y-3">
-          <p><strong>Topic preview:</strong> Leadership &amp; innovation strategies for green growth.</p>
-          <p><strong>Bio:</strong> Dr. Mahanty researches organizational behavior, innovation ecosystems, and sustainability in emerging markets.</p>
+          <p><strong>Affiliation:</strong> Indian Institute of Technology (IIT), Jammu</p>
+          <p><strong>Areas:</strong> Computer vision, machine learning, image and video analysis</p>
+          <p><strong>Role at NGVCAI 2026:</strong> Keynote Address</p>
         </div>
         <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal3')">Close</button>
+          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal(this.closest('.modal').id)">Close</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Bahinipati -->
   <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal4-title" aria-describedby="modal4-desc">
     <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
       <div class="relative">
-        <img src="assets/speakers/chandra-sekhar-bahinipati.jpg" alt="Photo of Dr. Chandra Sekhar Bahinipati" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
+        <div class="w-full h-48 sm:h-56 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+          <span class="text-6xl font-extrabold text-primary">BA</span>
+        </div>
         <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal4')">
           <i class="fas fa-times text-lg"></i>
         </button>
       </div>
       <div class="mt-4">
-        <h3 id="modal4-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Chandra Sekhar Bahinipati</h3>
-        <p id="modal4-desc" class="mt-1 text-gray-600">Associate Professor — IIT Tirupati.</p>
+        <h3 id="modal4-title" class="text-xl md:text-2xl font-bold text-brand">Dr. Bibhudendra Acharya</h3>
+        <p id="modal4-desc" class="mt-1 text-gray-600">Invited Speaker, NGVCAI 2026</p>
         <div class="mt-4 text-gray-700 space-y-3">
-          <p><strong>Topic preview:</strong> Climate economics &amp; policy for resilient development.</p>
-          <p><strong>Bio:</strong> Dr. Bahinipati focuses on climate risk, adaptation, and socio-economic resilience.</p>
+          <p><strong>Affiliation:</strong> National Institute of Technology (NIT), Raipur</p>
+          <p><strong>Areas:</strong> VLSI design, cryptography, hardware security</p>
+          <p><strong>Role at NGVCAI 2026:</strong> Invited Talk</p>
         </div>
         <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal4')">Close</button>
+          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal(this.closest('.modal').id)">Close</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Sahoo -->
-  <div id="modal5" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal5-title" aria-describedby="modal5-desc">
-    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
-      <div class="relative">
-        <img src="assets/speakers/dukhabandhu-sahoo.jpg" alt="Photo of Dr. Dukhabandhu Sahoo" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
-        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal5')">
-          <i class="fas fa-times text-lg"></i>
-        </button>
-      </div>
-      <div class="mt-4">
-        <h3 id="modal5-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Dukhabandhu Sahoo</h3>
-        <p id="modal5-desc" class="mt-1 text-gray-600">Associate Professor — IIT Bhubaneswar.</p>
-        <div class="mt-4 text-gray-700 space-y-3">
-          <p><strong>Topic preview:</strong> Tech-driven pathways to low-carbon industry.</p>
-          <p><strong>Bio:</strong> Dr. Sahoo’s scholarship connects engineering innovation with sustainability outcomes.</p>
-        </div>
-        <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal5')">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Fernando (LAST) -->
-  <div id="modal6" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal6-title" aria-describedby="modal6-desc">
-    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
-      <div class="relative">
-        <img src="assets/speakers/fernando-moreira.jpg" alt="Photo of Dr. Fernando Moreira" class="w-full h-48 sm:h-56 object-cover rounded-xl" loading="lazy" decoding="async" />
-        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal6')">
-          <i class="fas fa-times text-lg"></i>
-        </button>
-      </div>
-      <div class="mt-4">
-        <h3 id="modal6-title" class="text-xl md:text-2xl font-bold text-gray-800">Dr. Fernando Moreira</h3>
-        <p id="modal6-desc" class="mt-1 text-gray-600">Full Professor, REMIT &amp; IJP — Portucalense University, Portugal.</p>
-        <div class="mt-4 text-gray-700 space-y-3">
-          <p><strong>Topic preview:</strong> Digital transformation for sustainable enterprises.</p>
-          <p><strong>Bio:</strong> Dr. Moreira’s research spans information systems, management science, and technology adoption with a focus on sustainability outcomes.</p>
-        </div>
-        <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal('modal6')">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- JavaScript for Modals -->
-
+  <!-- Modal behaviour -->
+  <script>
+    function openModal(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      // click on backdrop closes
+      document.querySelectorAll('.modal').forEach(function (m) {
+        m.addEventListener('click', function (e) {
+          if (e.target === m) closeModal(m.id);
+        });
+      });
+      // Esc closes any open modal
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.modal.active').forEach(function (m) { closeModal(m.id); });
+        }
+      });
+      // keyboard activation of speaker cards
+      document.querySelectorAll('.speaker-card[role="button"]').forEach(function (c) {
+        c.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.click(); }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>

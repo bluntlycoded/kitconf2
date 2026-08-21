@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Call for Papers | GITDFSB Conference</title>
+  <title>Call for Papers | NGVCAI 2026</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,8 +16,19 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
-          colors: { primary: '#16a34a', accent: '#2563eb' },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Archivo', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand:   '#14396E',
+            primary: '#1E7C88',
+            accent:  '#26709B',
+            leaf:    '#4FA83F',
+            mint:    '#7FD0D8',
+            sprout:  '#8BD97A',
+            circuit: '#35C4E8',
+          },
           screens: { xs: '420px' }
         },
       },
@@ -26,13 +37,13 @@
 
   <!-- Google Font: Inter -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" href="logo.png" />
 
   <!-- Meta SEO -->
-  <meta name="description" content="Submit your research papers for the GITDFSB Conference 2025. Explore sustainable business technologies and contribute to green innovation." />
+  <meta name="description" content="Submit your research papers for NGVCAI 2026 — venture capital, entrepreneurship, and artificial intelligence." />
 
   <!-- Minimal custom CSS (no @apply; works with CDN Tailwind) -->
   <style>
@@ -52,7 +63,7 @@
     .animate-float { animation: float 3s ease-in-out infinite; }
 
     .nav-link, .footer-link { color:#d1d5db; transition: color .3s ease; }
-    .nav-link:hover, .footer-link:hover { color:#16a34a; }
+    .nav-link:hover, .footer-link:hover { color:#1E7C88; }
 
     .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
     .card-hover:hover {
@@ -64,7 +75,7 @@
     .timeline-item { position: relative; padding-left: 2rem; }
     .timeline-item::before {
       content:'';
-      position:absolute; left:0; top:.5rem; width:12px; height:12px; border-radius:50%; background:#16a34a;
+      position:absolute; left:0; top:.5rem; width:12px; height:12px; border-radius:50%; background:#1E7C88;
     }
     .timeline-item::after {
       content:''; position:absolute; left:5px; top:1.5rem; width:2px; height:calc(100% - 1rem); background:#e5e7eb;
@@ -72,13 +83,40 @@
     .timeline-item:last-child::after { display:none; }
 
     .benefit-card {
-      background: linear-gradient(135deg, rgba(22,163,74,.05) 0%, rgba(37,99,235,.05) 100%);
-      border: 1px solid rgba(22,163,74,.1);
+      background: linear-gradient(135deg, rgba(30, 124, 136, .05) 0%, rgba(20, 57, 110, .05) 100%);
+      border: 1px solid rgba(30, 124, 136, .1);
     }
+  </style>
+
+  <!-- NGVCAI brand type + colour system (synced to logo) -->
+  <style>
+    :root {
+      --ng-brand: #14396E;
+      --ng-primary: #1E7C88;
+      --ng-accent: #26709B;
+      --ng-leaf: #4FA83F;
+      --ng-mint: #7FD0D8;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+    }
+    /* logo sets everything in caps — headings echo it */
+    h1, h2 { text-transform: uppercase; letter-spacing: 0.005em; }
+    h3, h4 { letter-spacing: -0.005em; }
+
+    /* nav + footer links live on the navy bar */
+    .nav-link, .footer-link { color: #cbd5e1; transition: color .3s ease; }
+    .nav-link:hover, .footer-link:hover { color: var(--ng-mint); }
+
+    /* thin logo-gradient rule under the fixed header */
+    header.ng-header { border-bottom: 3px solid transparent;
+      border-image: linear-gradient(90deg, #14396E 0%, #1E7C88 45%, #4FA83F 100%) 1; }
   </style>
 </head>
 
-<body class="font-sans bg-white text-gray-900 antialiased">
+<body class="font-sans bg-white text-slate-700 antialiased">
 
   <!-- Skip link -->
   <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
@@ -86,21 +124,21 @@
   </a>
 
   <!-- Navbar -->
-  <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
+  <header class="ng-header fixed inset-x-0 top-0 z-40 bg-brand text-gray-100 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
-   <a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-primary transition-colors duration-300">
+   <a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-mint transition-colors duration-300">
   <img src="logo.png" alt="Logo" class="h-12 w-auto">
   <img src="kit.png" alt="KIT" class="h-12 w-auto">
 </a>
       <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
       <nav id="main-nav" class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
         <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
         <a href="speakers.html" class="nav-link text-sm sm:text-base">Speakers</a>
         <a href="committee.html" class="nav-link text-sm sm:text-base">Committee</a>
-        <a href="call-for-papers.html" class="nav-link text-primary font-semibold text-sm sm:text-base">Call for Papers</a>
+        <a href="call-for-papers.html" class="nav-link text-mint font-semibold text-sm sm:text-base">Call for Papers</a>
          <a href="author-guidelines.html" class="nav-link text-sm sm:text-base">Author Guidelines</a>
         <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
         <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
@@ -113,7 +151,7 @@
   <main id="main" class="pt-20 sm:pt-24">
 
     <!-- Hero Section -->
- <section class="relative py-16 sm:py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+ <section class="relative py-16 sm:py-20 bg-gradient-to-br from-teal-50 via-white to-sky-50 overflow-hidden">
   <div class="pointer-events-none absolute top-6 right-6 w-24 h-24 sm:w-32 sm:h-32 bg-primary/10 rounded-full animate-float"></div>
   <div class="pointer-events-none absolute bottom-6 left-6 w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;"></div>
   
@@ -129,23 +167,23 @@
 </div>
 
 
-      <h1 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4 md:mb-6">Call for Papers</h1>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-brand mb-4 md:mb-6">Call for Papers</h1>
       <p class="text-base md:text-xl text-gray-700 max-w-3xl md:max-w-4xl mx-auto mb-6 md:mb-8">
         We invite researchers, academics, and industry professionals to submit original research papers
-        on sustainable business technologies and green innovation for presentation at the GITDFSB Conference 2025.
+        on artificial intelligence, venture capital, and technology entrepreneurship for presentation at NGVCAI 2026.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
         <div class="bg-primary/10 px-5 py-2.5 sm:py-3 rounded-full">
           <span class="text-primary font-semibold text-sm sm:text-base">
             <i class="fas fa-calendar-alt mr-2"></i>
-            Submission Deadline: October 15, 2025
+            Submission Deadline: October 15, 2026
           </span>
         </div>
         <div class="bg-accent/10 px-5 py-2.5 sm:py-3 rounded-full">
           <span class="text-accent font-semibold text-sm sm:text-base">
             <i class="fas fa-file-alt mr-2"></i>
-            Taylor & Francis Group Format Required
+            Submission Format: To Be Announced
           </span>
         </div>
       </div>
@@ -158,7 +196,7 @@
     <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-12 md:mb-16 animate-fadeUp">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">Important Dates</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Important Dates</h2>
           <p class="text-base md:text-lg text-gray-600">Mark your calendar with these key deadlines for paper submission and conference participation.</p>
         </div>
         <div class="space-y-6 md:space-y-8">
@@ -167,12 +205,12 @@
             <div class="bg-white rounded-lg shadow-md p-5 md:p-6 border-l-4 border-primary">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div>
-                  <h3 class="text-base md:text-lg font-bold text-gray-800 mb-1.5">Paper Submission Deadline</h3>
+                  <h3 class="text-base md:text-lg font-bold text-brand mb-1.5">Paper Submission Deadline</h3>
                   <p class="text-gray-600 text-sm md:text-base">Complete papers with all requirements must be submitted</p>
                 </div>
                 <div class="text-right">
                   <div class="text-xl md:text-2xl font-bold text-primary">October 15</div>
-                  <div class="text-xs md:text-sm text-gray-500">2025</div>
+                  <div class="text-xs md:text-sm text-gray-500">2026</div>
                 </div>
               </div>
             </div>
@@ -183,12 +221,12 @@
             <div class="bg-white rounded-lg shadow-md p-5 md:p-6 border-l-4 border-accent">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div>
-                  <h3 class="text-base md:text-lg font-bold text-gray-800 mb-1.5">Acceptance Notification</h3>
+                  <h3 class="text-base md:text-lg font-bold text-brand mb-1.5">Acceptance Notification</h3>
                   <p class="text-gray-600 text-sm md:text-base">Authors receive acceptance/rejection notification</p>
                 </div>
                 <div class="text-right">
                   <div class="text-xl md:text-2xl font-bold text-accent">October 20</div>
-                  <div class="text-xs md:text-sm text-gray-500">2025</div>
+                  <div class="text-xs md:text-sm text-gray-500">2026</div>
                 </div>
               </div>
             </div>
@@ -199,12 +237,12 @@
             <div class="bg-white rounded-lg shadow-md p-5 md:p-6 border-l-4 border-yellow-500">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div>
-                  <h3 class="text-base md:text-lg font-bold text-gray-800 mb-1.5">Camera-Ready Submission</h3>
+                  <h3 class="text-base md:text-lg font-bold text-brand mb-1.5">Camera-Ready Submission</h3>
                   <p class="text-gray-600 text-sm md:text-base">Final versions of accepted papers due</p>
                 </div>
                 <div class="text-right">
                   <div class="text-xl md:text-2xl font-bold text-yellow-600">October 25</div>
-                  <div class="text-xs md:text-sm text-gray-500">2025</div>
+                  <div class="text-xs md:text-sm text-gray-500">2026</div>
                 </div>
               </div>
             </div>
@@ -215,12 +253,12 @@
             <div class="bg-white rounded-lg shadow-md p-5 md:p-6 border-l-4 border-red-500">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div>
-                  <h3 class="text-base md:text-lg font-bold text-gray-800 mb-1.5">Registration Deadline</h3>
+                  <h3 class="text-base md:text-lg font-bold text-brand mb-1.5">Registration Deadline</h3>
                   <p class="text-gray-600 text-sm md:text-base">Last date to register for the conference</p>
                 </div>
                 <div class="text-right">
                   <div class="text-xl md:text-2xl font-bold text-red-500">November 1</div>
-                  <div class="text-xs md:text-sm text-gray-500">2025</div>
+                  <div class="text-xs md:text-sm text-gray-500">2026</div>
                 </div>
               </div>
             </div>
@@ -232,11 +270,11 @@
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div>
                   <h3 class="text-base md:text-lg font-bold mb-1.5">Conference Dates</h3>
-                  <p class="text-sm md:text-base">GITDFSB Conference 2025</p>
+                  <p class="text-sm md:text-base">NGVCAI 2026</p>
                 </div>
                 <div class="text-right">
-                  <div class="text-xl md:text-2xl font-bold">November 7–8</div>
-                  <div class="text-xs md:text-sm opacity-90">2025</div>
+                  <div class="text-xl md:text-2xl font-bold">November 6–7</div>
+                  <div class="text-xs md:text-sm opacity-90">2026</div>
                 </div>
               </div>
             </div>
@@ -253,15 +291,14 @@
     <!-- Ready to Submit -->
     <section class="py-16 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4">Ready to Submit?</h2>
-        <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8">Join the global conversation on sustainable innovation.</p>
+        <h2 class="text-2xl md:text-4xl font-bold text-brand mb-3 md:mb-4">Ready to Submit?</h2>
+        <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8">Join the global conversation on AI-powered investment.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://cmt3.research.microsoft.com/GITDFSB2025/Submission/Index" target="_blank" rel="noopener"
-             class="bg-accent hover:bg-accent/90 text-black-800 font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all">
-            <i class="fas fa-upload mr-2"></i> Submit via CMT
-          </a>
+          <span class="inline-flex items-center justify-center bg-gray-300 text-gray-600 font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow cursor-not-allowed" title="Submission portal opens soon" aria-disabled="true">
+            <i class="fas fa-upload mr-2"></i> Submission Portal Opening Soon
+          </span>
           <a href="registration.html"
-             class="border-2 border-primary text-primary hover:bg-primary hover:text-black-800 font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg transition-all">
+             class="border-2 border-primary text-primary hover:bg-primary hover:text-gray-800 font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg transition-all">
             <i class="fas fa-ticket mr-2"></i> Register Now
           </a>
         </div>
@@ -270,9 +307,9 @@
 
         <section class="bg-gray-50 py-12 px-4 sm:px-6 md:px-12">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-xl md:text-2xl font-bold text-black-800 mb-3 md:mb-4">cmt Acknowledgement</h2>
+        <h2 class="text-xl md:text-2xl font-bold text-brand mb-3 md:mb-4">cmt Acknowledgement</h2>
         <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-          The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+          The peer-review platform for NGVCAI 2026 will be announced along with the call for papers. Where the Microsoft CMT service is used, it is provided free of charge by Microsoft, who bear all expenses including Azure cloud services, software development, and support.
         </p>
       </div>
     </section>
@@ -280,15 +317,15 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+  <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-primary">GITDFSB Conference</h3>
-        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">International Conference on Sustainable Business Technology</p>
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-mint">NGVCAI 2026</h3>
+        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">International Conference on Venture Capital &amp; Artificial Intelligence</p>
         <p class="text-gray-300 text-sm md:text-base space-y-1">
-          <span class="block"><i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025</span>
-          <span class="block"><i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur</span>
-          <span class="block"><i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology,Odisha,India</span>
+          <span class="block"><i class="fas fa-calendar-alt text-mint mr-2"></i>06–07 November 2026</span>
+          <span class="block"><i class="fas fa-map-marker-alt text-mint mr-2"></i>KIT Auditorium, Berhampur</span>
+          <span class="block"><i class="fas fa-building text-mint mr-2"></i>Hosted by Kalam Institute of Technology, Odisha, India</span>
         </p>
       </div>
 
@@ -297,16 +334,17 @@
         <a href="about.html" class="footer-link text-sm md:text-base">About</a>
         <a href="speakers.html" class="footer-link text-sm md:text-base">Speakers</a>
         <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
-        <a href="call-for-papers.html" class="footer-link text-primary font-semibold text-sm md:text-base">Call for Papers</a>
-         <a href="author-guidelines.html" class="footer-link text-sm md:text-base">Author Guidelines</a>
+        <a href="call-for-papers.html" class="footer-link text-mint font-semibold text-sm md:text-base">Call for Papers</a>
+       <a href="author-guidelines.html" class="footer-link text-sm md:text-base">Author Guidelines</a>
         <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
         <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
+        <a href="contact.html" class="footer-link text-sm md:text-base">Contact</a>
       </nav>
+    </div>
 
-    
-    <div class="mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center px-4">
-      <p class="text-gray-300 text-xs md:text-sm mb-1.5">© 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology,Odisha,India. All rights reserved.</p>
-      <p class="text-xs md:text-sm text-gray-400">Built and maintained by <a href="https://cipherium.in" class="text-primary font-semibold hover:text-primary/80">Cipherium Private Limited</a></p>
+<div class="mt-10 md:mt-12 border-t border-white/20 pt-6 md:pt-8 text-center px-4">
+      <p class="text-gray-300 text-xs md:text-sm mb-1.5">© 2026 NGVCAI — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.</p>
+      <p class="text-xs md:text-sm text-gray-400">Built and maintained by <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80">Cipherium Private Limited</a></p>
     </div>
   </footer>
 

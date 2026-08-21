@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | GITDFSB Conference</title>
+  <title>Contact | NGVCAI 2026</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,8 +16,19 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
-          colors: { primary: '#16a34a', accent: '#2563eb' },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Archivo', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand:   '#14396E',
+            primary: '#1E7C88',
+            accent:  '#26709B',
+            leaf:    '#4FA83F',
+            mint:    '#7FD0D8',
+            sprout:  '#8BD97A',
+            circuit: '#35C4E8',
+          },
           screens: { xs: '420px' }
         },
       },
@@ -26,13 +37,13 @@
 
   <!-- Google Font: Inter -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" href="logo.png" />
 
   <!-- Meta SEO -->
-  <meta name="description" content="Contact the GITDFSB Conference 2025 organizing team. Get in touch for inquiries, support, and conference information." />
+  <meta name="description" content="Contact the NGVCAI 2026 organizing team. Get in touch for inquiries, support, and conference information." />
 
   <!-- Minimal custom CSS (no @apply; CDN-safe) -->
   <style>
@@ -46,7 +57,7 @@
 
     /* Replacements for @apply */
     .nav-link,.footer-link { color:#d1d5db; transition: color .3s ease; }
-    .nav-link:hover,.footer-link:hover { color:#16a34a; }
+    .nav-link:hover,.footer-link:hover { color:#1E7C88; }
 
     .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
     .card-hover:hover {
@@ -55,8 +66,8 @@
     }
 
     .contact-card {
-      background: linear-gradient(135deg, rgba(22,163,74,.05) 0%, rgba(37,99,235,.05) 100%);
-      border: 1px solid rgba(22,163,74,.1);
+      background: linear-gradient(135deg, rgba(30, 124, 136, .05) 0%, rgba(20, 57, 110, .05) 100%);
+      border: 1px solid rgba(30, 124, 136, .1);
     }
 
     /* Form inputs without Tailwind build step */
@@ -73,13 +84,40 @@
     }
     .form-textarea { resize: vertical; }
     .form-input:focus, .form-textarea:focus, .form-select:focus {
-      border-color: #16a34a; /* primary */
-      box-shadow: 0 0 0 3px rgba(22,163,74,.25);
+      border-color: #1E7C88; /* primary */
+      box-shadow: 0 0 0 3px rgba(30, 124, 136, .25);
     }
+  </style>
+
+  <!-- NGVCAI brand type + colour system (synced to logo) -->
+  <style>
+    :root {
+      --ng-brand: #14396E;
+      --ng-primary: #1E7C88;
+      --ng-accent: #26709B;
+      --ng-leaf: #4FA83F;
+      --ng-mint: #7FD0D8;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+    }
+    /* logo sets everything in caps — headings echo it */
+    h1, h2 { text-transform: uppercase; letter-spacing: 0.005em; }
+    h3, h4 { letter-spacing: -0.005em; }
+
+    /* nav + footer links live on the navy bar */
+    .nav-link, .footer-link { color: #cbd5e1; transition: color .3s ease; }
+    .nav-link:hover, .footer-link:hover { color: var(--ng-mint); }
+
+    /* thin logo-gradient rule under the fixed header */
+    header.ng-header { border-bottom: 3px solid transparent;
+      border-image: linear-gradient(90deg, #14396E 0%, #1E7C88 45%, #4FA83F 100%) 1; }
   </style>
 </head>
 
-<body class="font-sans bg-white text-gray-900 antialiased">
+<body class="font-sans bg-white text-slate-700 antialiased">
 
   <!-- Skip link -->
   <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
@@ -87,14 +125,14 @@
   </a>
 
   <!-- Navbar -->
-  <header class="fixed inset-x-0 top-0 z-40 bg-gray-900 text-gray-100 shadow-lg">
+  <header class="ng-header fixed inset-x-0 top-0 z-40 bg-brand text-gray-100 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
-  <a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-primary transition-colors duration-300">
+  <a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-mint transition-colors duration-300">
   <img src="logo.png" alt="Logo" class="h-12 w-auto">
   <img src="kit.png" alt="KIT" class="h-12 w-auto">
 </a>
       <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-primary text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
+      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
@@ -106,7 +144,7 @@
          <a href="author-guidelines.html" class="nav-link text-sm sm:text-base">Author Guidelines</a>
         <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
         <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
-        <a href="contact.html" class="nav-link text-primary font-semibold text-sm sm:text-base">Contact</a>
+        <a href="contact.html" class="nav-link text-mint font-semibold text-sm sm:text-base">Contact</a>
       </nav>
     </div>
   </header>
@@ -115,7 +153,7 @@
   <main id="main" class="pt-20 sm:pt-24">
 
     <!-- Hero Section -->
-<section class="relative py-16 sm:py-20 bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden">
+<section class="relative py-16 sm:py-20 bg-gradient-to-br from-teal-50 via-white to-sky-50 overflow-hidden">
   <div class="pointer-events-none absolute top-6 right-6 w-24 h-24 sm:w-32 sm:h-32 bg-primary/10 rounded-full animate-float"></div>
   <div class="pointer-events-none absolute bottom-6 left-6 w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;"></div>
   
@@ -131,9 +169,9 @@
 </div>
 
 
-      <h1 class="text-3xl md:text-5xl font-extrabold text-gray-800 mb-4 md:mb-6">Contact Us</h1>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-brand mb-4 md:mb-6">Contact Us</h1>
       <p class="text-base md:text-xl text-gray-700 max-w-3xl md:max-w-4xl mx-auto mb-6 md:mb-8">
-        Get in touch with the GITDFSB Conference organizing team. We're here to help with your
+        Get in touch with the NGVCAI 2026 organizing team. We're here to help with your
         inquiries, support needs, and provide all the information you need for the conference.
       </p>
 
@@ -153,7 +191,7 @@
         <div class="bg-accent/10 px-5 py-2.5 sm:py-3 rounded-full">
           <span class="text-accent font-semibold text-sm sm:text-base">
             <i class="fas fa-envelope mr-2"></i>
-            Conference@kit.edu.in
+            conference@kit.edu.in
           </span>
         </div>
       </div>
@@ -166,9 +204,9 @@
     <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-10 sm:mb-12 animate-fadeUp">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">Find Us</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Find Us</h2>
           <p class="text-base md:text-lg text-gray-600">
-            Kalam Institute of Technology,Odisha,India is conveniently located in Berhampur, Odisha.
+            Kalam Institute of Technology, Odisha, India is conveniently located in Berhampur, Odisha.
           </p>
         </div>
         
@@ -179,7 +217,7 @@
               <i class="fas fa-map-marked-alt text-5xl md:text-6xl text-primary mb-3 md:mb-4"></i>
               <p class="text-lg md:text-xl font-semibold text-gray-700 mb-2">Interactive Map</p>
               <p class="text-gray-600 text-sm md:text-base">
-                Kalam Institute of Technology,Odisha,India<br>
+                Kalam Institute of Technology, Odisha, India<br>
                 Berhampur, Odisha - 760010
               </p>
               <a href="https://maps.google.com/?q=Kalam+Institute+of+Technology+Berhampur" 
@@ -195,19 +233,19 @@
     </section>
 
     <!-- Conference Secretariat -->
-    <section class="py-16 sm:py-20 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+    <section class="py-16 sm:py-20 bg-gradient-to-r from-teal-50/60 to-sky-50/60">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-12 md:mb-16 animate-fadeUp">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">Conference Secretariat</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Conference Secretariat</h2>
           <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-            Our main office location and primary contact information for the GITDFSB Conference 2025.
+            Our main office location and primary contact information for the NGVCAI 2026.
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <!-- Address Card -->
           <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 animate-fadeUp">
-            <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 flex items-center">
+            <h3 class="text-xl md:text-2xl font-bold text-brand mb-4 md:mb-6 flex items-center">
               <i class="fas fa-building text-primary mr-3"></i>
               Office Address
             </h3>
@@ -215,8 +253,8 @@
               <div class="flex items-start">
                 <i class="fas fa-map-marker-alt text-primary mt-1 mr-4"></i>
                 <div>
-                  <p class="font-semibold">GITDFSB Conference Secretariat</p>
-                  <p>Kalam Institute of Technology,Odisha,India</p>
+                  <p class="font-semibold">NGVCAI 2026 Secretariat</p>
+                  <p>Kalam Institute of Technology, Odisha, India</p>
                   <p>Bhubaneswar-Berhampur Highway</p>
                   <p>Berhampur, Odisha - 760010</p>
                   <p>India</p>
@@ -235,7 +273,7 @@
                 <i class="fas fa-envelope text-primary mr-4"></i>
                 <div>
                   <p class="font-semibold">Email:</p>
-                  <a href="mailto:Conference@kit.edu.in" class="text-primary hover:underline">Conference@kit.edu.in</a>
+                  <a href="mailto:conference@kit.edu.in" class="text-primary hover:underline">conference@kit.edu.in</a>
                 </div>
               </div>
               
@@ -249,7 +287,7 @@
             </div>
             
             <div class="mt-6 md:mt-8 p-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg">
-              <h4 class="font-bold text-gray-800 mb-2">
+              <h4 class="font-bold text-brand mb-2">
                 <i class="fas fa-clock text-primary mr-2"></i>
                 Office Hours
               </h4>
@@ -263,7 +301,7 @@
 
           <!-- Contact Form -->
           <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 animate-fadeUp" style="animation-delay:.3s;">
-            <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 flex items-center">
+            <h3 class="text-xl md:text-2xl font-bold text-brand mb-4 md:mb-6 flex items-center">
               <i class="fas fa-paper-plane text-accent mr-3"></i>
               Send us a Message
             </h3>
@@ -334,17 +372,17 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+  <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-primary">GITDFSB Conference</h3>
+        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-mint">NGVCAI 2026</h3>
         <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">
-          International Conference on Sustainable Business Technology
+          International Conference on Venture Capital &amp; Artificial Intelligence
         </p>
         <p class="text-gray-300 text-sm md:text-base space-y-1">
-          <span class="block"><i class="fas fa-calendar-alt text-primary mr-2"></i>07–08 November 2025</span>
-          <span class="block"><i class="fas fa-map-marker-alt text-primary mr-2"></i>KIT Auditorium, Berhampur</span>
-          <span class="block"><i class="fas fa-building text-primary mr-2"></i>Hosted by Kalam Institute of Technology,Odisha,India</span>
+          <span class="block"><i class="fas fa-calendar-alt text-mint mr-2"></i>06–07 November 2026</span>
+          <span class="block"><i class="fas fa-map-marker-alt text-mint mr-2"></i>KIT Auditorium, Berhampur</span>
+          <span class="block"><i class="fas fa-building text-mint mr-2"></i>Hosted by Kalam Institute of Technology, Odisha, India</span>
         </p>
       </div>
 
@@ -354,22 +392,21 @@
         <a href="speakers.html" class="footer-link text-sm md:text-base">Speakers</a>
         <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
         <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
-          <a href="author-guidelines.html" class="footer-link text-sm md:text-base">Author Guidelines</a>
+        <a href="author-guidelines.html" class="footer-link text-sm md:text-base">Author Guidelines</a>
         <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
 
         <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
-        <a href="contact.html" class="footer-link text-primary font-semibold text-sm md:text-base">Contact</a>
+        <a href="contact.html" class="footer-link text-mint font-semibold text-sm md:text-base">Contact</a>
       </nav>
+    </div>
 
-      
-
-    <div class="mt-10 md:mt-12 border-t border-gray-700 pt-6 md:pt-8 text-center px-4">
+<div class="mt-10 md:mt-12 border-t border-white/20 pt-6 md:pt-8 text-center px-4">
       <p class="text-gray-300 text-xs md:text-sm mb-1.5">
-        © 2025 GITDFSB Conference — Hosted by Kalam Institute of Technology,Odisha,India. All rights reserved.
+        © 2026 NGVCAI — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.
       </p>
       <p class="text-xs md:text-sm text-gray-400">
         Built and maintained by 
-        <a href="https://cipherium.in" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+        <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">
           Cipherium Private Limited
         </a>
       </p>
