@@ -1,203 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | NGVCAI 2026</title>
+  <meta name="description" content="Learn about NGVCAI 2026 — the 3rd International Conference on Next-Generation Venture Capital: Innovations Powered by Artificial Intelligence, hosted by Kalam Institute of Technology, Odisha, India. Proceedings published with Wiley." />
+  <link rel="canonical" href="https://gitdfsb.com/about.html" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NGVCAI 2026" />
+  <meta property="og:title" content="About | NGVCAI 2026" />
+  <meta property="og:description" content="The 3rd International Conference on Next-Generation Venture Capital: Innovations Powered by Artificial Intelligence." />
+  <meta property="og:image" content="https://gitdfsb.com/assets/img/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-  <!-- Custom Tailwind config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            display: ['Archivo', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            brand:   '#14396E',
-            primary: '#1E7C88',
-            accent:  '#26709B',
-            leaf:    '#4FA83F',
-            mint:    '#7FD0D8',
-            sprout:  '#8BD97A',
-            circuit: '#35C4E8',
-          },
-          screens: { xs: '420px' }
-        },
-      },
-    };
-  </script>
-
-  <!-- Google Font: Inter -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png" />
-
-  <!-- Meta SEO -->
-  <meta name="description" content="Learn about NGVCAI 2026 — the 3rd International Conference on Next-Generation Venture Capital: Innovations Powered by Artificial Intelligence, hosted by Kalam Institute of Technology, Odisha, India." />
-
-  <!-- Minimal custom CSS (no @apply; works with CDN Tailwind) -->
-  <style>
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
-    }
-    @keyframes fadeUp {
-      0%   { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    .animate-fadeUp { animation: fadeUp 0.8s ease-out both; }
-    .animate-float { animation: float 3s ease-in-out infinite; }
-
-    .nav-link, .footer-link { color:#d1d5db; transition: color .3s ease; }
-    .nav-link:hover, .footer-link:hover { color:#1E7C88; }
-
-    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
-    }
-
-    .feature-card {
-      background: linear-gradient(135deg, rgba(30, 124, 136, .05) 0%, rgba(20, 57, 110, .05) 100%);
-      border: 1px solid rgba(30, 124, 136, .1);
-    }
-    .stats-card {
-      background: linear-gradient(135deg, rgba(255,255,255,.95) 0%, rgba(249,250,251,.95) 100%);
-      backdrop-filter: blur(10px);
-    }
-  </style>
-
-  <!-- NGVCAI brand type + colour system (synced to logo) -->
-  <style>
-    :root {
-      --ng-brand: #14396E;
-      --ng-primary: #1E7C88;
-      --ng-accent: #26709B;
-      --ng-leaf: #4FA83F;
-      --ng-mint: #7FD0D8;
-    }
-    h1, h2, h3, h4, .font-display {
-      font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.015em;
-    }
-    /* logo sets everything in caps — headings echo it */
-    h1, h2 { text-transform: uppercase; letter-spacing: 0.005em; }
-    h3, h4 { letter-spacing: -0.005em; }
-
-    /* nav + footer links live on the navy bar */
-    .nav-link, .footer-link { color: #cbd5e1; transition: color .3s ease; }
-    .nav-link:hover, .footer-link:hover { color: var(--ng-mint); }
-
-    /* thin logo-gradient rule under the fixed header */
-    header.ng-header { border-bottom: 3px solid transparent;
-      border-image: linear-gradient(90deg, #14396E 0%, #1E7C88 45%, #4FA83F 100%) 1; }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
 
 <body class="font-sans bg-white text-slate-700 antialiased">
-  <!-- Skip link -->
-  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
-    Skip to main content
-  </a>
+
+  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">Skip to main content</a>
 
   <!-- Navbar -->
   <header class="ng-header fixed inset-x-0 top-0 z-40 bg-brand text-gray-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
-    <a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-mint transition-colors duration-300">
-  <img src="logo.png" alt="Logo" class="h-12 w-auto">
-  <img src="kit.png" alt="KIT" class="h-12 w-auto">
-</a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="NGVCAI 2026 — home">
+        <img src="assets/img/logo-nav.png" alt="NGVCAI 2026" class="h-10 w-10 sm:h-11 sm:w-11 rounded-full ring-2 ring-white/10" width="176" height="176">
+        <span class="h-8 w-px bg-white/20 hidden sm:block" aria-hidden="true"></span>
+        <img src="assets/img/kit.png" alt="Kalam Institute of Technology" class="h-8 sm:h-9 w-auto hidden sm:block" width="289" height="230">
+      </a>
 
       <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
+      <label for="nav-toggle" class="cursor-pointer lg:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
-      <nav id="main-nav"
-           class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
-        <a href="about.html" class="nav-link text-mint font-semibold text-sm sm:text-base">About</a>
-        <a href="speakers.html" class="nav-link text-sm sm:text-base">Speakers</a>
-        <a href="committee.html" class="nav-link text-sm sm:text-base">Committee</a>
-        <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
-         <a href="author-guidelines.html" class="nav-link text-sm sm:text-base">Author Guidelines</a>
-        <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
-        <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
-        <a href="contact.html" class="nav-link text-sm sm:text-base">Contact</a>
+      <nav id="main-nav" class="w-full lg:w-auto mt-3 lg:mt-0 flex-col lg:flex-row gap-4 lg:gap-6 hidden peer-checked:flex lg:flex lg:items-center">
+        <a href="about.html" class="nav-link is-active text-sm" aria-current="page">About</a>
+        <a href="speakers.html" class="nav-link text-sm">Speakers</a>
+        <a href="committee.html" class="nav-link text-sm">Committee</a>
+        <a href="call-for-papers.html" class="nav-link text-sm">Call for Papers</a>
+        <a href="author-guidelines.html" class="nav-link text-sm">Author Guidelines</a>
+        <a href="venue.html" class="nav-link text-sm">Venue</a>
+        <a href="contact.html" class="nav-link text-sm">Contact</a>
+        <a href="registration.html" class="btn btn-primary !px-5 !py-2 text-sm w-full lg:w-auto justify-center">Register</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main -->
   <main id="main" class="pt-20 sm:pt-24">
 
-    <!-- Hero Section -->
-   <section class="relative py-16 sm:py-20 bg-gradient-to-br from-teal-50 via-white to-sky-50 overflow-hidden">
-  <div class="pointer-events-none absolute top-6 right-6 w-24 h-24 sm:w-32 sm:h-32 bg-primary/10 rounded-full animate-float"></div>
-  <div class="pointer-events-none absolute bottom-6 left-6 w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;"></div>
+    <!-- Page hero -->
+    <section class="relative py-16 sm:py-20 bg-gradient-to-br from-teal-50 via-white to-sky-50 overflow-hidden">
+      <div class="pointer-events-none absolute top-6 right-6 w-24 h-24 sm:w-32 sm:h-32 bg-primary/10 rounded-full animate-float" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute bottom-6 left-6 w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;" aria-hidden="true"></div>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-    <div class="animate-fadeUp">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center animate-fadeUp">
+        <p class="section-eyebrow justify-center mb-4">Conference overview</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-brand mb-4 md:mb-6">About NGVCAI 2026</h1>
+        <p class="text-base md:text-xl text-gray-700 max-w-3xl md:max-w-4xl mx-auto mb-8">
+          Discover how NGVCAI 2026 is bringing together global leaders, researchers,
+          and innovators to shape how artificial intelligence is transforming venture capital and technology investment.
+        </p>
 
-      <!-- Logos Row -->
-     <div class="flex justify-center items-center gap-6 mb-6">
-  <img src="logo.png" alt="Logo" class="h-20 w-auto">
-  <img src="kit.png" alt="KIT" class="h-20 w-auto">
-  <img src="scopus.png" alt="Scopus" class="h-20 w-auto">
-  <img src="tf.png" alt="TF" class="h-20 w-auto">
-</div>
-
-
-      <h1 class="text-3xl md:text-5xl font-extrabold text-brand mb-4 md:mb-6">
-        About NGVCAI 2026
-      </h1>
-      <p class="text-base md:text-xl text-gray-700 max-w-3xl md:max-w-4xl mx-auto mb-6 md:mb-8">
-        Discover how the NGVCAI 2026 is bringing together global leaders, researchers,
-        and innovators to shape how artificial intelligence is transforming venture capital and technology investment.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
-        <div class="bg-primary/10 px-5 py-2.5 sm:py-3 rounded-full">
-          <span class="text-primary font-semibold text-sm sm:text-base">
-            <i class="fas fa-globe mr-2"></i>
-            International Conference
-          </span>
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-10">
+          <div class="bg-primary/10 px-5 py-2.5 sm:py-3 rounded-full">
+            <span class="text-primary font-semibold text-sm sm:text-base"><i class="fas fa-globe mr-2"></i>International Conference</span>
+          </div>
+          <div class="bg-accent/10 px-5 py-2.5 sm:py-3 rounded-full">
+            <span class="text-accent font-semibold text-sm sm:text-base"><i class="fas fa-microchip mr-2"></i>AI &amp; Investment Focus</span>
+          </div>
         </div>
-        <div class="bg-accent/10 px-5 py-2.5 sm:py-3 rounded-full">
-          <span class="text-accent font-semibold text-sm sm:text-base">
-            <i class="fas fa-leaf mr-2"></i>
-            AI &amp; Investment Focus
-          </span>
+
+        <div class="inline-flex flex-col items-center gap-3 bg-white rounded-2xl px-8 py-5 shadow-sm border border-slate-100">
+          <span class="text-slate-500 text-[11px] font-semibold uppercase tracking-[0.24em]">Indexing &amp; Publication Partner</span>
+          <div class="partner-strip">
+            <img src="assets/img/scopus.png" alt="Scopus" class="logo-scopus" loading="lazy" width="1280" height="643">
+            <img src="assets/img/wiley.png" alt="Wiley" class="logo-wiley" loading="lazy" width="340" height="72">
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- Conference Overview -->
     <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          <!-- Content -->
-          <div class="animate-fadeUp">
+          <div class="reveal">
+            <p class="section-eyebrow mb-3">What to expect</p>
             <h2 class="text-2xl md:text-3xl font-bold text-brand mb-4 md:mb-6">Conference Overview</h2>
             <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-5 md:mb-6">
-              The NGVCAI 2026 represents a pivotal gathering of minds committed to
+              NGVCAI 2026 represents a pivotal gathering of minds committed to
               the transformation of venture capital. As artificial intelligence reshapes how capital is deployed,
               this conference serves as a catalyst for innovative solutions that bridge technology,
               business, and responsible innovation.
@@ -208,29 +111,16 @@
               that are reshaping how startups are funded, built, and scaled in the 21st century.
             </p>
             <div class="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4 mt-6 md:mt-8">
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-primary text-lg md:text-xl mr-3"></i>
-                <span class="text-gray-700 text-sm md:text-base">Expert-led sessions</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-primary text-lg md:text-xl mr-3"></i>
-                <span class="text-gray-700 text-sm md:text-base">Networking opportunities</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-primary text-lg md:text-xl mr-3"></i>
-                <span class="text-gray-700 text-sm md:text-base">Hands-on workshops</span>
-              </div>
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-primary text-lg md:text-xl mr-3"></i>
-                <span class="text-gray-700 text-sm md:text-base">Research presentations</span>
-              </div>
+              <div class="flex items-center"><i class="fas fa-check-circle text-primary text-lg md:text-xl mr-3"></i><span class="text-gray-700 text-sm md:text-base">Expert-led sessions</span></div>
+              <div class="flex items-center"><i class="fas fa-check-circle text-primary text-lg md:text-xl mr-3"></i><span class="text-gray-700 text-sm md:text-base">Networking opportunities</span></div>
+              <div class="flex items-center"><i class="fas fa-check-circle text-primary text-lg md:text-xl mr-3"></i><span class="text-gray-700 text-sm md:text-base">Hands-on workshops</span></div>
+              <div class="flex items-center"><i class="fas fa-check-circle text-primary text-lg md:text-xl mr-3"></i><span class="text-gray-700 text-sm md:text-base">Research presentations</span></div>
             </div>
           </div>
 
-          <!-- Visual Element -->
-          <div class="animate-fadeUp" style="animation-delay:.3s;">
+          <div class="reveal" style="transition-delay:.15s">
             <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 sm:p-8 text-center">
-              <i class="fas fa-seedling text-5xl md:text-6xl text-primary mb-4 md:mb-6"></i>
+              <i class="fas fa-lightbulb text-5xl md:text-6xl text-primary mb-4 md:mb-6"></i>
               <h3 class="text-xl md:text-2xl font-bold text-brand mb-3 md:mb-4">Our Mission</h3>
               <p class="text-gray-700 text-base md:text-lg">
                 To accelerate responsible adoption of artificial intelligence across the investment lifecycle through research-driven
@@ -242,10 +132,45 @@
       </div>
     </section>
 
+    <!-- Publication Partner -->
+    <section class="py-16 sm:py-20 bg-brand text-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center reveal">
+        <p class="section-eyebrow justify-center mb-4 !text-mint">Publication</p>
+        <h2 class="text-2xl md:text-4xl font-bold mb-5">Wiley &mdash; Our Publication Partner</h2>
+        <p class="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+          Accepted and presented papers from NGVCAI 2026 will be published in the conference proceedings
+          in partnership with <strong class="text-mint">Wiley</strong>, one of the world's leading academic publishers,
+          with the proceedings submitted for Scopus indexing.
+        </p>
+        <div class="flex flex-wrap justify-center items-center gap-5 mb-10">
+          <span class="inline-flex items-center bg-white rounded-xl px-5 py-3 shadow-lg"><img src="assets/img/scopus.png" alt="Scopus" class="logo-scopus--lg" loading="lazy"></span>
+          <span class="inline-flex items-center bg-white rounded-xl px-3 py-2 shadow-lg"><img src="assets/img/wiley.png" alt="Wiley" class="logo-wiley--lg" loading="lazy" width="340" height="72"></span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div class="bg-white/10 rounded-xl p-6 border border-white/15">
+            <i class="fas fa-book-open text-mint text-2xl mb-3"></i>
+            <h3 class="font-bold text-white mb-2">Peer-Reviewed Proceedings</h3>
+            <p class="text-gray-300 text-sm">Every accepted paper passes double-blind review before publication.</p>
+          </div>
+          <div class="bg-white/10 rounded-xl p-6 border border-white/15">
+            <i class="fas fa-magnifying-glass-chart text-mint text-2xl mb-3"></i>
+            <h3 class="font-bold text-white mb-2">Submitted for Scopus</h3>
+            <p class="text-gray-300 text-sm">Proceedings are submitted for indexing to maximise discoverability.</p>
+          </div>
+          <div class="bg-white/10 rounded-xl p-6 border border-white/15">
+            <i class="fas fa-globe text-mint text-2xl mb-3"></i>
+            <h3 class="font-bold text-white mb-2">Global Distribution</h3>
+            <p class="text-gray-300 text-sm">Wiley's platform puts your research in front of an international readership.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Conference Themes -->
     <section class="py-16 sm:py-20 bg-gradient-to-r from-teal-50/60 to-sky-50/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-12 md:mb-16 animate-fadeUp">
+        <div class="text-center mb-12 md:mb-16 reveal">
+          <p class="section-eyebrow justify-center mb-3">Six tracks</p>
           <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Conference Themes</h2>
           <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             Six tracks covering where artificial intelligence meets venture capital, entrepreneurship, and technology investment.
@@ -253,70 +178,40 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <!-- Theme 1 -->
-          <div class="feature-card p-6 md:p-8 rounded-xl card-hover animate-fadeUp">
-            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-              <i class="fas fa-magnifying-glass-dollar text-primary text-xl md:text-2xl"></i>
-            </div>
+          <div class="surface-card--primary p-6 md:p-8 rounded-xl card-hover reveal">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6"><i class="fas fa-magnifying-glass-dollar text-primary text-xl md:text-2xl"></i></div>
             <h3 class="text-lg md:text-xl font-bold text-brand mb-3 md:mb-4">AI-Driven Deal Sourcing &amp; Due Diligence</h3>
-            <p class="text-gray-600 text-sm md:text-base">
-              Machine learning models that surface, screen, and score early-stage opportunities faster and more consistently than manual pipelines.
-            </p>
+            <p class="text-gray-600 text-sm md:text-base">Machine learning models that surface, screen, and score early-stage opportunities faster and more consistently than manual pipelines.</p>
           </div>
 
-          <!-- Theme 2 -->
-          <div class="feature-card p-6 md:p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay:.2s;">
-            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-              <i class="fas fa-robot text-accent text-xl md:text-2xl"></i>
-            </div>
+          <div class="surface-card--primary p-6 md:p-8 rounded-xl card-hover reveal" style="transition-delay:.1s">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6"><i class="fas fa-robot text-accent text-xl md:text-2xl"></i></div>
             <h3 class="text-lg md:text-xl font-bold text-brand mb-3 md:mb-4">Generative AI in Startup Ecosystems</h3>
-            <p class="text-gray-600 text-sm md:text-base">
-              How foundation models are reshaping product development, go-to-market, and the cost structure of building a company.
-            </p>
+            <p class="text-gray-600 text-sm md:text-base">How foundation models are reshaping product development, go-to-market, and the cost structure of building a company.</p>
           </div>
 
-          <!-- Theme 3 -->
-          <div class="feature-card p-6 md:p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay:.4s;">
-            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-              <i class="fas fa-chart-line text-primary text-xl md:text-2xl"></i>
-            </div>
+          <div class="surface-card--primary p-6 md:p-8 rounded-xl card-hover reveal" style="transition-delay:.2s">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6"><i class="fas fa-chart-line text-primary text-xl md:text-2xl"></i></div>
             <h3 class="text-lg md:text-xl font-bold text-brand mb-3 md:mb-4">Predictive Analytics for Portfolio Management</h3>
-            <p class="text-gray-600 text-sm md:text-base">
-              Forecasting portfolio performance, follow-on timing, and exit windows using data-driven signals rather than intuition alone.
-            </p>
+            <p class="text-gray-600 text-sm md:text-base">Forecasting portfolio performance, follow-on timing, and exit windows using data-driven signals rather than intuition alone.</p>
           </div>
 
-          <!-- Theme 4 -->
-          <div class="feature-card p-6 md:p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay:.6s;">
-            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-              <i class="fas fa-coins text-accent text-xl md:text-2xl"></i>
-            </div>
+          <div class="surface-card--primary p-6 md:p-8 rounded-xl card-hover reveal" style="transition-delay:.3s">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6"><i class="fas fa-coins text-accent text-xl md:text-2xl"></i></div>
             <h3 class="text-lg md:text-xl font-bold text-brand mb-3 md:mb-4">Fintech &amp; Algorithmic Investment Models</h3>
-            <p class="text-gray-600 text-sm md:text-base">
-              Automated underwriting, alternative data, revenue-based financing, and the infrastructure behind programmatic capital allocation.
-            </p>
+            <p class="text-gray-600 text-sm md:text-base">Automated underwriting, alternative data, revenue-based financing, and the infrastructure behind programmatic capital allocation.</p>
           </div>
 
-          <!-- Theme 5 -->
-          <div class="feature-card p-6 md:p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay:.8s;">
-            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-              <i class="fas fa-scale-balanced text-primary text-xl md:text-2xl"></i>
-            </div>
+          <div class="surface-card--primary p-6 md:p-8 rounded-xl card-hover reveal" style="transition-delay:.4s">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6"><i class="fas fa-scale-balanced text-primary text-xl md:text-2xl"></i></div>
             <h3 class="text-lg md:text-xl font-bold text-brand mb-3 md:mb-4">AI Governance, Ethics &amp; Investment Risk</h3>
-            <p class="text-gray-600 text-sm md:text-base">
-              Bias, explainability, regulation, and the fiduciary questions raised when algorithms influence who receives funding.
-            </p>
+            <p class="text-gray-600 text-sm md:text-base">Bias, explainability, regulation, and the fiduciary questions raised when algorithms influence who receives funding.</p>
           </div>
 
-          <!-- Theme 6 -->
-          <div class="feature-card p-6 md:p-8 rounded-xl card-hover animate-fadeUp" style="animation-delay:1s;">
-            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6">
-              <i class="fas fa-globe text-accent text-xl md:text-2xl"></i>
-            </div>
+          <div class="surface-card--primary p-6 md:p-8 rounded-xl card-hover reveal" style="transition-delay:.5s">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6"><i class="fas fa-globe text-accent text-xl md:text-2xl"></i></div>
             <h3 class="text-lg md:text-xl font-bold text-brand mb-3 md:mb-4">Emerging Markets &amp; Digital Entrepreneurship</h3>
-            <p class="text-gray-600 text-sm md:text-base">
-              AI-enabled venture building outside established hubs, and what it takes to fund innovation in developing economies.
-            </p>
+            <p class="text-gray-600 text-sm md:text-base">AI-enabled venture building outside established hubs, and what it takes to fund innovation in developing economies.</p>
           </div>
         </div>
       </div>
@@ -325,7 +220,8 @@
     <!-- Why Attend -->
     <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-12 md:mb-16 animate-fadeUp">
+        <div class="text-center mb-12 md:mb-16 reveal">
+          <p class="section-eyebrow justify-center mb-3">Who it's for</p>
           <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Why Attend NGVCAI 2026?</h2>
           <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             Join a two-day programme that will reshape how you think about capital, technology, and company building.
@@ -333,58 +229,30 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <!-- For Researchers -->
-          <div class="animate-fadeUp">
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 sm:p-8">
+          <div class="reveal">
+            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 sm:p-8 h-full">
               <h3 class="text-xl md:text-2xl font-bold text-brand mb-4 md:mb-6 flex items-center">
-                <i class="fas fa-microscope text-primary text-xl md:text-2xl mr-3"></i>
-                For Researchers & Academics
+                <i class="fas fa-microscope text-primary text-xl md:text-2xl mr-3"></i>For Researchers &amp; Academics
               </h3>
               <ul class="space-y-3 md:space-y-4">
-                <li class="flex items-start">
-                  <i class="fas fa-star text-primary mr-3 mt-1"></i>
-                  <span class="text-gray-700 text-sm md:text-base">Present your research to a global audience of peers and industry leaders</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-star text-primary mr-3 mt-1"></i>
-                  <span class="text-gray-700 text-sm md:text-base">Collaborate with researchers from 40+ countries worldwide</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-star text-primary mr-3 mt-1"></i>
-                  <span class="text-gray-700 text-sm md:text-base">Publish your work in indexed conference proceedings (publisher to be announced)</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-star text-primary mr-3 mt-1"></i>
-                  <span class="text-gray-700 text-sm md:text-base">Access funding opportunities and research partnerships</span>
-                </li>
+                <li class="flex items-start"><i class="fas fa-star text-primary mr-3 mt-1"></i><span class="text-gray-700 text-sm md:text-base">Present your research to a global audience of peers and industry leaders</span></li>
+                <li class="flex items-start"><i class="fas fa-star text-primary mr-3 mt-1"></i><span class="text-gray-700 text-sm md:text-base">Collaborate with researchers from across the international community</span></li>
+                <li class="flex items-start"><i class="fas fa-star text-primary mr-3 mt-1"></i><span class="text-gray-700 text-sm md:text-base">Publish your work in Scopus-indexed proceedings with <strong>Wiley</strong></span></li>
+                <li class="flex items-start"><i class="fas fa-star text-primary mr-3 mt-1"></i><span class="text-gray-700 text-sm md:text-base">Access funding opportunities and research partnerships</span></li>
               </ul>
             </div>
           </div>
 
-          <!-- For Industry -->
-          <div class="animate-fadeUp" style="animation-delay:.3s;">
-            <div class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-2xl p-6 sm:p-8">
+          <div class="reveal" style="transition-delay:.15s">
+            <div class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-2xl p-6 sm:p-8 h-full">
               <h3 class="text-xl md:text-2xl font-bold text-brand mb-4 md:mb-6 flex items-center">
-                <i class="fas fa-building text-accent text-xl md:text-2xl mr-3"></i>
-                For Industry Professionals
+                <i class="fas fa-building text-accent text-xl md:text-2xl mr-3"></i>For Industry Professionals
               </h3>
               <ul class="space-y-3 md:space-y-4">
-                <li class="flex items-start">
-                  <i class="fas fa-star text-accent mr-3 mt-1"></i>
-                  <span class="text-gray-700 text-sm md:text-base">Discover cutting-edge technologies ready for commercial application</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-star text-accent mr-3 mt-1"></i>
-                  <span class="text-gray-700 text-sm md:text-base">Network with potential partners, suppliers, and clients</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-star text-accent mr-3 mt-1"></i>
-                  <span class="text-gray-700 text-sm md:text-base">Learn about regulatory trends and compliance strategies</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-star text-accent mr-3 mt-1"></i>
-                  <span class="text-gray-700 text-sm md:text-base">Gain a practical edge in AI-assisted investing</span>
-                </li>
+                <li class="flex items-start"><i class="fas fa-star text-accent mr-3 mt-1"></i><span class="text-gray-700 text-sm md:text-base">Discover cutting-edge technologies ready for commercial application</span></li>
+                <li class="flex items-start"><i class="fas fa-star text-accent mr-3 mt-1"></i><span class="text-gray-700 text-sm md:text-base">Network with potential partners, suppliers, and clients</span></li>
+                <li class="flex items-start"><i class="fas fa-star text-accent mr-3 mt-1"></i><span class="text-gray-700 text-sm md:text-base">Learn about regulatory trends and compliance strategies</span></li>
+                <li class="flex items-start"><i class="fas fa-star text-accent mr-3 mt-1"></i><span class="text-gray-700 text-sm md:text-base">Gain a practical edge in AI-assisted investing</span></li>
               </ul>
             </div>
           </div>
@@ -393,52 +261,39 @@
     </section>
 
     <!-- Conference History -->
-    <section class="py-16 sm:py-20 bg-white">
+    <section class="py-16 sm:py-20 bg-gradient-to-r from-teal-50/60 to-sky-50/60">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          <!-- Timeline Visual -->
-          <div class="animate-fadeUp">
-            <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 sm:p-8">
+          <div class="reveal">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
               <h3 class="text-xl md:text-2xl font-bold text-brand mb-6 md:mb-8 text-center">Conference Journey</h3>
-
               <div class="space-y-5 md:space-y-6">
                 <div class="flex items-center">
-                  <div class="w-3.5 h-3.5 md:w-4 md:h-4 bg-primary rounded-full mr-4 md:mr-6"></div>
-                  <div>
-                    <div class="font-semibold text-gray-800 text-sm md:text-base">2024 &ndash; Inaugural Edition</div>
-                    <div class="text-gray-600 text-xs md:text-sm">First edition hosted at KIT, Berhampur</div>
-                  </div>
+                  <div class="w-3.5 h-3.5 md:w-4 md:h-4 bg-primary rounded-full mr-4 md:mr-6 shrink-0"></div>
+                  <div><div class="font-semibold text-gray-800 text-sm md:text-base">2024 &ndash; Inaugural Edition</div><div class="text-gray-600 text-xs md:text-sm">First edition hosted at KIT, Berhampur</div></div>
                 </div>
-
                 <div class="flex items-center">
-                  <div class="w-3.5 h-3.5 md:w-4 md:h-4 bg-accent rounded-full mr-4 md:mr-6"></div>
-                  <div>
-                    <div class="font-semibold text-gray-800 text-sm md:text-base">2025 &ndash; Second Edition</div>
-                    <div class="text-gray-600 text-xs md:text-sm">Expanded international participation and indexed proceedings</div>
-                  </div>
+                  <div class="w-3.5 h-3.5 md:w-4 md:h-4 bg-accent rounded-full mr-4 md:mr-6 shrink-0"></div>
+                  <div><div class="font-semibold text-gray-800 text-sm md:text-base">2025 &ndash; Second Edition</div><div class="text-gray-600 text-xs md:text-sm">Expanded international participation and indexed proceedings</div></div>
                 </div>
-
                 <div class="flex items-center">
-                  <div class="w-3.5 h-3.5 md:w-4 md:h-4 bg-primary rounded-full mr-4 md:mr-6"></div>
-                  <div>
-                    <div class="font-semibold text-gray-800 text-sm md:text-base">2026 &ndash; Third Edition</div>
-                    <div class="text-gray-600 text-xs md:text-sm">Focus shifts to venture capital powered by artificial intelligence</div>
-                  </div>
+                  <div class="w-3.5 h-3.5 md:w-4 md:h-4 bg-leaf rounded-full mr-4 md:mr-6 shrink-0"></div>
+                  <div><div class="font-semibold text-gray-800 text-sm md:text-base">2026 &ndash; Third Edition</div><div class="text-gray-600 text-xs md:text-sm">Focus shifts to venture capital powered by artificial intelligence, with Wiley as publication partner</div></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Content -->
-          <div class="animate-fadeUp" style="animation-delay:.3s;">
-            <h2 class="text-2xl md:text-3xl font-bold text-brand mb-4 md:mb-6">Our Story</h2>
+          <div class="reveal" style="transition-delay:.15s">
+            <p class="section-eyebrow mb-3">Our story</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-brand mb-4 md:mb-6">How NGVCAI Began</h2>
             <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-5 md:mb-6">
-              The NGVCAI 2026 was conceived from a vision to create a premier platform
+              NGVCAI was conceived from a vision to create a premier platform
               where capital meets technology. As artificial intelligence reshapes every stage of the venture cycle,
               the need for innovative, technology-driven solutions becomes increasingly critical.
             </p>
             <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-5 md:mb-6">
-              Hosted by the prestigious Kalam Institute of Technology, Odisha, India, this inaugural conference
+              Hosted by Kalam Institute of Technology, Odisha, India, the conference
               represents the culmination of extensive planning and collaboration with leading
               investors, researchers, and technology leaders worldwide.
             </p>
@@ -453,84 +308,50 @@
     </section>
 
     <!-- Expected Outcomes -->
-    <section class="py-16 sm:py-20 bg-gradient-to-r from-teal-50/60 to-sky-50/60">
+    <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-12 md:mb-16 animate-fadeUp">
+        <div class="text-center mb-12 md:mb-16 reveal">
+          <p class="section-eyebrow justify-center mb-3">Outcomes</p>
           <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Expected Outcomes</h2>
           <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-            The NGVCAI 2026 aims to deliver tangible outcomes that advance
-            AI-enabled investment practice globally.
+            NGVCAI 2026 aims to deliver tangible outcomes that advance AI-enabled investment practice globally.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <!-- Outcome 1 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 card-hover animate-fadeUp">
-            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6 mx-auto">
-              <i class="fas fa-lightbulb text-primary text-xl md:text-2xl"></i>
-            </div>
+          <div class="surface-card rounded-xl shadow-lg p-6 md:p-8 card-hover reveal">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6 mx-auto"><i class="fas fa-lightbulb text-primary text-xl md:text-2xl"></i></div>
             <h3 class="text-lg md:text-xl font-bold text-brand mb-3 md:mb-4 text-center">Innovation Catalyst</h3>
-            <p class="text-gray-600 text-sm md:text-base text-center">
-              Spark breakthrough innovations through cross-sector collaboration and knowledge exchange
-              between researchers and industry professionals.
-            </p>
+            <p class="text-gray-600 text-sm md:text-base text-center">Spark breakthrough innovations through cross-sector collaboration and knowledge exchange between researchers and industry professionals.</p>
           </div>
 
-          <!-- Outcome 2 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 card-hover animate-fadeUp" style="animation-delay:.2s;">
-            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6 mx-auto">
-              <i class="fas fa-handshake text-accent text-xl md:text-2xl"></i>
-            </div>
+          <div class="surface-card rounded-xl shadow-lg p-6 md:p-8 card-hover reveal" style="transition-delay:.15s">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-4 md:mb-6 mx-auto"><i class="fas fa-handshake text-accent text-xl md:text-2xl"></i></div>
             <h3 class="text-lg md:text-xl font-bold text-brand mb-3 md:mb-4 text-center">Strategic Partnerships</h3>
-            <p class="text-gray-600 text-sm md:text-base text-center">
-              Facilitate meaningful partnerships between academia, industry, and government to
-              accelerate responsible AI adoption in venture capital.
-            </p>
+            <p class="text-gray-600 text-sm md:text-base text-center">Facilitate meaningful partnerships between academia, industry, and government to accelerate responsible AI adoption in venture capital.</p>
           </div>
 
-          <!-- Outcome 3 -->
-          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 card-hover animate-fadeUp" style="animation-delay:.4s;">
-            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6 mx-auto">
-              <i class="fas fa-rocket text-primary text-xl md:text-2xl"></i>
-            </div>
+          <div class="surface-card rounded-xl shadow-lg p-6 md:p-8 card-hover reveal" style="transition-delay:.3s">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 md:mb-6 mx-auto"><i class="fas fa-rocket text-primary text-xl md:text-2xl"></i></div>
             <h3 class="text-lg md:text-xl font-bold text-brand mb-3 md:mb-4 text-center">Market Implementation</h3>
-            <p class="text-gray-600 text-sm md:text-base text-center">
-              Bridge the gap between research and market application, turning innovative ideas
-              into commercially viable ventures.
-            </p>
+            <p class="text-gray-600 text-sm md:text-base text-center">Bridge the gap between research and market application, turning innovative ideas into commercially viable ventures.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="py-16 sm:py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div class="animate-fadeUp">
-          <h2 class="text-2xl md:text-3xl font-bold text-brand mb-4 md:mb-6">Join the AI Investment Movement</h2>
-          <p class="text-base md:text-xl text-gray-700 mb-8 md:mb-10 max-w-2xl mx-auto">
-            Be part of the conversation shaping the future of venture capital.
-            Register today and help define how the next generation of companies gets funded.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-5 sm:gap-6 justify-center items-center mb-8 md:mb-10">
-            <a href="registration.html"
-               class="bg-primary hover:bg-primary/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-               <i class="fas fa-user-plus mr-2"></i>
-               Register Now
-            </a>
-            <a href="call-for-papers.html"
-               class="bg-accent hover:bg-accent/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-               <i class="fas fa-file-alt mr-2"></i>
-               Submit Your Research
-            </a>
-            <a href="speakers.html"
-               class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-               <i class="fas fa-users mr-2"></i>
-               Meet Our Speakers
-            </a>
-          </div>
-
+    <!-- CTA -->
+    <section class="py-16 sm:py-20 bg-gradient-to-r from-teal-50/60 to-sky-50/60">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center reveal">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand mb-4 md:mb-6">Join the AI Investment Movement</h2>
+        <p class="text-base md:text-xl text-gray-700 mb-8 md:mb-10 max-w-2xl mx-auto">
+          Be part of the conversation shaping the future of venture capital.
+          Register today and help define how the next generation of companies gets funded.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+          <a href="registration.html" class="btn btn-primary"><i class="fas fa-user-plus"></i> Register Now</a>
+          <a href="call-for-papers.html" class="btn btn-accent"><i class="fas fa-file-alt"></i> Submit Your Research</a>
+          <a href="speakers.html" class="btn btn-outline"><i class="fas fa-users"></i> Meet Our Speakers</a>
         </div>
       </div>
     </section>
@@ -538,26 +359,35 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+  <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-mint">NGVCAI 2026</h3>
-        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">
-          International Conference on Venture Capital &amp; Artificial Intelligence
-        </p>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/img/logo-nav.png" alt="" class="h-10 w-10 rounded-full" width="176" height="176" loading="lazy" aria-hidden="true">
+          <h3 class="text-xl md:text-2xl font-bold text-mint">NGVCAI 2026</h3>
+        </div>
+        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">3rd International Conference on Venture Capital &amp; Artificial Intelligence</p>
         <p class="text-gray-300 text-sm md:text-base space-y-1">
           <span class="block"><i class="fas fa-calendar-alt text-mint mr-2"></i>06–07 November 2026</span>
           <span class="block"><i class="fas fa-map-marker-alt text-mint mr-2"></i>KIT Auditorium, Berhampur</span>
           <span class="block"><i class="fas fa-building text-mint mr-2"></i>Hosted by Kalam Institute of Technology, Odisha, India</span>
         </p>
+        <div class="flex items-center gap-3 mt-6">
+          <span class="inline-flex items-center bg-white/95 rounded-lg px-3 py-1.5"><img src="assets/img/scopus.png" alt="Scopus" class="logo-scopus--sm" loading="lazy"></span>
+          <span class="inline-flex items-center bg-white/95 rounded-lg px-2 py-1"><img src="assets/img/wiley.png" alt="Wiley" class="logo-wiley--sm" loading="lazy" width="340" height="72"></span>
+        </div>
       </div>
 
-      <nav class="flex flex-col gap-2.5 md:gap-3">
+      <nav class="flex flex-col gap-2.5 md:gap-3" aria-label="Footer">
         <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
-        <a href="about.html" class="footer-link text-mint font-semibold text-sm md:text-base">About</a>
+        <a href="about.html" class="footer-link is-active text-sm md:text-base">About</a>
         <a href="speakers.html" class="footer-link text-sm md:text-base">Speakers</a>
         <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
         <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
+      </nav>
+
+      <nav class="flex flex-col gap-2.5 md:gap-3" aria-label="Footer secondary">
+        <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200 hidden md:block">&nbsp;</h4>
         <a href="author-guidelines.html" class="footer-link text-sm md:text-base">Author Guidelines</a>
         <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
         <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
@@ -565,17 +395,12 @@
       </nav>
     </div>
 
-<div class="mt-10 md:mt-12 border-t border-white/20 pt-6 md:pt-8 text-center px-4">
-      <p class="text-gray-300 text-xs md:text-sm mb-1.5">
-        © 2026 NGVCAI — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.
-      </p>
-      <p class="text-xs md:text-sm text-gray-400">
-        Built and maintained by
-        <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">
-          Cipherium Private Limited
-        </a>
-      </p>
+    <div class="mt-10 md:mt-12 border-t border-white/20 pt-6 md:pt-8 text-center px-4">
+      <p class="text-gray-300 text-xs md:text-sm mb-1.5">© 2026 NGVCAI — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.</p>
+      <p class="text-xs md:text-sm text-gray-400">Built and maintained by <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">Cipherium Private Limited</a></p>
     </div>
   </footer>
+
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>

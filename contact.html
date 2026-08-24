@@ -1,253 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | NGVCAI 2026</title>
+  <meta name="description" content="Contact the NGVCAI 2026 organizing team at Kalam Institute of Technology, Berhampur — secretariat address, phone, email, and enquiry form." />
+  <link rel="canonical" href="https://gitdfsb.com/contact.html" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NGVCAI 2026" />
+  <meta property="og:title" content="Contact | NGVCAI 2026" />
+  <meta property="og:description" content="Get in touch with the NGVCAI 2026 organizing team." />
+  <meta property="og:image" content="https://gitdfsb.com/assets/img/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-  <!-- Custom Tailwind config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            display: ['Archivo', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            brand:   '#14396E',
-            primary: '#1E7C88',
-            accent:  '#26709B',
-            leaf:    '#4FA83F',
-            mint:    '#7FD0D8',
-            sprout:  '#8BD97A',
-            circuit: '#35C4E8',
-          },
-          screens: { xs: '420px' }
-        },
-      },
-    };
-  </script>
-
-  <!-- Google Font: Inter -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png" />
-
-  <!-- Meta SEO -->
-  <meta name="description" content="Contact the NGVCAI 2026 organizing team. Get in touch for inquiries, support, and conference information." />
-
-  <!-- Minimal custom CSS (no @apply; CDN-safe) -->
-  <style>
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
-
-    @keyframes fadeUp { 0% {opacity:0; transform: translateY(20px);} 100% {opacity:1; transform: translateY(0);} }
-    @keyframes float { 0%,100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
-    .animate-fadeUp { animation: fadeUp .8s ease-out both; }
-    .animate-float { animation: float 3s ease-in-out infinite; }
-
-    /* Replacements for @apply */
-    .nav-link,.footer-link { color:#d1d5db; transition: color .3s ease; }
-    .nav-link:hover,.footer-link:hover { color:#1E7C88; }
-
-    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
-    }
-
-    .contact-card {
-      background: linear-gradient(135deg, rgba(30, 124, 136, .05) 0%, rgba(20, 57, 110, .05) 100%);
-      border: 1px solid rgba(30, 124, 136, .1);
-    }
-
-    /* Form inputs without Tailwind build step */
-    .form-input,
-    .form-textarea,
-    .form-select {
-      width: 100%;
-      padding: .75rem 1rem;
-      border: 1px solid #d1d5db; /* gray-300 */
-      border-radius: .5rem; /* rounded-lg */
-      transition: box-shadow .2s ease, border-color .2s ease;
-      background-color: #fff; color:#111827; /* gray-900 text */
-      outline: none;
-    }
-    .form-textarea { resize: vertical; }
-    .form-input:focus, .form-textarea:focus, .form-select:focus {
-      border-color: #1E7C88; /* primary */
-      box-shadow: 0 0 0 3px rgba(30, 124, 136, .25);
-    }
-  </style>
-
-  <!-- NGVCAI brand type + colour system (synced to logo) -->
-  <style>
-    :root {
-      --ng-brand: #14396E;
-      --ng-primary: #1E7C88;
-      --ng-accent: #26709B;
-      --ng-leaf: #4FA83F;
-      --ng-mint: #7FD0D8;
-    }
-    h1, h2, h3, h4, .font-display {
-      font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.015em;
-    }
-    /* logo sets everything in caps — headings echo it */
-    h1, h2 { text-transform: uppercase; letter-spacing: 0.005em; }
-    h3, h4 { letter-spacing: -0.005em; }
-
-    /* nav + footer links live on the navy bar */
-    .nav-link, .footer-link { color: #cbd5e1; transition: color .3s ease; }
-    .nav-link:hover, .footer-link:hover { color: var(--ng-mint); }
-
-    /* thin logo-gradient rule under the fixed header */
-    header.ng-header { border-bottom: 3px solid transparent;
-      border-image: linear-gradient(90deg, #14396E 0%, #1E7C88 45%, #4FA83F 100%) 1; }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
 
 <body class="font-sans bg-white text-slate-700 antialiased">
 
-  <!-- Skip link -->
-  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
-    Skip to main content
-  </a>
+  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">Skip to main content</a>
 
   <!-- Navbar -->
   <header class="ng-header fixed inset-x-0 top-0 z-40 bg-brand text-gray-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
-  <a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-mint transition-colors duration-300">
-  <img src="logo.png" alt="Logo" class="h-12 w-auto">
-  <img src="kit.png" alt="KIT" class="h-12 w-auto">
-</a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="NGVCAI 2026 — home">
+        <img src="assets/img/logo-nav.png" alt="NGVCAI 2026" class="h-10 w-10 sm:h-11 sm:w-11 rounded-full ring-2 ring-white/10" width="176" height="176">
+        <span class="h-8 w-px bg-white/20 hidden sm:block" aria-hidden="true"></span>
+        <img src="assets/img/kit.png" alt="Kalam Institute of Technology" class="h-8 sm:h-9 w-auto hidden sm:block" width="289" height="230">
+      </a>
+
       <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
+      <label for="nav-toggle" class="cursor-pointer lg:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
-      <nav id="main-nav" class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
-        <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
-        <a href="speakers.html" class="nav-link text-sm sm:text-base">Speakers</a>
-        <a href="committee.html" class="nav-link text-sm sm:text-base">Committee</a>
-        <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
-         <a href="author-guidelines.html" class="nav-link text-sm sm:text-base">Author Guidelines</a>
-        <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
-        <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
-        <a href="contact.html" class="nav-link text-mint font-semibold text-sm sm:text-base">Contact</a>
+      <nav id="main-nav" class="w-full lg:w-auto mt-3 lg:mt-0 flex-col lg:flex-row gap-4 lg:gap-6 hidden peer-checked:flex lg:flex lg:items-center">
+        <a href="about.html" class="nav-link text-sm">About</a>
+        <a href="speakers.html" class="nav-link text-sm">Speakers</a>
+        <a href="committee.html" class="nav-link text-sm">Committee</a>
+        <a href="call-for-papers.html" class="nav-link text-sm">Call for Papers</a>
+        <a href="author-guidelines.html" class="nav-link text-sm">Author Guidelines</a>
+        <a href="venue.html" class="nav-link text-sm">Venue</a>
+        <a href="contact.html" class="nav-link is-active text-sm" aria-current="page">Contact</a>
+        <a href="registration.html" class="btn btn-primary !px-5 !py-2 text-sm w-full lg:w-auto justify-center">Register</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main -->
   <main id="main" class="pt-20 sm:pt-24">
 
-    <!-- Hero Section -->
-<section class="relative py-16 sm:py-20 bg-gradient-to-br from-teal-50 via-white to-sky-50 overflow-hidden">
-  <div class="pointer-events-none absolute top-6 right-6 w-24 h-24 sm:w-32 sm:h-32 bg-primary/10 rounded-full animate-float"></div>
-  <div class="pointer-events-none absolute bottom-6 left-6 w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;"></div>
-  
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-    <div class="animate-fadeUp">
+    <!-- Page hero -->
+    <section class="relative py-16 sm:py-20 bg-gradient-to-br from-teal-50 via-white to-sky-50 overflow-hidden">
+      <div class="pointer-events-none absolute top-6 right-6 w-24 h-24 sm:w-32 sm:h-32 bg-primary/10 rounded-full animate-float" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute bottom-6 left-6 w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;" aria-hidden="true"></div>
 
-      <!-- Logos Row -->
-    <div class="flex justify-center items-center gap-6 mb-6">
-  <img src="logo.png" alt="Logo" class="h-20 w-auto">
-  <img src="kit.png" alt="KIT" class="h-20 w-auto">
-  <img src="scopus.png" alt="Scopus" class="h-20 w-auto">
-  <img src="tf.png" alt="TF" class="h-20 w-auto">
-</div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center animate-fadeUp">
+        <p class="section-eyebrow justify-center mb-4">We're here to help</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-brand mb-4 md:mb-6">Contact Us</h1>
+        <p class="text-base md:text-xl text-gray-700 max-w-3xl md:max-w-4xl mx-auto mb-8">
+          Get in touch with the NGVCAI 2026 organizing team for enquiries, support, and
+          any information you need about the conference.
+        </p>
 
-
-      <h1 class="text-3xl md:text-5xl font-extrabold text-brand mb-4 md:mb-6">Contact Us</h1>
-      <p class="text-base md:text-xl text-gray-700 max-w-3xl md:max-w-4xl mx-auto mb-6 md:mb-8">
-        Get in touch with the NGVCAI 2026 organizing team. We're here to help with your
-        inquiries, support needs, and provide all the information you need for the conference.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
-        <div class="bg-accent/10 px-5 py-2.5 sm:py-3 rounded-full">
-          <span class="text-accent font-semibold text-sm sm:text-base">
-            <i class="fas fa-user mr-2"></i>
-            Prof. Padma Charan Sahu
-          </span>
-        </div>
-        <div class="bg-primary/10 px-5 py-2.5 sm:py-3 rounded-full">
-          <span class="text-primary font-semibold text-sm sm:text-base">
-            <i class="fas fa-phone mr-2"></i>
-            +91 7978518005
-          </span>
-        </div>
-        <div class="bg-accent/10 px-5 py-2.5 sm:py-3 rounded-full">
-          <span class="text-accent font-semibold text-sm sm:text-base">
-            <i class="fas fa-envelope mr-2"></i>
-            conference@kit.edu.in
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Map Section -->
-    <section class="py-16 sm:py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-10 sm:mb-12 animate-fadeUp">
-          <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Find Us</h2>
-          <p class="text-base md:text-lg text-gray-600">
-            Kalam Institute of Technology, Odisha, India is conveniently located in Berhampur, Odisha.
-          </p>
-        </div>
-        
-        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-xl animate-fadeUp">
-          <!-- Placeholder for Google Maps -->
-          <div class="min-h-[240px] sm:min-h-[320px] md:min-h-[380px] lg:min-h-[420px] bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center p-6">
-            <div class="text-center">
-              <i class="fas fa-map-marked-alt text-5xl md:text-6xl text-primary mb-3 md:mb-4"></i>
-              <p class="text-lg md:text-xl font-semibold text-gray-700 mb-2">Interactive Map</p>
-              <p class="text-gray-600 text-sm md:text-base">
-                Kalam Institute of Technology, Odisha, India<br>
-                Berhampur, Odisha - 760010
-              </p>
-              <a href="https://maps.google.com/?q=Kalam+Institute+of+Technology+Berhampur" 
-                 target="_blank" 
-                 class="inline-block mt-4 bg-primary text-white px-5 md:px-6 py-2.5 md:py-3 rounded-lg hover:bg-primary/90 transition-colors text-sm md:text-base">
-                <i class="fas fa-external-link-alt mr-2"></i>
-                Open in Google Maps
-              </a>
-            </div>
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
+          <div class="bg-accent/10 px-5 py-2.5 sm:py-3 rounded-full">
+            <span class="text-accent font-semibold text-sm sm:text-base"><i class="fas fa-user mr-2"></i>Prof. Padma Charan Sahu</span>
           </div>
+          <a href="tel:+917978518005" class="bg-primary/10 px-5 py-2.5 sm:py-3 rounded-full hover:bg-primary/20 transition-colors">
+            <span class="text-primary font-semibold text-sm sm:text-base"><i class="fas fa-phone mr-2"></i>+91 7978518005</span>
+          </a>
+          <a href="mailto:conference@kit.edu.in" class="bg-accent/10 px-5 py-2.5 sm:py-3 rounded-full hover:bg-accent/20 transition-colors">
+            <span class="text-accent font-semibold text-sm sm:text-base"><i class="fas fa-envelope mr-2"></i>conference@kit.edu.in</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Conference Secretariat -->
-    <section class="py-16 sm:py-20 bg-gradient-to-r from-teal-50/60 to-sky-50/60">
+    <!-- Secretariat + Form -->
+    <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center mb-12 md:mb-16 animate-fadeUp">
+        <div class="text-center mb-12 md:mb-16 reveal">
+          <p class="section-eyebrow justify-center mb-3">Reach us</p>
           <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Conference Secretariat</h2>
           <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-            Our main office location and primary contact information for the NGVCAI 2026.
+            Our office location and primary contact information for NGVCAI 2026.
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <!-- Address Card -->
-          <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 animate-fadeUp">
+          <div class="surface-card rounded-2xl shadow-xl p-6 sm:p-8 reveal">
             <h3 class="text-xl md:text-2xl font-bold text-brand mb-4 md:mb-6 flex items-center">
-              <i class="fas fa-building text-primary mr-3"></i>
-              Office Address
+              <i class="fas fa-building text-primary mr-3"></i>Office Address
             </h3>
             <div class="space-y-4 text-gray-700">
               <div class="flex items-start">
@@ -260,37 +115,25 @@
                   <p>India</p>
                 </div>
               </div>
-              
+
               <div class="flex items-center">
                 <i class="fas fa-phone text-primary mr-4"></i>
-                <div>
-                  <p class="font-semibold">Main Office:</p>
-                  <a href="tel:+919438250712" class="text-primary hover:underline">+91 9438250712</a>
-                </div>
+                <div><p class="font-semibold">Main Office:</p><a href="tel:+919438250712" class="text-primary hover:underline">+91 9438250712</a></div>
               </div>
 
               <div class="flex items-center">
                 <i class="fas fa-envelope text-primary mr-4"></i>
-                <div>
-                  <p class="font-semibold">Email:</p>
-                  <a href="mailto:conference@kit.edu.in" class="text-primary hover:underline">conference@kit.edu.in</a>
-                </div>
+                <div><p class="font-semibold">Email:</p><a href="mailto:conference@kit.edu.in" class="text-primary hover:underline">conference@kit.edu.in</a></div>
               </div>
-              
+
               <div class="flex items-center">
                 <i class="fas fa-globe text-primary mr-4"></i>
-                <div>
-                  <p class="font-semibold">Website:</p>
-                  <a href="https://kit.edu.in" target="_blank" class="text-primary hover:underline">www.kit.edu.in</a>
-                </div>
+                <div><p class="font-semibold">Website:</p><a href="https://kit.edu.in" target="_blank" rel="noopener" class="text-primary hover:underline">www.kit.edu.in</a></div>
               </div>
             </div>
-            
+
             <div class="mt-6 md:mt-8 p-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg">
-              <h4 class="font-bold text-brand mb-2">
-                <i class="fas fa-clock text-primary mr-2"></i>
-                Office Hours
-              </h4>
+              <h4 class="font-bold text-brand mb-2"><i class="fas fa-clock text-primary mr-2"></i>Office Hours</h4>
               <div class="text-sm md:text-base text-gray-700">
                 <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
                 <p>Saturday: 9:00 AM - 2:00 PM IST</p>
@@ -300,13 +143,12 @@
           </div>
 
           <!-- Contact Form -->
-          <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 animate-fadeUp" style="animation-delay:.3s;">
+          <div class="surface-card rounded-2xl shadow-xl p-6 sm:p-8 reveal" style="transition-delay:.15s">
             <h3 class="text-xl md:text-2xl font-bold text-brand mb-4 md:mb-6 flex items-center">
-              <i class="fas fa-paper-plane text-accent mr-3"></i>
-              Send us a Message
+              <i class="fas fa-paper-plane text-accent mr-3"></i>Send us a Message
             </h3>
-            
-            <form action="#" method="POST" class="space-y-5 md:space-y-6" novalidate>
+
+            <form action="mailto:conference@kit.edu.in" method="POST" enctype="text/plain" class="space-y-5 md:space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
                 <div>
                   <label for="first-name" class="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
@@ -317,101 +159,126 @@
                   <input type="text" id="last-name" name="last-name" required class="form-input" placeholder="Enter your last name" autocomplete="family-name" />
                 </div>
               </div>
-              
+
               <div>
                 <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
                 <input type="email" id="email" name="email" required class="form-input" placeholder="Enter your email address" autocomplete="email" />
               </div>
-              
+
               <div>
                 <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
                 <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" autocomplete="tel" />
               </div>
-              
+
               <div>
                 <label for="inquiry-type" class="block text-sm font-semibold text-gray-700 mb-2">Inquiry Type *</label>
-                <select id="inquiry-type" name="inquiry-type" required class="form-select" aria-label="Inquiry type">
+                <select id="inquiry-type" name="inquiry-type" required class="form-select">
                   <option value="">Select inquiry type</option>
                   <option value="general">General Information</option>
                   <option value="papers">Paper Submission</option>
                   <option value="registration">Registration</option>
+                  <option value="publication">Publication &amp; Wiley Proceedings</option>
                   <option value="technical">Technical Support</option>
-                  <option value="media">Media & Publicity</option>
+                  <option value="media">Media &amp; Publicity</option>
                   <option value="local">Local Arrangements</option>
                   <option value="other">Other</option>
                 </select>
               </div>
-              
+
               <div>
                 <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject *</label>
                 <input type="text" id="subject" name="subject" required class="form-input" placeholder="Enter the subject of your inquiry" />
               </div>
-              
+
               <div>
                 <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
                 <textarea id="message" name="message" rows="5" required class="form-textarea" placeholder="Enter your message or inquiry details"></textarea>
               </div>
-              
+
               <div class="flex items-start gap-2">
                 <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2" />
                 <label for="newsletter" class="text-sm text-gray-700">Subscribe to conference updates and newsletter</label>
               </div>
-              
-              <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 md:py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <i class="fas fa-paper-plane mr-2"></i>
-                Send Message
-              </button>
+
+              <button type="submit" class="btn btn-primary w-full"><i class="fas fa-paper-plane"></i> Send Message</button>
             </form>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- (Optional) FAQ Section placeholder left intact -->
+    <!-- Map -->
+    <section class="py-16 sm:py-20 bg-gradient-to-r from-teal-50/60 to-sky-50/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 sm:mb-12 reveal">
+          <p class="section-eyebrow justify-center mb-3">Location</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Find Us</h2>
+          <p class="text-base md:text-lg text-gray-600">
+            Kalam Institute of Technology is located in Berhampur, Odisha.
+          </p>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden shadow-xl bg-white reveal">
+          <iframe
+            title="Map showing Kalam Institute of Technology, Berhampur"
+            src="https://www.google.com/maps?q=Kalam%20Institute%20of%20Technology%20Berhampur&output=embed"
+            width="100%" height="420" style="border:0;" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="p-5 text-center">
+            <p class="text-gray-700 text-sm md:text-base mb-3">Kalam Institute of Technology, Berhampur, Odisha - 760010</p>
+            <a href="https://maps.google.com/?q=Kalam+Institute+of+Technology+Berhampur" target="_blank" rel="noopener" class="btn btn-primary !py-2.5 !px-5 text-sm">
+              <i class="fas fa-external-link-alt"></i> Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
   <!-- Footer -->
-  <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+  <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-mint">NGVCAI 2026</h3>
-        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">
-          International Conference on Venture Capital &amp; Artificial Intelligence
-        </p>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/img/logo-nav.png" alt="" class="h-10 w-10 rounded-full" width="176" height="176" loading="lazy" aria-hidden="true">
+          <h3 class="text-xl md:text-2xl font-bold text-mint">NGVCAI 2026</h3>
+        </div>
+        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">3rd International Conference on Venture Capital &amp; Artificial Intelligence</p>
         <p class="text-gray-300 text-sm md:text-base space-y-1">
           <span class="block"><i class="fas fa-calendar-alt text-mint mr-2"></i>06–07 November 2026</span>
           <span class="block"><i class="fas fa-map-marker-alt text-mint mr-2"></i>KIT Auditorium, Berhampur</span>
           <span class="block"><i class="fas fa-building text-mint mr-2"></i>Hosted by Kalam Institute of Technology, Odisha, India</span>
         </p>
+        <div class="flex items-center gap-3 mt-6">
+          <span class="inline-flex items-center bg-white/95 rounded-lg px-3 py-1.5"><img src="assets/img/scopus.png" alt="Scopus" class="logo-scopus--sm" loading="lazy"></span>
+          <span class="inline-flex items-center bg-white/95 rounded-lg px-2 py-1"><img src="assets/img/wiley.png" alt="Wiley" class="logo-wiley--sm" loading="lazy" width="340" height="72"></span>
+        </div>
       </div>
 
-      <nav class="flex flex-col gap-2.5 md:gap-3">
+      <nav class="flex flex-col gap-2.5 md:gap-3" aria-label="Footer">
         <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
         <a href="about.html" class="footer-link text-sm md:text-base">About</a>
         <a href="speakers.html" class="footer-link text-sm md:text-base">Speakers</a>
         <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
         <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
+      </nav>
+
+      <nav class="flex flex-col gap-2.5 md:gap-3" aria-label="Footer secondary">
+        <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200 hidden md:block">&nbsp;</h4>
         <a href="author-guidelines.html" class="footer-link text-sm md:text-base">Author Guidelines</a>
         <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
-
         <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
-        <a href="contact.html" class="footer-link text-mint font-semibold text-sm md:text-base">Contact</a>
+        <a href="contact.html" class="footer-link is-active text-sm md:text-base">Contact</a>
       </nav>
     </div>
 
-<div class="mt-10 md:mt-12 border-t border-white/20 pt-6 md:pt-8 text-center px-4">
-      <p class="text-gray-300 text-xs md:text-sm mb-1.5">
-        © 2026 NGVCAI — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.
-      </p>
-      <p class="text-xs md:text-sm text-gray-400">
-        Built and maintained by 
-        <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">
-          Cipherium Private Limited
-        </a>
-      </p>
+    <div class="mt-10 md:mt-12 border-t border-white/20 pt-6 md:pt-8 text-center px-4">
+      <p class="text-gray-300 text-xs md:text-sm mb-1.5">© 2026 NGVCAI — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.</p>
+      <p class="text-xs md:text-sm text-gray-400">Built and maintained by <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">Cipherium Private Limited</a></p>
     </div>
   </footer>
 
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>

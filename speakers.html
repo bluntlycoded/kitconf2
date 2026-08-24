@@ -1,197 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Speakers | NGVCAI 2026</title>
+  <meta name="description" content="Meet the keynote speakers, invited speakers, and chief guest of NGVCAI 2026 — researchers and practitioners shaping AI-driven venture capital." />
+  <link rel="canonical" href="https://gitdfsb.com/speakers.html" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NGVCAI 2026" />
+  <meta property="og:title" content="Speakers | NGVCAI 2026" />
+  <meta property="og:description" content="Meet the keynote speakers and chief guest of NGVCAI 2026." />
+  <meta property="og:image" content="https://gitdfsb.com/assets/img/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-  <!-- Custom Tailwind config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            display: ['Archivo', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            brand:   '#14396E',
-            primary: '#1E7C88',
-            accent:  '#26709B',
-            leaf:    '#4FA83F',
-            mint:    '#7FD0D8',
-            sprout:  '#8BD97A',
-            circuit: '#35C4E8',
-          },
-          screens: { xs: '420px' }
-        },
-      },
-    };
-  </script>
-
-  <!-- Google Font: Inter -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png" />
-
-  <!-- Meta SEO -->
-  <meta name="description" content="Meet our distinguished keynote speakers and industry experts at the NGVCAI 2026." />
-
-  <!-- Custom Styles (CDN-safe: no @apply) -->
-  <style>
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
-
-    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
-    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-    .animate-fadeUp { animation: fadeUp .8s ease-out both; }
-    .animate-float { animation: float 3s ease-in-out infinite; }
-
-    .nav-link,.footer-link { color:#d1d5db; transition: color .3s ease; }
-    .nav-link:hover,.footer-link:hover { color:#1E7C88; }
-
-    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
-    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
-
-    .speaker-card { background: linear-gradient(135deg, rgba(255,255,255,.95) 0%, rgba(249,250,251,.95) 100%); backdrop-filter: blur(10px); }
-
-    /* Photo wrappers keep consistent aspect & overlay badge readable */
-    .speaker-photo-wrap { position: relative; height: 18rem; }
-    @media (min-width: 640px) { .speaker-photo-wrap { height: 20rem; } }
-    .speaker-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-
-    /* Modal */
-    .modal { display:none; position: fixed; inset:0; z-index:1000; background-color: rgba(0,0,0,.5); backdrop-filter: blur(5px); }
-    .modal.active { display:flex; align-items:center; justify-content:center; }
-  </style>
-
-  <!-- NGVCAI brand type + colour system (synced to logo) -->
-  <style>
-    :root {
-      --ng-brand: #14396E;
-      --ng-primary: #1E7C88;
-      --ng-accent: #26709B;
-      --ng-leaf: #4FA83F;
-      --ng-mint: #7FD0D8;
-    }
-    h1, h2, h3, h4, .font-display {
-      font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.015em;
-    }
-    /* logo sets everything in caps — headings echo it */
-    h1, h2 { text-transform: uppercase; letter-spacing: 0.005em; }
-    h3, h4 { letter-spacing: -0.005em; }
-
-    /* nav + footer links live on the navy bar */
-    .nav-link, .footer-link { color: #cbd5e1; transition: color .3s ease; }
-    .nav-link:hover, .footer-link:hover { color: var(--ng-mint); }
-
-    /* thin logo-gradient rule under the fixed header */
-    header.ng-header { border-bottom: 3px solid transparent;
-      border-image: linear-gradient(90deg, #14396E 0%, #1E7C88 45%, #4FA83F 100%) 1; }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
 
 <body class="font-sans bg-white text-slate-700 antialiased">
 
-  <!-- Skip link -->
   <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">Skip to main content</a>
 
   <!-- Navbar -->
   <header class="ng-header fixed inset-x-0 top-0 z-40 bg-brand text-gray-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
-      <a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-mint transition-colors duration-300">
-        <img src="logo.png" alt="Logo" class="h-12 w-auto">
-        <img src="kit.png" alt="KIT" class="h-12 w-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="NGVCAI 2026 — home">
+        <img src="assets/img/logo-nav.png" alt="NGVCAI 2026" class="h-10 w-10 sm:h-11 sm:w-11 rounded-full ring-2 ring-white/10" width="176" height="176">
+        <span class="h-8 w-px bg-white/20 hidden sm:block" aria-hidden="true"></span>
+        <img src="assets/img/kit.png" alt="Kalam Institute of Technology" class="h-8 sm:h-9 w-auto hidden sm:block" width="289" height="230">
       </a>
 
       <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
+      <label for="nav-toggle" class="cursor-pointer lg:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
-      <nav id="main-nav" class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
-        <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
-        <a href="speakers.html" class="nav-link text-mint text-sm sm:text-base">Speakers</a>
-        <a href="committee.html" class="nav-link text-sm sm:text-base">Committee</a>
-        <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
-        <a href="author-guidelines.html" class="nav-link text-sm sm:text-base">Author Guidelines</a>
-        <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
-        <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
-        <a href="contact.html" class="nav-link text-sm sm:text-base">Contact</a>
+      <nav id="main-nav" class="w-full lg:w-auto mt-3 lg:mt-0 flex-col lg:flex-row gap-4 lg:gap-6 hidden peer-checked:flex lg:flex lg:items-center">
+        <a href="about.html" class="nav-link text-sm">About</a>
+        <a href="speakers.html" class="nav-link is-active text-sm" aria-current="page">Speakers</a>
+        <a href="committee.html" class="nav-link text-sm">Committee</a>
+        <a href="call-for-papers.html" class="nav-link text-sm">Call for Papers</a>
+        <a href="author-guidelines.html" class="nav-link text-sm">Author Guidelines</a>
+        <a href="venue.html" class="nav-link text-sm">Venue</a>
+        <a href="contact.html" class="nav-link text-sm">Contact</a>
+        <a href="registration.html" class="btn btn-primary !px-5 !py-2 text-sm w-full lg:w-auto justify-center">Register</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main -->
   <main id="main" class="pt-20 sm:pt-24">
 
-    <!-- Hero Section -->
+    <!-- Page hero -->
     <section class="relative py-16 sm:py-20 bg-gradient-to-br from-teal-50 via-white to-sky-50 overflow-hidden">
-  <div class="absolute top-10 right-10 w-24 sm:w-32 h-24 sm:h-32 bg-primary/10 rounded-full animate-float" aria-hidden="true"></div>
-  <div class="absolute bottom-10 left-10 w-20 sm:w-24 h-20 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;" aria-hidden="true"></div>
-  
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-    <div class="animate-fadeUp">
+      <div class="pointer-events-none absolute top-10 right-10 w-24 sm:w-32 h-24 sm:h-32 bg-primary/10 rounded-full animate-float" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute bottom-10 left-10 w-20 sm:w-24 h-20 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;" aria-hidden="true"></div>
 
-      <!-- Logos Row -->
-      <div class="flex justify-center items-center gap-6 mb-6">
-  <img src="logo.png" alt="Logo" class="h-20 w-auto">
-  <img src="kit.png" alt="KIT" class="h-20 w-auto">
-  <img src="scopus.png" alt="Scopus" class="h-20 w-auto">
-  <img src="tf.png" alt="TF" class="h-20 w-auto">
-</div>
-
-
-      <h1 class="text-3xl md:text-5xl font-extrabold text-brand mb-4 md:mb-6">Keynote Speakers</h1>
-      <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6 md:mb-8">
-        Meet the researchers and practitioners shaping how artificial intelligence is applied
-        to venture capital, entrepreneurship, and technology investment.
-      </p>
-      <div class="flex justify-center">
-        <div class="bg-primary/10 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full">
-          <span class="text-primary font-semibold">
-            <i class="fas fa-users mr-2"></i>Academia, Industry &amp; Government
-          </span>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center animate-fadeUp">
+        <p class="section-eyebrow justify-center mb-4">Academia, industry &amp; government</p>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-brand mb-4 md:mb-6">Conference Speakers</h1>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+          Meet the researchers and practitioners shaping how artificial intelligence is applied
+          to venture capital, entrepreneurship, and technology investment.
+        </p>
+        <div class="inline-flex flex-col items-center gap-3 bg-white rounded-2xl px-8 py-5 shadow-sm border border-slate-100">
+          <span class="text-slate-500 text-[11px] font-semibold uppercase tracking-[0.24em]">Indexing &amp; Publication Partner</span>
+          <div class="partner-strip">
+            <img src="assets/img/scopus.png" alt="Scopus" class="logo-scopus" loading="lazy" width="1280" height="643">
+            <img src="assets/img/wiley.png" alt="Wiley" class="logo-wiley" loading="lazy" width="340" height="72">
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-    <!-- Keynote Speakers -->
+    <!-- Chief Guest -->
     <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-3 md:mb-4 text-brand animate-fadeUp">Keynote Speakers</h2>
-        <p class="text-center text-gray-600 mb-10 md:mb-12 animate-fadeUp">Featured speakers delivering transformative insights</p>
+        <div class="text-center mb-10 md:mb-12 reveal">
+          <p class="section-eyebrow justify-center mb-3">Honouring the occasion</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand">Chief Guest</h2>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal1')" tabindex="0" role="button" aria-label="Open details for Dr. Sarat Chandra Tripathy">
-            <div class="speaker-photo-wrap flex items-center justify-center bg-gradient-to-br from-accent/10 to-gray-100">
-              <span class="text-5xl font-extrabold text-accent">SCT</span>
+        <div class="max-w-sm mx-auto reveal">
+          <article class="surface-card rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer speaker-card" onclick="openModal('modal1')" tabindex="0" role="button" aria-label="Open details for Dr. Sarat Chandra Tripathy">
+            <div class="speaker-photo-wrap bg-slate-100">
+              <img src="assets/speakers/sarat-chandra-tripathy.jpg" alt="Dr. Sarat Chandra Tripathy" class="speaker-photo object-top" width="640" height="640" loading="lazy">
               <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Chief Guest</div>
             </div>
             <div class="p-6">
               <h3 class="text-xl md:text-2xl font-bold text-brand mb-1.5">Dr. Sarat Chandra Tripathy</h3>
               <p class="text-accent font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Scientist &ndash; F</p>
               <p class="text-gray-600 mb-3">PhD, DSc. Serves at the National Centre for Polar and Ocean Research under the Earth System Science Organization.</p>
-              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>Ministry of Earth Sciences, Government of India &middot; Goa</div>
+              <div class="flex items-start text-sm text-gray-500"><i class="fas fa-landmark mr-2 mt-1"></i><span>Ministry of Earth Sciences, Government of India &middot; Goa</span></div>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal2')" style="animation-delay:.2s;" tabindex="0" role="button" aria-label="Open details for Dr. Manfred Hoerstmann">
-            <div class="speaker-photo-wrap flex items-center justify-center bg-gradient-to-br from-primary/10 to-gray-100">
-              <span class="text-5xl font-extrabold text-primary">MH</span>
+    <!-- Keynote & Invited Speakers -->
+    <section class="py-16 sm:py-20 bg-gradient-to-r from-teal-50/60 to-sky-50/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 md:mb-12 reveal">
+          <p class="section-eyebrow justify-center mb-3">Featured voices</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand mb-3 md:mb-4">Keynote &amp; Invited Speakers</h2>
+          <p class="text-base md:text-lg text-gray-600">Featured speakers delivering transformative insights</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <article class="speaker-card surface-card rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer reveal" onclick="openModal('modal2')" tabindex="0" role="button" aria-label="Open details for Dr. Manfred Hoerstmann">
+            <div class="speaker-photo-wrap bg-slate-100">
+              <img src="assets/speakers/manfred-hoerstmann.jpg" alt="Dr. Manfred Hoerstmann" class="speaker-photo object-top" width="640" height="640" loading="lazy">
               <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
             </div>
             <div class="p-6">
@@ -202,48 +130,53 @@
             </div>
           </article>
 
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal3')" style="animation-delay:.4s;" tabindex="0" role="button" aria-label="Open details for Dr. Badri Narayan Subudhi">
-            <div class="speaker-photo-wrap flex items-center justify-center bg-gradient-to-br from-accent/10 to-gray-100">
-              <span class="text-5xl font-extrabold text-accent">BNS</span>
+          <article class="speaker-card surface-card rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer reveal" onclick="openModal('modal3')" style="transition-delay:.15s" tabindex="0" role="button" aria-label="Open details for Dr. Badri Narayan Subudhi">
+            <div class="speaker-photo-wrap bg-slate-100">
+              <img src="assets/speakers/badri-narayan-subudhi.jpg" alt="Dr. Badri Narayan Subudhi" class="speaker-photo object-top" width="640" height="640" loading="lazy">
               <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
             </div>
             <div class="p-6">
               <h3 class="text-xl md:text-2xl font-bold text-brand mb-1.5">Dr. Badri Narayan Subudhi</h3>
               <p class="text-accent font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Keynote Speaker</p>
               <p class="text-gray-600 mb-3">Researcher in computer vision, machine learning, and image analysis.</p>
-              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>Indian Institute of Technology (IIT), Jammu</div>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>IIT Jammu</div>
             </div>
           </article>
 
-          <article class="speaker-card rounded-2xl shadow-lg overflow-hidden card-hover animate-fadeUp cursor-pointer" onclick="openModal('modal4')" style="animation-delay:.6s;" tabindex="0" role="button" aria-label="Open details for Dr. Bibhudendra Acharya">
-            <div class="speaker-photo-wrap flex items-center justify-center bg-gradient-to-br from-primary/10 to-gray-100">
-              <span class="text-5xl font-extrabold text-primary">BA</span>
-              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Speaker</div>
+          <article class="speaker-card surface-card rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer reveal" onclick="openModal('modal4')" style="transition-delay:.3s" tabindex="0" role="button" aria-label="Open details for Dr. Bibhudendra Acharya">
+            <div class="speaker-photo-wrap bg-slate-100">
+              <img src="assets/speakers/bibhudendra-acharya.jpg" alt="Dr. Bibhudendra Acharya" class="speaker-photo object-top" width="640" height="640" loading="lazy">
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Invited</div>
             </div>
             <div class="p-6">
               <h3 class="text-xl md:text-2xl font-bold text-brand mb-1.5">Dr. Bibhudendra Acharya</h3>
               <p class="text-primary font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Invited Speaker</p>
               <p class="text-gray-600 mb-3">Works on VLSI design, cryptography, and secure hardware systems.</p>
-              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>National Institute of Technology (NIT), Raipur</div>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>NIT Raipur</div>
             </div>
           </article>
+        </div>
+
+        <div class="mt-12 max-w-3xl mx-auto reveal">
+          <div class="rounded-xl border border-dashed border-gray-300 bg-white/70 p-8 text-center">
+            <i class="fas fa-microphone-lines text-gray-400 text-3xl mb-4" aria-hidden="true"></i>
+            <h3 class="text-xl font-bold text-brand mb-2">More Speakers To Be Announced</h3>
+            <p class="text-gray-600 text-sm md:text-base">Additional keynote and invited speakers for NGVCAI 2026 will be published here as they are confirmed.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- CTA -->
     <section class="py-16 sm:py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div class="animate-fadeUp">
-          <h2 class="text-3xl md:text-4xl font-bold text-brand mb-4 md:mb-6">Join the Conversation</h2>
-          <p class="text-lg md:text-xl text-gray-700 mb-6 md:mb-8">
-            Learn from these leaders and connect with founders, investors, and researchers working at the edge of AI and capital.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="registration.html" class="bg-primary hover:bg-primary/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Register Now
-            </a>
-          </div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand mb-4 md:mb-6">Join the Conversation</h2>
+        <p class="text-lg md:text-xl text-gray-700 mb-6 md:mb-8">
+          Learn from these leaders and connect with founders, investors, and researchers working at the edge of AI and capital.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="registration.html" class="btn btn-primary"><i class="fas fa-user-plus"></i> Register Now</a>
+          <a href="call-for-papers.html" class="btn btn-outline"><i class="fas fa-file-alt"></i> Call for Papers</a>
         </div>
       </div>
     </section>
@@ -251,24 +184,35 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
+  <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-mint">NGVCAI 2026</h3>
-        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">International Conference on Venture Capital &amp; Artificial Intelligence</p>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/img/logo-nav.png" alt="" class="h-10 w-10 rounded-full" width="176" height="176" loading="lazy" aria-hidden="true">
+          <h3 class="text-xl md:text-2xl font-bold text-mint">NGVCAI 2026</h3>
+        </div>
+        <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">3rd International Conference on Venture Capital &amp; Artificial Intelligence</p>
         <p class="text-gray-300 text-sm md:text-base space-y-1">
           <span class="block"><i class="fas fa-calendar-alt text-mint mr-2"></i>06–07 November 2026</span>
           <span class="block"><i class="fas fa-map-marker-alt text-mint mr-2"></i>KIT Auditorium, Berhampur</span>
           <span class="block"><i class="fas fa-building text-mint mr-2"></i>Hosted by Kalam Institute of Technology, Odisha, India</span>
         </p>
+        <div class="flex items-center gap-3 mt-6">
+          <span class="inline-flex items-center bg-white/95 rounded-lg px-3 py-1.5"><img src="assets/img/scopus.png" alt="Scopus" class="logo-scopus--sm" loading="lazy"></span>
+          <span class="inline-flex items-center bg-white/95 rounded-lg px-2 py-1"><img src="assets/img/wiley.png" alt="Wiley" class="logo-wiley--sm" loading="lazy" width="340" height="72"></span>
+        </div>
       </div>
 
-      <nav class="flex flex-col gap-2.5 md:gap-3">
+      <nav class="flex flex-col gap-2.5 md:gap-3" aria-label="Footer">
         <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
         <a href="about.html" class="footer-link text-sm md:text-base">About</a>
-        <a href="speakers.html" class="footer-link text-mint text-sm md:text-base">Speakers</a>
+        <a href="speakers.html" class="footer-link is-active text-sm md:text-base">Speakers</a>
         <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
         <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
+      </nav>
+
+      <nav class="flex flex-col gap-2.5 md:gap-3" aria-label="Footer secondary">
+        <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200 hidden md:block">&nbsp;</h4>
         <a href="author-guidelines.html" class="footer-link text-sm md:text-base">Author Guidelines</a>
         <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
         <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
@@ -278,149 +222,88 @@
 
     <div class="mt-10 md:mt-12 border-t border-white/20 pt-6 md:pt-8 text-center px-4">
       <p class="text-gray-300 text-xs md:text-sm mb-1.5">© 2026 NGVCAI — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.</p>
-      <p class="text-xs md:text-sm text-gray-400">Built and maintained by 
-        <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">Cipherium Private Limited</a>
-      </p>
+      <p class="text-xs md:text-sm text-gray-400">Built and maintained by <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">Cipherium Private Limited</a></p>
     </div>
   </footer>
 
   <!-- Speaker Modals -->
-  <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" aria-describedby="modal1-desc">
-    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+  <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title">
+    <div class="w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
       <div class="relative">
-        <div class="w-full h-48 sm:h-56 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-          <span class="text-6xl font-extrabold text-primary">SCT</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal1')">
-          <i class="fas fa-times text-lg"></i>
-        </button>
+        <div class="w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-100"><img src="assets/speakers/sarat-chandra-tripathy.jpg" alt="Dr. Sarat Chandra Tripathy" class="w-full h-full object-cover object-top" width="640" height="640" loading="lazy"></div>
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal1')"><i class="fas fa-times text-lg"></i></button>
       </div>
       <div class="mt-4">
         <h3 id="modal1-title" class="text-xl md:text-2xl font-bold text-brand">Dr. Sarat Chandra Tripathy</h3>
-        <p id="modal1-desc" class="mt-1 text-gray-600">Scientist &ndash; F (PhD, DSc) &mdash; Chief Guest, NGVCAI 2026</p>
+        <p class="mt-1 text-gray-600">Scientist &ndash; F (PhD, DSc) &mdash; Chief Guest, NGVCAI 2026</p>
         <div class="mt-4 text-gray-700 space-y-3">
           <p><strong>Affiliation:</strong> National Centre for Polar and Ocean Research (NCPOR)</p>
           <p><strong>Organization:</strong> Earth System Science Organization, Ministry of Earth Sciences, Government of India</p>
           <p><strong>Location:</strong> Headland Sada, Vasco-da-Gama, Goa &ndash; 403804</p>
           <p><strong>Role at NGVCAI 2026:</strong> Chief Guest</p>
         </div>
-        <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal(this.closest('.modal').id)">Close</button>
-        </div>
+        <div class="mt-6 text-right"><button class="btn btn-primary !py-2 !px-4" onclick="closeModal('modal1')">Close</button></div>
       </div>
     </div>
   </div>
 
-  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" aria-describedby="modal2-desc">
-    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title">
+    <div class="w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
       <div class="relative">
-        <div class="w-full h-48 sm:h-56 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-          <span class="text-6xl font-extrabold text-primary">MH</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal2')">
-          <i class="fas fa-times text-lg"></i>
-        </button>
+        <div class="w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-100"><img src="assets/speakers/manfred-hoerstmann.jpg" alt="Dr. Manfred Hoerstmann" class="w-full h-full object-cover object-top" width="640" height="640" loading="lazy"></div>
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal2')"><i class="fas fa-times text-lg"></i></button>
       </div>
       <div class="mt-4">
         <h3 id="modal2-title" class="text-xl md:text-2xl font-bold text-brand">Dr. Manfred Hoerstmann</h3>
-        <p id="modal2-desc" class="mt-1 text-gray-600">Keynote Speaker, NGVCAI 2026</p>
+        <p class="mt-1 text-gray-600">Keynote Speaker, NGVCAI 2026</p>
         <div class="mt-4 text-gray-700 space-y-3">
           <p><strong>Country:</strong> United States of America</p>
           <p><strong>Role at NGVCAI 2026:</strong> Keynote Address</p>
           <p><strong>Full profile:</strong> To be announced</p>
         </div>
-        <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal(this.closest('.modal').id)">Close</button>
-        </div>
+        <div class="mt-6 text-right"><button class="btn btn-primary !py-2 !px-4" onclick="closeModal('modal2')">Close</button></div>
       </div>
     </div>
   </div>
 
-  <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" aria-describedby="modal3-desc">
-    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+  <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title">
+    <div class="w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
       <div class="relative">
-        <div class="w-full h-48 sm:h-56 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-          <span class="text-6xl font-extrabold text-primary">BNS</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal3')">
-          <i class="fas fa-times text-lg"></i>
-        </button>
+        <div class="w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-100"><img src="assets/speakers/badri-narayan-subudhi.jpg" alt="Dr. Badri Narayan Subudhi" class="w-full h-full object-cover object-top" width="640" height="640" loading="lazy"></div>
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal3')"><i class="fas fa-times text-lg"></i></button>
       </div>
       <div class="mt-4">
         <h3 id="modal3-title" class="text-xl md:text-2xl font-bold text-brand">Dr. Badri Narayan Subudhi</h3>
-        <p id="modal3-desc" class="mt-1 text-gray-600">Keynote Speaker, NGVCAI 2026</p>
+        <p class="mt-1 text-gray-600">Keynote Speaker, NGVCAI 2026</p>
         <div class="mt-4 text-gray-700 space-y-3">
           <p><strong>Affiliation:</strong> Indian Institute of Technology (IIT), Jammu</p>
           <p><strong>Areas:</strong> Computer vision, machine learning, image and video analysis</p>
           <p><strong>Role at NGVCAI 2026:</strong> Keynote Address</p>
         </div>
-        <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal(this.closest('.modal').id)">Close</button>
-        </div>
+        <div class="mt-6 text-right"><button class="btn btn-primary !py-2 !px-4" onclick="closeModal('modal3')">Close</button></div>
       </div>
     </div>
   </div>
 
-  <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal4-title" aria-describedby="modal4-desc">
-    <div class="modal-content w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+  <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal4-title">
+    <div class="w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
       <div class="relative">
-        <div class="w-full h-48 sm:h-56 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-          <span class="text-6xl font-extrabold text-primary">BA</span>
-        </div>
-        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal4')">
-          <i class="fas fa-times text-lg"></i>
-        </button>
+        <div class="w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-100"><img src="assets/speakers/bibhudendra-acharya.jpg" alt="Dr. Bibhudendra Acharya" class="w-full h-full object-cover object-top" width="640" height="640" loading="lazy"></div>
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal4')"><i class="fas fa-times text-lg"></i></button>
       </div>
       <div class="mt-4">
         <h3 id="modal4-title" class="text-xl md:text-2xl font-bold text-brand">Dr. Bibhudendra Acharya</h3>
-        <p id="modal4-desc" class="mt-1 text-gray-600">Invited Speaker, NGVCAI 2026</p>
+        <p class="mt-1 text-gray-600">Invited Speaker, NGVCAI 2026</p>
         <div class="mt-4 text-gray-700 space-y-3">
           <p><strong>Affiliation:</strong> National Institute of Technology (NIT), Raipur</p>
           <p><strong>Areas:</strong> VLSI design, cryptography, hardware security</p>
           <p><strong>Role at NGVCAI 2026:</strong> Invited Talk</p>
         </div>
-        <div class="mt-6 text-right">
-          <button class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90" onclick="closeModal(this.closest('.modal').id)">Close</button>
-        </div>
+        <div class="mt-6 text-right"><button class="btn btn-primary !py-2 !px-4" onclick="closeModal('modal4')">Close</button></div>
       </div>
     </div>
   </div>
 
-  <!-- Modal behaviour -->
-  <script>
-    function openModal(id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      el.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal(id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      el.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-      // click on backdrop closes
-      document.querySelectorAll('.modal').forEach(function (m) {
-        m.addEventListener('click', function (e) {
-          if (e.target === m) closeModal(m.id);
-        });
-      });
-      // Esc closes any open modal
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          document.querySelectorAll('.modal.active').forEach(function (m) { closeModal(m.id); });
-        }
-      });
-      // keyboard activation of speaker cards
-      document.querySelectorAll('.speaker-card[role="button"]').forEach(function (c) {
-        c.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.click(); }
-        });
-      });
-    });
-  </script>
-
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>

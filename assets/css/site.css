@@ -1,0 +1,153 @@
+/* ==========================================================================
+   NGVCAI 2026 — shared site stylesheet
+   Loaded on every page so the browser caches one file instead of
+   re-downloading ~9 copies of the same rules inline.
+   ========================================================================== */
+
+:root {
+  --ng-brand:   #14396E;
+  --ng-primary: #1E7C88;
+  --ng-accent:  #26709B;
+  --ng-leaf:    #4FA83F;
+  --ng-mint:    #7FD0D8;
+  --ng-sprout:  #8BD97A;
+}
+
+html { scroll-behavior: smooth; }
+:target { scroll-margin-top: 6rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ---- Typography -------------------------------------------------------- */
+h1, h2, h3, h4, .font-display {
+  font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+h1, h2 { text-transform: uppercase; letter-spacing: 0.005em; }
+h3, h4 { letter-spacing: -0.005em; }
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ng-primary);
+}
+.section-eyebrow::before {
+  content: '';
+  width: 1.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ng-primary), var(--ng-leaf));
+  display: inline-block;
+}
+
+/* ---- Keyframes ----------------------------------------------------------*/
+@keyframes fadeUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes float  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pulse  { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
+@keyframes slideIn{ 0% { opacity: 0; transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
+
+.animate-fadeUp    { animation: fadeUp .8s ease-out both; }
+.animate-float     { animation: float 3s ease-in-out infinite; }
+.animate-pulse-slow{ animation: pulse 2s ease-in-out infinite; }
+
+/* Scroll-reveal: elements start hidden, JS (site.js) flips .is-visible
+   when they enter the viewport. Falls back to visible if JS is off. */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.no-js .reveal { opacity: 1; transform: none; }
+
+/* ---- Header / nav -------------------------------------------------------*/
+header.ng-header {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, #14396E 0%, #1E7C88 45%, #4FA83F 100%) 1;
+  transition: box-shadow .3s ease;
+}
+.nav-link, .footer-link { color: #cbd5e1; transition: color .3s ease; }
+.nav-link:hover, .footer-link:hover, .nav-link:focus-visible, .footer-link:focus-visible { color: var(--ng-mint); }
+.nav-link.is-active { color: #fff; }
+.nav-link.is-active::after { content:''; display:block; height:2px; margin-top:4px; background: var(--ng-sprout); border-radius: 2px; }
+.footer-link.is-active { color: var(--ng-mint); font-weight: 600; }
+
+/* ---- Buttons --------------------------------------------------------------*/
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  font-weight: 700; border-radius: .65rem; padding: .95rem 2rem;
+  box-shadow: 0 10px 25px -8px rgba(20,57,110,.35);
+  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+.btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 30px -10px rgba(20,57,110,.45); }
+.btn-primary { background: var(--ng-primary); color: #fff; }
+.btn-primary:hover { background: #19717c; }
+.btn-accent { background: var(--ng-accent); color: #fff; }
+.btn-accent:hover { background: #226390; }
+.btn-outline { background: transparent; border: 2px solid var(--ng-primary); color: var(--ng-primary); box-shadow: none; }
+.btn-outline:hover { background: var(--ng-primary); color: #fff; }
+.btn-disabled { background: #e2e8f0; color: #64748b; box-shadow: none; cursor: not-allowed; }
+.btn-disabled:hover { transform: none; }
+
+/* ---- Cards ----------------------------------------------------------------*/
+.card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
+
+.surface-card          { background: linear-gradient(135deg, rgba(255,255,255,.97) 0%, rgba(249,250,251,.97) 100%); border: 1px solid rgba(20,57,110,.08); }
+.surface-card--primary { background: linear-gradient(135deg, rgba(30,124,136,.06) 0%, rgba(20,57,110,.06) 100%); border: 1px solid rgba(30,124,136,.15); }
+.surface-card--accent  { background: linear-gradient(135deg, rgba(20,57,110,.06) 0%, rgba(30,124,136,.06) 100%); border: 1px solid rgba(20,57,110,.15); }
+
+/* ---- Partner strip ---------------------------------------------------------*/
+.partner-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem 2.75rem; }
+.partner-strip img { width: auto; filter: grayscale(15%); opacity: .92; transition: opacity .25s ease, filter .25s ease; }
+.partner-strip img:hover { opacity: 1; filter: none; }
+
+/* Each mark is sized on its own so the wide Wiley wordmark and the
+   squarer Scopus logo read at a comparable optical weight. */
+.logo-scopus { height: 2.25rem; width: auto; }
+.logo-wiley  { height: 1.5rem;  width: auto; }
+.logo-scopus--lg { height: 2.5rem; width: auto; }
+.logo-wiley--lg  { height: 1.75rem; width: auto; }
+.logo-scopus--sm { height: 1.25rem; width: auto; }
+.logo-wiley--sm  { height: .9rem;   width: auto; }
+
+/* ---- Hero image slider (index only) -----------------------------------*/
+.slider-container { position:absolute; inset:0; overflow:hidden; z-index:1; }
+.slider-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition: opacity 1.2s ease-in-out; }
+.slider-image.active { opacity:1; animation: slideIn 1.2s ease-in-out; }
+.slider-overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(10,25,55,.55) 0%, rgba(10,25,55,.72) 100%); z-index:2; }
+.hero-content { position:relative; z-index:10; }
+.slider-dots { position:absolute; bottom:24px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:15; }
+.slider-dot { width:12px; height:12px; border-radius:50%; background: rgba(255,255,255,.55); cursor:pointer; border: none; padding: 0; transition: all .3s ease; }
+.slider-dot.active { background:#fff; transform: scale(1.15); }
+.slider-dot:hover { background: rgba(255,255,255,.85); }
+
+@media (max-width: 768px) { .hero-title { font-size: 2rem; line-height: 1.12; } .hero-kicker { letter-spacing: .2em; } }
+@media (max-width: 640px) { .hero-title { font-size: 1.75rem; line-height: 1.15; } .hero-kicker { letter-spacing: .16em; font-size: .75rem; } }
+
+/* ---- Speakers / modal (speakers.html) ----------------------------------*/
+.speaker-photo-wrap { position: relative; height: 18rem; }
+@media (min-width: 640px) { .speaker-photo-wrap { height: 20rem; } }
+.speaker-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.modal { display:none; position: fixed; inset:0; z-index:1000; background-color: rgba(10,25,55,.6); backdrop-filter: blur(5px); }
+.modal.active { display:flex; align-items:center; justify-content:center; }
+
+/* ---- Timeline (call-for-papers.html) ------------------------------------*/
+.timeline-item { position: relative; padding-left: 2rem; }
+.timeline-item::before { content:''; position:absolute; left:0; top:.5rem; width:12px; height:12px; border-radius:50%; background: var(--ng-primary); }
+.timeline-item::after { content:''; position:absolute; left:5px; top:1.5rem; width:2px; height:calc(100% - 1rem); background:#e5e7eb; }
+.timeline-item:last-child::after { display:none; }
+
+/* ---- Forms (contact.html) -----------------------------------------------*/
+.form-input, .form-textarea, .form-select {
+  width: 100%; padding: .75rem 1rem; border: 1px solid #d1d5db; border-radius: .5rem;
+  transition: box-shadow .2s ease, border-color .2s ease; background-color: #fff; color: #111827; outline: none;
+}
+.form-textarea { resize: vertical; }
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  border-color: var(--ng-primary); box-shadow: 0 0 0 3px rgba(30,124,136,.25);
+}

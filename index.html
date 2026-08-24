@@ -1,156 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NGVCAI 2026 | Home</title>
+  <title>NGVCAI 2026 | Next-Generation Venture Capital &amp; AI Conference</title>
+  <meta name="description" content="NGVCAI 2026 — 3rd International Conference on Next-Generation Venture Capital: Innovations Powered by Artificial Intelligence. 06–07 November 2026, KIT Auditorium, Berhampur. Scopus-indexed proceedings in partnership with Wiley." />
+  <link rel="canonical" href="https://gitdfsb.com/" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NGVCAI 2026" />
+  <meta property="og:title" content="NGVCAI 2026 | Next-Generation Venture Capital & AI Conference" />
+  <meta property="og:description" content="3rd International Conference on Next-Generation Venture Capital: Innovations Powered by Artificial Intelligence. 06–07 Nov 2026, KIT Auditorium, Berhampur." />
+  <meta property="og:image" content="https://gitdfsb.com/assets/img/logo.png" />
+  <meta property="og:url" content="https://gitdfsb.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NGVCAI 2026 | Next-Generation Venture Capital & AI Conference" />
+  <meta name="twitter:description" content="3rd International Conference on Next-Generation Venture Capital: Innovations Powered by Artificial Intelligence. 06–07 Nov 2026, KIT Auditorium, Berhampur." />
+  <meta name="twitter:image" content="https://gitdfsb.com/assets/img/logo.png" />
 
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-  <!-- Custom Tailwind config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            display: ['Archivo', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            brand:   '#14396E',
-            primary: '#1E7C88',
-            accent:  '#26709B',
-            leaf:    '#4FA83F',
-            mint:    '#7FD0D8',
-            sprout:  '#8BD97A',
-            circuit: '#35C4E8',
-          },
-          screens: { xs: '420px' }
-        },
-      },
-    };
-  </script>
-
-  <!-- Google Font: Inter -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png" />
+  <!-- Tailwind CSS (CDN) + shared config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind-config.js"></script>
 
-  <!-- Meta SEO -->
-  <meta name="description" content="3rd International Conference on Next-Generation Venture Capital: Innovations Powered by Artificial Intelligence. 06–07 November 2026, KIT Auditorium, Berhampur." />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- Minimal custom CSS (no @apply; CDN-safe) -->
-  <style>
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="assets/css/site.css" />
 
-    @keyframes fadeUp { 0% {opacity:0; transform: translateY(20px);} 100% {opacity:1; transform: translateY(0);} }
-    @keyframes float { 0%,100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
-    @keyframes pulse { 0%,100% {opacity: 1;} 50% {opacity: .7;} }
-    @keyframes slideIn { 0% {opacity:0; transform: scale(1.05);} 100% {opacity:1; transform: scale(1);} }
-
-    .animate-fadeUp { animation: fadeUp .8s ease-out both; }
-    .animate-float { animation: float 3s ease-in-out infinite; }
-    .animate-pulse-slow { animation: pulse 2s ease-in-out infinite; }
-
-    /* Slider */
-    .slider-container { position:absolute; inset:0; overflow:hidden; z-index:1; }
-    .slider-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition: opacity 1.2s ease-in-out; }
-    .slider-image.active { opacity:1; animation: slideIn 1.2s ease-in-out; }
-    .slider-overlay { position:absolute; inset:0; background: rgba(0,0,0,.35); z-index:2; }
-    .hero-content { position:relative; z-index:10; }
-
-    /* Dots */
-    .slider-dots { position:absolute; bottom:24px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:15; }
-    .slider-dot { width:12px; height:12px; border-radius:50%; background: rgba(255,255,255,.55); cursor:pointer; transition: all .3s ease; }
-    .slider-dot.active { background:#fff; transform: scale(1.15); }
-    .slider-dot:hover { background: rgba(255,255,255,.85); }
-
-    /* Link hovers (replacement for @apply) */
-    .nav-link,.footer-link { color:#d1d5db; transition: color .3s ease; }
-    .nav-link:hover,.footer-link:hover { color:#1E7C88; }
-
-    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
-    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
-
-    .committee-card { background: linear-gradient(135deg, rgba(30, 124, 136, .05) 0%, rgba(20, 57, 110, .05) 100%); border: 1px solid rgba(30, 124, 136, .1); }
-    .kit-card { background: linear-gradient(135deg, rgba(20, 57, 110, .05) 0%, rgba(30, 124, 136, .05) 100%); border: 1px solid rgba(20, 57, 110, .1); }
-
-    /* Responsive hero title tweaks */
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2rem; line-height: 1.12; }
-      .hero-kicker { letter-spacing: .2em; }
-    }
-    @media (max-width: 640px) {
-      .hero-title { font-size: 1.75rem; line-height: 1.15; }
-      .hero-kicker { letter-spacing: .16em; font-size: .75rem; }
-    }
-  </style>
-
-  <!-- NGVCAI brand type + colour system (synced to logo) -->
-  <style>
-    :root {
-      --ng-brand: #14396E;
-      --ng-primary: #1E7C88;
-      --ng-accent: #26709B;
-      --ng-leaf: #4FA83F;
-      --ng-mint: #7FD0D8;
-    }
-    h1, h2, h3, h4, .font-display {
-      font-family: 'Archivo', 'Inter', ui-sans-serif, system-ui, sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.015em;
-    }
-    /* logo sets everything in caps — headings echo it */
-    h1, h2 { text-transform: uppercase; letter-spacing: 0.005em; }
-    h3, h4 { letter-spacing: -0.005em; }
-
-    /* nav + footer links live on the navy bar */
-    .nav-link, .footer-link { color: #cbd5e1; transition: color .3s ease; }
-    .nav-link:hover, .footer-link:hover { color: var(--ng-mint); }
-
-    /* thin logo-gradient rule under the fixed header */
-    header.ng-header { border-bottom: 3px solid transparent;
-      border-image: linear-gradient(90deg, #14396E 0%, #1E7C88 45%, #4FA83F 100%) 1; }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "NGVCAI 2026 — Next-Generation Venture Capital: Innovations Powered by Artificial Intelligence",
+    "startDate": "2026-11-06",
+    "endDate": "2026-11-07",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "KIT Auditorium",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bhubaneswar-Berhampur Highway",
+        "addressLocality": "Berhampur",
+        "addressRegion": "Odisha",
+        "postalCode": "760010",
+        "addressCountry": "IN"
+      }
+    },
+    "organizer": { "@type": "Organization", "name": "Kalam Institute of Technology, Odisha, India", "url": "https://kit.edu.in" },
+    "description": "3rd International Conference on Next-Generation Venture Capital: Innovations Powered by Artificial Intelligence. Scopus-indexed proceedings in partnership with Wiley.",
+    "image": ["https://gitdfsb.com/assets/img/logo.png"]
+  }
+  </script>
 </head>
 
 <body class="font-sans bg-white text-slate-700 antialiased">
 
-  <!-- Skip link -->
-  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">
-    Skip to main content
-  </a>
+  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-primary text-white px-4 py-2 rounded z-50">Skip to main content</a>
 
   <!-- Navbar -->
   <header class="ng-header fixed inset-x-0 top-0 z-40 bg-brand text-gray-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
-<a href="index.html" class="flex items-center space-x-3 text-xl font-bold tracking-tight hover:text-mint transition-colors duration-300">
-  <img src="logo.png" alt="Logo" class="h-12 w-auto">
-  <img src="kit.png" alt="KIT" class="h-12 w-auto">
-</a>
-
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="NGVCAI 2026 — home">
+        <img src="assets/img/logo-nav.png" alt="NGVCAI 2026" class="h-10 w-10 sm:h-11 sm:w-11 rounded-full ring-2 ring-white/10" width="176" height="176">
+        <span class="h-8 w-px bg-white/20 hidden sm:block" aria-hidden="true"></span>
+        <img src="assets/img/kit.png" alt="Kalam Institute of Technology" class="h-8 sm:h-9 w-auto hidden sm:block" width="289" height="230">
+      </a>
 
       <input id="nav-toggle" type="checkbox" class="hidden peer" aria-hidden="true" />
-      <label for="nav-toggle" class="cursor-pointer sm:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
+      <label for="nav-toggle" class="cursor-pointer lg:hidden text-gray-200 hover:text-mint text-2xl" aria-label="Toggle navigation" aria-controls="main-nav">
         <i class="fas fa-bars"></i>
       </label>
 
-      <nav id="main-nav" class="w-full mt-3 sm:mt-0 sm:w-auto flex-col sm:flex-row gap-4 sm:gap-6 hidden peer-checked:flex sm:flex">
-        <a href="about.html" class="nav-link text-sm sm:text-base">About</a>
-        <a href="speakers.html" class="nav-link text-sm sm:text-base">Speakers</a>
-        <a href="committee.html" class="nav-link text-sm sm:text-base">Committee</a>
-        <a href="call-for-papers.html" class="nav-link text-sm sm:text-base">Call for Papers</a>
-        <a href="author-guidelines.html" class="nav-link text-sm sm:text-base">Author Guidelines</a>
-        <a href="venue.html" class="nav-link text-sm sm:text-base">Venue</a>
-        <a href="registration.html" class="nav-link text-sm sm:text-base">Register</a>
-        <a href="contact.html" class="nav-link text-sm sm:text-base">Contact</a>
+      <nav id="main-nav" class="w-full lg:w-auto mt-3 lg:mt-0 flex-col lg:flex-row gap-4 lg:gap-6 hidden peer-checked:flex lg:flex lg:items-center">
+        <a href="about.html" class="nav-link text-sm">About</a>
+        <a href="speakers.html" class="nav-link text-sm">Speakers</a>
+        <a href="committee.html" class="nav-link text-sm">Committee</a>
+        <a href="call-for-papers.html" class="nav-link text-sm">Call for Papers</a>
+        <a href="author-guidelines.html" class="nav-link text-sm">Author Guidelines</a>
+        <a href="venue.html" class="nav-link text-sm">Venue</a>
+        <a href="contact.html" class="nav-link text-sm">Contact</a>
+        <a href="registration.html" class="btn btn-primary !px-5 !py-2 text-sm w-full lg:w-auto justify-center">Register</a>
       </nav>
     </div>
   </header>
@@ -158,53 +100,62 @@
   <!-- Main -->
   <main id="main">
 
-    <!-- Hero Section with Image Slider Background -->
-    <section class="relative flex flex-col items-center justify-center text-center py-24 md:py-36 overflow-hidden min-h-[80vh] sm:min-h-[90vh]">
-      <!-- Image Slider Background -->
+    <!-- Hero -->
+    <section class="relative flex flex-col items-center justify-center text-center py-28 md:py-40 overflow-hidden min-h-[86vh] sm:min-h-[92vh]">
       <div class="slider-container" aria-hidden="true">
-        <img src="img1.jpeg" alt="" class="slider-image active" />
-        <img src="img2.jpeg" alt="" class="slider-image" />
-        <img src="img3.jpeg" alt="" class="slider-image" />
+        <img src="assets/img/hero-img1.jpg" alt="" class="slider-image active" width="1600" height="1066" fetchpriority="high" />
+        <img src="assets/img/hero-img2.jpg" alt="" class="slider-image" width="1600" height="1066" loading="lazy" />
+        <img src="assets/img/hero-img3.jpg" alt="" class="slider-image" width="1600" height="1200" loading="lazy" />
       </div>
-
-      <!-- Gradient overlay -->
       <div class="slider-overlay" aria-hidden="true"></div>
 
-      <div class="hero-content max-w-6xl px-4 sm:px-6 animate-fadeUp">
-        <p class="hero-kicker text-sm sm:text-base font-semibold uppercase tracking-[0.28em] text-mint mb-5">
+      <div class="hero-content max-w-6xl px-4 sm:px-6">
+        <img src="assets/img/logo-nav.png" alt="" class="mx-auto mb-6 h-20 w-20 sm:h-24 sm:w-24 rounded-full ring-4 ring-white/15 shadow-2xl animate-fadeUp" width="176" height="176" aria-hidden="true" />
+
+        <p class="hero-kicker text-sm sm:text-base font-semibold uppercase tracking-[0.28em] text-mint mb-5 animate-fadeUp">
           3<sup>rd</sup> International Conference
         </p>
-        <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] mb-4 text-white">
-          Next-Generation<br>
-          <span class="text-mint">Venture Capital</span>
+        <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.08] mb-4 text-white animate-fadeUp">
+          Next-Generation<br><span class="text-mint">Venture Capital</span>
         </h1>
-        <p class="hero-sub text-lg sm:text-xl lg:text-2xl font-semibold text-white/95 mb-6 max-w-3xl mx-auto">
+        <p class="hero-sub text-lg sm:text-xl lg:text-2xl font-semibold text-white/95 mb-6 max-w-3xl mx-auto animate-fadeUp">
           Innovations Powered by Artificial Intelligence
         </p>
-        <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display tracking-tight text-sprout mb-6">
+        <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display tracking-tight text-sprout mb-6 animate-fadeUp">
           NGVCAI &ndash; 2026
         </p>
-        <p class="text-base sm:text-lg lg:text-xl text-white/90 mb-8 max-w-3xl mx-auto font-medium">
-          <strong class="text-sprout">06 &ndash; 07 November 2026</strong> · KIT Auditorium, Berhampur
+        <p class="text-base sm:text-lg lg:text-xl text-white/90 mb-9 max-w-3xl mx-auto font-medium animate-fadeUp">
+          <strong class="text-sprout">06 &ndash; 07 November 2026</strong> &middot; KIT Auditorium, Berhampur
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-          <a href="registration.html" class="bg-primary hover:bg-primary/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            Register Now
+
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 animate-fadeUp">
+          <a href="registration.html" class="btn btn-primary text-base md:text-lg">
+            <i class="fas fa-user-plus"></i> Register Now
           </a>
-          <span class="inline-flex items-center justify-center bg-gray-300 text-gray-600 font-bold rounded-lg shadow cursor-not-allowed px-8 md:px-10 py-3.5 md:py-4" title="Submission portal opens soon" aria-disabled="true">
-            Submission Opening Soon
+          <span class="btn btn-disabled text-base md:text-lg" title="Submission portal opens soon" aria-disabled="true">
+            <i class="fas fa-hourglass-half"></i> Submission Opening Soon
           </span>
+        </div>
+
+        <div class="animate-fadeUp inline-flex flex-col items-center gap-4 bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-5 border border-white/15">
+          <span class="text-white/75 text-[11px] font-semibold uppercase tracking-[0.24em]">Indexing &amp; Publication Partner</span>
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <span class="inline-flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
+              <img src="assets/img/scopus.png" alt="Scopus" class="logo-scopus" loading="lazy" width="1280" height="643">
+            </span>
+            <span class="inline-flex items-center bg-white rounded-lg px-2 py-1 shadow-sm">
+              <img src="assets/img/wiley.png" alt="Wiley" class="logo-wiley" loading="lazy" width="340" height="72">
+            </span>
+          </div>
         </div>
       </div>
 
-      <!-- Slider Navigation Dots -->
       <div class="slider-dots">
         <button class="slider-dot active" aria-label="Slide 1" onclick="currentSlide(1)"></button>
         <button class="slider-dot" aria-label="Slide 2" onclick="currentSlide(2)"></button>
         <button class="slider-dot" aria-label="Slide 3" onclick="currentSlide(3)"></button>
       </div>
 
-      <!-- Floating Elements -->
       <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float" style="animation-delay:-1s;" aria-hidden="true"></div>
       <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/10 rounded-full animate-float" style="animation-delay:-2s;" aria-hidden="true"></div>
       <div class="absolute top-1/2 left-20 w-12 h-12 bg-white/10 rounded-full animate-float" style="animation-delay:-.5s;" aria-hidden="true"></div>
@@ -212,13 +163,15 @@
 
     <!-- About Section -->
     <section id="about" class="max-w-6xl mx-auto py-16 sm:py-20 px-4 sm:px-6 text-center">
-      <div class="animate-fadeUp">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-brand">About the Conference</h2>
+      <div class="reveal">
+        <p class="section-eyebrow justify-center mb-3">About the conference</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-brand">Where Capital Meets AI</h2>
         <p class="text-base md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-6 md:mb-8">
           Join investors, founders, researchers, and technologists as we examine how artificial intelligence is
           rewriting the venture capital playbook &mdash; from deal sourcing and due diligence to portfolio management
           and exit strategy. Hosted by <span class="font-bold text-primary">Kalam Institute of Technology, Odisha, India</span>,
-          NGVCAI 2026 is a two-day forum for research, capital, and technology to meet in one room.
+          NGVCAI 2026 is a two-day forum for research, capital, and technology to meet in one room, with Scopus-indexed
+          proceedings published in partnership with <span class="font-bold text-brand">Wiley</span>.
         </p>
         <a href="about.html" class="inline-flex items-center text-primary font-semibold hover:text-mint/80 transition-colors group">
           Learn more
@@ -230,27 +183,28 @@
     <!-- About KIT -->
     <section id="about-kit" class="bg-gradient-to-r from-sky-50 to-teal-50 py-16 sm:py-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-brand animate-fadeUp">About Kalam Institute of Technology, Odisha, India</h2>
+        <div class="text-center mb-10 md:mb-12 reveal">
+          <p class="section-eyebrow justify-center mb-3">The host institution</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand">About Kalam Institute of Technology, Odisha, India</h2>
+        </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-          <!-- Content -->
-          <div class="animate-fadeUp">
+          <div class="reveal">
             <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6">
-              <span class="font-bold text-accent">Kalam Institute of Technology, (KIT), Berhampur</span> stands as a beacon of excellence in technical education and innovation. Named after the visionary Dr. A.P.J. Abdul Kalam, our institute embodies his spirit of scientific inquiry and technological advancement.
+              <span class="font-bold text-accent">Kalam Institute of Technology (KIT), Berhampur</span> stands as a beacon of excellence in technical education and innovation. Named after the visionary Dr. A.P.J. Abdul Kalam, our institute embodies his spirit of scientific inquiry and technological advancement.
             </p>
             <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6">
               Established with the mission to nurture tomorrow's engineers and innovators, KIT has consistently been at the forefront of applied computing, entrepreneurship, and emerging technology in education and research.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 md:mt-8">
-              <div class="kit-card p-4 rounded-lg"><h4 class="font-bold text-accent mb-2 flex items-center"><i class="fas fa-graduation-cap text-lg mr-2"></i>Academic Excellence</h4><p class="text-gray-700 text-sm">Leading programs in engineering, computing, and management.</p></div>
-              <div class="kit-card p-4 rounded-lg"><h4 class="font-bold text-primary mb-2 flex items-center"><i class="fas fa-microscope text-lg mr-2"></i>Research Focus</h4><p class="text-gray-700 text-sm">Active research in artificial intelligence, data science, and applied computing.</p></div>
-              <div class="kit-card p-4 rounded-lg"><h4 class="font-bold text-accent mb-2 flex items-center"><i class="fas fa-lightbulb text-lg mr-2"></i>Entrepreneurship</h4><p class="text-gray-700 text-sm">A working incubation and entrepreneurship culture on campus.</p></div>
-              <div class="kit-card p-4 rounded-lg"><h4 class="font-bold text-primary mb-2 flex items-center"><i class="fas fa-handshake text-lg mr-2"></i>Industry Connect</h4><p class="text-gray-700 text-sm">Strong partnerships with industry leaders and global institutions.</p></div>
+              <div class="surface-card--accent p-4 rounded-lg"><h4 class="font-bold text-accent mb-2 flex items-center"><i class="fas fa-graduation-cap text-lg mr-2"></i>Academic Excellence</h4><p class="text-gray-700 text-sm">Leading programs in engineering, computing, and management.</p></div>
+              <div class="surface-card--accent p-4 rounded-lg"><h4 class="font-bold text-primary mb-2 flex items-center"><i class="fas fa-microscope text-lg mr-2"></i>Research Focus</h4><p class="text-gray-700 text-sm">Active research in artificial intelligence, data science, and applied computing.</p></div>
+              <div class="surface-card--accent p-4 rounded-lg"><h4 class="font-bold text-accent mb-2 flex items-center"><i class="fas fa-lightbulb text-lg mr-2"></i>Entrepreneurship</h4><p class="text-gray-700 text-sm">A working incubation and entrepreneurship culture on campus.</p></div>
+              <div class="surface-card--accent p-4 rounded-lg"><h4 class="font-bold text-primary mb-2 flex items-center"><i class="fas fa-handshake text-lg mr-2"></i>Industry Connect</h4><p class="text-gray-700 text-sm">Strong partnerships with industry leaders and global institutions.</p></div>
             </div>
           </div>
 
-          <!-- Stats -->
-          <div class="animate-fadeUp" style="animation-delay:.3s;">
+          <div class="reveal" style="transition-delay:.15s">
             <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
               <h3 class="text-xl md:text-2xl font-bold text-brand mb-4 md:mb-6 text-center">KIT at a Glance</h3>
               <div class="space-y-5 sm:space-y-6">
@@ -272,7 +226,7 @@
                 </div>
               </div>
               <div class="mt-6 sm:mt-8 text-center">
-                <a href="https://kit.edu.in" target="_blank" class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition-colors group">
+                <a href="https://kit.edu.in" target="_blank" rel="noopener" class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition-colors group">
                   Visit KIT Website
                   <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 </a>
@@ -286,17 +240,17 @@
     <!-- Stats -->
     <section class="bg-gradient-to-r from-teal-50 to-sky-50 py-16 sm:py-20">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 text-center px-4 sm:px-6">
-        <div class="animate-fadeUp">
+        <div class="reveal">
           <div class="text-5xl md:text-6xl font-extrabold text-primary mb-3 md:mb-4 animate-pulse-slow">2</div>
           <h3 class="text-lg md:text-xl font-semibold text-brand">Days of Innovation</h3>
           <p class="text-gray-600 text-sm md:text-base">Intensive learning experience</p>
         </div>
-        <div class="animate-fadeUp" style="animation-delay:.2s;">
+        <div class="reveal" style="transition-delay:.15s">
           <div class="text-5xl md:text-6xl font-extrabold text-accent mb-3 md:mb-4 animate-pulse-slow">3+</div>
           <h3 class="text-lg md:text-xl font-semibold text-brand">Expert Speakers</h3>
-          <p class="text-gray-600 text-sm md:text-base">Industry leaders & researchers</p>
+          <p class="text-gray-600 text-sm md:text-base">Industry leaders &amp; researchers</p>
         </div>
-        <div class="animate-fadeUp" style="animation-delay:.4s;">
+        <div class="reveal" style="transition-delay:.3s">
           <div class="text-5xl md:text-6xl font-extrabold text-primary mb-3 md:mb-4 animate-pulse-slow">100+</div>
           <h3 class="text-lg md:text-xl font-semibold text-brand">Participants</h3>
           <p class="text-gray-600 text-sm md:text-base">Networking opportunities</p>
@@ -307,14 +261,16 @@
     <!-- CFP -->
     <section id="call-for-papers" class="bg-white py-16 sm:py-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-brand animate-fadeUp">Call for Papers</h2>
-        <p class="text-base md:text-xl text-gray-700 mb-8 md:mb-12 max-w-4xl mx-auto animate-fadeUp">
-          We invite researchers, academics, and industry professionals to submit original research papers 
-          on artificial intelligence, venture capital, and technology entrepreneurship.
+        <p class="section-eyebrow justify-center mb-3 reveal">Research track</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-brand reveal">Call for Papers</h2>
+        <p class="text-base md:text-xl text-gray-700 mb-8 md:mb-12 max-w-4xl mx-auto reveal">
+          We invite researchers, academics, and industry professionals to submit original research papers
+          on artificial intelligence, venture capital, and technology entrepreneurship. Accepted papers are
+          published in Scopus-indexed proceedings in partnership with <strong class="text-brand">Wiley</strong>.
         </p>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12">
-          <div class="p-6 rounded-lg bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 animate-fadeUp">
+          <div class="p-6 rounded-lg surface-card--primary reveal">
             <h3 class="text-xl font-bold text-primary mb-4 flex items-center justify-center"><i class="fas fa-search text-lg mr-2"></i>Research Topics</h3>
             <ul class="text-left text-gray-700 space-y-2 text-sm md:text-base">
               <li class="flex items-center"><i class="fas fa-chevron-right text-primary text-xs mr-2"></i>AI-Driven Deal Sourcing &amp; Due Diligence</li>
@@ -323,8 +279,8 @@
               <li class="flex items-center"><i class="fas fa-chevron-right text-primary text-xs mr-2"></i>AI Governance, Ethics &amp; Investment Risk</li>
             </ul>
           </div>
-          
-          <div class="p-6 rounded-lg bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 animate-fadeUp" style="animation-delay:.2s;">
+
+          <div class="p-6 rounded-lg surface-card--accent reveal" style="transition-delay:.15s">
             <h3 class="text-xl font-bold text-accent mb-4 flex items-center justify-center"><i class="fas fa-calendar-alt text-lg mr-2"></i>Important Dates</h3>
             <ul class="text-left text-gray-700 space-y-2 text-sm md:text-base">
               <li class="flex items-center"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Deadline for Paper Submission: Oct 15, 2026</li>
@@ -334,33 +290,31 @@
               <li class="flex items-center font-bold text-accent"><i class="fas fa-chevron-right text-accent text-xs mr-2"></i>Conference Date: Nov 6-7, 2026</li>
             </ul>
           </div>
-          
-          <div class="p-6 rounded-lg bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20 animate-fadeUp" style="animation-delay:.4s;">
+
+          <div class="p-6 rounded-lg surface-card reveal" style="transition-delay:.3s">
             <h3 class="text-xl font-bold text-brand mb-4 flex items-center justify-center"><i class="fas fa-file-alt text-lg mr-2"></i>Submission Guidelines</h3>
             <ul class="text-left text-gray-700 space-y-2 text-sm md:text-base">
               <li class="flex items-center"><i class="fas fa-chevron-right text-gray-600 text-xs mr-2"></i>Paper length: 6&ndash;8 pages</li>
               <li class="flex items-center"><i class="fas fa-chevron-right text-gray-600 text-xs mr-2"></i>Original research only</li>
               <li class="flex items-center"><i class="fas fa-chevron-right text-gray-600 text-xs mr-2"></i>Double-blind peer review</li>
-              <li class="flex items-center"><i class="fas fa-chevron-right text-gray-600 text-xs mr-2"></i>Publication opportunities</li>
+              <li class="flex items-center"><i class="fas fa-chevron-right text-gray-600 text-xs mr-2"></i>Wiley-published proceedings</li>
             </ul>
           </div>
         </div>
-        
-        <a href="call-for-papers.html" class="bg-accent hover:bg-accent/90 text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-          Submit Your Paper
-        </a>
+
+        <a href="call-for-papers.html" class="btn btn-accent reveal">Submit Your Paper</a>
       </div>
     </section>
 
-
-
+    <!-- Chief Guest -->
     <section id="guests" class="max-w-7xl mx-auto py-16 sm:py-20 px-4 sm:px-6 text-center bg-white">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 animate-fadeUp text-brand">Chief Guest</h2>
+      <p class="section-eyebrow justify-center mb-3 reveal">Honoring the occasion</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-brand reveal">Chief Guest</h2>
 
-      <div class="grid grid-cols-1 max-w-md mx-auto">
-        <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp border border-gray-100">
-          <div class="h-40 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
-            <span class="text-4xl font-extrabold text-primary">SCT</span>
+      <div class="grid grid-cols-1 max-w-md mx-auto reveal">
+        <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+          <div class="aspect-square overflow-hidden bg-slate-100">
+            <img src="assets/speakers/sarat-chandra-tripathy.jpg" alt="Dr. Sarat Chandra Tripathy" class="w-full h-full object-cover object-center" width="640" height="640" loading="lazy">
           </div>
           <div class="p-6">
             <h3 class="text-lg md:text-xl font-bold text-brand mb-1.5">Dr. Sarat Chandra Tripathy</h3>
@@ -375,191 +329,167 @@
     </section>
 
     <!-- Speakers -->
-<section id="speakers" class="max-w-7xl mx-auto py-16 sm:py-20 px-4 sm:px-6 text-center bg-gradient-to-r from-teal-50/60 to-sky-50/60">
-  <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 animate-fadeUp text-brand">Keynote Speakers</h2>
+    <section id="speakers" class="max-w-7xl mx-auto py-16 sm:py-20 px-4 sm:px-6 text-center bg-gradient-to-r from-teal-50/60 to-sky-50/60">
+      <p class="section-eyebrow justify-center mb-3 reveal">Featured voices</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-brand reveal">Keynote Speakers</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-5xl mx-auto">
-    <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp">
-      <div class="h-40 flex items-center justify-center bg-gradient-to-br from-accent/10 to-primary/10">
-        <span class="text-4xl font-extrabold text-accent">MH</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-5xl mx-auto">
+        <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden reveal">
+          <div class="aspect-square overflow-hidden bg-slate-100">
+            <img src="assets/speakers/manfred-hoerstmann.jpg" alt="Dr. Manfred Hoerstmann" class="w-full h-full object-cover object-center" width="640" height="640" loading="lazy">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-bold text-brand mb-1.5">Dr. Manfred Hoerstmann</h3>
+            <p class="text-primary font-semibold mb-1.5">Keynote Speaker</p>
+            <p class="text-gray-600 text-sm">United States of America</p>
+          </div>
+        </article>
+
+        <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden reveal" style="transition-delay:.15s">
+          <div class="aspect-square overflow-hidden bg-slate-100">
+            <img src="assets/speakers/badri-narayan-subudhi.jpg" alt="Dr. Badri Narayan Subudhi" class="w-full h-full object-cover object-center" width="640" height="640" loading="lazy">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-bold text-brand mb-1.5">Dr. Badri Narayan Subudhi</h3>
+            <p class="text-accent font-semibold mb-1.5">Keynote Speaker</p>
+            <p class="text-gray-600 text-sm">Indian Institute of Technology (IIT), Jammu</p>
+          </div>
+        </article>
+
+        <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden reveal" style="transition-delay:.3s">
+          <div class="aspect-square overflow-hidden bg-slate-100">
+            <img src="assets/speakers/bibhudendra-acharya.jpg" alt="Dr. Bibhudendra Acharya" class="w-full h-full object-cover object-center" width="640" height="640" loading="lazy">
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg md:text-xl font-bold text-brand mb-1.5">Dr. Bibhudendra Acharya</h3>
+            <p class="text-primary font-semibold mb-1.5">Invited Speaker</p>
+            <p class="text-gray-600 text-sm">National Institute of Technology (NIT), Raipur</p>
+          </div>
+        </article>
       </div>
-      <div class="p-6">
-        <h3 class="text-lg md:text-xl font-bold text-brand mb-1.5">Dr. Manfred Hoerstmann</h3>
-        <p class="text-primary font-semibold mb-1.5">Keynote Speaker</p>
-        <p class="text-gray-600 text-sm">United States of America</p>
+
+      <a href="speakers.html" class="mt-10 sm:mt-12 inline-flex items-center text-primary font-semibold hover:text-mint/80 transition-colors group">
+        Meet all speakers
+        <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </section>
+
+    <!-- Committee (Homepage Preview) -->
+    <section id="committee" class="bg-white py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <p class="section-eyebrow justify-center mb-3 reveal">Leadership</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-brand reveal">Organizing Committee</h2>
+
+        <h3 class="text-xl font-bold text-primary mb-6 reveal">Chief Patrons</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
+          <div class="surface-card--primary p-6 rounded-xl shadow hover:shadow-lg transition reveal">
+            <h4 class="text-lg md:text-xl font-bold text-brand mb-1.5">Er. Kanhu Charan Choudhury</h4>
+            <p class="text-primary font-semibold mb-1">Chairman-cum-Director</p>
+            <p class="text-gray-600 text-sm">Kalam Group of Institutions</p>
+          </div>
+          <div class="surface-card--primary p-6 rounded-xl shadow hover:shadow-lg transition reveal" style="transition-delay:.15s">
+            <h4 class="text-lg md:text-xl font-bold text-brand mb-1.5">Mr. Pratap Chandra Panigrahy</h4>
+            <p class="text-primary font-semibold mb-1">Vice-Chairman</p>
+            <p class="text-gray-600 text-sm">Kalam Group of Institutions</p>
+          </div>
+          <div class="surface-card--primary p-6 rounded-xl shadow hover:shadow-lg transition reveal" style="transition-delay:.3s">
+            <h4 class="text-lg md:text-xl font-bold text-brand mb-1.5">Mr. Santosh Kumar Jena</h4>
+            <p class="text-primary font-semibold mb-1">Secretary</p>
+            <p class="text-gray-600 text-sm">Kalam Group of Institutions</p>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-accent mb-6 reveal">Patron</h3>
+        <div class="grid grid-cols-1 max-w-sm mx-auto reveal">
+          <div class="surface-card--accent p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h4 class="text-lg md:text-xl font-bold text-brand mb-1.5">Prof. (Dr.) Pabitra Kumar Tripathy</h4>
+            <p class="text-accent font-semibold mb-1">Patron</p>
+            <p class="text-gray-600 text-sm">Kalam Institute of Technology, Odisha, India</p>
+          </div>
+        </div>
+
+        <a href="committee.html" class="mt-10 sm:mt-12 inline-flex items-center text-primary font-semibold hover:text-mint/80 transition-colors group">
+          View Full Committee
+          <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
-    </article>
+    </section>
 
-    <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp" style="animation-delay:.2s;">
-      <div class="h-40 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
-        <span class="text-4xl font-extrabold text-primary">BNS</span>
-      </div>
-      <div class="p-6">
-        <h3 class="text-lg md:text-xl font-bold text-brand mb-1.5">Dr. Badri Narayan Subudhi</h3>
-        <p class="text-accent font-semibold mb-1.5">Keynote Speaker</p>
-        <p class="text-gray-600 text-sm">Indian Institute of Technology (IIT), Jammu</p>
-      </div>
-    </article>
-
-    <article class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden animate-fadeUp" style="animation-delay:.4s;">
-      <div class="h-40 flex items-center justify-center bg-gradient-to-br from-accent/10 to-primary/10">
-        <span class="text-4xl font-extrabold text-accent">BA</span>
-      </div>
-      <div class="p-6">
-        <h3 class="text-lg md:text-xl font-bold text-brand mb-1.5">Dr. Bibhudendra Acharya</h3>
-        <p class="text-primary font-semibold mb-1.5">Invited Speaker</p>
-        <p class="text-gray-600 text-sm">National Institute of Technology (NIT), Raipur</p>
-      </div>
-    </article>
-  </div>
-
-  <a href="speakers.html" class="mt-10 sm:mt-12 inline-flex items-center text-primary font-semibold hover:text-mint/80 transition-colors group">
-    Meet all speakers
-    <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-    </svg>
-  </a>
-</section>
-
-
-    
-
-<!-- Committee (Homepage Preview) -->
-<section id="committee" class="bg-white py-16 sm:py-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-brand">
-      Organizing Committee
-    </h2>
-
-    <h3 class="text-xl font-bold text-primary mb-6">Chief Patrons</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
-      <div class="committee-card p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h4 class="text-lg md:text-xl font-bold text-brand mb-1.5">Er. Kanhu Charan Choudhury</h4>
-        <p class="text-primary font-semibold mb-1">Chairman-cum-Director</p>
-        <p class="text-gray-600 text-sm">Kalam Group of Institutions</p>
-      </div>
-      <div class="committee-card p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h4 class="text-lg md:text-xl font-bold text-brand mb-1.5">Mr. Pratap Chandra Panigrahy</h4>
-        <p class="text-primary font-semibold mb-1">Vice-Chairman</p>
-        <p class="text-gray-600 text-sm">Kalam Group of Institutions</p>
-      </div>
-      <div class="committee-card p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h4 class="text-lg md:text-xl font-bold text-brand mb-1.5">Mr. Santosh Kumar Jena</h4>
-        <p class="text-primary font-semibold mb-1">Secretary</p>
-        <p class="text-gray-600 text-sm">Kalam Group of Institutions</p>
-      </div>
-    </div>
-
-    <h3 class="text-xl font-bold text-accent mb-6">Patron</h3>
-    <div class="grid grid-cols-1 max-w-sm mx-auto">
-      <div class="kit-card p-6 rounded-xl shadow hover:shadow-lg transition">
-        <h4 class="text-lg md:text-xl font-bold text-brand mb-1.5">Prof. (Dr.) Pabitra Kumar Tripathy</h4>
-        <p class="text-accent font-semibold mb-1">Patron</p>
-        <p class="text-gray-600 text-sm">Kalam Institute of Technology, Odisha, India</p>
-      </div>
-    </div>
-
-    <a href="committee.html"
-       class="mt-10 sm:mt-12 inline-flex items-center text-primary font-semibold hover:text-mint/80 transition-colors group">
-      View Full Committee
-      <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-           fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-      </svg>
-    </a>
-  </div>
-</section>
-
-  <!-- cmt Acknowledgement -->
+    <!-- cmt Acknowledgement -->
     <section class="bg-gray-50 py-12 px-4 sm:px-6 md:px-12">
-      <div class="max-w-4xl mx-auto text-center">
+      <div class="max-w-4xl mx-auto text-center reveal">
         <h2 class="text-xl md:text-2xl font-bold text-brand mb-3 md:mb-4">cmt Acknowledgement</h2>
         <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-         The peer-review platform for NGVCAI 2026 will be announced along with the call for papers. Where the Microsoft CMT service is used, it is provided free of charge by Microsoft, who bear all expenses including Azure cloud services, software development, and support.
+          The peer-review platform for NGVCAI 2026 will be announced along with the call for papers. Where the Microsoft CMT service is used, it is provided free of charge by Microsoft, who bear all expenses including Azure cloud services, software development, and support.
         </p>
       </div>
     </section>
+
     <!-- Author Guidelines -->
-<section id="author-guidelines" class="bg-gradient-to-r from-teal-50/60 to-sky-50/60 py-16 sm:py-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-brand text-center">
-      Author Guidelines
-    </h2>
+    <section id="author-guidelines" class="bg-gradient-to-r from-teal-50/60 to-sky-50/60 py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center reveal">
+          <p class="section-eyebrow justify-center mb-3">For authors</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-brand">Author Guidelines</h2>
+        </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      
-      <!-- Paper Submission -->
-      <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition">
-        <h3 class="text-xl font-bold text-brand mb-3">Paper Submission</h3>
-        <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
-          <li>Papers must be submitted in <span class="font-bold">English</span> only.</li>
-          <li>All submissions should follow the <span class="font-bold">the conference template (to be announced)</span> (MS Word/LaTeX template).</li>
-          <li>Paper length: <span class="font-bold">6–8 pages</span> including figures, tables, and references.</li>
-        </ul>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition reveal">
+            <h3 class="text-xl font-bold text-brand mb-3">Paper Submission</h3>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
+              <li>Papers must be submitted in <span class="font-bold">English</span> only.</li>
+              <li>All submissions should follow the <span class="font-bold">Wiley conference template (to be announced)</span> (MS Word/LaTeX template).</li>
+              <li>Paper length: <span class="font-bold">6–8 pages</span> including figures, tables, and references.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition reveal" style="transition-delay:.1s">
+            <h3 class="text-xl font-bold text-brand mb-3">Formatting Requirements</h3>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
+              <li>Use <span class="font-bold">Times New Roman</span>, 10 pt, single column format.</li>
+              <li>Margins: 1 inch on all sides.</li>
+              <li>Figures and tables must be <span class="font-bold">clear, numbered, and captioned</span>.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition reveal" style="transition-delay:.2s">
+            <h3 class="text-xl font-bold text-brand mb-3">Plagiarism &amp; Ethics</h3>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
+              <li>Papers must be <span class="font-bold">original</span> and not submitted elsewhere.</li>
+              <li>Similarity index should be below <span class="font-bold">15%</span>.</li>
+              <li>Plagiarism, including self-plagiarism, will result in rejection.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition reveal" style="transition-delay:.3s">
+            <h3 class="text-xl font-bold text-brand mb-3">Review &amp; Acceptance</h3>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
+              <li>All papers will undergo a <span class="font-bold">double-blind peer review</span>.</li>
+              <li>Acceptance is based on quality, originality, and relevance.</li>
+              <li>Accepted papers must be revised as per reviewer comments before camera-ready submission.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition reveal" style="transition-delay:.4s">
+            <h3 class="text-xl font-bold text-brand mb-3">Camera-ready &amp; Copyright</h3>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
+              <li>Final paper must be submitted in <span class="font-bold">the Wiley conference template (to be announced)</span>.</li>
+              <li>Authors must submit a signed <span class="font-bold">copyright form (to be announced)</span>.</li>
+              <li>Any incomplete submission may not be included in the proceedings.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition reveal" style="transition-delay:.5s">
+            <h3 class="text-xl font-bold text-brand mb-3">Registration Policy</h3>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
+              <li>At least <span class="font-bold">one author</span> of each accepted paper must register.</li>
+              <li>Registered author must present the paper at the conference.</li>
+              <li>Papers without presentation will not be included in the proceedings.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <!-- Formatting -->
-      <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition">
-        <h3 class="text-xl font-bold text-brand mb-3">Formatting Requirements</h3>
-        <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
-          <li>Use <span class="font-bold">Times New Roman</span>, 10 pt, single column format.</li>
-          <li>Margins: 1 inch on all sides.</li>
-          <li>Figures and tables must be <span class="font-bold">clear, numbered, and captioned</span>.</li>
-        </ul>
-      </div>
-
-      <!-- Plagiarism Policy -->
-      <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition">
-        <h3 class="text-xl font-bold text-brand mb-3">Plagiarism & Ethics</h3>
-        <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
-          <li>Papers must be <span class="font-bold">original</span> and not submitted elsewhere.</li>
-          <li>Similarity index should be below <span class="font-bold">15%</span>.</li>
-          <li>Plagiarism, including self-plagiarism, will result in rejection.</li>
-        </ul>
-      </div>
-
-      <!-- Review & Acceptance -->
-      <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition">
-        <h3 class="text-xl font-bold text-brand mb-3">Review & Acceptance</h3>
-        <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
-          <li>All papers will undergo a <span class="font-bold">double-blind peer review</span>.</li>
-          <li>Acceptance is based on quality, originality, and relevance.</li>
-          <li>Accepted papers must be revised as per reviewer comments before camera-ready submission.</li>
-        </ul>
-      </div>
-
-      <!-- Camera-ready Submission -->
-      <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition">
-        <h3 class="text-xl font-bold text-brand mb-3">Camera-ready & Copyright</h3>
-        <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
-          <li>Final paper must be submitted in <span class="font-bold">the conference template (to be announced)</span>.</li>
-          <li>Authors must submit a signed <span class="font-bold">copyright form (to be announced)</span>.</li>
-          <li>Any incomplete submission may not be included in the proceedings.</li>
-        </ul>
-      </div>
-
-      <!-- Registration Policy -->
-      <div class="p-6 bg-white rounded-xl shadow hover:shadow-md transition">
-        <h3 class="text-xl font-bold text-brand mb-3">Registration Policy</h3>
-        <ul class="list-disc pl-5 text-gray-700 space-y-2 text-sm sm:text-base">
-          <li>At least <span class="font-bold">one author</span> of each accepted paper must register.</li>
-          <li>Registered author must present the paper at the conference.</li>
-          <li>Papers without presentation will not be included in the proceedings.</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Link to Download Template -->
-    <div class="text-center mt-12">
-      <!-- <a href="assets/CRC_Template.zip" class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition">
-        Download CRC Press Template
-        <i class="fas fa-file-download ml-2"></i>
-      </a> -->
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- CTA -->
     <section class="relative py-20 sm:py-24 overflow-hidden">
@@ -569,18 +499,14 @@
         <div class="absolute bottom-10 right-10 w-20 h-20 sm:w-24 sm:h-24 bg-accent/10 rounded-full animate-float" style="animation-delay:-1s;"></div>
         <div class="absolute top-1/2 right-16 w-12 h-12 sm:w-16 sm:h-16 bg-circuit/20 rounded-full animate-float" style="animation-delay:-2s;"></div>
       </div>
-      <div class="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 animate-fadeUp">
+      <div class="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 reveal">
         <h2 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-brand">Don't Miss Out!</h2>
         <p class="text-base md:text-xl text-gray-700 mb-8 md:mb-10 max-w-2xl mx-auto">
           Secure your seat and join the conversation shaping how capital and artificial intelligence build the next generation of companies.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-          <a href="registration.html" class="bg-primary hover:bg-primary/90 text-white font-bold px-10 md:px-12 py-4 md:py-5 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-block text-lg md:text-xl">
-            Register Today
-          </a>
-          <span class="inline-flex items-center justify-center bg-gray-300 text-gray-600 font-bold rounded-lg shadow cursor-not-allowed px-10 md:px-12 py-4 md:py-5 text-lg md:text-xl" title="Submission portal opens soon" aria-disabled="true">
-            Submission Opening Soon
-          </span>
+          <a href="registration.html" class="btn btn-primary text-lg md:text-xl">Register Today</a>
+          <span class="btn btn-disabled text-lg md:text-xl" title="Submission portal opens soon" aria-disabled="true">Submission Opening Soon</span>
         </div>
       </div>
     </section>
@@ -591,7 +517,10 @@
   <footer class="bg-brand text-gray-100 pt-14 sm:pt-16 pb-8 mt-16 sm:mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
       <div class="md:col-span-2">
-        <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-mint">NGVCAI 2026</h3>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/img/logo-nav.png" alt="" class="h-10 w-10 rounded-full" width="176" height="176" loading="lazy" aria-hidden="true">
+          <h3 class="text-xl md:text-2xl font-bold text-mint">NGVCAI 2026</h3>
+        </div>
         <p class="text-gray-300 text-base md:text-lg mb-3 md:mb-4">
           3rd International Conference on Venture Capital &amp; Artificial Intelligence
         </p>
@@ -600,17 +529,25 @@
           <span class="block"><i class="fas fa-map-marker-alt text-mint mr-2"></i>KIT Auditorium, Berhampur</span>
           <span class="block"><i class="fas fa-building text-mint mr-2"></i>Hosted by Kalam Institute of Technology, Odisha, India</span>
         </p>
+        <div class="flex items-center gap-3 mt-6">
+          <span class="inline-flex items-center bg-white/95 rounded-lg px-3 py-1.5"><img src="assets/img/scopus.png" alt="Scopus" class="logo-scopus--sm" loading="lazy"></span>
+          <span class="inline-flex items-center bg-white/95 rounded-lg px-2 py-1"><img src="assets/img/wiley.png" alt="Wiley" class="logo-wiley--sm" loading="lazy" width="340" height="72"></span>
+        </div>
       </div>
 
-      <nav class="flex flex-col gap-2.5 md:gap-3">
+      <nav class="flex flex-col gap-2.5 md:gap-3" aria-label="Footer">
         <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200">Quick Links</h4>
         <a href="about.html" class="footer-link text-sm md:text-base">About</a>
         <a href="speakers.html" class="footer-link text-sm md:text-base">Speakers</a>
         <a href="committee.html" class="footer-link text-sm md:text-base">Committee</a>
         <a href="call-for-papers.html" class="footer-link text-sm md:text-base">Call for Papers</a>
+      </nav>
+
+      <nav class="flex flex-col gap-2.5 md:gap-3" aria-label="Footer secondary">
+        <h4 class="font-semibold text-base md:text-lg mb-1.5 md:mb-2 text-gray-200 hidden md:block">&nbsp;</h4>
         <a href="author-guidelines.html" class="footer-link text-sm md:text-base">Author Guidelines</a>
         <a href="venue.html" class="footer-link text-sm md:text-base">Venue</a>
-                <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
+        <a href="registration.html" class="footer-link text-sm md:text-base">Register</a>
         <a href="contact.html" class="footer-link text-sm md:text-base">Contact</a>
       </nav>
     </div>
@@ -620,56 +557,12 @@
         © 2026 NGVCAI — Hosted by Kalam Institute of Technology, Odisha, India. All rights reserved.
       </p>
       <p class="text-xs md:text-sm text-gray-400">
-        Built and maintained by 
-        <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">
-          Cipherium Private Limited
-        </a>
+        Built and maintained by
+        <a href="https://cipherium.in" class="text-mint font-semibold hover:text-mint/80 transition-colors">Cipherium Private Limited</a>
       </p>
     </div>
   </footer>
 
-  <!-- Image Slider Script -->
-  <script>
-    // Run after DOM is ready so elements exist
-    document.addEventListener('DOMContentLoaded', function () {
-      let currentSlideIndex = 0;
-      const slides = document.querySelectorAll('.slider-image');
-      const dots = document.querySelectorAll('.slider-dot');
-      const totalSlides = slides.length;
-
-      function showSlide(index) {
-        slides.forEach(s => s.classList.remove('active'));
-        dots.forEach(d => d.classList.remove('active'));
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-      }
-
-      function nextSlide() {
-        currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-        showSlide(currentSlideIndex);
-      }
-
-      // Expose to inline onclick handlers
-      window.currentSlide = function (n) {
-        // incoming is 1-based from HTML
-        const idx = Math.max(0, Math.min(totalSlides - 1, n - 1));
-        currentSlideIndex = idx;
-        showSlide(currentSlideIndex);
-      };
-
-      // Auto-advance every 5s
-      let intervalId = setInterval(nextSlide, 5000);
-
-      // Pause on hover over dots (better UX)
-      dots.forEach(dot => {
-        dot.addEventListener('mouseenter', () => clearInterval(intervalId));
-        dot.addEventListener('mouseleave', () => intervalId = setInterval(nextSlide, 5000));
-      });
-
-      // Init
-      showSlide(0);
-    });
-  </script>
-
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>
