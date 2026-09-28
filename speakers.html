@@ -82,15 +82,15 @@
       </div>
     </section>
 
-    <!-- Chief Guest -->
+    <!-- Chief Guest & Guest of Honour -->
     <section class="py-16 sm:py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center mb-10 md:mb-12 reveal">
           <p class="section-eyebrow justify-center mb-3">Honouring the occasion</p>
-          <h2 class="text-2xl md:text-3xl font-bold text-brand">Chief Guest</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand">Chief Guest &amp; Guest of Honour</h2>
         </div>
 
-        <div class="max-w-sm mx-auto reveal">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto reveal">
           <article class="surface-card rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer speaker-card" onclick="openModal('modal1')" tabindex="0" role="button" aria-label="Open details for Dr. Sarat Chandra Tripathy">
             <div class="speaker-photo-wrap bg-slate-100">
               <img src="assets/speakers/sarat-chandra-tripathy.jpg" alt="Dr. Sarat Chandra Tripathy" class="speaker-photo object-top" width="640" height="640" loading="lazy">
@@ -101,6 +101,19 @@
               <p class="text-accent font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Scientist &ndash; F</p>
               <p class="text-gray-600 mb-3">PhD, DSc. Serves at the National Centre for Polar and Ocean Research under the Earth System Science Organization.</p>
               <div class="flex items-start text-sm text-gray-500"><i class="fas fa-landmark mr-2 mt-1"></i><span>Ministry of Earth Sciences, Government of India &middot; Goa</span></div>
+            </div>
+          </article>
+
+          <article class="surface-card rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer speaker-card" onclick="openModal('modal5')" tabindex="0" role="button" aria-label="Open details for Amrut Phalguni Mohanty">
+            <div class="speaker-photo-wrap bg-slate-100">
+              <img src="assets/speakers/amrut-phalguni-mahanty.jpg" alt="Amrut Phalguni Mohanty" class="speaker-photo object-top" width="640" height="640" loading="lazy">
+              <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Guest of Honour</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl md:text-2xl font-bold text-brand mb-1.5">Amrut Phalguni Mohanty</h3>
+              <p class="text-primary font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Chief Administrative Officer &amp; PIO</p>
+              <p class="text-gray-600 mb-3">Chief Administrative Officer and Public Information Officer at IIM Sambalpur.</p>
+              <div class="flex items-start text-sm text-gray-500"><i class="fas fa-landmark mr-2 mt-1"></i><span>Indian Institute of Management (IIM) Sambalpur</span></div>
             </div>
           </article>
         </div>
@@ -153,6 +166,19 @@
               <p class="text-primary font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Invited Speaker</p>
               <p class="text-gray-600 mb-3">Works on VLSI design, cryptography, and secure hardware systems.</p>
               <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>NIT Raipur</div>
+            </div>
+          </article>
+
+          <article class="speaker-card surface-card rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer reveal" onclick="openModal('modal6')" style="transition-delay:.45s" tabindex="0" role="button" aria-label="Open details for Manfred (Fred) Schindler">
+            <div class="speaker-photo-wrap bg-slate-100">
+              <img src="assets/speakers/manfred-fred-schindler.jpg" alt="Manfred (Fred) Schindler" class="speaker-photo object-top" width="640" height="640" loading="lazy">
+              <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">Keynote</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl md:text-2xl font-bold text-brand mb-1.5">Manfred (Fred) Schindler</h3>
+              <p class="text-accent font-semibold mb-2"><i class="fas fa-user-tie mr-2"></i>Keynote Speaker</p>
+              <p class="text-gray-600 mb-3">Independent Consultant. 2024 IEEE VP Technical Activities and MTT-S Honorary Life Member.</p>
+              <div class="flex items-center text-sm text-gray-500"><i class="fas fa-landmark mr-2"></i>IEEE</div>
             </div>
           </article>
         </div>
@@ -300,6 +326,44 @@
           <p><strong>Role at NGVCAI 2026:</strong> Invited Talk</p>
         </div>
         <div class="mt-6 text-right"><button class="btn btn-primary !py-2 !px-4" onclick="closeModal('modal4')">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal5-title">
+    <div class="w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+      <div class="relative">
+        <div class="w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-100"><img src="assets/speakers/amrut-phalguni-mahanty.jpg" alt="Amrut Phalguni Mohanty" class="w-full h-full object-cover object-top" width="640" height="640" loading="lazy"></div>
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal5')"><i class="fas fa-times text-lg"></i></button>
+      </div>
+      <div class="mt-4">
+        <h3 id="modal5-title" class="text-xl md:text-2xl font-bold text-brand">Amrut Phalguni Mohanty</h3>
+        <p class="mt-1 text-gray-600">Guest of Honour, NGVCAI 2026</p>
+        <div class="mt-4 text-gray-700 space-y-3">
+          <p><strong>Affiliation:</strong> Indian Institute of Management (IIM) Sambalpur</p>
+          <p><strong>Role:</strong> Chief Administrative Officer (CAO) and Public Information Officer</p>
+          <p><strong>Role at NGVCAI 2026:</strong> Guest of Honour</p>
+        </div>
+        <div class="mt-6 text-right"><button class="btn btn-primary !py-2 !px-4" onclick="closeModal('modal5')">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal6" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal6-title">
+    <div class="w-[92%] sm:w-[88%] max-w-xl bg-white rounded-2xl shadow-2xl p-6 animate-fadeUp">
+      <div class="relative">
+        <div class="w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-slate-100"><img src="assets/speakers/manfred-fred-schindler.jpg" alt="Manfred (Fred) Schindler" class="w-full h-full object-cover object-top" width="640" height="640" loading="lazy"></div>
+        <button class="absolute top-3 right-3 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow" aria-label="Close" onclick="closeModal('modal6')"><i class="fas fa-times text-lg"></i></button>
+      </div>
+      <div class="mt-4">
+        <h3 id="modal6-title" class="text-xl md:text-2xl font-bold text-brand">Manfred (Fred) Schindler</h3>
+        <p class="mt-1 text-gray-600">Keynote Speaker, NGVCAI 2026</p>
+        <div class="mt-4 text-gray-700 space-y-3">
+          <p><strong>Role:</strong> Independent Consultant</p>
+          <p><strong>IEEE:</strong> 2024 IEEE VP Technical Activities &middot; MTT-S Honorary Life Member</p>
+          <p><strong>Role at NGVCAI 2026:</strong> Keynote Address</p>
+        </div>
+        <div class="mt-6 text-right"><button class="btn btn-primary !py-2 !px-4" onclick="closeModal('modal6')">Close</button></div>
       </div>
     </div>
   </div>
